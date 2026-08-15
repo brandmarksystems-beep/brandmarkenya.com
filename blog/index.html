@@ -7,40 +7,55 @@
 <style>
   :root { --teal: #00b4d8; --teal-dark: #0096c7; --black: #03045e; --white: #ffffff; --gray: #f8f9fa; }
   
-  body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; background: var(--gray); color: var(--black); }
+  body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; background: var(--gray); color: var(--black); line-height: 1.7; }
   header { background: var(--white); padding: 20px 0; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
-  .container { max-width: 900px; margin: 0 auto; padding: 0 20px; }
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
   h1 a { color: var(--teal-dark); text-decoration: none; font-size: 28px; }
   
-  .post { background: var(--white); margin: 40px 0; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); }
-  .post h2 { color: var(--teal); margin-top: 0; font-size: 28px; }
-  .post-meta { color: #777; font-size: 14px; margin-bottom: 20px; }
-  .post-content p { line-height: 1.7; margin-bottom: 15px; }
-  .post-content h2 { color: var(--teal); margin: 30px 0 15px; font-size: 22px; }
+  /* 2 COLUMN LAYOUT */
+  .blog-wrapper { padding: 60px 0; }
+  .blog-card {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr; /* image smaller, content bigger */
+    gap: 40px;
+    background: var(--white);
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    align-items: start;
+  }
+  .blog-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+  }
+  .blog-content h2 { color: var(--teal); margin-top: 0; font-size: 32px; }
+  .blog-meta { color: #777; font-size: 14px; margin-bottom: 20px; }
+  .blog-content h3 { color: var(--teal-dark); margin: 25px 0 10px; font-size: 20px; }
+  
+  /* CTA BUTTON */
+  .cta-btn { 
+    display: inline-block; 
+    background: var(--teal); 
+    color: var(--white); 
+    padding: 14px 28px; 
+    border-radius: 8px; 
+    text-decoration: none; 
+    font-weight: 700; 
+    margin-top: 20px;
+    transition: 0.3s;
+  }
+  .cta-btn:hover { background: var(--teal-dark); transform: translateY(-2px); }
   
   footer { text-align: center; padding: 40px 0; color: var(--white); background: var(--black); margin-top: 60px; }
   footer a { color: var(--teal); text-decoration: none; }
   
-  /* Continue Reading Button */
-  .post-footer { margin-top: 25px; padding-top: 20px; border-top: 1px solid #eee; }
-  .btn-continue { 
-    display: inline-block; 
-    background: var(--teal); 
-    color: var(--white); 
-    padding: 12px 24px; 
-    border-radius: 8px; 
-    text-decoration: none; 
-    font-weight: 700; 
-    transition: 0.3s;
-  }
-  .btn-continue:hover { background: var(--teal-dark); transform: translateX(3px); }
-
-  /* Mobile Responsive */
-  @media (max-width: 600px) {
-    .container { padding: 0 15px; }
-    .post { padding: 20px; }
-    .post h2 { font-size: 24px; }
-    .btn-continue { display: block; text-align: center; width: 100%; }
+  /* MOBILE: stack to 1 column */
+  @media (max-width: 900px) {
+    .blog-card { grid-template-columns: 1fr; padding: 25px; gap: 25px; }
+    .blog-content h2 { font-size: 26px; }
+    .cta-btn { display: block; text-align: center; width: 100%; }
   }
 </style>
 </head>
@@ -51,23 +66,42 @@
     </div>
   </header>
 
-  <div class="container">
-    <div class="post">
-      <h2>5 Silent Brand Killers Killing SMEs in Eldoret</h2>
-      <p class="post-meta">August 15, 2026 | By BrandMark Team</p>
+  <div class="container blog-wrapper">
+    <div class="blog-card">
       
-      <div class="post-content">
-        <p>Every day in Eldoret, great businesses are losing customers not because of bad products, but because of silent brand mistakes. You work hard, but your brand is working against you.</p>
-        
-        <h2>1. Inconsistent Brand Image</h2>
-        <p>Your logo on WhatsApp is different from your flyer. Your tone on Facebook is different from your shop sign. Customers get confused and don't trust you. Pick 2 colors, 1 font, and 1 logo version. Stick to it everywhere.</p>
-        
-        <p>...and 4 more mistakes that are costing you sales.</p>
+      <!-- LEFT: IMAGE -->
+      <div class="blog-image">
+        <img src="/blog-images/branding-eldoret.jpg" alt="Branding for SMEs in Eldoret">
       </div>
 
-      <div class="post-footer">
-        <a href="5-silent-killers.html" class="btn-continue">Continue Reading →</a>
+      <!-- RIGHT: CONTENT -->
+      <div class="blog-content">
+        <h2>5 Silent Brand Killers Killing SMEs in Eldoret</h2>
+        <p class="blog-meta">August 15, 2026 | By BrandMark Team</p>
+        
+        <p>Every day in Eldoret, great businesses are losing customers not because of bad products, but because of silent brand mistakes. You work hard, but your brand is working against you.</p>
+        
+        <h3>1. Inconsistent Brand Image</h3>
+        <p>Your logo on WhatsApp is different from your flyer. Your tone on Facebook is different from your shop sign. Customers get confused and don't trust you.</p>
+
+        <h3>2. Poor Quality Products/Services</h3>
+        <p>Branding brings them in, but quality keeps them. One bad experience and they tell 10 people.</p>
+
+        <h3>3. No Online Presence</h3>
+        <p>If I can't find you on Google or WhatsApp Business in 2026, you don't exist.</p>
+
+        <h3>4. Copying Competitors</h3>
+        <p>When you look like everyone else in Eldoret CBD, you become forgettable. What makes YOU different?</p>
+
+        <h3>5. Ignoring Customer Experience</h3>
+        <p>Your brand is not your logo. It's how people FEEL after dealing with you.</p>
+
+        <p><strong>Fixing these 5 things won't cost you millions. It will cost you intention.</strong></p>
+
+        <!-- CTA RIGHT AFTER CONTENT -->
+        <a href="/contact.html" class="cta-btn">Get Your Brand Audit →</a>
       </div>
+
     </div>
   </div>
 
