@@ -6,96 +6,98 @@
 <title>5 Silent Brand Killers Killing SMEs in Eldoret | BrandMark Kenya</title>
 <meta name="description" content="Discover the 5 silent brand mistakes costing SMEs in Eldoret customers. Get a free brand audit from BrandMark Kenya.">
 <style>
-  :root { --teal: #00b4d8; --teal-dark: #0096c7; --navy: #03045e; --white: #ffffff; --gray: #f8fafc; }
+  :root { --teal: #00b4d8; --teal-dark: #0096c7; --navy: #03045e; --white: #ffffff; }
   
     * { box-sizing: border-box; }
-  body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); color: var(--navy); line-height: 1.7; }
-  header { background: var(--white); padding: 20px 0; box-shadow: 0 2px 10px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 10; }
-  .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+  body { 
+    font-family: 'Segoe UI', Arial, sans-serif; 
+    margin: 0; 
+    background: linear-gradient(135deg, #caf0f8 0%, #90e0ef 50%, #00b4d8 100%);
+    background-attachment: fixed;
+    color: var(--navy); 
+    line-height: 1.7; 
+  }
+  header { background: var(--white); padding: 20px 0; box-shadow: 0 4px 15px rgba(0,0,0,0.08); position: sticky; top: 0; z-index: 10; }
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
   h1 a { color: var(--teal-dark); text-decoration: none; font-size: 28px; font-weight: 800; }
   
   .blog-wrapper { padding: 60px 0; }
+  
   .blog-card {
     display: grid;
-    grid-template-columns: 420px 1fr;
-    gap: 40px;
+    grid-template-columns: 400px 1fr;
     background: var(--white);
-    padding: 40px;
-    border-radius: 16px;
-    box-shadow: 0 8px 30px rgba(0, 180, 216, 0.15);
-    border: 1px solid #e0f2fe;
-    align-items: start;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 119, 182, 0.25);
+    overflow: hidden;
+    min-height: 700px;
+  }
+
+  .blog-image {
+    background: linear-gradient(180deg, var(--teal) 0%, var(--navy) 100%);
+    padding: 40px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 20px;
   }
   .blog-image img {
     width: 100%;
-    height: auto;
-    object-fit: cover;
     border-radius: 12px;
-    border: 3px solid var(--teal);
-    position: sticky;
-    top: 100px;
+    border: 4px solid var(--white);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  }
+  .blog-image .side-content {
+    color: var(--white);
+  }
+  .blog-image .side-content h4 {
+    font-size: 22px;
+    margin: 10px 0;
+  }
+  .blog-image .side-content p {
+    font-size: 15px;
+    opacity: 0.9;
+    line-height: 1.6;
+  }
+
+  .blog-content {
+    padding: 40px;
+    background: var(--white);
   }
   .blog-content h2 { color: var(--teal); margin-top: 0; font-size: 32px; line-height: 1.3; }
   .blog-meta { color: #555; font-size: 14px; margin-bottom: 20px; }
   .blog-content h3 { color: var(--teal-dark); margin: 25px 0 10px; font-size: 20px; }
   
-  /* FORM + CTA SECTION */
   .lead-section { 
-    background: var(--gray); 
+    background: #e0f2fe; 
     padding: 30px; 
     border-radius: 12px; 
     margin-top: 30px; 
-    border: 2px dashed var(--teal);
+    border-left: 5px solid var(--teal);
   }
   .lead-section h3 { margin-top: 0; color: var(--navy); }
   .form-group { display: flex; flex-direction: column; gap: 12px; margin-bottom: 15px; }
-  .form-group input { 
-    padding: 14px; 
-    border: 2px solid #e0f2fe; 
-    border-radius: 8px; 
-    font-size: 16px;
-    transition: 0.3s;
-  }
+  .form-group input { padding: 14px; border: 2px solid #e0f2fe; border-radius: 8px; font-size: 16px; width: 100%; }
   .form-group input:focus { outline: none; border-color: var(--teal); }
   
-  .btn-group { display: flex; gap: 12px; flex-wrap: wrap; }
   .btn { 
-    flex: 1;
-    min-width: 200px;
-    padding: 14px 24px; 
-    border-radius: 8px; 
-    text-decoration: none; 
-    font-weight: 700; 
-    text-align: center;
-    transition: 0.3s;
-    cursor: pointer;
-    border: none;
-    font-size: 16px;
+    display: block; width: 100%; padding: 14px 24px; border-radius: 8px; 
+    text-decoration: none; font-weight: 700; text-align: center;
+    transition: 0.3s; cursor: pointer; border: none; font-size: 16px; margin-bottom: 10px;
   }
-  .btn-primary { 
-    background: linear-gradient(90deg, var(--teal) 0%, var(--teal-dark) 100%);
-    color: var(--white); 
-    box-shadow: 0 4px 12px rgba(0, 180, 216, 0.3);
-  }
-  .btn-primary:hover { transform: translateY(-2px); }
-  .btn-whatsapp { 
-    background: #25D366; 
-    color: var(--white); 
-    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
-  }
-  .btn-whatsapp:hover { transform: translateY(-2px); }
-  .or-divider { text-align: center; margin: 15px 0; color: #777; font-size: 14px; }
+  .btn-primary { background: linear-gradient(90deg, var(--teal) 0%, var(--teal-dark) 100%); color: var(--white); }
+  .btn-whatsapp { background: #25D366; color: var(--white); }
+  .btn:hover { transform: translateY(-2px); }
+  .or-divider { text-align: center; margin: 10px 0; color: #777; font-size: 14px; }
   
-  footer { text-align: center; padding: 40px 0; color: var(--white); background: var(--navy); margin-top: 60px; }
-  footer a { color: var(--teal); text-decoration: none; }
+  footer { text-align: center; padding: 40px 0; color: var(--white); }
+  footer a { color: #caf0f8; text-decoration: none; }
   
   @media (max-width: 900px) {
-    .blog-card { grid-template-columns: 1fr; padding: 25px; gap: 25px; }
-    .blog-image img { position: static; max-height: 300px; }
+    .blog-card { grid-template-columns: 1fr; min-height: auto; }
+    .blog-image { padding: 30px 20px; }
+    .blog-content { padding: 30px 20px; }
     .blog-content h2 { font-size: 26px; }
-    .btn-group { flex-direction: column; }
-    .btn { width: 100%; }
-    .lead-section { padding: 20px; }
   }
 </style>
 </head>
@@ -109,12 +111,15 @@
   <div class="container blog-wrapper">
     <div class="blog-card">
       
-      <!-- LEFT: IMAGE -->
       <div class="blog-image">
         <img src="../blog-images/brand-killers.webp" alt="5 Silent Brand Killers for SMEs in Eldoret">
+        <div class="side-content">
+          <h4>SMEs in Eldoret</h4>
+          <p>Most businesses fail not because the product is bad, but because the brand is silent. Let's fix that.</p>
+          <p><strong>BrandMark Kenya</strong><br>Building brands that sell.</p>
+        </div>
       </div>
 
-      <!-- RIGHT: CONTENT -->
       <div class="blog-content">
         <h2>5 Silent Brand Killers Killing SMEs in Eldoret</h2>
         <p class="blog-meta">August 15, 2026 | By BrandMark Team</p>
@@ -138,12 +143,10 @@
 
         <p><strong>Fixing these 5 things won't cost you millions. It will cost you intention.</strong></p>
 
-        <!-- LEAD CAPTURE SECTION -->
         <div class="lead-section">
           <h3>Get Your Free Brand Audit</h3>
           <p style="margin-bottom: 20px;">Let us review your brand and tell you exactly what's killing it.</p>
           
-          <!-- FORMSPREE FORM -->
           <form action="https://formspree.io/f/mzepabar" method="POST">
             <div class="form-group">
               <input type="text" name="name" placeholder="Your Name" required>
@@ -155,7 +158,6 @@
 
           <div class="or-divider">— OR —</div>
 
-          <!-- WHATSAPP BUTTON -->
           <a href="https://wa.me/254725776082?text=Hi%20BrandMark%20Kenya,%20I%20need%20a%20free%20brand%20audit" class="btn btn-whatsapp" target="_blank">
             Chat on WhatsApp
           </a>
