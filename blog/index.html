@@ -12,7 +12,6 @@
   .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
   h1 a { color: var(--teal-dark); text-decoration: none; font-size: 28px; }
   
-  /* 2 COLUMN LAYOUT WITH BRAND BG */
   .blog-wrapper { padding: 60px 0; }
   .blog-card {
     display: grid;
@@ -36,7 +35,6 @@
   .blog-meta { color: #555; font-size: 14px; margin-bottom: 20px; }
   .blog-content h3 { color: var(--teal-dark); margin: 25px 0 10px; font-size: 20px; }
   
-  /* CTA BUTTON */
   .cta-btn { 
     display: inline-block; 
     background: linear-gradient(90deg, var(--teal) 0%, var(--teal-dark) 100%);
@@ -54,7 +52,6 @@
   footer { text-align: center; padding: 40px 0; color: var(--white); background: var(--navy); margin-top: 60px; }
   footer a { color: var(--teal); text-decoration: none; }
   
-  /* MOBILE */
   @media (max-width: 900px) {
     .blog-card { grid-template-columns: 1fr; padding: 25px; gap: 25px; }
     .blog-content h2 { font-size: 26px; }
@@ -72,9 +69,9 @@
   <div class="container blog-wrapper">
     <div class="blog-card">
       
-      <!-- LEFT: IMAGE - FIXED PATH FOR blog-images FOLDER -->
+      <!-- LEFT: IMAGE - FIXED PATH WITH ../ -->
       <div class="blog-image">
-        <img src="/blog-images/brand-killers.webp" alt="5 Silent Brand Killers for SMEs in Eldoret">
+        <img src="../blog-images/brand-killers.webp" alt="5 Silent Brand Killers for SMEs in Eldoret">
       </div>
 
       <!-- RIGHT: CONTENT -->
@@ -101,8 +98,8 @@
 
         <p><strong>Fixing these 5 things won't cost you millions. It will cost you intention.</strong></p>
 
-        <!-- CTA FIXED - goes back to root -->
-        <a href="/contact.html" class="cta-btn">Get Your Brand Audit →</a>
+        <!-- CTA FIXED - GOES TO WHATSAPP -->
+        <a href="https://wa.me/254725776082" class="cta-btn" target="_blank">Get Your Brand Audit on WhatsApp →</a>
       </div>
 
     </div>
@@ -110,7 +107,7 @@
 
   <footer>
     <div class="container">
-      <p>© 2026 BrandMark Kenya | <a href="/">Home</a> | <a href="/blog/">Blog</a> | <a href="/contact.html">Contact</a></p>
+      <p>© 2026 BrandMark Kenya | <a href="/">Home</a> | <a href="/blog/">Blog</a></p>
     </div>
   </footer>
 </body>
