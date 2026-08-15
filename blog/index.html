@@ -3,9 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BrandMark Kenya Blog | Marketing Tips for SMEs</title>
-  <meta name="description" content="Practical marketing, branding and digital tips for SMEs in Kenya by BrandMark Kenya">
-  
+  <title>5 Silent Brand Killers Killing SMEs in Eldoret | BrandMark Kenya</title>
+
   <!-- YOUR GA CODE -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-HPZ7GK21KM"></script>
   <script>
@@ -24,136 +23,97 @@
       --teal-dark: #0096c7;
       --gray: #f5f7fa;
     }
-
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { 
-      font-family: 'Segoe UI', Arial, sans-serif; 
-      line-height: 1.6; 
-      color: var(--black); 
-      background: var(--gray); 
-    }
+    body { font-family: 'Segoe UI', Arial, sans-serif; line-height: 1.7; color: var(--black); background: var(--gray); }
     
     .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
     
-    header { 
-      background: linear-gradient(90deg, var(--black) 0%, var(--teal-dark) 100%);
-      color: var(--white); 
-      padding: 12px 0; /* WAS 20px. Now smaller */
-      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-    }
-    header h1 { font-size: 1.4rem; font-weight: 800; } /* WAS 1.8rem. Now smaller */
+    header { background: linear-gradient(90deg, var(--black) 0%, var(--teal-dark) 100%); color: var(--white); padding: 12px 0; }
+    header h1 { font-size: 1.4rem; font-weight: 800; }
     header a { color: var(--white); text-decoration: none; }
-    header a:hover { color: var(--cyan); }
     
-    .blog-hero { 
-      text-align: center; 
-      padding: 40px 20px; /* WAS 80px. Now 50% smaller */
+    .post { background: var(--white); padding: 40px; margin: 30px auto; border-radius: 16px; max-width: 1200px; }
+    .post h1 { font-size: 2.2rem; margin-bottom: 10px; color: var(--black); }
+    .post-meta { color: var(--teal-dark); font-weight: 600; margin-bottom: 30px; }
+    
+    /* NEW 2 COLUMN LAYOUT */
+    .post-layout {
+      display: grid;
+      gap: 40px;
+    }
+    @media (min-width: 992px) {
+      .post-layout {
+        grid-template-columns: 2fr 1fr; /* Image gets 2/3, CTA gets 1/3 */
+        align-items: start;
+      }
+    }
+    
+    .post-image img { width: 100%; border-radius: 12px; box-shadow: 0 8px 25px rgba(0,180,216,0.2); }
+    
+    .post-cta {
       background: linear-gradient(135deg, var(--cyan) 0%, var(--teal) 100%);
       color: var(--white);
+      padding: 30px;
+      border-radius: 12px;
+      position: sticky;
+      top: 20px; /* CTA sticks when you scroll */
     }
-    .blog-hero h2 { font-size: 2.2rem; margin-bottom: 10px; font-weight: 800; } /* WAS 2.8rem */
-    .blog-hero p { font-size: 1rem; opacity: 0.95; }
+    .post-cta h3 { font-size: 1.4rem; margin-bottom: 12px; }
+    .post-cta p { margin-bottom: 20px; opacity: 0.95; }
+    .btn { display: block; background: var(--black); color: var(--white); padding: 14px; border-radius: 8px; text-decoration: none; font-weight: 700; text-align: center; margin-bottom: 12px; transition: 0.3s; }
+    .btn:hover { background: var(--teal-dark); transform: scale(1.03); }
+    .btn-secondary { background: var(--white); color: var(--black); }
     
-    .blog-grid { 
-      display: grid; 
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
-      gap: 30px; 
-      padding: 40px 0; /* WAS 60px */
-    }
+    .post-content { margin-top: 40px; }
+    .post-content h2 { color: var(--teal-dark); margin: 30px 0 15px; }
     
-    .blog-card { 
-      background: var(--white); 
-      border-radius: 16px; 
-      overflow: hidden; 
-      box-shadow: 0 6px 20px rgba(0,180,216,0.15);
-      transition: all 0.3s ease;
-      border: 2px solid transparent;
-    }
-    .blog-card:hover { 
-      transform: translateY(-8px); 
-      border-color: var(--cyan);
-      box-shadow: 0 12px 30px rgba(0,212,255,0.25);
-    }
-    
-    .blog-card img { width: 100%; height: 260px; object-fit: cover; } /* WAS 220px. Now taller so less crop */
-    
-    .blog-content { padding: 25px; }
-    .blog-content h3 { color: var(--black); margin-bottom: 12px; font-size: 1.4rem; }
-    .blog-content p { color: #444; font-size: 0.95rem; margin-bottom: 18px; }
-    .blog-meta { font-size: 0.85rem; color: var(--teal-dark); font-weight: 600; margin-bottom: 12px; }
-    
-    .btn { 
-      display: inline-block; 
-      background: linear-gradient(135deg, var(--cyan) 0%, var(--teal) 100%);
-      color: var(--white); 
-      padding: 12px 24px; 
-      border-radius: 8px; 
-      text-decoration: none; 
-      font-weight: 700;
-      transition: all 0.3s;
-    }
-    .btn:hover { 
-      background: linear-gradient(135deg, var(--teal) 0%, var(--teal-dark) 100%);
-      transform: scale(1.05);
-    }
-    
-    footer { 
-      text-align: center; 
-      padding: 40px 0; 
-      color: var(--white); 
-      background: var(--black); 
-      margin-top: 60px; 
-    }
+    footer { text-align: center; padding: 40px 0; color: var(--white); background: var(--black); margin-top: 60px; }
     footer a { color: var(--cyan); text-decoration: none; }
-    
-    /* Mobile */
-    @media (max-width: 768px) {
-      .blog-hero h2 { font-size: 1.7rem; }
-      .blog-hero { padding: 30px 20px; }
-      .blog-grid { grid-template-columns: 1fr; gap: 20px; }
-      .blog-card img { height: 200px; } /* Mobile image height */
-    }
   </style>
 </head>
 <body>
-
   <header>
     <div class="container">
-      <a href="/"><h1>BrandMark Kenya</h1></a>
+      <h1><a href="/">BrandMark Kenya</a></h1>
     </div>
   </header>
 
-  <section class="blog-hero">
-    <div class="container">
-      <h2>Marketing That Actually Works</h2>
-      <p>Real strategies for Kenyan SMEs to build brands that sell. From Eldoret to the world.</p>
-    </div>
-  </section>
+  <div class="post">
+    <h1>5 Silent Brand Killers Killing SMEs in Eldoret</h1>
+    <div class="post-meta">Published Aug 2025 | By BrandMark Kenya</div>
+    
+    <div class="post-layout">
+      <!-- LEFT: IMAGE -->
+      <div class="post-image">
+        <img src="../blog-images/brand-killers-eldoret.png" alt="5 Silent Brand Killers">
+      </div>
 
-  <main class="container">
-    <div class="blog-grid">
+      <!-- RIGHT: CTA -->
+      <div class="post-cta">
+        <h3>Is Your Brand Leaking Money?</h3>
+        <p>Stop losing customers to weak branding. Let us fix it in 7 days.</p>
+        <a href="/#contact" class="btn">Get Free Brand Audit</a>
+        <a href="/blog/" class="btn btn-secondary">← Back to Blog</a>
+      </div>
+    </div>
+
+    <!-- BLOG CONTENT GOES BELOW -->
+    <div class="post-content">
+      <p>Every day in Eldoret, good businesses lose customers not because their product is bad... but because their brand is silent.</p>
       
-      <!-- POST #1 -->
-      <article class="blog-card">
-        <img src="/blog-images/brand-killers.webp" alt="5 Silent Brand Killers">
-        <div class="blog-content">
-          <div class="blog-meta">August 15, 2026 • 5 min read</div>
-          <h3>5 Silent Brand Killers Killing SMEs in Eldoret</h3>
-          <p>Most SMEs die quietly. Not from lack of money, but from these 5 brand mistakes. Here’s how to fix them before they kill you.</p>
-          <a href="/blog/5-silent-killers.html" class="btn">Read Article →</a>
-        </div>
-      </article>
-
-      <!-- ADD NEW POSTS HERE. Copy the whole <article> block -->
-
+      <h2>1. Inconsistent Brand Image</h2>
+      <p>Your logo looks different on WhatsApp, your banner, and your receipts. Customers get confused and don't trust you.</p>
+      
+      <h2>2. Poor Quality Products/Services</h2>
+      <p>...continue with your full blog post here...</p>
+      
     </div>
-  </main>
+  </div>
 
   <footer>
     <div class="container">
-      <p>© 2026 BrandMark Kenya. Building Brands That Sell. | <a href="/">Back to Home</a></p>
+      <p>&copy; 2026 BrandMark Kenya | <a href="/blog/">Blog</a> | <a href="/#contact">Contact</a></p>
     </div>
   </footer>
-
 </body>
 </html>
