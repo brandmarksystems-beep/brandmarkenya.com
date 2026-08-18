@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>5 Silent Brand Killers Killing SMEs in Eldoret | BrandMark Kenya</title>
-<meta name="description" content="Discover the 5 silent brand mistakes costing SMEs in Eldoret customers. Get a free brand audit from BrandMark Kenya.">
+<title>8 Brand Mistakes Silently Killing SMEs in Eldoret Right Now | BrandMark Kenya</title>
+<meta name="description" content="Discover 8 brand mistakes killing SMEs in Eldoret. Learn how to fix them and get a free brand audit from BrandMark Kenya.">
 <style>
   :root { --teal: #00b4d8; --teal-dark: #0096c7; --navy: #03045e; --white: #ffffff; }
   
@@ -21,25 +21,20 @@
   .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
   h1 a { color: var(--teal-dark); text-decoration: none; font-size: 28px; font-weight: 800; }
   
-  .blog-wrapper { padding: 60px 0; }
+  .blog-wrapper { padding: 40px 0; }
   
+  /* MOBILE FIRST - THIS STAYS THE SAME */
   .blog-card {
     display: grid;
-    grid-template-columns: 400px 1fr;
+    grid-template-columns: 1fr;
     background: var(--white);
     border-radius: 20px;
     box-shadow: 0 20px 60px rgba(0, 119, 182, 0.25);
     overflow: hidden;
-    min-height: 700px;
   }
-
   .blog-image {
     background: linear-gradient(180deg, var(--teal) 0%, var(--navy) 100%);
-    padding: 40px 30px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    gap: 20px;
+    padding: 30px 20px;
   }
   .blog-image img {
     width: 100%;
@@ -47,26 +42,32 @@
     border: 4px solid var(--white);
     box-shadow: 0 10px 30px rgba(0,0,0,0.3);
   }
-  .blog-image .side-content {
-    color: var(--white);
-  }
-  .blog-image .side-content h4 {
-    font-size: 22px;
-    margin: 10px 0;
-  }
-  .blog-image .side-content p {
-    font-size: 15px;
-    opacity: 0.9;
-    line-height: 1.6;
-  }
-
-  .blog-content {
-    padding: 40px;
-    background: var(--white);
-  }
-  .blog-content h2 { color: var(--teal); margin-top: 0; font-size: 32px; line-height: 1.3; }
+  .blog-image .side-content { color: var(--white); margin-top: 20px; }
+  .blog-image .side-content h4 { font-size: 22px; margin: 10px 0; }
+  .blog-image .side-content p { font-size: 15px; opacity: 0.9; }
+  .blog-content { padding: 30px 20px; background: var(--white); }
+  .blog-content h2 { color: var(--teal); margin-top: 0; font-size: 26px; }
   .blog-meta { color: #555; font-size: 14px; margin-bottom: 20px; }
   .blog-content h3 { color: var(--teal-dark); margin: 25px 0 10px; font-size: 20px; }
+
+  /* DESKTOP LANDSCAPE - ONLY APPLIES ABOVE 1000px */
+  @media (min-width: 1000px) {
+    .container { max-width: 1300px; }
+    .blog-wrapper { padding: 60px 0; }
+    .blog-card {
+      grid-template-columns: 480px 1fr; /* Wider left column */
+    }
+    .blog-image {
+      padding: 40px 30px;
+      position: sticky; /* Sticks so no white space */
+      top: 100px;
+      align-self: flex-start;
+      height: fit-content;
+    }
+    .blog-image .side-content h4 { font-size: 24px; margin: 20px 0 10px; }
+    .blog-content { padding: 50px; }
+    .blog-content h2 { font-size: 34px; }
+  }
   
   .lead-section { 
     background: #e0f2fe; 
@@ -92,13 +93,6 @@
   
   footer { text-align: center; padding: 40px 0; color: var(--white); }
   footer a { color: #caf0f8; text-decoration: none; }
-  
-  @media (max-width: 900px) {
-    .blog-card { grid-template-columns: 1fr; min-height: auto; }
-    .blog-image { padding: 30px 20px; }
-    .blog-content { padding: 30px 20px; }
-    .blog-content h2 { font-size: 26px; }
-  }
 </style>
 </head>
 <body>
@@ -112,16 +106,16 @@
     <div class="blog-card">
       
       <div class="blog-image">
-        <img src="../blog-images/brand-killers.webp" alt="5 Silent Brand Killers for SMEs in Eldoret">
+        <img src="../blog-images/brand-killers.webp" alt="8 Brand Mistakes Silently Killing SMEs in Eldoret">
         <div class="side-content">
-          <h4>SMEs in Eldoret</h4>
-          <p>Most businesses fail not because the product is bad, but because the brand is silent. Let's fix that.</p>
+          <h4>8 Brand Mistakes</h4>
+          <p>Most businesses in Eldoret fail not because the product is bad, but because the brand is silent. Let's fix that.</p>
           <p><strong>BrandMark Kenya</strong><br>Building brands that sell.</p>
         </div>
       </div>
 
       <div class="blog-content">
-        <h2>5 Silent Brand Killers Killing SMEs in Eldoret</h2>
+        <h2>8 Brand Mistakes Silently Killing SMEs in Eldoret Right Now</h2>
         <p class="blog-meta">August 15, 2026 | By BrandMark Team</p>
         
         <p>Every day in Eldoret, great businesses are losing customers not because of bad products, but because of silent brand mistakes. You work hard, but your brand is working against you.</p>
@@ -141,13 +135,22 @@
         <h3>5. Ignoring Customer Experience</h3>
         <p>Your brand is not your logo. It's how people FEEL after dealing with you.</p>
 
-        <p><strong>Fixing these 5 things won't cost you millions. It will cost you intention.</strong></p>
+        <h3>6. No Clear Brand Message</h3>
+        <p>"We sell everything" means you sell nothing. Pick one thing and own it.</p>
+
+        <h3>7. Bad Visuals</h3>
+        <p>Pixelated logos and Canva flyers from 2015 are killing your credibility.</p>
+
+        <h3>8. No Brand Strategy</h3>
+        <p>Posting randomly without a plan. Branding without strategy is just noise.</p>
+
+        <p><strong>Fixing these 8 things won't cost you millions. It will cost you intention.</strong></p>
 
         <div class="lead-section">
           <h3>Get Your Free Brand Audit</h3>
           <p style="margin-bottom: 20px;">Let us review your brand and tell you exactly what's killing it.</p>
           
-          <form action="https://formspree.io/f/mzepabar" method="POST">
+          <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
             <div class="form-group">
               <input type="text" name="name" placeholder="Your Name" required>
               <input type="email" name="email" placeholder="Your Email" required>
