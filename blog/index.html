@@ -6,174 +6,120 @@
 <title>8 Brand Mistakes Silently Killing SMEs in Eldoret Right Now | BrandMark Kenya</title>
 <meta name="description" content="Discover 8 brand mistakes killing SMEs in Eldoret. Learn how to fix them and get a free brand audit from BrandMark Kenya.">
 <style>
-  :root { --teal: #00b4d8; --teal-dark: #0096c7; --navy: #03045e; --white: #ffffff; }
+  :root { --teal: #00b4d8; --teal-dark: #0096c7; --navy: #03045e; --white: #ffffff; --light-bg: #f7f9fc; }
   
-    * { box-sizing: border-box; }
-  body { 
-    font-family: 'Segoe UI', Arial, sans-serif; 
-    margin: 0; 
-    background: linear-gradient(135deg, #caf0f8 0%, #90e0ef 50%, #00b4d8 100%);
-    background-attachment: fixed;
-    color: var(--navy); 
-    line-height: 1.7; 
-  }
-  header { background: var(--white); padding: 20px 0; box-shadow: 0 4px 15px rgba(0,0,0,0.08); position: sticky; top: 0; z-index: 10; }
-  .container { max-width: 1400px; margin: 0 auto; padding: 0 40px; } /* Wider container */
-  h1 a { color: var(--teal-dark); text-decoration: none; font-size: 28px; font-weight: 800; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: var(--white); color: #33475b; line-height: 1.8; }
   
-  .blog-wrapper { padding: 40px 0; }
-  
-  /* MOBILE FIRST - STACKED */
-  .blog-card {
-    display: grid;
-    grid-template-columns: 1fr;
-    background: var(--white);
-    border-radius: 20px;
-    box-shadow: 0 20px 60px rgba(0, 119, 182, 0.25);
-    overflow: hidden;
-    max-width: 800px; /* Keep mobile narrow */
-    margin: 0 auto;
-  }
-  .blog-image {
-    background: linear-gradient(180deg, var(--teal) 0%, var(--navy) 100%);
-    padding: 30px 20px;
-  }
-  .blog-image img {
-    width: 100%;
-    border-radius: 12px;
-    border: 4px solid var(--white);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-  }
-  .blog-image .side-content { color: var(--white); margin-top: 20px; }
-  .blog-image .side-content h4 { font-size: 22px; margin: 10px 0; }
-  .blog-image .side-content p { font-size: 15px; opacity: 0.9; }
-  .blog-content { padding: 30px 20px; background: var(--white); }
-  .blog-content h2 { color: var(--teal); margin-top: 0; font-size: 26px; }
-  .blog-meta { color: #555; font-size: 14px; margin-bottom: 20px; }
-  .blog-content h3 { color: var(--teal-dark); margin: 25px 0 10px; font-size: 20px; }
+  header { background: var(--white); padding: 18px 0; border-bottom: 1px solid #e0e0e0; position: sticky; top: 0; z-index: 10; }
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
+  .nav { display: flex; justify-content: space-between; align-items: center; }
+  .logo a { color: var(--teal-dark); text-decoration: none; font-size: 24px; font-weight: 800; }
+  .btn-primary { background: var(--teal); color: var(--white); padding: 10px 20px; border-radius: 4px; text-decoration: none; font-weight: 600; transition: 0.2s; }
+  .btn-primary:hover { background: var(--teal-dark); }
 
-  /* DESKTOP LANDSCAPE - FULL WIDTH, NO EMPTY SPACE */
-  @media (min-width: 1000px) {
-    .container { max-width: 100%; padding: 0 60px; } /* Use full width */
-    .blog-wrapper { padding: 60px 0; }
-    .blog-card {
-      max-width: 100%; /* Remove the 800px limit */
-      grid-template-columns: 40% 60%; /* Image 40%, Text 60% */
-      border-radius: 0; /* Edge to edge look */
-      box-shadow: none;
-      background: transparent;
-    }
-    .blog-image {
-      padding: 50px 40px;
-      position: sticky;
-      top: 120px;
-      align-self: flex-start;
-      height: fit-content;
-      border-radius: 20px 0 0 20px;
-    }
-    .blog-content { 
-      padding: 60px 80px; 
-      border-radius: 0 20px 20px 0;
-      box-shadow: 0 20px 60px rgba(0, 119, 182, 0.25);
-    }
-    .blog-image .side-content h4 { font-size: 28px; margin: 20px 0 15px; }
-    .blog-content h2 { font-size: 38px; line-height: 1.3; }
-    .blog-content { font-size: 17px; }
-  }
+  .blog-post-wrapper { padding: 50px 0 80px; }
   
-  .lead-section { 
-    background: #e0f2fe; 
-    padding: 30px; 
-    border-radius: 12px; 
-    margin-top: 30px; 
-    border-left: 5px solid var(--teal);
-  }
-  .lead-section h3 { margin-top: 0; color: var(--navy); }
-  .form-group { display: flex; flex-direction: column; gap: 12px; margin-bottom: 15px; }
-  .form-group input { padding: 14px; border: 2px solid #e0f2fe; border-radius: 8px; font-size: 16px; width: 100%; }
+  /* HUBSPOT 2-COLUMN LAYOUT */
+  .post-grid { display: grid; grid-template-columns: 1fr 340px; gap: 60px; align-items: start; }
+  
+  .post-content { max-width: 700px; }
+  .post-content .tag { font-size: 14px; color: var(--teal); font-weight: 700; text-transform: uppercase; }
+  .post-content h1 { font-size: 42px; line-height: 1.2; margin: 10px 0 15px; color: var(--navy); }
+  .post-meta { font-size: 14px; color: #777; margin-bottom: 25px; }
+  .featured-image { width: 100%; border-radius: 8px; margin-bottom: 30px; }
+  .post-content p { font-size: 18px; margin-bottom: 20px; }
+  .post-content h3 { font-size: 24px; color: var(--navy); margin: 35px 0 15px; }
+
+  /* STICKY SIDEBAR */
+  .sidebar { position: sticky; top: 120px; }
+  .cta-box { background: var(--light-bg); border: 1px solid #e0e0e0; border-radius: 8px; padding: 30px; }
+  .cta-box h4 { font-size: 22px; color: var(--navy); margin-bottom: 10px; }
+  .cta-box p { font-size: 15px; margin-bottom: 20px; color: #555; }
+  .form-group input { width: 100%; padding: 12px; border: 1px solid #cbd6e2; border-radius: 4px; font-size: 16px; margin-bottom: 12px; }
   .form-group input:focus { outline: none; border-color: var(--teal); }
-  
-  .btn { 
-    display: block; width: 100%; padding: 14px 24px; border-radius: 8px; 
-    text-decoration: none; font-weight: 700; text-align: center;
-    transition: 0.3s; cursor: pointer; border: none; font-size: 16px; margin-bottom: 10px;
+  .btn-block { display: block; width: 100%; text-align: center; }
+  .btn-whatsapp { background: #25D366; color: var(--white); padding: 12px 20px; border-radius: 4px; text-decoration: none; font-weight: 600; display: block; text-align: center; margin-top: 10px; }
+  .or-divider { text-align: center; margin: 12px 0; color: #777; font-size: 13px; }
+
+  /* MOBILE: STACK */
+  @media (max-width: 900px) {
+    .post-grid { grid-template-columns: 1fr; }
+    .sidebar { position: static; }
+    .post-content h1 { font-size: 32px; }
+    .container { padding: 0 20px; }
   }
-  .btn-primary { background: linear-gradient(90deg, var(--teal) 0%, var(--teal-dark) 100%); color: var(--white); }
-  .btn-whatsapp { background: #25D366; color: var(--white); }
-  .btn:hover { transform: translateY(-2px); }
-  .or-divider { text-align: center; margin: 10px 0; color: #777; font-size: 14px; }
-  
-  footer { text-align: center; padding: 40px 0; color: var(--white); }
-  footer a { color: #caf0f8; text-decoration: none; }
+
+  footer { text-align: center; padding: 40px 0; margin-top: 60px; background: var(--light-bg); border-top: 1px solid #e0e0e0; }
+  footer a { color: var(--teal); text-decoration: none; }
 </style>
 </head>
 <body>
   <header>
-    <div class="container">
-      <h1><a href="/">BrandMark Kenya</a></h1>
+    <div class="container nav">
+      <div class="logo"><a href="/">BrandMark Kenya</a></div>
+      <a href="/blog/" class="btn-primary">← Back to Blog</a>
     </div>
   </header>
 
-  <div class="container blog-wrapper">
-    <div class="blog-card">
+  <div class="container blog-post-wrapper">
+    <div class="post-grid">
       
-      <div class="blog-image">
-        <img src="../blog-images/brand-killers.webp" alt="8 Brand Mistakes Silently Killing SMEs in Eldoret">
-        <div class="side-content">
-          <h4>8 Brand Mistakes</h4>
-          <p>Most businesses in Eldoret fail not because the product is bad, but because the brand is silent. Let's fix that.</p>
-          <p><strong>BrandMark Kenya</strong><br>Building brands that sell.</p>
-        </div>
-      </div>
-
-      <div class="blog-content">
-        <h2>8 Brand Mistakes Silently Killing SMEs in Eldoret Right Now</h2>
-        <p class="blog-meta">August 15, 2026 | By BrandMark Team</p>
+      <!-- LEFT: MAIN CONTENT 70% -->
+      <div class="post-content">
+        <span class="tag">Branding</span>
+        <h1>8 Brand Mistakes Silently Killing SMEs in Eldoret Right Now</h1>
+        <div class="post-meta">August 15, 2026 | By BrandMark Team</div>
+        
+        <img src="../../blog-images/brand-killers.webp" alt="8 Brand Mistakes Silently Killing SMEs in Eldoret" class="featured-image">
         
         <p>Every day in Eldoret, great businesses are losing customers not because of bad products, but because of silent brand mistakes. You work hard, but your brand is working against you.</p>
         
         <h3>1. Inconsistent Brand Image</h3>
-        <p>Your logo on WhatsApp is different from your flyer. Your tone on Facebook is different from your shop sign. Customers get confused and don't trust you.</p>
+        <p>Your logo on WhatsApp is different from your flyer. Your tone on Facebook is different from your shop sign. Customers get confused and don't trust you. Consistency builds trust.</p>
 
         <h3>2. Poor Quality Products/Services</h3>
-        <p>Branding brings them in, but quality keeps them. One bad experience and they tell 10 people.</p>
+        <p>Branding brings them in, but quality keeps them. One bad experience and they tell 10 people. Your brand promise must match your delivery.</p>
 
         <h3>3. No Online Presence</h3>
-        <p>If I can't find you on Google or WhatsApp Business in 2026, you don't exist.</p>
+        <p>If I can't find you on Google or WhatsApp Business in 2026, you don't exist. Your customers are searching. Are you there?</p>
 
         <h3>4. Copying Competitors</h3>
-        <p>When you look like everyone else in Eldoret CBD, you become forgettable. What makes YOU different?</p>
+        <p>When you look like everyone else in Eldoret CBD, you become forgettable. What makes YOU different? Your brand needs a unique voice.</p>
 
         <h3>5. Ignoring Customer Experience</h3>
-        <p>Your brand is not your logo. It's how people FEEL after dealing with you.</p>
+        <p>Your brand is not your logo. It's how people FEEL after dealing with you. From the first DM to the final delivery.</p>
 
         <h3>6. No Clear Brand Message</h3>
-        <p>"We sell everything" means you sell nothing. Pick one thing and own it.</p>
+        <p>"We sell everything" means you sell nothing. Pick one thing and own it. Be known for 1 thing first.</p>
 
         <h3>7. Bad Visuals</h3>
-        <p>Pixelated logos and Canva flyers from 2015 are killing your credibility.</p>
+        <p>Pixelated logos and Canva flyers from 2015 are killing your credibility. Invest in clean, professional visuals.</p>
 
         <h3>8. No Brand Strategy</h3>
-        <p>Posting randomly without a plan. Branding without strategy is just noise.</p>
+        <p>Posting randomly without a plan. Branding without strategy is just noise. You need goals, audience, and content plan.</p>
 
         <p><strong>Fixing these 8 things won't cost you millions. It will cost you intention.</strong></p>
+      </div>
 
-        <div class="lead-section">
-          <h3>Get Your Free Brand Audit</h3>
-          <p style="margin-bottom: 20px;">Let us review your brand and tell you exactly what's killing it.</p>
+      <!-- RIGHT: STICKY SIDEBAR 30% -->
+      <div class="sidebar">
+        <div class="cta-box">
+          <h4>Get Your Free Brand Audit</h4>
+          <p>Let us review your brand and tell you exactly what's killing it. No strings attached.</p>
           
           <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
             <div class="form-group">
               <input type="text" name="name" placeholder="Your Name" required>
               <input type="email" name="email" placeholder="Your Email" required>
-              <input type="tel" name="phone" placeholder="Your WhatsApp Number" required>
+              <input type="tel" name="phone" placeholder="WhatsApp Number" required>
             </div>
-            <button type="submit" class="btn btn-primary">Send Audit Request</button>
+            <button type="submit" class="btn-primary btn-block">Send Audit Request</button>
           </form>
 
           <div class="or-divider">— OR —</div>
 
-          <a href="https://wa.me/254725776082?text=Hi%20BrandMark%20Kenya,%20I%20need%20a%20free%20brand%20audit" class="btn btn-whatsapp" target="_blank">
+          <a href="https://wa.me/254725776082?text=Hi%20BrandMark%20Kenya,%20I%20need%20a%20free%20brand%20audit" class="btn-whatsapp" target="_blank">
             Chat on WhatsApp
           </a>
         </div>
