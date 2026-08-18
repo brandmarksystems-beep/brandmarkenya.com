@@ -18,7 +18,7 @@
     line-height: 1.7; 
   }
   header { background: var(--white); padding: 20px 0; box-shadow: 0 4px 15px rgba(0,0,0,0.08); position: sticky; top: 0; z-index: 10; }
-  .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+  .container { max-width: 1400px; margin: 0 auto; padding: 0 40px; } /* Wider container */
   h1 a { color: var(--teal-dark); text-decoration: none; font-size: 28px; font-weight: 800; }
   
   .blog-wrapper { padding: 40px 0; }
@@ -31,6 +31,8 @@
     border-radius: 20px;
     box-shadow: 0 20px 60px rgba(0, 119, 182, 0.25);
     overflow: hidden;
+    max-width: 800px; /* Keep mobile narrow */
+    margin: 0 auto;
   }
   .blog-image {
     background: linear-gradient(180deg, var(--teal) 0%, var(--navy) 100%);
@@ -50,24 +52,33 @@
   .blog-meta { color: #555; font-size: 14px; margin-bottom: 20px; }
   .blog-content h3 { color: var(--teal-dark); margin: 25px 0 10px; font-size: 20px; }
 
-  /* DESKTOP LANDSCAPE - SIDE BY SIDE */
+  /* DESKTOP LANDSCAPE - FULL WIDTH, NO EMPTY SPACE */
   @media (min-width: 1000px) {
-    .container { max-width: 1300px; }
+    .container { max-width: 100%; padding: 0 60px; } /* Use full width */
     .blog-wrapper { padding: 60px 0; }
     .blog-card {
-      grid-template-columns: 480px 1fr; /* Image 480px, Text takes rest */
-      gap: 0;
+      max-width: 100%; /* Remove the 800px limit */
+      grid-template-columns: 40% 60%; /* Image 40%, Text 60% */
+      border-radius: 0; /* Edge to edge look */
+      box-shadow: none;
+      background: transparent;
     }
     .blog-image {
-      padding: 40px 30px;
-      position: sticky; /* Keeps image visible while scrolling */
+      padding: 50px 40px;
+      position: sticky;
       top: 120px;
       align-self: flex-start;
       height: fit-content;
+      border-radius: 20px 0 0 20px;
     }
-    .blog-image .side-content h4 { font-size: 24px; margin: 20px 0 10px; }
-    .blog-content { padding: 50px; }
-    .blog-content h2 { font-size: 34px; }
+    .blog-content { 
+      padding: 60px 80px; 
+      border-radius: 0 20px 20px 0;
+      box-shadow: 0 20px 60px rgba(0, 119, 182, 0.25);
+    }
+    .blog-image .side-content h4 { font-size: 28px; margin: 20px 0 15px; }
+    .blog-content h2 { font-size: 38px; line-height: 1.3; }
+    .blog-content { font-size: 17px; }
   }
   
   .lead-section { 
