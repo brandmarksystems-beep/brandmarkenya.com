@@ -1980,11 +1980,22 @@ document.querySelectorAll('a[href^="tel:"]').forEach(function(a){
     window.location.href = a.getAttribute('href');
   });
 });
-document.querySelectorAll('a[href="#quote-form"], .nav-quote').forEach(function(a){
+document.querySelectorAll('a[href^="#quote-form"], .nav-quote').forEach(function(a){
   a.addEventListener('click', function(e){
     e.preventDefault();
-    var q=document.getElementById('quote-form');
-    if(q) q.scrollIntoView({behavior:'smooth',block:'start'});
+    // 1. Show HOME panel first
+    document.querySelectorAll('.panel').forEach(function(p){ p.classList.remove('active'); });
+    var home = document.getElementById('p-home');
+    if(home) home.classList.add('active');
+    window.scrollTo(0,0);
+    // 2. Close mobile menu if open
+    var mob = document.getElementById('mobMenu');
+    if(mob) mob.classList.remove('open');
+    // 3. Scroll to form after panel is visible
+    setTimeout(function(){
+      var q=document.getElementById('quote-form');
+      if(q) q.scrollIntoView({behavior:'smooth',block:'start'});
+    }, 350);
   });
 });
 </script>
