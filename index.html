@@ -1956,31 +1956,34 @@ document.addEventListener('DOMContentLoaded', function(){
   });
 </script>
 <script>
-document.querySelectorAll('a[href^="mailto:"]').forEach(function(a){
-  a.addEventListener('click', function(e){
-    e.preventDefault();
-    var href = a.getAttribute('href');
-    var m = href.match(/^mailto:([^?]*)(?:\?(.*))?$/i);
-    var to = m ? (m[1] || '') : '';
-    var params = new URLSearchParams(m && m[2] ? m[2] : '');
-    window.location.href = href;
-    setTimeout(function(){
-      if(!document.hidden){
-        var gmailUrl = 'https://mail.google.com/mail/?view=cm&fs=1&to=' + encodeURIComponent(to);
-        if(params.get('subject')) gmailUrl += '&su=' + encodeURIComponent(params.get('subject'));
-        if(params.get('body')) gmailUrl += '&body=' + encodeURIComponent(params.get('body'));
-        window.location.href = gmailUrl;
+function goToQuoteForm(){
+  document.querySelectorAll('.panel').forEach(function(p){ p.classList.remove('active'); });
+  var home = document.getElementById('p-home');
+  if(home) home.classList.add('active');
+  var mob = document.getElementById('mobMenu');
+  if(mob) mob.classList.remove('open');
+  window.scrollTo(0,0);
+  setTimeout(function(){
+    var q = document.getElementById('quote-form');
+    if(q) q.scrollIntoView({behavior:'smooth', block:'start'});
+  }, 350);
+  return false;
+}
+document.addEventListener('DOMContentLoaded', function(){
+  var topBtn = document.getElementById('topQuoteBtn');
+  if(topBtn){ topBtn.addEventListener('click', function(e){ e.preventDefault(); goToQuoteForm(); }); }
+  // Fix advertise panel quote buttons - stop mailto
+  var advPanel = document.getElementById('p-advertise');
+  if(advPanel){
+    advPanel.querySelectorAll('a, button').forEach(function(el){
+      if(el.textContent.toLowerCase().includes('quote')){
+        el.removeAttribute('href');
+        el.style.cursor='pointer';
+        el.addEventListener('click', function(e){ e.preventDefault(); goToQuoteForm(); });
       }
-    }, 500);
-  });
+    });
+  }
 });
-document.querySelectorAll('a[href^="tel:"]').forEach(function(a){
-  a.addEventListener('click', function(e){
-    e.preventDefault();
-    window.location.href = a.getAttribute('href');
-  });
-});
-
 </script>
 </body>
 </html>
