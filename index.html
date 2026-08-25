@@ -827,7 +827,7 @@ a[target="_blank"],button{cursor:pointer!important;}
     <span></span><span></span><span></span>
   </button>
   <div style="display:flex;gap:8px;align-items:center;">
-    <a class="nav-quote" href="#quote-form">GET A QUOTE</a>
+    <a class="nav-quote" href="#quote-form" onclick="event.preventDefault();document.getElementById('quote-form').scrollIntoView({behavior:'smooth',block:'start'});">GET A QUOTE</a>
   </div>
 </nav>
 
