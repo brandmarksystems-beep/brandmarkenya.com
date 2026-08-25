@@ -827,7 +827,7 @@ a[target="_blank"],button{cursor:pointer!important;}
     <span></span><span></span><span></span>
   </button>
   <div style="display:flex;gap:8px;align-items:center;">
-    <button class="nav-quote" type="button" style="cursor:pointer;pointer-events:auto !important;z-index:9999;" onclick="try{document.querySelectorAll('.panel').forEach(function(p){p.classList.remove('active')});document.getElementById('p-home').classList.add('active');document.getElementById('mobMenu')?.classList.remove('open');setTimeout(function(){var q=document.getElementById('quote-form');if(q)q.scrollIntoView({behavior:'smooth',block:'start'});},400);}catch(e){window.location.hash='#quote-form';}">GET A QUOTE</button>
+    <button id="topQuoteBtn" type="button" style="background:#0ea5e9;color:white;padding:12px 22px;border-radius:999px;border:none;font-weight:700;cursor:pointer;position:relative;z-index:99999;" onclick="window.goToQuoteForm()">GET A QUOTE</button>  
   </div>
 </nav>
 
