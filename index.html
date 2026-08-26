@@ -1962,16 +1962,10 @@ document.querySelectorAll('a[href^="mailto:"]').forEach(function(a){
   a.addEventListener('click', function(e){
     e.preventDefault();
     var href = a.getAttribute('href');
-    var m = href.match(/^mailto:([^?]*)(?:\?(.*))?$/i);
-    var to = m ? (m[1] || '') : '';
-    var params = new URLSearchParams(m && m[2] ? m[2] : '');
     window.location.href = href;
     setTimeout(function(){
       if(!document.hidden){
-        var gmailUrl = 'https://mail.google.com/mail/?view=cm&fs=1&to=' + encodeURIComponent(to);
-        if(params.get('subject')) gmailUrl += '&su=' + encodeURIComponent(params.get('subject'));
-        if(params.get('body')) gmailUrl += '&body=' + encodeURIComponent(params.get('body'));
-        window.location.href = gmailUrl;
+        go('quote');
       }
     }, 500);
   });
