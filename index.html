@@ -827,7 +827,7 @@ a[target="_blank"],button{cursor:pointer!important;}
     <span></span><span></span><span></span>
   </button>
   <div style="display:flex;gap:8px;align-items:center;">
-    <button id="topQuoteBtn" type="button" style="background:#0ea5e9;color:white;padding:12px 22px;border-radius:999px;border:none;font-weight:700;cursor:pointer;position:relative;z-index:99999;" onclick="window.goToQuoteForm()">GET A QUOTE</button>  
+    <button class="nav-quote" onclick="go('quote')">GET A QUOTE</button>
   </div>
 </nav>
 
@@ -1017,7 +1017,7 @@ a[target="_blank"],button{cursor:pointer!important;}
       <h4 class="bm-ad-h">Your Brand Deserves to <span>Stand Out</span></h4>
       <p class="bm-ad-p">From vivid digital prints to breathtaking brand identities — we craft brands that command attention and inspire loyalty across Kenya and beyond.</p>
       <ul class="bm-ad-ul"><li>Logo &amp; Brand Identity Design</li><li>Large Format &amp; Digital Printing</li><li>Signage, Banners &amp; Wall Branding</li><li>Corporate Wear &amp; Promotional Items</li></ul>
-      <a class="btn-c" href="mailto:info@brandmarkenya.com?subject=Quote%20Request" style="width:100%;justify-content:center;margin-top:14px;">GET A FREE QUOTE</a>
+      <button class="btn-c" onclick="go('quote')" style="width:100%;justify-content:center;margin-top:14px;">GET A FREE QUOTE</button>
       <div class="bm-ad-foot">&#128222; +254 736 900 750 &nbsp;&#183;&nbsp; &#128205; Aya House, Kenyatta St, Eldoret</div>
     </div>
   </div>
@@ -1333,17 +1333,19 @@ a[target="_blank"],button{cursor:pointer!important;}
 
 </div><!-- /p-directory -->
 
-</div><!-- /panels -->
+<div class="panel" id="p-quote" style="background:linear-gradient(160deg,#000d10 0%,#001a1d 55%,#000 100%);padding:clamp(68px,10vh,80px) var(--pad) 52px;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;">
+  <section id="quote-form" style="max-width:600px;margin:0 auto;">
+    <h2 style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;margin-bottom:14px;color:#fff;">Request a Quote</h2>
+    <form action="https://formsubmit.co/info@brandmarkenya.com" method="POST" style="display:flex;flex-direction:column;gap:12px;">
+      <input type="text" name="name" placeholder="Your Name" required style="padding:12px;border-radius:4px;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.05);color:#fff;"/>
+      <input type="tel" name="phone" placeholder="Phone Number" required style="padding:12px;border-radius:4px;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.05);color:#fff;"/>
+      <textarea name="message" placeholder="Tell us what you need" rows="5" required style="padding:12px;border-radius:4px;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.05);color:#fff;"></textarea>
+      <button type="submit" class="dir-submit-btn">Send Request</button>
+    </form>
+  </section>
+</div>
 
-<section id="quote-form" style="max-width:600px;margin:60px auto;padding:80px var(--pad) 0;scroll-margin-top:100px;">
-  <h2 style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;margin-bottom:14px;color:#fff;">Request a Quote</h2>
-  <form action="https://formsubmit.co/info@brandmarkenya.com" method="POST" style="..."><input type="hidden" name="_captcha" value="false"><input type="hidden" name="_next" value="https://www.brandmarkenya.com/thank-you.html">
-    <input type="text" name="name" placeholder="Your Name" required style="padding:12px;border-radius:4px;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.05);color:#fff;"/>
-    <input type="tel" name="phone" placeholder="Phone Number" required style="padding:12px;border-radius:4px;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.05);color:#fff;"/>
-    <textarea name="message" placeholder="Tell us what you need" rows="5" required style="padding:12px;border-radius:4px;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.05);color:#fff;"></textarea>
-    <button type="submit" class="dir-submit-btn">Send Request</button>
-  </form>
-</section>
+</div><!-- /panels -->
 
 <!-- ═══════════ FOOTER ═══════════ -->
 <footer class="site-footer">
@@ -1501,7 +1503,7 @@ a[target="_blank"],button{cursor:pointer!important;}
 </div>
 <script>
 
-var PANELS=['home','about','services','advertise','directory'];
+var PANELS=['home','about','services','advertise','directory','quote'];
 var cur='home';
 function go(id){
   if(id===cur)return;
@@ -1666,33 +1668,33 @@ var dirData = [
    cats:["graphic-design","digital-print","large-format","signage","apparel","promotional"],
    tagline:"Inspired Branding...",icon:"🖨️",
    desc:"Your one-stop centre for all branding, printing and signage needs in Eldoret and beyond. Wall branding, corporate wear, roll-up banners, logos and more.",
-   location:"Eldoret",phone:"+254736900750",whatsapp:"+254725776082",
+   location:"Eldoret",phone:"+254 736 900 750",whatsapp:"254725776082",
    website:"https://brandmarkenya.com"},
   {id:"bm-002",name:"PrintHouse Nairobi",featured:true,verified:true,
    cats:["digital-print","large-format","packaging"],
    tagline:"Precision printing, every time",icon:"🖼️",
    desc:"Large-format digital printing specialists serving Nairobi's corporate market. Banners, posters, vehicle wraps, packaging and more. Same-day service available.",
-   location:"Nairobi",phone:"+254722100200",whatsapp:"254722100200",website:""},
+   location:"Nairobi",phone:"+254 722 100 200",whatsapp:"254722100200",website:""},
   {id:"bm-003",name:"SignCraft Kenya",featured:false,verified:true,
    cats:["signage","large-format"],
    tagline:"Signs that sell",icon:"🪧",
    desc:"Professional signage fabrication and installation across Kenya. 3D letters, illuminated signs, pylons, shop fronts and wayfinding systems.",
-   location:"Kisumu",phone:"+254711300400",whatsapp:"+254711300400",website:""},
+   location:"Kisumu",phone:"+254 711 300 400",whatsapp:"254711300400",website:""},
   {id:"bm-004",name:"ThreadBrands Apparel",featured:false,verified:false,
    cats:["apparel","promotional"],
    tagline:"Wear your brand with pride",icon:"👕",
    desc:"Custom branded apparel, embroidery and screen printing for corporates, NGOs, schools and events. T-shirts, polo shirts, caps, jackets and full uniform programmes.",
-   location:"Nairobi",phone:"+254701500600",whatsapp:"+254701500600",website:""},
+   location:"Nairobi",phone:"+254 701 500 600",whatsapp:"254701500600",website:""},
   {id:"bm-005",name:"CreativeEdge Design Studio",featured:false,verified:true,
    cats:["graphic-design","web-design"],
    tagline:"Design that means business",icon:"✏️",
    desc:"Full-service graphic design studio in Nakuru. Brand identity, logo design, packaging design, marketing materials and website design for SMEs.",
-   location:"Nakuru",phone:"+254733700800",whatsapp:"+254733700800",website:""},
+   location:"Nakuru",phone:"+254 733 700 800",whatsapp:"254733700800",website:""},
   {id:"bm-006",name:"EventPrint Kenya",featured:false,verified:false,
    cats:["events","promotional","large-format"],
    tagline:"Your event. Your brand. Our craft.",icon:"🎪",
    desc:"Specialist event branding and print solutions. Backdrops, pull-up banners, branded gazebos, event flags and promotional merchandise for corporate events.",
-   location:"Nairobi",phone:"+254720900100",whatsapp:"+254720900100",website:""}
+   location:"Nairobi",phone:"+254 720 900 100",whatsapp:"254720900100",website:""}
 ];
 
 var dirActiveCat = "all";
@@ -1956,33 +1958,29 @@ document.addEventListener('DOMContentLoaded', function(){
   });
 </script>
 <script>
-function goToQuoteForm(){
-  document.querySelectorAll('.panel').forEach(function(p){ p.classList.remove('active'); });
-  var home = document.getElementById('p-home');
-  if(home) home.classList.add('active');
-  var mob = document.getElementById('mobMenu');
-  if(mob) mob.classList.remove('open');
-  window.scrollTo(0,0);
-  setTimeout(function(){
-    var q = document.getElementById('quote-form');
-    if(q) q.scrollIntoView({behavior:'smooth', block:'start'});
-  }, 350);
-  return false;
-}
-document.addEventListener('DOMContentLoaded', function(){
-  var topBtn = document.getElementById('topQuoteBtn');
-  if(topBtn){ topBtn.addEventListener('click', function(e){ e.preventDefault(); goToQuoteForm(); }); }
-  // Fix advertise panel quote buttons - stop mailto
-  var advPanel = document.getElementById('p-advertise');
-  if(advPanel){
-    advPanel.querySelectorAll('a, button').forEach(function(el){
-      if(el.textContent.toLowerCase().includes('quote')){
-        el.removeAttribute('href');
-        el.style.cursor='pointer';
-        el.addEventListener('click', function(e){ e.preventDefault(); goToQuoteForm(); });
+document.querySelectorAll('a[href^="mailto:"]').forEach(function(a){
+  a.addEventListener('click', function(e){
+    e.preventDefault();
+    var href = a.getAttribute('href');
+    var m = href.match(/^mailto:([^?]*)(?:\?(.*))?$/i);
+    var to = m ? (m[1] || '') : '';
+    var params = new URLSearchParams(m && m[2] ? m[2] : '');
+    window.location.href = href;
+    setTimeout(function(){
+      if(!document.hidden){
+        var gmailUrl = 'https://mail.google.com/mail/?view=cm&fs=1&to=' + encodeURIComponent(to);
+        if(params.get('subject')) gmailUrl += '&su=' + encodeURIComponent(params.get('subject'));
+        if(params.get('body')) gmailUrl += '&body=' + encodeURIComponent(params.get('body'));
+        window.location.href = gmailUrl;
       }
-    });
-  }
+    }, 500);
+  });
+});
+document.querySelectorAll('a[href^="tel:"]').forEach(function(a){
+  a.addEventListener('click', function(e){
+    e.preventDefault();
+    window.location.href = a.getAttribute('href');
+  });
 });
 </script>
 </body>
