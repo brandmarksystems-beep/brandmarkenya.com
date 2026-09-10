@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Advertise - BrandMark Kenya</title>
+<link rel="stylesheet" href="/style.css">
+<style>
+.ad-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;padding:20px}
+.ad-card{border:1px solid #ddd;border-radius:12px;overflow:hidden;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.1)}
+.ad-card img{width:100%;height:180px;object-fit:cover}
+.ad-info{padding:15px}
+.badge{background:#ffcc00;padding:3px 8px;border-radius:4px;font-size:12px;font-weight:bold}
+.taken{background:#e0ffe0;color:#0a0}
+</style>
+</head>
+<body>
+<header><h1 style="text-align:center;padding:20px">Our Advertisers</h1></header>
+<main><div id="ads" class="ad-grid"></div></main>
+<script src="/advertise/data.js"></script>
+<script>
+const container = document.getElementById('ads');
+advertisers.forEach(ad => {
+  const card = document.createElement('div');
+  card.className='ad-card';
+  card.innerHTML = `
+    <a href="${ad.page}"><img src="${ad.banner}" alt="${ad.name}"></a>
+    <div class="ad-info">
+      <h3>${ad.name}</h3>
+      <p>${ad.category}</p>
+      <span class="badge taken">${ad.status}</span>
+      <br><br><a href="${ad.page}" style="color:#0077ff">View Profile →</a>
+    </div>`;
+  container.appendChild(card);
+});
+</script>
+</body>
+</html>
