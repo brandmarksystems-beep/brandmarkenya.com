@@ -1,88 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Our Advertisers | Brandmark Kenya</title>
-<meta name="description" content="Featured advertisers on Brandmark Kenya - Book your slot today">
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:Inter,Arial,Helvetica,sans-serif;background:#fafafa;color:#111;line-height:1.6}
-.header{background:#000;color:#fff;padding:14px 5%;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:10}
-.logo{font-weight:800;letter-spacing:1px;font-size:18px}.logo span{color:#00e5ff}
-.header a{color:#fff;text-decoration:none;margin-left:16px;font-size:14px;background:#111;padding:8px 14px;border-radius:6px;border:1px solid #222}
-.wrap{max-width:1200px;margin:0 auto;padding:30px 5%}
-h1{text-align:center;font-size:32px;margin:20px 0 10px}
-.sub{text-align:center;color:#666;margin-bottom:30px;font-size:15px}
-#ads-grid{display:grid;grid-template-columns:1fr;gap:22px}
-.ad-card{background:#fff;border-radius:16px;overflow:hidden;border:1px solid #e9e9e9;box-shadow:0 4px 16px rgba(0,0,0,.05);transition:.2s}
-.ad-card:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(0,0,0,.12)}
-.ad-card img{width:100%;height:220px;object-fit:contain;object-position:center;background:#080808;display:block}
-.ad-card .info{padding:16px 18px 18px}
-.ad-card h3{font-size:18px;margin-bottom:4px}
-.ad-card .cat{color:#666;font-size:13px;margin-bottom:12px}
-.badge-taken{display:inline-block;background:#e6ffed;color:#0a7a2a;font-size:11px;font-weight:700;padding:4px 10px;border-radius:20px;margin-bottom:12px;border:1px solid #b6f5c6}
-.badge-free{display:inline-block;background:#fff3cd;color:#856404;font-size:11px;font-weight:700;padding:4px 10px;border-radius:20px;margin-bottom:12px;border:1px solid #ffe69c}
-.view{display:inline-block;font-weight:600;font-size:14px;text-decoration:none}
-.view-taken{color:#0084ff}
-.view-free{color:#000;background:#00e5ff;padding:8px 16px;border-radius:6px}
-.view-free:hover{background:#000;color:#fff}
-.free-card{border:2px dashed #00e5ff !important;background:#f0fdff !important}
-.free-card img{background:#e6fbff !important}
-.footer{text-align:center;padding:40px 5%;color:#888;font-size:13px;margin-top:30px;border-top:1px solid #eee;background:#fff}
-.footer a{color:#00a6c7;text-decoration:none;font-weight:600}
-@media(min-width:700px){#ads-grid{grid-template-columns:repeat(2,1fr);gap:28px}.ad-card img{height:240px}h1{font-size:36px}}
-@media(min-width:1100px){#ads-grid{grid-template-columns:repeat(3,1fr)}}
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:Inter,Arial,sans-serif;background:#f8f8f8}
+.h{background:#000;color:#fff;padding:14px 4vw;display:flex;justify-content:space-between;align-items:center}
+.h b{color:#00e5ff}.btn{background:#111;color:#fff;padding:8px 16px;border-radius:8px;text-decoration:none;font-size:14px;border:1px solid #333}.btn-p{background:#00e5ff;color:#000;font-weight:700}
+.wrap{max-width:1100px;margin:auto;padding:40px 4vw}h1{text-align:center;font-size:36px}.sub{text-align:center;color:#777;margin:10px 0 30px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px}
+.card{background:#fff;border-radius:16px;overflow:hidden;border:1px solid #e5e5e5}.card img{width:100%;height:190px;object-fit:cover;background:#eee}
+.card-body{padding:16px}.badge{background:#00e5ff;font-size:10px;font-weight:800;padding:3px 8px;border-radius:4px}
+.free{border:2px dashed #bbb;background:#fff;border-radius:16px;padding:30px;text-align:center}
 </style>
 </head>
 <body>
-<div class="header">
-  <div class="logo">BRANDMARK <span>KENYA</span></div>
-  <div><a href="/">Home</a><a href="mailto:info@brandmarkenya.com">Book Slot</a></div>
-</div>
-
+<div class="h"><div><b>BRANDMARK</b> KENYA</div><div style="display:flex;gap:10px"><a class="btn" href="/">Home</a><a class="btn btn-p" href="mailto:info@brandmarkenya.com?subject=Book Slot KSh 500">Book Slot</a></div></div>
 <div class="wrap">
-  <h1>Our Advertisers</h1>
-  <p class="sub">2 slots taken • 4 slots available — Get featured today from KSh 500/month</p>
-  <div id="ads-grid"></div>
+<h1>Our Advertisers</h1>
+<p class="sub" id="slotInfo"></p>
+<div class="grid" id="grid"></div>
+<div style="text-align:center;margin-top:40px;color:#999;font-size:13px">© 2026 Brandmark Systems Ltd | info@brandmarkenya.com<br><br><a href="/" style="color:#00a8b8;text-decoration:none">← Back to Home</a></div>
 </div>
 
-<div class="footer">© 2026 Brandmark Systems Ltd | <a href="mailto:info@brandmarkenya.com">info@brandmarkenya.com</a><br><br><a href="/">← Back to Home</a></div>
-
-<script src="./data.js"></script>
+<script src="/advertise/data.js"></script>
 <script>
-const TOTAL_SLOTS = 6; // Change to 9 or 12 as you grow
-const grid = document.getElementById('ads-grid');
-let html = '';
+const TOTAL = 6;
+const taken = advertisers.length;
+const free = TOTAL - taken;
+document.getElementById('slotInfo').innerHTML = `${taken} slots taken • ${free} slots available — Get featured today from <strong style="color:#000">KSh 500/month</strong>`;
 
-if(typeof advertisers !== 'undefined'){
-  html += advertisers.map(a=>`
-    <div class="ad-card">
-      <a href="${a.page}"><img src="${a.banner}" alt="${a.name}" loading="lazy" onerror="this.src='${a.logo||'/images/logo.png'}'"></a>
-      <div class="info">
-        <h3>${a.name}</h3>
-        <div class="cat">${a.category||'Featured Partner'}</div>
-        <div class="badge-taken">TAKEN</div><br>
-        <a class="view view-taken" href="${a.page}">View Profile →</a>
-      </div>
+let h = '';
+advertisers.forEach(ad=>{
+  if(ad.status !== 'TAKEN') return;
+  h += `<div class="card">
+    <a href="${ad.page}"><img src="${ad.banner}" alt="${ad.name}" onerror="this.src='https://via.placeholder.com/400x200?text='+encodeURIComponent(ad.name)"></a>
+    <div class="card-body">
+      <span class="badge">FEATURED</span>
+      <h3 style="margin:8px 0 4px">${ad.name}</h3>
+      <p style="color:#666;font-size:13px">${ad.category}</p>
+      <a href="${ad.page}" style="color:#0097a7;font-weight:700;text-decoration:none;font-size:14px">View Profile →</a>
     </div>
-  `).join('');
-  
-  const freeCount = TOTAL_SLOTS - advertisers.length;
-  for(let i=1;i<=freeCount;i++){
-    html += `
-    <div class="ad-card free-card">
-      <img src="https://via.placeholder.com/600x340/00e5ff/000000?text=YOUR+AD+HERE" alt="Available Slot">
-      <div class="info">
-        <h3>Available Slot #${advertisers.length + i}</h3>
-        <div class="cat">Be featured on Brandmark Kenya</div>
-        <div class="badge-free">FREE • BOOK NOW</div><br>
-        <a class="view view-free" href="mailto:info@brandmarkenya.com?subject=Book%20Advertiser%20Slot%20%23${advertisers.length + i}&body=Hi%20Brandmark,%20I%20want%20to%20book%20slot%20${advertisers.length + i}">Book This Slot →</a>
-      </div>
-    </div>`;
-  }
+  </div>`;
+});
+for(let i=0;i<free;i++){
+  h += `<div class="free"><h3>Advertise Here</h3><p style="color:#888;font-size:13px;margin:8px 0 14px">Your banner here<br>From KSh 500/month</p><a class="btn btn-p" href="mailto:info@brandmarkenya.com?subject=Book Slot ${i+1} KSh 500">Book This Slot</a></div>`;
 }
-grid.innerHTML = html;
+document.getElementById('grid').innerHTML = h;
 </script>
 </body>
 </html>
