@@ -681,7 +681,7 @@ a[target="_blank"],button{cursor:pointer!important;}
         <button onclick="go('services');svcTab('main')">All Services</button>
       </div>
     </li>
-    <li><button id="n-advertise" onclick="go('advertise')">Advertise</button></li>
+    <li><button id="n-advertise" onclick="location.href='/advertise/'">Advertise</button></li>
     <li><button id="n-directory" onclick="go('directory')">Directory</button></li>
   </ul>
   <button class="hamburger" id="hbg" onclick="toggleMob()">
@@ -882,140 +882,6 @@ a[target="_blank"],button{cursor:pointer!important;}
     </div>
   </div>
 </div>
-
-
-
-<!-- ═══════════ ADVERTISE ═══════════ -->
-
-<!-- ═══════════ ADVERTISE ═══════════ -->
-<div class="panel" id="p-advertise">
-  <div class="adv-hero">
-      <div>
-        <div class="slbl cy">Grow With Us</div>
-        <h2>Advertise Your <em>Business</em> To Thousands</h2>
-        <p>BrandMark Systems Ltd is more than a print shop — we are a brand-building platform reaching SMEs, corporates, NGOs and individuals across Kenya who are actively looking for quality branding and printing partners.</p>
-        <p>Place your business in front of the right audience. Your advert on BrandMark reaches decision-makers at the exact moment they are thinking about branding.</p>
-        <div class="adv-hero-btns">
-          <a href="mailto:info@brandmarkenya.com?subject=Advertising%20Enquiry" class="btn-c">Enquire Now</a>
-          <a href="tel:+254736900750" class="btn-o">Call Us</a>
-        </div>
-      </div>
-      <div>
-        <div class="adv-stats">
-          <div class="adv-stat"><div class="adv-stat-n">500+</div><div class="adv-stat-l">Monthly Visitors</div></div>
-          <div class="adv-stat"><div class="adv-stat-n">6</div><div class="adv-stat-l">Site Panels</div></div>
-          <div class="adv-stat"><div class="adv-stat-n">12+</div><div class="adv-stat-l">Industries</div></div>
-          <div class="adv-stat"><div class="adv-stat-n">KE+</div><div class="adv-stat-l">Reach</div></div>
-        </div>
-        <div class="ad-slots-lbl">Live Ad Slots — Available Now</div>
-        <div class="ad-slots">
-          <div class="ad-slot taken"><div class="ad-slot-icon">&#127970;</div><div class="ad-slot-txt">BrandMark Systems</div><div class="ad-slot-tag">TAKEN</div></div>
-          <div class="ad-slot taken"><div class="ad-slot-icon">&#127979;</div><div class="ad-slot-txt">Chayil Business Solutions</div><div class="ad-slot-tag">TAKEN</div></div>
-          <div class="ad-slot" onclick="showContact()"><div class="ad-slot-icon">&#43;</div><div class="ad-slot-txt">Your Business Here</div><div class="ad-slot-tag">AVAILABLE</div></div>
-          <div class="ad-slot" onclick="showContact()"><div class="ad-slot-icon">&#43;</div><div class="ad-slot-txt">Your Business Here</div><div class="ad-slot-tag">AVAILABLE</div></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="slbl cy" style="margin-bottom:12px;">Advertising Packages</div>
-    <div class="adv-pkgs">
-      <div class="adv-pkg"><div class="pkg-name">Starter</div><div class="pkg-price">Ksh 2,500</div><div class="pkg-period">Per Month</div><ul><li>1 Ad slot on our website</li><li>Business name &amp; logo displayed</li><li>Link to your WhatsApp or phone</li><li>Listed in our SME directory</li><li>1 social media mention/month</li></ul><a href="mailto:info@brandmarkenya.com?subject=Starter%20Package" class="btn-c" style="font-size:.6rem;padding:8px 14px;">Get Started</a></div>
-      <div class="adv-pkg featured"><div class="pkg-name">Growth</div><div class="pkg-price">Ksh 5,000</div><div class="pkg-period">Per Month</div><ul><li>Premium ad slot — home panel</li><li>Full business profile card</li><li>Clickable website &amp; social links</li><li>Featured in Brand spotlight</li><li>3 social media mentions/month</li><li>Monthly performance report</li></ul><a href="mailto:info@brandmarkenya.com?subject=Growth%20Package" class="btn-c" style="font-size:.6rem;padding:8px 14px;">Get Started</a></div>
-      <div class="adv-pkg"><div class="pkg-name">Enterprise</div><div class="pkg-price">Ksh 12,000</div><div class="pkg-period">Per Month</div><ul><li>Rotating banner — all panels</li><li>Dedicated business section</li><li>Logo on all BrandMark collateral</li><li>Weekly social media posts</li><li>Priority listing in SME directory</li><li>Quarterly brand consultation</li><li>Google Analytics traffic report</li></ul><a href="mailto:info@brandmarkenya.com?subject=Enterprise%20Package" class="btn-c" style="font-size:.6rem;padding:8px 14px;">Get Started</a></div>
-    </div>
-
-    <div class="adv-flyers-section">
-      <div class="adv-flyers-label">Our Featured Advertisers</div>
-
-      <div class="eflyer-wrap">
-        <svg viewBox="0 0 480 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;border-radius:6px;box-shadow:0 8px 40px rgba(0,0,0,.5);">
-          <defs><linearGradient id="bmBg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#000"/><stop offset="50%" style="stop-color:#001a1d"/><stop offset="100%" style="stop-color:#000"/></linearGradient><linearGradient id="bmCyan" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" style="stop-color:#00c8d4"/><stop offset="100%" style="stop-color:#006b73"/></linearGradient><clipPath id="bmClip"><rect width="480" height="300" rx="6"/></clipPath></defs>
-          <g clip-path="url(#bmClip)">
-            <rect width="480" height="300" fill="url(#bmBg)"/>
-            <polygon points="0,0 210,0 330,300 0,300" fill="rgba(0,200,212,.05)"/>
-            <g fill="rgba(0,200,212,.07)"><circle cx="36" cy="36" r="1.5"/><circle cx="72" cy="36" r="1.5"/><circle cx="108" cy="36" r="1.5"/><circle cx="36" cy="72" r="1.5"/><circle cx="72" cy="72" r="1.5"/><circle cx="108" cy="72" r="1.5"/><circle cx="36" cy="108" r="1.5"/><circle cx="360" cy="186" r="1.5"/><circle cx="396" cy="186" r="1.5"/><circle cx="432" cy="186" r="1.5"/><circle cx="360" cy="222" r="1.5"/><circle cx="396" cy="222" r="1.5"/><circle cx="432" cy="222" r="1.5"/></g>
-            <rect x="0" y="0" width="480" height="5" fill="url(#bmCyan)"/><rect x="0" y="295" width="480" height="5" fill="url(#bmCyan)"/>
-            <polygon points="0,0 20,0 0,20" fill="rgba(0,200,212,.5)"/><polygon points="480,0 460,0 480,20" fill="rgba(0,200,212,.5)"/>
-            <rect x="0" y="0" width="178" height="300" fill="rgba(0,200,212,.05)"/>
-            <circle cx="88" cy="82" r="54" fill="rgba(255,255,255,.94)"/><circle cx="88" cy="82" r="52" fill="none" stroke="#00c8d4" stroke-width="1.5"/>
-            <image href="images/img-017.webp" x="36" y="30" width="104" height="104"/>
-            <text x="88" y="155" text-anchor="middle" font-family="Arial Black,sans-serif" font-size="12.5" font-weight="900" fill="#00c8d4" letter-spacing="1">BRANDMARK</text>
-            <text x="88" y="169" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="rgba(255,255,255,.6)" letter-spacing="3">SYSTEMS LTD</text>
-            <rect x="20" y="176" width="136" height="21" rx="10" fill="rgba(0,200,212,.15)" stroke="rgba(0,200,212,.4)" stroke-width=".8"/>
-            <text x="88" y="190" text-anchor="middle" font-family="Georgia,serif" font-size="8.5" font-style="italic" fill="#00c8d4">Inspired Branding...</text>
-            <line x1="22" y1="204" x2="154" y2="204" stroke="rgba(0,200,212,.3)" stroke-width=".8"/>
-            <text x="88" y="220" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="rgba(255,255,255,.55)">+254 736 900 750</text>
-            <text x="88" y="233" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="rgba(255,255,255,.55)">+254 797 132 084</text>
-            <text x="88" y="250" text-anchor="middle" font-family="Arial,sans-serif" font-size="6.5" fill="rgba(0,200,212,.7)">brandmarkenya.com</text>
-            <text x="88" y="265" text-anchor="middle" font-family="Arial,sans-serif" font-size="6.5" fill="rgba(255,255,255,.38)">Aya House, Kenyatta St, Eldoret</text>
-            <text x="196" y="30" font-family="Arial,sans-serif" font-size="8.5" fill="rgba(0,200,212,.65)" letter-spacing="3">YOUR BRAND. OUR PASSION.</text>
-            <line x1="196" y1="36" x2="464" y2="36" stroke="rgba(0,200,212,.25)" stroke-width=".5"/>
-            <text x="196" y="62" font-family="Arial Black,sans-serif" font-size="22" font-weight="900" fill="white">We Build Brands</text>
-            <text x="196" y="82" font-family="Georgia,serif" font-size="14" font-style="italic" fill="#00c8d4">That Stand Out.</text>
-            <g font-family="Arial,sans-serif" font-size="9" fill="rgba(255,255,255,.82)"><text x="204" y="106">&#10003; Logo &amp; Graphic Design</text><text x="204" y="121">&#10003; Digital &amp; Offset Printing</text><text x="204" y="136">&#10003; Large Format &amp; Banners</text><text x="204" y="151">&#10003; Signage &amp; Wall Branding</text><text x="336" y="106">&#10003; T-Shirts &amp; Apparel</text><text x="336" y="121">&#10003; Promo &amp; Gift Items</text><text x="336" y="136">&#10003; Vehicle Wraps</text><text x="336" y="151">&#10003; Books &amp; Calendars</text></g>
-            <line x1="196" y1="162" x2="464" y2="162" stroke="rgba(0,200,212,.18)" stroke-width=".5"/>
-            <g font-family="Arial,sans-serif" font-size="8.5" fill="rgba(255,255,255,.7)"><text x="204" y="178">&#x2709; info@brandmarkenya.com</text><text x="204" y="193">&#x1F310; brandmarkenya.com</text></g>
-            <rect x="202" y="208" width="148" height="34" rx="3" fill="#00c8d4"/>
-            <text x="276" y="230" text-anchor="middle" font-family="Arial Black,sans-serif" font-size="10" font-weight="900" fill="#000">GET A FREE QUOTE</text>
-            <rect x="356" y="208" width="108" height="34" rx="3" fill="#25d366"/>
-            <text x="410" y="221" text-anchor="middle" font-family="Arial Black,sans-serif" font-size="9" font-weight="900" fill="#fff">WHATSAPP US</text>
-            <text x="410" y="234" text-anchor="middle" font-family="Arial,sans-serif" font-size="8" fill="rgba(255,255,255,.9)">0725 776 082</text>
-          </g>
-        </svg>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px;">
-          <button onclick="go('quote')" style="display:flex;align-items:center;justify-content:center;gap:8px;background:#00c8d4;color:#000;font-family:'DM Sans',sans-serif;font-size:.68rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;padding:12px;text-decoration:none;border-radius:3px;border:none;cursor:pointer;">&#128222; Get a Free Quote</button>
-          <a href="https://wa.me/254725776082?text=Hello%20BrandMark%20Systems%20Ltd." target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;gap:8px;background:#25d366;color:#fff;font-family:'DM Sans',sans-serif;font-size:.68rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;padding:12px;text-decoration:none;border-radius:3px;">&#128241; WhatsApp Us</a>
-        </div>
-        <div class="eflyer-caption"><strong>BrandMark Systems Ltd</strong> — Inspired Branding. Aya House, Kenyatta St, Eldoret. <a href="mailto:info@brandmarkenya.com" style="color:var(--cyan);text-decoration:none;">info@brandmarkenya.com</a></div>
-      </div>
-
-      <div class="eflyer-wrap">
-        <svg viewBox="0 0 480 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;border-radius:6px;box-shadow:0 8px 40px rgba(0,0,0,.5);">
-          <defs><linearGradient id="chBg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#0d1f0d"/><stop offset="50%" style="stop-color:#1a2e0a"/><stop offset="100%" style="stop-color:#0d1f0d"/></linearGradient><linearGradient id="chGreen" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" style="stop-color:#2db52d"/><stop offset="100%" style="stop-color:#4cd94c"/></linearGradient><linearGradient id="chOrange" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" style="stop-color:#e85c00"/><stop offset="100%" style="stop-color:#ff7a1a"/></linearGradient><clipPath id="chClip"><rect width="480" height="300" rx="6"/></clipPath></defs>
-          <g clip-path="url(#chClip)">
-            <rect width="480" height="300" fill="url(#chBg)"/>
-            <rect x="0" y="0" width="240" height="5" fill="url(#chGreen)"/><rect x="240" y="0" width="240" height="5" fill="url(#chOrange)"/>
-            <rect x="0" y="295" width="240" height="5" fill="url(#chOrange)"/><rect x="240" y="295" width="240" height="5" fill="url(#chGreen)"/>
-            <polygon points="0,0 22,0 0,22" fill="rgba(45,181,45,.6)"/><polygon points="480,0 458,0 480,22" fill="rgba(232,92,0,.6)"/>
-            <rect x="0" y="0" width="185" height="300" fill="rgba(255,255,255,.04)"/>
-            <circle cx="80" cy="90" r="66" fill="rgba(255,255,255,.92)"/>
-            <image href="images/img-018.webp" x="16" y="26" width="128" height="128"/>
-            <text x="92" y="178" text-anchor="middle" font-family="Arial Black,sans-serif" font-size="10.5" font-weight="900" fill="#2db52d">CHAYIL BUSINESS</text>
-            <text x="92" y="192" text-anchor="middle" font-family="Arial Black,sans-serif" font-size="10.5" font-weight="900" fill="#e85c00">SOLUTIONS</text>
-            <text x="92" y="210" text-anchor="middle" font-family="Georgia,serif" font-size="8.5" font-style="italic" fill="rgba(255,255,255,.6)">Made by Experience</text>
-            <line x1="22" y1="220" x2="162" y2="220" stroke="rgba(45,181,45,.35)" stroke-width=".8"/>
-            <text x="92" y="278" text-anchor="middle" font-family="Arial,sans-serif" font-size="7.5" fill="rgba(255,255,255,.5)">&#x1F4CD; Eldoret, Kenya</text>
-            <rect x="195" y="16" width="176" height="20" rx="10" fill="url(#chGreen)"/>
-            <text x="283" y="30" text-anchor="middle" font-family="Arial,sans-serif" font-size="8.5" font-weight="bold" fill="#fff" letter-spacing="1.5">HAIR CARE &amp; DETERGENTS</text>
-            <text x="197" y="58" font-family="Arial Black,sans-serif" font-size="21" font-weight="900" fill="white">Premium Quality</text>
-            <text x="197" y="80" font-family="Georgia,serif" font-size="13.5" font-style="italic" fill="#e85c00">For Homes &amp; Institutions</text>
-            <line x1="197" y1="89" x2="464" y2="89" stroke="rgba(45,181,45,.25)" stroke-width=".6"/>
-            <g font-family="Arial,sans-serif" font-size="9" fill="rgba(255,255,255,.85)"><text x="207" y="109">&#10003; Professional Hair Care Products</text><text x="207" y="125">&#10003; Industrial-Grade Cleaning Detergents</text><text x="207" y="141">&#10003; Home &amp; Institutional Cleaning Solutions</text><text x="207" y="157">&#10003; Bulk Manufacturing &amp; Reliable Supply</text><text x="207" y="173">&#10003; Quality Assured &middot; Fast Delivery &middot; Best Prices</text></g>
-            <line x1="197" y1="211" x2="464" y2="211" stroke="rgba(232,92,0,.2)" stroke-width=".6"/>
-            <g font-family="Arial,sans-serif" font-size="8.5" fill="rgba(255,255,255,.8)"><text x="207" y="228">&#x1F4DE; 0795 675 786 &#160;|&#160; 0736 836 374</text><text x="207" y="244">&#x2709; chayilent@gmail.com</text></g>
-            <rect x="204" y="255" width="122" height="30" rx="3" fill="url(#chGreen)"/>
-            <text x="265" y="274" text-anchor="middle" font-family="Arial Black,sans-serif" font-size="10" font-weight="900" fill="#fff">ORDER NOW</text>
-            <rect x="333" y="255" width="130" height="30" rx="3" fill="url(#chOrange)"/>
-            <text x="398" y="274" text-anchor="middle" font-family="Arial Black,sans-serif" font-size="10" font-weight="900" fill="#fff">ENQUIRE TODAY</text>
-            <text x="464" y="292" text-anchor="end" font-family="Arial,sans-serif" font-size="6" fill="rgba(255,255,255,.2)">AD BY BRANDMARK SYSTEMS LTD</text>
-          </g>
-        </svg>
-        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:8px;">
-          <a href="tel:+254795675786" style="display:flex;align-items:center;justify-content:center;gap:6px;background:#2db52d;color:#fff;font-family:'DM Sans',sans-serif;font-size:.65rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:11px 6px;text-decoration:none;border-radius:3px;">&#128222; Order Now</a>
-          <a href="tel:+254736836374" style="display:flex;align-items:center;justify-content:center;gap:6px;background:#e85c00;color:#fff;font-family:'DM Sans',sans-serif;font-size:.65rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:11px 6px;text-decoration:none;border-radius:3px;">&#128222; Enquire Today</a>
-          <a href="mailto:chayilent@gmail.com" style="display:flex;align-items:center;justify-content:center;gap:6px;background:none;border:1px solid #2db52d;color:#2db52d;font-family:'DM Sans',sans-serif;font-size:.65rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:11px 6px;text-decoration:none;border-radius:3px;">&#9993; Email Us</a>
-        </div>
-        <div class="eflyer-caption"><strong>Chayil Business Solutions</strong> — Quality hair care &amp; detergents. Made by Experience. <a href="tel:+254795675786" style="color:var(--cyan);text-decoration:none;">0795 675 786</a> | <a href="tel:+254736836374" style="color:var(--cyan);text-decoration:none;">0736 836 374</a></div>
-      </div>
-
-      <div class="adv-excite">
-        <h3>Your Business Could Be <em>Featured Here</em></h3>
-        <p>Join BrandMark's growing network of advertisers and reach hundreds of businesses, entrepreneurs and institutions across Kenya actively looking for quality products and services.</p>
-        <div class="adv-excite-btns"><button class="btn-c" onclick="go('quote')">Advertise With Us</button><a href="tel:+254736900750" class="btn-o">Call +254 736 900 750</a></div>
-        <p style="margin-top:10px;font-size:.7rem;color:rgba(255,255,255,.35);">Packages from Ksh 2,500/month &middot; Professional e-flyer design included</p>
-      </div>
-    </div>
-  </div>
 
 
 
@@ -1363,7 +1229,7 @@ a[target="_blank"],button{cursor:pointer!important;}
 </div>
 <script>
 
-var PANELS=['home','about','services','advertise','directory','quote'];
+var PANELS=['home','about','services','directory','quote'];
 var cur='home';
 function go(id){
   if(id===cur)return;
