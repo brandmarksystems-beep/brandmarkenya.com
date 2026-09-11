@@ -1,28 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Thank You - BrandMarkenya</title>
-  <style>
-    body{margin:0; font-family:Inter, sans-serif; background:#f8fafc; display:flex; align-items:center; justify-content:center; min-height:100vh; text-align:center; padding:20px;}
-    .card{background:white; padding:40px 30px; border-radius:16px; max-width:450px; box-shadow:0 10px 30px rgba(0,0,0,0.08);}
-    .check{width:70px; height:70px; background:#dcfce7; color:#16a34a; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:36px; margin:0 auto 20px;}
-    h1{color:#0f172a; margin:0 0 10px; font-size:26px;}
-    p{color:#64748b; line-height:1.6; margin:0 0 20px;}
-    a{display:inline-block; padding:12px 24px; background:#0f172a; color:white; text-decoration:none; border-radius:8px; font-weight:600; margin:5px;}
-    a.green{background:#16a34a;}
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thank You | Brandmark Kenya</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Inter,Arial,sans-serif;background:#000;color:#fff;display:flex;align-items:center;justify-content:center;min-height:100vh;padding:20px;text-align:center}
+.card{background:#0a0a0a;border:1px solid #222;border-radius:20px;padding:40px 28px;max-width:480px;width:100%;box-shadow:0 20px 60px rgba(0,229,255,.15)}
+.icon{width:70px;height:70px;background:#00e5ff;color:#000;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:36px;margin:0 auto 20px;font-weight:800}
+h1{font-size:28px;margin-bottom:12px}
+h1 span{color:#00e5ff}
+p{color:#aaa;font-size:15px;line-height:1.7;margin-bottom:24px}
+.btn{display:inline-block;background:#00e5ff;color:#000;padding:12px 26px;border-radius:8px;text-decoration:none;font-weight:700;margin:6px}
+.btn-o{background:transparent;color:#fff;border:1px solid #333}
+.btn:hover{opacity:.9}
+.small{font-size:12px;color:#666;margin-top:20px}
+</style>
 </head>
 <body>
-  <div class="card">
-    <div class="check">✓</div>
-    <h1>Asante! Quote Received</h1>
-    <p>Thanks for contacting <strong>www.brandmarkenya.com</strong><br>
-    We have received your request. Our team will WhatsApp / Call you within 1 hour.</p>
-    <p style="font-size:14px;">Check your email - we sent you a confirmation.</p>
-    <a href="/">Back to Home</a>
-    <a href="https://wa.me/254725776082" class="green">Chat on WhatsApp</a>
-  </div>
+<div class="card">
+  <div class="icon">✓</div>
+  <h1>Thank You! <span>Received</span></h1>
+  <p>Your business submission for advertising has been received.<br><br>
+  We will review and create your advert profile within <strong style="color:#fff">24 hours</strong>.<br>
+  You will be featured from <strong style="color:#00e5ff">KSh 500/month</strong> only.</p>
+  
+  <a class="btn" href="/advertise/">Back to Advertisers</a>
+  <a class="btn btn-o" href="/">Go Home</a>
+  
+  <div class="small">Questions? <a href="mailto:info@brandmarkenya.com" style="color:#00e5ff;text-decoration:none">info@brandmarkenya.com</a> • 0725 776 082<br>Auto-redirecting to home in 8 seconds...</div>
+</div>
+<script>
+setTimeout(()=>{ window.location.href='/'; }, 8000);
+</script>
 </body>
 </html>
