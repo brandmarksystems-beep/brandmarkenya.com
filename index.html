@@ -322,59 +322,6 @@ nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);z-index:300;
   color:var(--cyan);}
 .why-btns{margin-top:18px;display:flex;gap:9px;flex-wrap:wrap;}
 
-/* ── PRICING ── */
-#p-pricing{background:#fff;color:var(--black);padding:clamp(68px,10vh,80px) var(--pad) 52px;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;}
-#p-pricing h2{font-family:'Cormorant Garamond',serif;
-  font-size:clamp(1.6rem,3vw,2.6rem);font-weight:300;margin-bottom:14px;}
-#p-pricing h2 em{font-style:italic;color:var(--cd);}
-.price-tabs{display:flex;gap:4px;margin-bottom:14px;flex-wrap:wrap;}
-.ptab{background:none;border:1px solid rgba(0,0,0,.14);
-  font-family:'DM Sans',sans-serif;font-size:.6rem;letter-spacing:.13em;
-  text-transform:uppercase;color:rgba(0,0,0,.48);padding:6px 11px;
-  cursor:pointer;transition:all .25s;}
-.ptab.active,.ptab:hover{background:var(--cyan);border-color:var(--cyan);color:var(--black);}
-.price-panels{overflow-y:auto;flex:1;}
-.price-panel{display:none;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));
-  gap:9px;padding-bottom:14px;}
-.price-panel.active{display:grid;}
-.pc{background:#f4feff;border:1px solid rgba(0,200,212,.16);padding:14px 16px;}
-.pc h4{font-family:'Cormorant Garamond',serif;font-size:.96rem;font-weight:600;
-  color:var(--cd);margin-bottom:7px;border-bottom:1px solid rgba(0,200,212,.18);
-  padding-bottom:5px;}
-.pc ul{list-style:none;}
-.pc ul li{font-size:.73rem;line-height:1.8;color:rgba(0,0,0,.63);
-  padding:1px 0;border-bottom:1px solid rgba(0,0,0,.05);}
-.pc ul li:last-child{border:none;}
-.pc ul li span{float:right;font-weight:500;color:var(--cd);}
-.pc-note{font-size:.68rem;color:rgba(0,0,0,.42);font-style:italic;
-  margin-top:10px;grid-column:1/-1;}
-
-
-/* Inline BrandMark ad */
-.bm-ad{background:linear-gradient(135deg,rgba(0,200,212,.09),rgba(0,0,0,.3));
-  border:1px solid rgba(0,200,212,.28);border-top:3px solid var(--cyan);
-  padding:22px 18px;margin-top:6px;}
-.bm-ad-badge{font-size:.55rem;letter-spacing:.2em;text-transform:uppercase;
-  color:var(--cyan);margin-bottom:12px;}
-.bm-ad-logo{width:42px;height:42px;border-radius:50%;background:var(--cyan);
-  color:var(--black);font-family:'Cormorant Garamond',serif;font-size:1.4rem;
-  font-style:italic;display:flex;align-items:center;justify-content:center;
-  margin-bottom:8px;}
-.bm-ad-name{font-family:'Nunito',sans-serif;font-weight:900;font-size:.86rem;
-  color:var(--cyan);}
-.bm-ad-tag{font-family:'Raleway',sans-serif;font-style:italic;font-size:.74rem;
-  color:rgba(255,255,255,.58);margin-bottom:10px;}
-.bm-ad-h{font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:300;
-  color:var(--white);margin-bottom:7px;line-height:1.3;}
-.bm-ad-h span{color:var(--cyan);font-style:italic;}
-.bm-ad-p{font-size:.79rem;line-height:1.78;color:rgba(255,255,255,.63);
-  text-align:justify;margin-bottom:11px;}
-.bm-ad-ul{list-style:none;margin-bottom:8px;}
-.bm-ad-ul li{font-size:.75rem;color:rgba(255,255,255,.63);padding:4px 0;
-  display:flex;align-items:flex-start;gap:7px;}
-.bm-ad-ul li::before{content:"✓";color:var(--cyan);flex-shrink:0;}
-.bm-ad-foot{font-size:.68rem;color:rgba(255,255,255,.35);
-  text-align:center;margin-top:11px;}
 
 /* ── FOOTER ── */
 .site-footer{position:fixed;bottom:0;left:0;right:0;z-index:200;height:var(--footer-h);background:rgba(0,0,0,.97);border-top:1px solid rgba(0,200,212,.15);display:flex;flex-direction:column;}
@@ -385,7 +332,6 @@ nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);z-index:300;
   display:flex;gap:2px;align-items:center;flex-wrap:nowrap;
   overflow-x:auto;-webkit-overflow-scrolling:touch;
   scrollbar-width:none;padding:5px var(--pad) 4px;}
-
 
 
 .footer-links button,.footer-links a{background:none;border:none;
@@ -697,7 +643,7 @@ a[target="_blank"],button{cursor:pointer!important;}
   <button onclick="goMob('home')">Home</button>
   <button onclick="goMob('about')">About</button>
   <button onclick="goMob('services');svcTab('main')">Services</button>
-  <button onclick="goMob('advertise')">Advertise</button>
+  <button onclick="location.href='/advertise/'">Advertise</button>
   <button onclick="goMob('directory')">Directory</button>
 </div>
 <div class="panels">
@@ -1145,7 +1091,7 @@ a[target="_blank"],button{cursor:pointer!important;}
       <h2>4. Your Rights (Kenya Data Protection Act, 2019)</h2>
       <p>You have the right to access, correct or request deletion of your personal data. Contact us at <a href="mailto:info@brandmarkenya.com">info@brandmarkenya.com</a>.</p>
       <h2>5. Data Security</h2>
-      <p>We use Netlify's secure HTTPS hosting. No internet transmission is 100% secure.</p>
+      <p>We use Cloudflare's secure HTTPS hosting. No internet transmission is 100% secure.</p>
       <h2>6. Children's Privacy</h2>
       <p>Our Service is not directed to users under 18. We do not knowingly collect data from children.</p>
       <h2>Contact</h2>
