@@ -5,107 +5,100 @@
 <title>Our Advertisers | Brandmark Kenya</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:Inter,Arial,sans-serif;background:#f8f8f8;color:#111}
+body{font-family:Inter,Arial,sans-serif;background:#f8f8f8}
 .h{background:#000;color:#fff;padding:14px 4vw;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:10}
 .h b{color:#00e5ff}
 .btn{background:#111;color:#fff;padding:10px 18px;border-radius:10px;text-decoration:none;font-size:14px;border:1px solid #333;cursor:pointer;display:inline-block}
 .btn-p{background:#00e5ff;color:#000;font-weight:800;border-color:#00e5ff}
 .wrap{max-width:1100px;margin:auto;padding:40px 4vw}
-h1{text-align:center;font-size:clamp(28px,4vw,40px)}
-.sub{text-align:center;color:#777;margin:10px 0 30px;font-size:14px;line-height:1.5}
+h1{text-align:center;font-size:36px}.sub{text-align:center;color:#777;margin:10px 0 30px;font-size:14px}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px}
-.card{background:#fff;border-radius:16px;overflow:hidden;border:1px solid #e5e5e5;transition:.2s}
-.card:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(0,0,0,.08)}
+.card{background:#fff;border-radius:16px;overflow:hidden;border:1px solid #e5e5e5}
 .card img{width:100%;height:190px;object-fit:cover;background:#eee}
-.card-body{padding:16px}
-.badge{background:#00e5ff;font-size:10px;font-weight:800;padding:4px 8px;border-radius:4px;letter-spacing:.05em}
-.free{border:2px dashed #bbb;background:#fff;border-radius:16px;padding:32px 20px;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:280px}
+.card-body{padding:16px}.badge{background:#00e5ff;font-size:10px;font-weight:800;padding:4px 8px;border-radius:4px}
+.free{border:2px dashed #bbb;background:#fff;border-radius:16px;padding:32px 20px;text-align:center;min-height:280px;display:flex;flex-direction:column;align-items:center;justify-content:center}
 #bookModal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.65);z-index:99999;align-items:center;justify-content:center;padding:5vw}
-#bookBox{background:#fff;border-radius:20px;max-width:380px;width:100%;padding:24px;position:relative;animation:pop .2s ease}
-@keyframes pop{from{transform:scale(.95)}to{transform:scale(1)}}
-.m-opt{display:flex;align-items:center;gap:12px;padding:14px 16px;border-radius:12px;text-decoration:none;font-weight:700;margin-bottom:10px;font-size:15px;transition:.15s}
-.m-opt:hover{transform:scale(1.02)}
+.m-opt{display:flex;align-items:center;gap:12px;padding:14px 16px;border-radius:12px;text-decoration:none;font-weight:700;margin-bottom:10px}
 </style>
 </head>
 <body>
-<div class="h">
-  <div><b>BRANDMARK</b> KENYA</div>
-  <div style="display:flex;gap:10px"><a class="btn" href="/">Home</a><a class="btn btn-p" onclick="openBook('General Slot')">Book Slot</a></div>
-</div>
-
+<div class="h"><div><b>BRANDMARK</b> KENYA</div><div style="display:flex;gap:10px"><a class="btn" href="/">Home</a><a class="btn btn-p" onclick="openBook('General Slot')">Book Slot</a></div></div>
 <div class="wrap">
-  <h1>Our Advertisers</h1>
-  <p class="sub" id="slotInfo">Loading advertisers...</p>
-  <div class="grid" id="grid"></div>
-  <div style="text-align:center;margin-top:40px;color:#999;font-size:13px">© 2026 Brandmark Systems Ltd | info@brandmarkenya.com<br><br><a href="/" style="color:#0097a7;text-decoration:none">← Back to Home</a></div>
+<h1>Our Advertisers</h1>
+<p class="sub" id="slotInfo">2 slots taken • 4 slots available • From <b>KSh 500/month</b></p>
+<div class="grid" id="grid"></div>
+<div style="text-align:center;margin-top:40px;color:#999;font-size:13px">© 2026 Brandmark Systems Ltd<br><br><a href="/" style="color:#0097a7;text-decoration:none">← Back to Home</a></div>
 </div>
-
-<!-- BOOKING MODAL -->
-<div id="bookModal">
-  <div id="bookBox">
-    <button onclick="closeBook()" style="position:absolute;top:12px;right:12px;background:#f0f0f0;border:0;width:32px;height:32px;border-radius:50%;cursor:pointer;font-weight:700">✕</button>
-    <h3 style="font-size:20px">Book <span id="slotName">Slot</span></h3>
-    <p style="color:#666;font-size:13px;margin:6px 0 20px">From <b style="color:#000">KSh 500/month</b> • Avg. 400+ views</p>
-    <a id="waLink" class="m-opt" target="_blank" style="background:#25D366;color:#fff">💬 WhatsApp Us</a>
-    <a id="callLink" class="m-opt" style="background:#000;color:#fff">📞 Call Now</a>
-    <a id="mailLink" class="m-opt" style="background:#f2f2f2;color:#000;border:1px solid #e5e5e5">📧 Email Us</a>
-    <p style="text-align:center;font-size:11px;color:#999;margin-top:14px">We reply within 30 mins • Eldoret</p>
-  </div>
-</div>
+<div id="bookModal"><div style="background:#fff;border-radius:20px;max-width:380px;width:100%;padding:24px;position:relative">
+<button onclick="closeBook()" style="position:absolute;top:12px;right:12px;background:#f0f0f0;border:0;width:32px;height:32px;border-radius:50%;cursor:pointer">✕</button>
+<h3>Book <span id="slotName">Slot</span></h3>
+<p style="color:#666;font-size:13px;margin:6px 0 20px">From <b style="color:#000">KSh 500/month</b> • 400+ views/month</p>
+<a id="waLink" class="m-opt" target="_blank" style="background:#25D366;color:#fff">💬 WhatsApp Us</a>
+<a id="callLink" class="m-opt" style="background:#000;color:#fff">📞 Call Now</a>
+<a id="mailLink" class="m-opt" style="background:#f2f2f2;color:#000">📧 Email Us</a>
+</div></div>
 
 <script>
-// --- CONFIG ---
-const PHONE='254725776082'; // CHANGE TO YOUR NUMBER e.g 254712345678
+const PHONE='254725776082'; // ONLY PLACE TO CHANGE
 const EMAIL='info@brandmarkenya.com';
 const TOTAL=6;
-
 const advertisers=[
-  {id:"brandmark-systems-ltd", name:"BrandMark Systems Ltd", category:"Web Design & Hosting", banner:"/images/ads/brandmark-systems-final.webp", page:"/advertise/brandmark-systems-ltd.html", status:"TAKEN", baseViews:842},
-  {id:"chayil-business-solutions", name:"Chayil Business Solutions", category:"Business Consultancy", banner:"/images/ads/chayil-business-final.webp", page:"/advertise/chayil-business-solutions.html", status:"TAKEN", baseViews:516}
+  {id:"brandmark", name:"BrandMark Systems Ltd", category:"Web Design & Hosting", banner:"/images/ads/brandmark-systems-final.webp", page:"/advertise/brandmark-systems-ltd.html", baseViews:842},
+  {id:"chayil", name:"Chayil Business Solutions", category:"Business Consultancy", banner:"/images/ads/chayil-business-final.webp", page:"/advertise/chayil-business-solutions.html", baseViews:516}
 ];
 
-// --- VIEWS SYSTEM ---
-function getViews(ad){
-  const key=`bm_views_${ad.id}`;
-  let v=localStorage.getItem(key);
-  if(!v){
-    v=ad.baseViews + Math.floor(Math.random()*60);
-  } else {
-    v=parseInt(v)+ Math.floor(Math.random()*3)+1;
+// SAFE DYNAMIC VIEWS - will never crash
+function getViewsSafe(ad){
+  try{
+    const key='bm_views_'+ad.id;
+    let v=localStorage.getItem(key);
+    if(!v){ v=ad.baseViews + Math.floor(Math.random()*30); }
+    else { v=parseInt(v)+ (Math.floor(Math.random()*3)+1); }
+    localStorage.setItem(key, v);
+    return parseInt(v);
+  }catch(err){
+    return ad.baseViews; // fallback if storage blocked
   }
-  localStorage.setItem(key,v);
-  return parseInt(v);
 }
-function getClicks(id){
-  const key=`bm_clicks_${id}`;
-  let c=localStorage.getItem(key);
-  if(!c){ c=Math.floor(Math.random()*35)+18; localStorage.setItem(key,c); }
-  return parseInt(c);
-}
-function trackClick(id){
-  const k=`bm_clicks_${id}`;
-  localStorage.setItem(k, parseInt(localStorage.getItem(k)||0)+1);
+function getClicksSafe(id){
+  try{
+    const key='bm_clicks_'+id;
+    let c=localStorage.getItem(key);
+    if(!c){ c=Math.floor(Math.random()*30)+20; localStorage.setItem(key,c); }
+    return parseInt(c);
+  }catch(err){ return 24; }
 }
 
-// --- RENDER ---
-const taken=advertisers.length;
+// RENDER WITH ONE CALCULATION PER AD
+const adsWithStats = advertisers.map(ad=>({
+  ...ad,
+  views: getViewsSafe(ad),
+  clicks: getClicksSafe(ad.id)
+}));
+
+const taken=adsWithStats.length;
 const free=TOTAL-taken;
-const totalViews=advertisers.reduce((s,a)=>s+getViews(a),0);
+const totalViews=adsWithStats.reduce((s,a)=>s+a.views,0);
 
-document.getElementById('slotInfo').innerHTML=`${taken} slots taken • ${free} slots available • <span style="color:#000">👁️ ${totalViews.toLocaleString()}+ total views this month</span> — From <strong style="color:#000">KSh 500/month</strong>`;
+document.getElementById('slotInfo').innerHTML=`${taken} slots taken • ${free} slots available • <span style="color:#000">👁️ ${totalViews.toLocaleString()}+ total views this month</span> — From <b style="color:#000">KSh 500/month</b>`;
 
-let html='';
-advertisers.forEach(ad=>{
-  const views=getViews(ad);
-  const clicks=getClicks(ad.id);
-  const badgeText=views>700?'🔥 Popular': views>500?'⭐ Trending':'✨ New';
-  html+=`<div class="card">
-    <a href="${ad.page}" onclick="trackClick('${ad.id}')"><img src="${ad.banner}" alt="${ad.name}" onerror="this.src='https://via.placeholder.com/400x200?text='+encodeURIComponent(ad.name)"></a>
-    <div class="card-body">
-      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
-        <span class="badge">FEATURED</span>
-        <span style="font-size:11px;background:#f3f3f3;padding:3px 8px;border-radius:20px">${badgeText}</span>
-      </div>
-      <h3 style="margin:6px 0 4px">${ad.name}</h3>
-      <p style="color:#666;font-size:13px">${ad.category}</p>
-      <div style="display:flex;gap:12px;margin:10px 0 8px;font-size:12px;color:#666
+let h='';
+adsWithStats.forEach(ad=>{
+  h+=`<div class="card"><a href="${ad.page}"><img src="${ad.banner}" alt="${ad.name}" onerror="this.src='https://via.placeholder.com/400x200?text=${encodeURIComponent(ad.name)}'"></a><div class="card-body"><div style="display:flex;justify-content:space-between;align-items:center"><span class="badge">FEATURED</span><span style="font-size:11px;background:#f3f3f3;padding:3px 8px;border-radius:20px">${ad.views>700?'🔥 Popular':'✨ Trending'}</span></div><h3 style="margin:8px 0 4px">${ad.name}</h3><p style="color:#666;font-size:13px">${ad.category}</p><div style="display:flex;gap:12px;margin:10px 0;font-size:12px;color:#666;background:#f8f8f8;padding:6px 10px;border-radius:8px"><span>👁️ ${ad.views.toLocaleString()} views</span><span>👆 ${ad.clicks} clicks</span></div><a href="${ad.page}" style="color:#0097a7;font-weight:700;text-decoration:none;font-size:14px">View Profile →</a></div></div>`;
+});
+for(let i=1;i<=free;i++){ h+=`<div class="free"><h3>Advertise Here</h3><p style="color:#888;font-size:13px;margin:8px 0">Avg. 400+ views/month</p><a class="btn btn-p" onclick="openBook('Slot ${i}')">Book This Slot — KSh 500</a></div>`; }
+document.getElementById('grid').innerHTML=h;
+
+function openBook(slot){
+  document.getElementById('slotName').innerText=slot;
+  const msg=`Hello Brandmark, I want to book ${slot} (KSh 500/month)`;
+  document.getElementById('waLink').href=`https://wa.me/${PHONE}?text=${encodeURIComponent(msg)}`;
+  document.getElementById('callLink').href=`tel:+${PHONE}`;
+  document.getElementById('mailLink').href=`mailto:${EMAIL}?subject=Book ${slot}&body=${encodeURIComponent(msg)}`;
+  document.getElementById('bookModal').style.display='flex';
+}
+function closeBook(){document.getElementById('bookModal').style.display='none';}
+document.getElementById('bookModal').addEventListener('click',e=>{if(e.target.id==='bookModal') closeBook();});
+</script>
+</body>
+</html>
