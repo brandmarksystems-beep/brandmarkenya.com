@@ -2,83 +2,111 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Blog | BrandMark Kenya - Branding Tips Eldoret</title>
-<meta name="description" content="Branding, printing & business growth tips in Eldoret. Large format, corporate branding, directory guide.">
+<title>Blog | BrandMark Kenya</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:Inter,system-ui,Arial,sans-serif;background:#051314;color:#d7e8e8;line-height:1.6}
-.h{background:#000;color:#fff;padding:12px 4vw;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:50;border-bottom:1px solid #0e2a2a}
+body{font-family:Inter,Arial,sans-serif;background:#051314;color:#d7e8e8}
+.h{background:#000;color:#fff;padding:12px 4vw;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:20;border-bottom:1px solid #0e2a2a}
 .h b{color:#00e5ff}
-.btn{padding:9px 16px;border-radius:8px;text-decoration:none;font-size:13px;border:1px solid #1a3a3a;background:transparent;color:#fff;cursor:pointer}
+.btn{padding:9px 16px;border-radius:8px;text-decoration:none;font-size:13px;border:1px solid #1a3a3a;background:transparent;color:#fff}
 .btn-p{background:#00e5ff;color:#000;font-weight:800;border-color:#00e5ff}
-.wrap{max-width:1150px;margin:auto;padding:28px 4vw 100px}
-.hero{text-align:center;padding:10px 0 22px}
-.hero h1{font-size:clamp(32px,6vw,48px);color:#fff;letter-spacing:-1px}
-.hero h1 span{color:#00e5ff;font-style:italic;font-family:Georgia,serif;font-weight:400}
-.hero .sub{color:#7a9e9e;margin-top:8px}
-.search-wrap{max-width:520px;margin:22px auto 0;display:flex;gap:10px}
-.search-wrap input{flex:1;background:#0a1f1f;border:1px solid #143333;border-radius:10px;padding:12px 14px;color:#fff;outline:none}
-.search-wrap input:focus{border-color:#00e5ff}
-.filters{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:18px 0 26px}
-.f-pill{padding:7px 14px;border-radius:20px;border:1px solid #143333;background:#0a1f1f;color:#7a9e9e;font-size:12px;cursor:pointer}
-.f-pill.active{background:#00e5ff;color:#000;border-color:#00e5ff;font-weight:700}
-#featured{background:linear-gradient(135deg,#0a2424,#0f2e2e);border:1px solid #143d3d;border-radius:20px;padding:18px;display:flex;gap:18px;align-items:center;margin-bottom:28px;cursor:pointer;position:relative;overflow:hidden}
-#featured img{width:220px;height:140px;object-fit:cover;border-radius:12px;background:#000;flex-shrink:0;border:1px solid #143333}
-.live{position:absolute;top:12px;left:12px;background:#000;color:#ff3b30;font-size:10px;font-weight:800;padding:4px 8px;border-radius:20px;display:flex;align-items:center;gap:6px;border:1px solid #ff3b30}
-.dot{width:8px;height:8px;background:#ff3b30;border-radius:50%;box-shadow:0 0 10px #ff3b30;animation:pulse 1.5s infinite}
-@keyframes pulse{0%{transform:scale(1)}50%{transform:scale(1.4)}100%{transform:scale(1)}}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:20px}
-.card{background:#0a1f1f;border:1px solid #143333;border-radius:18px;overflow:hidden;transition:.25s;display:flex;flex-direction:column;cursor:pointer}
-.card:hover{transform:translateY(-4px);border-color:#00e5ff;box-shadow:0 12px 30px rgba(0,229,255,.12)}
+.wrap{max-width:1150px;margin:auto;padding:24px 4vw 100px}
+.hero{text-align:center}
+.hero h1{font-size:clamp(30px,6vw,46px);color:#fff}
+.hero h1 span{color:#00e5ff;font-style:italic;font-family:Georgia,serif}
+.sub{color:#7a9e9e;margin-top:8px;font-size:14px}
+.search{display:flex;gap:10px;max-width:520px;margin:20px auto}
+.search input{flex:1;background:#0a1f1f;border:1px solid #143333;border-radius:10px;padding:12px 14px;color:#fff;outline:none}
+.pills{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:16px 0 24px}
+.pill{padding:7px 14px;border-radius:20px;border:1px solid #143333;background:#0a1f1f;color:#7a9e9e;font-size:12px;cursor:pointer}
+.pill.on{background:#00e5ff;color:#000;font-weight:700;border-color:#00e5ff}
+.feat{background:linear-gradient(135deg,#0a2424,#0f2e2e);border:1px solid #143d3d;border-radius:20px;padding:16px;display:flex;gap:16px;align-items:center;margin-bottom:26px;cursor:pointer}
+.feat img{width:200px;height:130px;object-fit:cover;border-radius:12px;background:#000;flex-shrink:0}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px}
+.card{background:#0a1f1f;border:1px solid #143333;border-radius:16px;overflow:hidden;cursor:pointer}
 .card:active{transform:scale(.98)}
-.card img{width:100%;height:200px;object-fit:cover;background:#111;display:block}
-.card-body{padding:16px;display:flex;flex-direction:column;flex:1}
-.badge{background:#00e5ff;color:#000;font-size:9px;font-weight:900;padding:5px 9px;border-radius:5px;width:fit-content;letter-spacing:.5px}
-.read{color:#00e5ff;font-weight:700;font-size:13px;margin-top:auto;padding-top:14px;display:block}
-.meta{display:flex;justify-content:space-between;align-items:center;margin-top:12px;font-size:11px;color:#5a7a7a;background:rgba(0,0,0,.35);padding:7px 10px;border-radius:9px}
-.trend{background:rgba(255,140,0,.12);color:#ffb020;border:1px solid rgba(255,140,0,.2);padding:3px 8px;border-radius:12px;font-size:10px;font-weight:700}
-.wa-float{position:fixed;right:18px;bottom:18px;width:58px;height:58px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;z-index:30;text-decoration:none;font-size:30px;box-shadow:0 8px 20px rgba(0,0,0,.4)}
-@media(max-width:700px){#featured{flex-direction:column}#featured img{width:100%;height:180px}}
+.card img{width:100%;height:190px;object-fit:cover;background:#111;display:block}
+.body{padding:14px}
+.badge{background:#00e5ff;color:#000;font-size:9px;font-weight:900;padding:4px 8px;border-radius:4px;display:inline-block}
+.read{color:#00e5ff;font-weight:700;font-size:13px;margin-top:12px;display:block}
+.meta{font-size:11px;color:#5a7a7a;background:rgba(0,0,0,.3);padding:6px 10px;border-radius:8px;margin-top:10px;display:flex;justify-content:space-between}
+.wa{position:fixed;right:18px;bottom:18px;width:58px;height:58px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;z-index:30;text-decoration:none;font-size:28px}
+@media(max-width:700px){.feat{flex-direction:column}.feat img{width:100%;height:170px}}
 </style>
 </head>
 <body>
-<div class="h"><div><b>BrandMark</b> Systems Ltd</div><div style="display:flex;gap:10px;align-items:center"><a href="/advertise/" style="color:#7a9e9e;text-decoration:none;font-size:13px">Advertisers</a><a class="btn btn-p" href="/#quote">GET A QUOTE</a></div></div>
-
+<div class="h"><div><b>BrandMark</b> Systems Ltd</div><div style="display:flex;gap:8px;align-items:center"><a href="/advertise/" style="color:#7a9e9e;text-decoration:none;font-size:13px">Advertisers</a><a class="btn btn-p" href="/">GET A QUOTE</a></div></div>
 <div class="wrap">
-<div class="hero"><h1>Where Ideas <span>Become</span> Brands</h1><p class="sub" id="countInfo">Loading articles...</p>
-<div class="search-wrap"><input id="search" placeholder="Search printing, branding, directory..." oninput="doSearch()"><button class="btn" onclick="doSearch()">Search</button></div>
-<div class="filters" id="filters"></div>
-</div>
-
-<div id="featured" onclick="goFeatured()"></div>
+<div class="hero"><h1>Where Ideas <span>Become</span> Brands</h1><p class="sub" id="count">Loading...</p><div class="search"><input id="q" placeholder="Search printing, branding..." oninput="render()"><button class="btn" onclick="render()">Search</button></div><div class="pills" id="pills"></div></div>
+<div class="feat" id="feat" onclick="goFeat()"></div>
 <div class="grid" id="grid"></div>
-
-<div style="text-align:center;margin-top:50px;color:#4a6666;font-size:13px">© 2026 BrandMark Systems Ltd • Aya House, Eldoret<br><br><a href="/" style="color:#00e5ff;text-decoration:none">← Back to Home</a> • <a href="/advertise/" style="color:#00e5ff;text-decoration:none">Our Advertisers</a></div>
+<div style="text-align:center;margin-top:40px;color:#4a6666;font-size:12px">© 2026 BrandMark • Aya House, Eldoret<br><br><a href="/" style="color:#00e5ff;text-decoration:none">← Back to Home</a> • <a href="/advertise/" style="color:#00e5ff;text-decoration:none">Our Advertisers</a></div>
 </div>
-
-<a class="wa-float" href="https://wa.me/254725776082" target="_blank">💬</a>
+<a class="wa" href="https://wa.me/254725776082">💬</a>
 
 <script>
-const BLOGS=[
-  {id:"large-format", title:"Large Format Printing in Eldoret - Vivid & Premium", cat:"PRINTING", page:"/blog/large-format/", desc:"Vivid banners, vinyl stickers, one-way vision & reflective stickers on Crystek 1.8m. Waterproof & UV resistant.", img:"/images/blog/crystek-printing.webp", views:2142, trending:true},
-  {id:"branding-101", title:"Branding 101 - What Every Business in Eldoret Needs", cat:"BRANDING", page:"/blog/branding-101/", desc:"Logo, colors, uniforms and signage - the 5 pillars of a brand that customers remember and trust.", img:"/images/blog/branding-101.webp", views:1890, trending:true},
-  {id:"corporate-branding", title:"Corporate Branding That Converts Clients", cat:"BRANDING", page:"/blog/corporate-branding/", desc:"From polo embroidery to vehicle branding - how to look premium and win corporate tenders.", img:"/images/blog/corporate-branding.webp", views:1650, trending:false},
-  {id:"how-to-start-branding", title:"How to Start Branding Your Business in Kenya - Step by Step", cat:"GUIDE", page:"/blog/how-to-start-branding/", desc:"No logo? No budget? Start here. A practical guide for mama mboga to hardware shops.", img:"/images/blog/start-branding.webp", views:1420, trending:false},
-  {id:"why-directory", title:"Why Your Business Needs a Directory Listing in 2026", cat:"DIRECTORY", page:"/blog/why-directory/", desc:"78% of customers search online before buying in Eldoret. Here's how directory puts you first.", img:"/images/blog/why-directory.webp", views:1120, trending:true},
-  {id:"directory-guide", title:"Directory Guide - How to Get Featured on BrandMark Kenya", cat:"DIRECTORY", page:"/blog/directory-guide/", desc:"KSh 500/month for 1000+ views. How to apply, what you get, and how to book your slot.", img:"/images/blog/directory-guide.webp", views:980, trending:false}
+// YOUR 6 REAL FOLDERS - FIXED
+var BLOGS=[
+  {id:"large-format", title:"Large Format Printing in Eldoret - Vivid & Premium", cat:"PRINTING", page:"/blog/large-format/", desc:"Vivid banners, vinyl stickers, one-way vision & reflective stickers on Crystek 1.8m.", views:2142},
+  {id:"branding-101", title:"Branding 101 - What Every Business in Eldoret Needs", cat:"BRANDING", page:"/blog/branding-101/", desc:"Logo, colors, uniforms and signage - the 5 pillars of a brand that customers remember.", views:1890},
+  {id:"corporate-branding", title:"Corporate Branding That Converts Clients", cat:"BRANDING", page:"/blog/corporate-branding/", desc:"From polo embroidery to vehicle branding - how to look premium and win tenders.", views:1650},
+  {id:"how-to-start-branding", title:"How to Start Branding Your Business in Kenya", cat:"GUIDE", page:"/blog/how-to-start-branding/", desc:"No logo? No budget? Start here. Practical guide for startups & SMEs.", views:1420},
+  {id:"why-directory", title:"Why Your Business Needs a Directory Listing in 2026", cat:"DIRECTORY", page:"/blog/why-directory/", desc:"78% of customers search online before buying in Eldoret. Be found first.", views:1120},
+  {id:"directory-guide", title:"Directory Guide - How to Get Featured", cat:"DIRECTORY", page:"/blog/directory-guide/", desc:"KSh 500/month for 1000+ views. How to apply and book your slot.", views:980}
 ];
+var CATS=["ALL","PRINTING","BRANDING","GUIDE","DIRECTORY"];
+var active="ALL";
+var cur=0;
 
-let activeCat="ALL";
-const cats=["ALL","PRINTING","BRANDING","GUIDE","DIRECTORY"];
-
-function getViews(b){
+function getV(b){
   try{
-    const k='bm_blog_views_'+b.id;
-    let v=localStorage.getItem(k);
-    if(!v){ v=b.views+Math.floor(Math.random()*30); localStorage.setItem(k,v); }
+    var k="bm_blog_views_"+b.id;
+    var v=localStorage.getItem(k);
+    if(!v){ v=b.views+Math.floor(Math.random()*20); localStorage.setItem(k,v); }
     return parseInt(localStorage.getItem(k));
   }catch(e){ return b.views; }
 }
+function renderPills(){
+  var html="";
+  for(var i=0;i<CATS.length;i++){
+    var c=CATS[i];
+    html+='<span class="pill '+(active===c?'on':'')+'" onclick="setCat(\''+c+'\')">'+c+'</span>';
+  }
+  document.getElementById("pills").innerHTML=html;
+}
+function setCat(c){ active=c; renderPills(); render(); }
+function goFeat(){ var b=BLOGS[cur % BLOGS.length]; window.location.href=b.page; }
 
-function renderFilters(){
-  document.getElementById('filters').innerHTML=cats.map(c=>`<span class="f-pill ${active
+function render(){
+  try{
+    var q=document.getElementById("q").value.toLowerCase();
+    var list=BLOGS.slice();
+    if(active!=="ALL"){ list=list.filter(function(b){return b.cat===active;}); }
+    if(q){ list=list.filter(function(b){return b.title.toLowerCase().indexOf(q)>-1 || b.desc.toLowerCase().indexOf(q)>-1;}); }
+
+    document.getElementById("count").textContent=list.length+" articles • "+BLOGS.length+" total";
+
+    // featured
+    var fb=BLOGS[cur % BLOGS.length];
+    var fv=getV(fb);
+    document.getElementById("feat").innerHTML='<img src="/images/blog/'+fb.id+'.webp" onerror="this.src=\'/images/ads/brandmark-systems-final.webp\'"><div><span class="badge">'+fb.cat+'</span> <span style="font-size:11px;color:#00e5ff">👁️ '+fv+'</span><h2 style="color:#fff;font-size:18px;margin:8px 0">'+fb.title+'</h2><p style="color:#7a9e9e;font-size:13px">'+fb.desc+'</p><span style="color:#00e5ff;font-weight:700;font-size:13px">Read →</span></div>';
+
+    // grid
+    var h="";
+    for(var i=0;i<list.length;i++){
+      var b=list[i];
+      var v=getV(b);
+      h+='<div class="card" onclick="location.href=\''+b.page+'\'"><img src="/images/blog/'+b.id+'.webp" onerror="this.src=\'/images/ads/brandmark-systems-final.webp\'"><div class="body"><span class="badge">'+b.cat+'</span><h3 style="color:#fff;margin:10px 0 6px;font-size:16px">'+b.title+'</h3><p style="color:#6d8d8d;font-size:13px">'+b.desc+'</p><div class="meta"><span>👁️ '+v+'</span><span>Read More →</span></div></div></div>';
+    }
+    document.getElementById("grid").innerHTML=h || '<p style="color:#7a9e9e;text-align:center">No results</p>';
+  }catch(err){
+    document.getElementById("count").textContent="Error: "+err.message;
+  }
+}
+
+renderPills();
+render();
+setInterval(function(){cur++;render();},4000);
+</script>
+</body>
+</html>
