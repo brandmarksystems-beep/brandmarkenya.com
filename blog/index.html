@@ -5,47 +5,48 @@
 <title>Blog | BrandMark Kenya</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:Inter,Arial,sans-serif;background:#051314;color:#d7e8e8}
-.h{background:#000;color:#fff;padding:12px 4vw;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:20;border-bottom:1px solid #0e2a2a}
+body{font-family:Inter,Arial,sans-serif;background:#061d1d;color:#d7e8e8;line-height:1.6}
+.h{background:#000;padding:12px 4vw;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:20;border-bottom:1px solid #0e2a2a}
 .h b{color:#00e5ff}
 .btn{padding:9px 16px;border-radius:8px;text-decoration:none;font-size:13px;border:1px solid #1a3a3a;background:transparent;color:#fff}
 .btn-p{background:#00e5ff;color:#000;font-weight:800;border-color:#00e5ff}
 .wrap{max-width:1150px;margin:auto;padding:24px 4vw 100px}
 .hero{text-align:center}
-.hero h1{font-size:clamp(30px,6vw,46px);color:#fff}
+.hero h1{font-size:clamp(30px,6vw,46px);color:#fff;letter-spacing:-1px}
 .hero h1 span{color:#00e5ff;font-style:italic;font-family:Georgia,serif}
 .sub{color:#7a9e9e;margin-top:8px;font-size:14px}
 .search{display:flex;gap:10px;max-width:520px;margin:20px auto}
-.search input{flex:1;background:#0a1f1f;border:1px solid #143333;border-radius:10px;padding:12px 14px;color:#fff;outline:none}
+.search input{flex:1;background:#0a2a2a;border:1px solid #143333;border-radius:10px;padding:12px 14px;color:#fff;outline:none}
 .pills{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:16px 0 24px}
-.pill{padding:7px 14px;border-radius:20px;border:1px solid #143333;background:#0a1f1f;color:#7a9e9e;font-size:12px;cursor:pointer}
+.pill{padding:7px 14px;border-radius:20px;border:1px solid #143333;background:#0a2a2a;color:#7a9e9e;font-size:12px;cursor:pointer}
 .pill.on{background:#00e5ff;color:#000;font-weight:700;border-color:#00e5ff}
-.feat{background:linear-gradient(135deg,#0a2424,#0f2e2e);border:1px solid #143d3d;border-radius:20px;padding:16px;display:flex;gap:16px;align-items:center;margin-bottom:26px;cursor:pointer}
-.feat img{width:200px;height:130px;object-fit:cover;border-radius:12px;background:#000;flex-shrink:0}
+.feat{background:#0a2a2a;border:1px solid #143d3d;border-radius:20px;padding:16px;display:flex;gap:16px;align-items:center;margin-bottom:26px;cursor:pointer}
+.feat-left{width:200px;height:130px;background:#001a1a;border-radius:12px;display:flex;align-items:center;justify-content:center;color:#00e5ff;font-weight:800;font-size:13px;flex-shrink:0;border:1px solid #0f3333}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px}
-.card{background:#0a1f1f;border:1px solid #143333;border-radius:16px;overflow:hidden;cursor:pointer}
+.card{background:#0a2a2a;border:1px solid #143333;border-radius:16px;overflow:hidden;cursor:pointer;transition:.2s}
+.card:hover{transform:translateY(-3px);border-color:#00e5ff}
 .card:active{transform:scale(.98)}
-.card img{width:100%;height:190px;object-fit:cover;background:#111;display:block}
+.top{height:6px;background:#00e5ff}
+.imgph{height:150px;background:#001a1a;display:flex;align-items:center;justify-content:center;color:#00e5ff;font-weight:800;letter-spacing:1px}
 .body{padding:14px}
 .badge{background:#00e5ff;color:#000;font-size:9px;font-weight:900;padding:4px 8px;border-radius:4px;display:inline-block}
 .read{color:#00e5ff;font-weight:700;font-size:13px;margin-top:12px;display:block}
 .meta{font-size:11px;color:#5a7a7a;background:rgba(0,0,0,.3);padding:6px 10px;border-radius:8px;margin-top:10px;display:flex;justify-content:space-between}
-.wa{position:fixed;right:18px;bottom:18px;width:58px;height:58px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;z-index:30;text-decoration:none;font-size:28px}
-@media(max-width:700px){.feat{flex-direction:column}.feat img{width:100%;height:170px}}
+.wa{position:fixed;right:18px;bottom:18px;width:56px;height:56px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;z-index:30;text-decoration:none;font-size:26px}
+@media(max-width:700px){.feat{flex-direction:column}.feat-left{width:100%;height:140px}}
 </style>
 </head>
 <body>
-<div class="h"><div><b>BrandMark</b> Systems Ltd</div><div style="display:flex;gap:8px;align-items:center"><a href="/advertise/" style="color:#7a9e9e;text-decoration:none;font-size:13px">Advertisers</a><a class="btn btn-p" href="/">GET A QUOTE</a></div></div>
+<div class="h"><div><b>BrandMark</b> Systems Ltd</div><div style="display:flex;gap:8px;align-items:center"><a href="/advertise/" style="color:#7a9e9e;text-decoration:none;font-size:13px">Advertisers</a><a class="btn btn-p" href="/#quote">GET A QUOTE</a></div></div>
 <div class="wrap">
-<div class="hero"><h1>Where Ideas <span>Become</span> Brands</h1><p class="sub" id="count">Loading...</p><div class="search"><input id="q" placeholder="Search printing, branding..." oninput="render()"><button class="btn" onclick="render()">Search</button></div><div class="pills" id="pills"></div></div>
+<div class="hero"><h1>Where Ideas <span>Become</span> Brands</h1><p class="sub" id="count">Loading...</p><div class="search"><input id="q" placeholder="Search printing, branding..." oninput="render()"><button class="btn btn-p" onclick="render()">Search</button></div><div class="pills" id="pills"></div></div>
 <div class="feat" id="feat" onclick="goFeat()"></div>
 <div class="grid" id="grid"></div>
-<div style="text-align:center;margin-top:40px;color:#4a6666;font-size:12px">© 2026 BrandMark • Aya House, Eldoret<br><br><a href="/" style="color:#00e5ff;text-decoration:none">← Back to Home</a> • <a href="/advertise/" style="color:#00e5ff;text-decoration:none">Our Advertisers</a></div>
+<div style="text-align:center;margin-top:40px;color:#4a6666;font-size:12px">© 2026 BrandMark • Aya House, Eldoret<br><br><a href="/" style="color:#00e5ff;text-decoration:none">← Back to Home</a></div>
 </div>
 <a class="wa" href="https://wa.me/254725776082">💬</a>
 
 <script>
-// YOUR 6 REAL FOLDERS - FIXED
 var BLOGS=[
   {id:"large-format", title:"Large Format Printing in Eldoret - Vivid & Premium", cat:"PRINTING", page:"/blog/large-format/", desc:"Vivid banners, vinyl stickers, one-way vision & reflective stickers on Crystek 1.8m.", views:2142},
   {id:"branding-101", title:"Branding 101 - What Every Business in Eldoret Needs", cat:"BRANDING", page:"/blog/branding-101/", desc:"Logo, colors, uniforms and signage - the 5 pillars of a brand that customers remember.", views:1890},
@@ -54,9 +55,7 @@ var BLOGS=[
   {id:"why-directory", title:"Why Your Business Needs a Directory Listing in 2026", cat:"DIRECTORY", page:"/blog/why-directory/", desc:"78% of customers search online before buying in Eldoret. Be found first.", views:1120},
   {id:"directory-guide", title:"Directory Guide - How to Get Featured", cat:"DIRECTORY", page:"/blog/directory-guide/", desc:"KSh 500/month for 1000+ views. How to apply and book your slot.", views:980}
 ];
-var CATS=["ALL","PRINTING","BRANDING","GUIDE","DIRECTORY"];
-var active="ALL";
-var cur=0;
+var CATS=["ALL","PRINTING","BRANDING","GUIDE","DIRECTORY"]; var active="ALL"; var cur=0;
 
 function getV(b){
   try{
@@ -67,38 +66,34 @@ function getV(b){
   }catch(e){ return b.views; }
 }
 function renderPills(){
-  var html="";
+  var h="";
   for(var i=0;i<CATS.length;i++){
     var c=CATS[i];
-    html+='<span class="pill '+(active===c?'on':'')+'" onclick="setCat(\''+c+'\')">'+c+'</span>';
+    h+='<span class="pill '+(active===c?'on':'')+'" onclick="setCat(\''+c+'\')">'+c+'</span>';
   }
-  document.getElementById("pills").innerHTML=html;
+  document.getElementById("pills").innerHTML=h;
 }
 function setCat(c){ active=c; renderPills(); render(); }
-function goFeat(){ var b=BLOGS[cur % BLOGS.length]; window.location.href=b.page; }
+function goFeat(){ window.location.href=BLOGS[cur%BLOGS.length].page; }
 
 function render(){
   try{
     var q=document.getElementById("q").value.toLowerCase();
     var list=BLOGS.slice();
-    if(active!=="ALL"){ list=list.filter(function(b){return b.cat===active;}); }
-    if(q){ list=list.filter(function(b){return b.title.toLowerCase().indexOf(q)>-1 || b.desc.toLowerCase().indexOf(q)>-1;}); }
+    if(active!=="ALL") list=list.filter(function(b){return b.cat===active;});
+    if(q) list=list.filter(function(b){return b.title.toLowerCase().indexOf(q)>-1;});
 
     document.getElementById("count").textContent=list.length+" articles • "+BLOGS.length+" total";
 
-    // featured
-    var fb=BLOGS[cur % BLOGS.length];
-    var fv=getV(fb);
-    document.getElementById("feat").innerHTML='<img src="/images/blog/'+fb.id+'.webp" onerror="this.src=\'/images/ads/brandmark-systems-final.webp\'"><div><span class="badge">'+fb.cat+'</span> <span style="font-size:11px;color:#00e5ff">👁️ '+fv+'</span><h2 style="color:#fff;font-size:18px;margin:8px 0">'+fb.title+'</h2><p style="color:#7a9e9e;font-size:13px">'+fb.desc+'</p><span style="color:#00e5ff;font-weight:700;font-size:13px">Read →</span></div>';
+    var fb=BLOGS[cur%BLOGS.length]; var fv=getV(fb);
+    document.getElementById("feat").innerHTML='<div class="feat-left">'+fb.cat+'</div><div><span class="badge">'+fb.cat+'</span> <span style="font-size:11px;color:#00e5ff"> 👁️ '+fv+'</span><h2 style="color:#fff;font-size:18px;margin:8px 0">'+fb.title+'</h2><p style="color:#7a9e9e;font-size:13px">'+fb.desc+'</p><span style="color:#00e5ff;font-weight:700;font-size:13px">Read →</span></div>';
 
-    // grid
     var h="";
     for(var i=0;i<list.length;i++){
-      var b=list[i];
-      var v=getV(b);
-      h+='<div class="card" onclick="location.href=\''+b.page+'\'"><img src="/images/blog/'+b.id+'.webp" onerror="this.src=\'/images/ads/brandmark-systems-final.webp\'"><div class="body"><span class="badge">'+b.cat+'</span><h3 style="color:#fff;margin:10px 0 6px;font-size:16px">'+b.title+'</h3><p style="color:#6d8d8d;font-size:13px">'+b.desc+'</p><div class="meta"><span>👁️ '+v+'</span><span>Read More →</span></div></div></div>';
+      var b=list[i]; var v=getV(b);
+      h+='<div class="card" onclick="location.href=\''+b.page+'\'"><div class="top"></div><div class="imgph">'+b.cat+'</div><div class="body"><span class="badge">'+b.cat+'</span><h3 style="color:#fff;margin:10px 0 6px;font-size:16px">'+b.title+'</h3><p style="color:#6d8d8d;font-size:13px">'+b.desc+'</p><div class="meta"><span>👁️ '+v+'</span><span style="color:#00e5ff">Read →</span></div></div></div>';
     }
-    document.getElementById("grid").innerHTML=h || '<p style="color:#7a9e9e;text-align:center">No results</p>';
+    document.getElementById("grid").innerHTML=h;
   }catch(err){
     document.getElementById("count").textContent="Error: "+err.message;
   }
@@ -106,7 +101,7 @@ function render(){
 
 renderPills();
 render();
-setInterval(function(){cur++;render();},4000);
+setInterval(function(){cur++;render();},5000);
 </script>
 </body>
 </html>
