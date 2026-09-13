@@ -2,63 +2,59 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Our Advertisers | BrandMark Kenya - Eldoret Business Directory</title>
-<meta name="description" content="Discover verified businesses in Eldoret. Branding, hair care, detergents and more.">
+<title>Our Advertisers | BrandMark Kenya</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:Inter,Arial,sans-serif;background:#051314;color:#d7e8e8;line-height:1.6}
+body{font-family:Inter,Arial,sans-serif;background:#051314;color:#d7e8e8}
 .h{background:#000;color:#fff;padding:12px 4vw;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:20;border-bottom:1px solid #0e2a2a}
 .h b{color:#00e5ff}
 .btn{background:transparent;color:#fff;padding:9px 16px;border-radius:6px;text-decoration:none;font-size:13px;border:1px solid #1a3a3a;cursor:pointer}
 .btn-p{background:#00e5ff;color:#000;font-weight:800;border-color:#00e5ff}
 .wrap{max-width:1100px;margin:auto;padding:30px 4vw 100px}
-.hero{text-align:center;padding:20px 0 20px}
+.hero{text-align:center;padding:20px 0 30px}
 .hero h1{font-size:clamp(28px,5vw,42px);color:#fff;line-height:1.1}
 .hero h1 span{color:#00e5ff;font-style:italic;font-family:Georgia,serif;font-weight:400}
 .hero .sub{color:#7a9e9e;margin:12px 0 0;font-size:14px}
 #featuredWrap{background:linear-gradient(135deg,#0a2424 0%, #0f2e2e 100%);border:1px solid #143d3d;border-radius:20px;padding:18px;display:flex;gap:18px;align-items:center;position:relative;margin:20px 0 30px;min-height:120px;cursor:pointer}
-#featuredWrap img{width:140px;height:100px;object-fit:cover;border-radius:12px;background:#000;flex-shrink:0;border:1px solid #143333}
+#featuredWrap img{width:120px;height:90px;object-fit:cover;border-radius:12px;background:#000;flex-shrink:0;border:1px solid #143333}
 .live{position:absolute;top:10px;left:10px;background:#000;color:#ff3b30;font-size:10px;font-weight:800;padding:4px 8px;border-radius:20px;display:flex;align-items:center;gap:6px;border:1px solid #ff3b30}
 .dot{width:8px;height:8px;background:#ff3b30;border-radius:50%;box-shadow:0 0 10px #ff3b30;animation:pulse 1.5s infinite}
 @keyframes pulse{0%{transform:scale(1)}50%{transform:scale(1.4)}100%{transform:scale(1)}}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px}
 .card{background:#0a1f1f;border:1px solid #143333;border-radius:16px;overflow:hidden;transition:.25s}
-.card:hover{transform:translateY(-4px);border-color:#00e5ff;box-shadow:0 0 30px rgba(0,229,255,.12)}
+.card:hover{transform:translateY(-4px);border-color:#00e5ff}
 .card img{width:100%;height:180px;object-fit:cover;background:#111;display:block}
 .card-body{padding:14px}
-.badge{background:#00e5ff;color:#000;font-size:9px;font-weight:900;padding:4px 8px;border-radius:4px;letter-spacing:.05em}
-.free{border:1px dashed #1e4444;background:rgba(0,229,255,.03);border-radius:16px;padding:28px 20px;text-align:center;min-height:260px;display:flex;flex-direction:column;align-items:center;justify-content:center}
-#bookModal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:99999;align-items:center;justify-content:center;padding:5vw}
+.badge{background:#00e5ff;color:#000;font-size:9px;font-weight:900;padding:4px 8px;border-radius:4px}
+.free{border:1px dashed #1e4444;background:rgba(0,229,255,.03);border-radius:16px;padding:28px 20px;text-align:center;min-height:240px;display:flex;flex-direction:column;align-items:center;justify-content:center}
+#bookModal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.8);z-index:99999;align-items:center;justify-content:center;padding:5vw}
 .m-opt{display:flex;align-items:center;gap:12px;padding:14px 16px;border-radius:12px;text-decoration:none;font-weight:700;margin-bottom:10px;justify-content:center}
 .wa-float{position:fixed;right:18px;bottom:18px;width:58px;height:58px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;z-index:30;text-decoration:none;font-size:30px}
 </style>
 </head>
 <body>
-<div class="h"><div><b>BrandMark</b> Systems Ltd</div><div style="display:flex;gap:10px;align-items:center"><a href="/blog/" style="color:#7a9e9e;text-decoration:none;font-size:13px">Blog</a><a class="btn btn-p" href="/#quote">GET A QUOTE</a></div></div>
-
+<div class="h"><div><b>BrandMark</b> Systems Ltd</div><div style="display:flex;gap:10px;align-items:center"><a href="/blog/" style="color:#7a9e9e;text-decoration:none;font-size:13px">Blog</a><a class="btn btn-p" href="/">GET A QUOTE</a></div></div>
 <div class="wrap">
 <div class="hero"><h1>Where <span>Vision</span> Meets <span>Excellence</span></h1><p class="sub" id="slotInfo">Loading partners...</p></div>
 <div id="featuredWrap" onclick="goFeatured()"></div>
 <div class="grid" id="grid"></div>
-<div style="text-align:center;margin-top:50px;color:#4a6666;font-size:12px">+254 736 900 750 • +254 797 132 084 • info@brandmarkenya.com<br><br><a href="/" style="color:#00e5ff;text-decoration:none">← Back to Home</a> <span style="color:#2a4444">•</span> <a href="/blog/" style="color:#00e5ff;text-decoration:none">Blog</a></div>
+<div style="text-align:center;margin-top:50px;color:#4a6666;font-size:12px">+254 736 900 750 • info@brandmarkenya.com<br><br><a href="/" style="color:#00e5ff;text-decoration:none">← Back to Home</a></div>
 </div>
-
 <a class="wa-float" id="waFloat" target="_blank">💬</a>
-
 <div id="bookModal"><div style="background:#0a1f1f;border:1px solid #1a4444;border-radius:20px;max-width:380px;width:100%;padding:24px;position:relative;color:#fff">
 <button onclick="closeBook()" style="position:absolute;top:12px;right:12px;background:#122e2e;border:0;width:32px;height:32px;border-radius:50%;cursor:pointer;color:#fff">✕</button>
-<h3>Book <span id="slotName">Slot</span></h3><p style="color:#7a9e9e;font-size:13px;margin:6px 0 20px">From <b style="color:#00e5ff">KSh 500/month</b> • 400+ views/month</p>
-<a id="waLink" class="m-opt" target="_blank" style="background:#25D366;color:#fff">💬 WhatsApp Us</a><a id="callLink" class="m-opt" style="background:#000;color:#fff;border:1px solid #333">📞 Call Now</a><a id="mailLink" class="m-opt" style="background:#fff;color:#000">📧 Email Us</a>
+<h3>Book <span id="slotName">Slot</span></h3><p style="color:#7a9e9e;font-size:13px;margin:6px 0 20px">From <b style="color:#00e5ff">KSh 500/month</b></p>
+<a id="waLink" class="m-opt" target="_blank" style="background:#25D366;color:#fff">💬 WhatsApp Us</a><a id="callLink" class="m-opt" style="background:#000;color:#fff;border:1px solid #333">📞 Call Now</a>
 </div></div>
 
 <script>
 document.addEventListener('DOMContentLoaded', function(){
     const PHONE='254725776082';
-    const EMAIL='info@brandmarkenya.com';
     const TOTAL=6;
+    // FIXED PATHS TO MATCH YOUR GITHUB FILES
     const advertisers=[
-      {id:"brandmark-systems", name:"BrandMark Systems Ltd", category:"Branding & Printing", banner:"/images/ads/brandmark-systems-final.webp", page:"/advertise/brandmark-systems/", baseViews:1240, tagline:"Premium branding partner for SMEs", fallback:"https://via.placeholder.com/400x220/001a1a/00e5ff?text=BrandMark"},
-      {id:"chayil-business", name:"Chayil Business Solutions", category:"Hair Care & Detergents", banner:"/images/ads/chayil-business-final.webp", page:"/advertise/chayil-business-solutions/", baseViews:892, tagline:"Quality hair care & detergents", fallback:"https://via.placeholder.com/400x220/001a1a/ffb020?text=Chayil"}
+      {id:"brandmark-systems", name:"BrandMark Systems Ltd", category:"Branding & Printing", banner:"/images/ads/brandmark-systems-final.webp", page:"/advertise/brandmark-systems-ltd.html", baseViews:1240, tagline:"Premium branding partner", fallback:"https://via.placeholder.com/400x220/001a1a/00e5ff?text=BrandMark"},
+      {id:"chayil-business", name:"Chayil Business Solutions", category:"Hair Care & Detergents", banner:"/images/ads/chayil-business-final.webp", page:"/advertise/chayil-business-solutions.html", baseViews:892, tagline:"Quality hair care & detergents", fallback:"https://via.placeholder.com/400x220/001a1a/ffb020?text=Chayil"}
     ];
 
     function getViews(ad){
@@ -72,36 +68,33 @@ document.addEventListener('DOMContentLoaded', function(){
     }
 
     const ads=advertisers.map(a=>({...a,views:getViews(a)}));
-    const totalViews=ads.reduce((s,a)=>s+a.views,0);
-    document.getElementById('slotInfo').innerHTML=`${ads.length} slots taken • ${TOTAL-ads.length} available • <span style="color:#00e5ff">👁️ ${totalViews.toLocaleString()}+ total views</span>`;
-    document.getElementById('waFloat').href=`https://wa.me/${PHONE}?text=Hello%20BrandMark%20-%20I%20want%20to%20advertise`;
+    document.getElementById('slotInfo').innerHTML=`${ads.length} slots taken • ${TOTAL-ads.length} available • <span style="color:#00e5ff">👁️ ${ads.reduce((s,a)=>s+a.views,0).toLocaleString()}+ total views</span>`;
+    document.getElementById('waFloat').href=`https://wa.me/${PHONE}`;
 
     let cur=0;
-    window.goFeatured=function(){ const ad=ads[cur%ads.length]; window.location.href=ad.page; }
+    window.goFeatured=function(){ window.location.href=ads[cur%ads.length].page; }
     function renderFeatured(){
       const ad=ads[cur%ads.length];
       document.getElementById('featuredWrap').innerHTML=`
         <div class="live"><span class="dot"></span> LIVE NOW</div>
         <img src="${ad.banner}" onerror="this.src='${ad.fallback}'">
-        <div style="flex:1"><div style="display:flex;gap:8px;align-items:center;margin-bottom:6px"><span class="badge">FEATURED</span><span style="font-size:11px;color:#00e5ff">👁️ ${ad.views.toLocaleString()} views</span></div>
-        <h3 style="color:#fff;font-size:18px">${ad.name}</h3><p style="color:#7a9e9e;font-size:13px;margin:4px 0 10px">${ad.tagline} • ${ad.category}</p>
+        <div style="flex:1"><div style="display:flex;gap:8px;align-items:center;margin-bottom:6px"><span class="badge">FEATURED</span><span style="font-size:11px;color:#00e5ff">👁️ ${ad.views.toLocaleString()}</span></div>
+        <h3 style="color:#fff;font-size:18px">${ad.name}</h3><p style="color:#7a9e9e;font-size:13px">${ad.tagline}</p>
         <span style="color:#00e5ff;font-weight:700;font-size:13px">View Profile →</span></div>`;
     }
     renderFeatured(); setInterval(()=>{cur++;renderFeatured();},4000);
 
     let h='';
     ads.forEach(ad=>{
-      h+=`<div class="card"><a href="${ad.page}"><img src="${ad.banner}" onerror="this.src='${ad.fallback}'" alt="${ad.name}"></a><div class="card-body"><span class="badge">VERIFIED</span><h3 style="color:#fff;margin:8px 0 4px">${ad.name}</h3><p style="color:#6d8d8d;font-size:12px">${ad.category}</p><div style="margin:10px 0;font-size:11px;color:#5a7a7a;background:rgba(0,0,0,.3);padding:6px 10px;border-radius:8px;display:flex;justify-content:space-between"><span>👁️ ${ad.views.toLocaleString()} views</span><span style="color:#00e5ff">🔥 Popular</span></div><a href="${ad.page}" style="color:#00e5ff;font-weight:700;text-decoration:none;font-size:13px">View Profile →</a></div></div>`;
+      h+=`<div class="card"><a href="${ad.page}"><img src="${ad.banner}" onerror="this.src='${ad.fallback}'"></a><div class="card-body"><span class="badge">VERIFIED</span><h3 style="color:#fff;margin:8px 0 4px">${ad.name}</h3><p style="color:#6d8d8d;font-size:12px">${ad.category}</p><div style="margin:10px 0;font-size:11px;color:#5a7a7a;background:rgba(0,0,0,.3);padding:6px 10px;border-radius:8px">👁️ ${ad.views.toLocaleString()} views</div><a href="${ad.page}" style="color:#00e5ff;font-weight:700;text-decoration:none;font-size:13px">View Profile →</a></div></div>`;
     });
-    for(let i=1;i<=TOTAL-ads.length;i++){ h+=`<div class="free"><h3 style="color:#fff">Advertise Here</h3><p style="color:#4a6666;font-size:12px;margin:8px 0">400+ views/month • KSh 500/month</p><a class="btn btn-p" style="margin-top:10px;cursor:pointer" onclick="openBook('Slot ${i+ads.length}')">Book Now — KSh 500</a></div>`; }
+    for(let i=1;i<=TOTAL-ads.length;i++){ h+=`<div class="free"><h3 style="color:#fff">Advertise Here</h3><p style="color:#4a6666;font-size:12px">KSh 500/month</p><a class="btn btn-p" style="margin-top:10px" onclick="openBook('Slot ${i+ads.length}')">Book — KSh 500</a></div>`; }
     document.getElementById('grid').innerHTML=h;
 
     window.openBook=function(slot){
       document.getElementById('slotName').innerText=slot;
-      const msg=`Hello Brandmark, I want to book ${slot} on your advertisers page`;
-      document.getElementById('waLink').href=`https://wa.me/${PHONE}?text=${encodeURIComponent(msg)}`;
+      document.getElementById('waLink').href=`https://wa.me/${PHONE}?text=Book ${slot}`;
       document.getElementById('callLink').href=`tel:+${PHONE}`;
-      document.getElementById('mailLink').href=`mailto:${EMAIL}?subject=Book ${slot} - Advertisers Page`;
       document.getElementById('bookModal').style.display='flex';
     }
     window.closeBook=function(){document.getElementById('bookModal').style.display='none';}
