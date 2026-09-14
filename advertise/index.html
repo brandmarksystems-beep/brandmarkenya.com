@@ -17,16 +17,16 @@ body{font-family:'DM Sans',Inter,Arial,sans-serif;background:linear-gradient(160
 .hero h1 span{color:var(--cyan);font-style:italic;font-weight:300}
 .hero .sub{color:var(--muted);margin:12px 0 0;font-size:13px}
 #featuredWrap{background:linear-gradient(135deg,rgba(0,200,212,.08) 0%, rgba(0,0,0,.35) 100%);border:1px solid var(--border);border-radius:20px;padding:18px;display:flex;gap:18px;align-items:center;position:relative;margin:20px 0 30px;min-height:120px;cursor:pointer;transition:.25s}
-#featuredWrap:hover{border-color:var(--cyan);box-shadow:0 8px 24px rgba(0,200,212,.12)}
-#featuredWrap img{width:120px;height:90px;object-fit:cover;border-radius:12px;background:#000;flex-shrink:0;border:1px solid var(--border)}
+#featuredWrap:hover{border-color:var(--cyan)}
+#featuredWrap img{width:120px;height:90px;object-fit:contain;background:#000;border-radius:12px;flex-shrink:0;border:1px solid var(--border)}
 .live{position:absolute;top:10px;left:10px;background:#000;color:#ff3b30;font-size:9px;font-weight:800;padding:4px 8px;border-radius:20px;display:flex;align-items:center;gap:6px;border:1px solid #ff3b30;letter-spacing:.1em}
 .dot{width:8px;height:8px;background:#ff3b30;border-radius:50%;box-shadow:0 0 10px #ff3b30;animation:pulse 1.5s infinite}
 @keyframes pulse{0%{transform:scale(1)}50%{transform:scale(1.4)}100%{transform:scale(1)}}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px}
-.card{background:rgba(0,200,212,.05);border:1px solid var(--border);border-radius:16px;overflow:hidden;transition:.25s}
+.card{background:rgba(0,200,212,.05);border:1px solid var(--border);border-radius:16px;overflow:hidden;transition:.25s;position:relative}
 .card:hover{transform:translateY(-4px);border-color:var(--cyan)}
-.card img{width:100%;height:180px;object-fit:cover;background:#111;display:block}
-.card-body{padding:14px}
+.card img{width:100%;height:220px;object-fit:contain;object-position:center top;background:#000;display:block;border-bottom:1px solid var(--border)}
+.card-body{padding:14px;position:relative;z-index:2}
 .badge{background:var(--cyan);color:#000;font-size:9px;font-weight:900;padding:4px 8px;border-radius:4px;letter-spacing:.06em}
 .free{border:1px dashed rgba(0,200,212,.22);background:rgba(0,200,212,.03);border-radius:16px;padding:28px 20px;text-align:center;min-height:240px;display:flex;flex-direction:column;align-items:center;justify-content:center}
 #bookModal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:99999;align-items:center;justify-content:center;padding:5vw}
@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function(){
     const TOTAL=6;
     const advertisers=[
       {id:"brandmark-systems", name:"BrandMark Systems Ltd", category:"Branding & Printing", banner:"/images/ads/brandmark-systems-final.webp", page:"/advertise/brandmark-systems-ltd.html", baseViews:1240, tagline:"Premium branding partner — Eldoret", fallback:"https://via.placeholder.com/400x220/001a1a/00c8d4?text=BrandMark"},
-      {id:"chayil-business", name:"Chayil Business Solutions", category:"Business Consultancy & Beauty", banner:"/images/ads/chayil-business-final.webp", page:"/advertise/chayil-business-solutions.html", baseViews:892, tagline:"KRA • Registration • Hair Care • 0723 098 298", fallback:"https://via.placeholder.com/400x220/001a1a/ffb020?text=Chayil"}
+      {id:"chayil-business", name:"Chayil Business Solutions", category:"Business Consultancy & Beauty", banner:"/images/ads/chayil-business-final.webp", page:"/advertise/chayil-business-solutions.html", baseViews:892, tagline:"KRA • Registration • Hair Care • 0723 098 298", fallback:"https://via.placeholder.com/400x220/001a1a/00c8d4?text=Chayil"}
     ];
 
     function getViews(ad){
@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
     let h='';
     ads.forEach(ad=>{
-      h+=`<div class="card"><a href="${ad.page}"><img src="${ad.banner}" onerror="this.src='${ad.fallback}'" alt="${ad.name}"></a><div class="card-body"><span class="badge">VERIFIED</span><h3 style="color:#fff;margin:8px 0 4px;font-family:'Cormorant Garamond',serif;font-weight:400">${ad.name}</h3><p style="color:#6d8d8d;font-size:12px">${ad.category}</p><div style="margin:10px 0;font-size:11px;color:#5a7a7a;background:rgba(0,0,0,.3);padding:6px 10px;border-radius:8px">👁️ ${ad.views.toLocaleString()} views</div><a href="${ad.page}" style="color:var(--cyan);font-weight:700;text-decoration:none;font-size:13px">View Profile →</a></div></div>`;
+      h+=`<div class="card"><a href="${ad.page}" style="display:block"><img src="${ad.banner}" onerror="this.src='${ad.fallback}'" alt="${ad.name}"></a><div class="card-body"><span class="badge">VERIFIED</span><h3 style="color:#fff;margin:8px 0 4px;font-family:'Cormorant Garamond',serif;font-weight:400">${ad.name}</h3><p style="color:#6d8d8d;font-size:12px">${ad.category}</p><div style="margin:10px 0;font-size:11px;color:#5a7a7a;background:rgba(0,0,0,.3);padding:6px 10px;border-radius:8px">👁️ ${ad.views.toLocaleString()} views</div><a href="${ad.page}" style="color:var(--cyan);font-weight:800;text-decoration:none;font-size:13px;display:inline-block;padding:6px 0;position:relative;z-index:10">View Profile →</a></div></div>`;
     });
     for(let i=1;i<=TOTAL-ads.length;i++){ h+=`<div class="free"><h3 style="color:#fff;font-family:'Cormorant Garamond',serif;font-weight:400">Advertise Here</h3><p style="color:#4a6666;font-size:12px">KSh 500/month • 400+ views</p><a class="btn btn-p" style="margin-top:10px" onclick="openBook('Slot ${i+ads.length}')">Book — KSh 500</a></div>`; }
     document.getElementById('grid').innerHTML=h;
