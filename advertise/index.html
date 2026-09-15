@@ -54,8 +54,8 @@ document.addEventListener('DOMContentLoaded', function(){
     const PHONE='254725776082';
     const TOTAL=6;
     const advertisers=[
-      {id:"brandmark-systems", name:"BrandMark Systems Ltd", category:"Branding & Printing", banner:"/images/ads/brandmark-systems-final.webp", page:"/advertise/brandmark-systems-ltd.html", baseViews:1240, tagline:"Premium branding partner — Eldoret", fallback:"https://via.placeholder.com/400x220/001a1a/00c8d4?text=BrandMark"},
-      {id:"chayil-business", name:"Chayil Business Solutions", category:"Business Consultancy & Beauty", banner:"/images/ads/chayil-business-final.webp", page:"/advertise/chayil-business-solutions.html", baseViews:892, tagline:"KRA • Registration • Hair Care • 0723 098 298", fallback:"https://via.placeholder.com/400x220/001a1a/00c8d4?text=Chayil"}
+      {id:"brandmark-systems", name:"BrandMark Systems Ltd", category:"Branding & Printing", banner:"/images/ads/brandmark-systems-final.webp", page:"/advertise/brandmark-systems-ltd.html", baseViews:1240, tagline:"Printing & Branding Services — inspired branding", fallback:"/blog-images/brandmark-corporate-banner.webp"},
+      {id:"chayil-business", name:"Chayil Business Solutions", category:"Hair Care & Detergents Manufacturing", banner:"/images/ads/chayil-business-final.webp", page:"/advertise/chayil-business-solutions.html", baseViews:892, tagline:"Professional Hair Care • Bar Soap • Industrial Detergents • 0795 675 786", fallback:"/advertise/chayil-poster.jpg"}
     ];
 
     function getViews(ad){
@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
     let h='';
     ads.forEach(ad=>{
-      h+=`<div class="card"><a href="${ad.page}" style="display:block"><img src="${ad.banner}" onerror="this.src='${ad.fallback}'" alt="${ad.name}"></a><div class="card-body"><span class="badge">VERIFIED</span><h3 style="color:#fff;margin:8px 0 4px;font-family:'Cormorant Garamond',serif;font-weight:400">${ad.name}</h3><p style="color:#6d8d8d;font-size:12px">${ad.category}</p><div style="margin:10px 0;font-size:11px;color:#5a7a7a;background:rgba(0,0,0,.3);padding:6px 10px;border-radius:8px">👁️ ${ad.views.toLocaleString()} views</div><a href="${ad.page}" style="color:var(--cyan);font-weight:800;text-decoration:none;font-size:13px;display:inline-block;padding:6px 0;position:relative;z-index:10">View Profile →</a></div></div>`;
+      h+=`<div class="card"><a href="${ad.page}" style="display:block"><img src="${ad.banner}" onerror="this.src='${ad.fallback}'" alt="${ad.name}"></a><div class="card-body"><span class="badge">VERIFIED</span><h3 style="color:#fff;margin:8px 0 4px;font-family:'Cormorant Garamond',serif;font-weight:400">${ad.name}</h3><p style="color:#6d8d8d;font-size:12px">${ad.category}</p><div style="margin:10px 0;font-size:11px;color:#5a7a7a;background:rgba(0,0,0,.3);padding:6px 10px;border-radius:8px">👁️ ${ad.views.toLocaleString()} views • ${ad.tagline}</div><a href="${ad.page}" style="color:var(--cyan);font-weight:800;text-decoration:none;font-size:13px;display:inline-block;padding:6px 0;position:relative;z-index:10">View Profile →</a></div></div>`;
     });
     for(let i=1;i<=TOTAL-ads.length;i++){ h+=`<div class="free"><h3 style="color:#fff;font-family:'Cormorant Garamond',serif;font-weight:400">Advertise Here</h3><p style="color:#4a6666;font-size:12px">KSh 500/month • 400+ views</p><a class="btn btn-p" style="margin-top:10px" onclick="openBook('Slot ${i+ads.length}')">Book — KSh 500</a></div>`; }
     document.getElementById('grid').innerHTML=h;
