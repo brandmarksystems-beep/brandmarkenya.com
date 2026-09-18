@@ -652,22 +652,23 @@ a[target="_blank"],button{cursor:pointer!important;}
       <div class="hero-big">Where <em>Vision</em><br class="hero-break"> Meets <em>Excellence</em></div>
       <!-- Rotating image slider — fills the remaining space in the left column.
            Replace the src="" placeholders below with the actual photo files. -->
-      <div class="hero-slider" id="heroSlider">
-        <div class="hero-slide active">
-          <img src="images/img-001.webp" alt="Huduma Centre branding and signage by BrandMark Systems" loading="eager" fetchpriority="high" decoding="async">          <div class="hero-slide-cap">Huduma Centre &mdash; Branding &amp; Signage</div>
-        </div>
-        <div class="hero-slide">
-          <img src="images/img-002.webp" alt="Collage of branded apparel — t-shirts, caps and mugs" loading="lazy"/>
-          <div class="hero-slide-cap">Branded Apparel &mdash; T-Shirts, Caps &amp; Mugs</div>
-        </div>
-        <div class="hero-slide">
-          <img src="images/img-003.webp" alt="Nuru Boutique branding project" loading="lazy"/>
-          <div class="hero-slide-cap">Nuru Boutique</div>
-        </div>
-        <div class="hero-slide">
-          <img src="images/img-004.webp" alt="BrandMark Systems embroidery workshop" loading="lazy"/>
-          <div class="hero-slide-cap">BrandMark &mdash; Embroidery Workshop</div>
-        </div>
+<div class="hero-slider" id="heroSlider">
+  <div class="hero-slide active">
+    <img src="/portfolio-images/huduma-centre-desk.webp" alt="Huduma Centre branding and signage by BrandMark Systems" loading="lazy"/>
+  </div>
+  <div class="hero-slide">
+    <img src="/portfolio-images/collage-aprons-and-shirts.webp" alt="Collage of branded apparel - t-shirts, caps and mugs" loading="lazy"/>
+    <div class="hero-slide-cap">Branded Apparel &mdash; T-Shirts, Caps &amp; Mugs</div>
+  </div>
+  <div class="hero-slide">
+    <img src="/portfolio-images/nuru-boutique-3d.webp" alt="Nuru Boutique branding project" loading="lazy"/>
+    <div class="hero-slide-cap">Nuru Boutique</div>
+  </div>
+  <div class="hero-slide">
+    <img src="/portfolio-images/brandmark-workshop.webp" alt="BrandMark Systems embroidery workshop" loading="lazy"/>
+    <div class="hero-slide-cap">BrandMark &mdash; Embroidery Workshop</div>
+  </div>
+</div>
         <!-- Desktop (>=1024px) sliding filmstrip: built by JS from the images
              above, so the source photos stay defined in one place only. -->
         <div class="hero-marquee" id="heroMarquee" aria-hidden="true">
@@ -697,7 +698,7 @@ a[target="_blank"],button{cursor:pointer!important;}
 </div>
 <style>@keyframes adsScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}} #ads-track:hover{animation-play-state:paused} #ads-track a{flex:0 0 280px;background:#151515;border-radius:12px;overflow:hidden;border:1px solid #222;text-decoration:none;display:block} #ads-track img{width:100%;height:140px;object-fit:cover;display:block} #ads-track .ad-name{color:#fff;padding:10px 12px;font-weight:600;font-size:14px}</style>
 <script src="/advertise/data.js"></script>
-<script>try{const t=document.getElementById('ads-track');if(t&&typeof advertisers!=='undefined'&&advertisers.length){const l=[...advertisers,...advertisers];t.innerHTML=l.map(a=>`<a href="${a.page}"><img src="${a.banner}" onerror="this.src='${a.logo||'/images/logo.png'}'"><div class="ad-name">${a.name}</div></a>`).join('')}else{document.getElementById('ads-ticker').style.display='none'}}catch(e){}</script>
+<script>try{const t=document.getElementById('ads-track');if(t&&typeof advertisers!=='undefined'&&advertisers.length){const l=[...advertisers,...advertisers];t.innerHTML=l.map(a=>`<a href="${a.page}"><img src="${a.banner}" onerror="this.src='${a.logo||'/portfolio-images/brandmark-logo.webp'}'"><div class="ad-name">${a.name}</div></a>`).join('')}else{document.getElementById('ads-ticker').style.display='none'}}catch(e){}</script>
 
    <!-- ═══════════ ABOUT ═══════════ -->
 <div class="panel" id="p-about">
