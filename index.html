@@ -1529,50 +1529,6 @@ document.addEventListener('DOMContentLoaded', function(){
   setInterval(showNext, ROTATE_MS);
 });
 
-/* ============================================================
-   HERO MARQUEE (desktop ≥1024px)
-   Builds a continuously-scrolling filmstrip from the same
-   images used in #heroSlider above, so there's only one place
-   (the .hero-slide markup) that defines the actual photos.
-   The strip is duplicated once so the CSS animation
-   (translateX 0 -> -50%) loops seamlessly with no visible seam.
-   ============================================================ */
-document.addEventListener('DOMContentLoaded', function(){
-  var slider = document.getElementById('heroSlider');
-  var track  = document.getElementById('heroMarqueeTrack');
-  if(!slider || !track) return;
-
-  var slides = slider.querySelectorAll('.hero-slide');
-  if(!slides.length) return;
-
-  function buildItem(imgEl, captionText){
-    var item = document.createElement('div');
-    item.className = 'hero-marquee-item';
-
-    var img = document.createElement('img');
-    img.src = imgEl.src;
-    img.alt = imgEl.alt;
-    img.loading = 'lazy';
-    item.appendChild(img);
-
-    if(captionText){
-      var cap = document.createElement('span');
-      cap.textContent = captionText;
-      item.appendChild(cap);
-    }
-    return item;
-  }
-
-  // Repeat the sequence twice, back-to-back, for a seamless loop
-  for(var loop = 0; loop < 2; loop++){
-    slides.forEach(function(slide){
-      var img   = slide.querySelector('img');
-      var capEl = slide.querySelector('.hero-slide-cap');
-      if(img) track.appendChild(buildItem(img, capEl ? capEl.textContent : ''));
-    });
-  }
-});
-
 </script>
 <!-- EmailJS SDK -->
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
