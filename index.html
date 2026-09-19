@@ -1,150 +1,602 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>BrandMark Systems Ltd</title>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="BrandMark Systems Ltd — Inspired Branding. Digital printing, signage, brand identity and corporate wear in Eldoret, Kenya."/>
+<meta name="keywords" content="printing Eldoret, branding Kenya, signage, digital print, corporate wear, BrandMark Systems"/>
+<meta property="og:title" content="BrandMark Systems Ltd — Inspired Branding"/>
+<meta property="og:url" content="https://brandmarkenya.com"/>
+<meta property="og:type" content="website"/>
+<link rel="canonical" href="https://brandmarkenya.com"/>
+<title>Brandmarkenya.com</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Bebas+Neue&family=DM+Sans:wght@300;400;500&family=Nunito:wght@900&family=Raleway:ital,wght@1,700&display=swap" rel="stylesheet"/>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-HPZ7GK21KM"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-HPZ7GK21KM');</script>
 <style>
-:root{--cyan:#00c8d4;--cd:#008c96;--black:#000;--white:#fff;--muted:rgba(255,255,255,.58);--pad:clamp(16px,4vw,60px);--nav-h:58px;--footer-h:72px;}
-*{margin:0;padding:0;box-sizing:border-box;}
+:root{--cyan:#00c8d4;--cl:#33d6e0;--cd:#008c96;--black:#000;--white:#fff;--muted:rgba(255,255,255,.58);--pad:clamp(16px,4vw,60px);--nav-h:58px;--footer-h:72px;}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
 html,body{width:100%;height:100%;overflow:hidden;font-family:'DM Sans',sans-serif;background:var(--black);color:var(--white);}
+.cursor{width:10px;height:10px;background:var(--cyan);border-radius:50%;position:fixed;top:0;left:0;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .2s,height .2s;}
+.cursor-ring{width:32px;height:32px;border:1px solid var(--cyan);border-radius:50%;position:fixed;top:0;left:0;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:all .25s;opacity:.5;}
 nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);z-index:300;display:flex;align-items:center;justify-content:space-between;padding:0 var(--pad);background:rgba(0,0,0,.94);backdrop-filter:blur(14px);border-bottom:1px solid rgba(0,200,212,.12);}
-.nav-logo{display:flex;align-items:center;gap:8px;background:none;border:none;cursor:pointer;}
-.nav-logo img{height:34px;width:34px;border-radius:50%;object-fit:contain;}
-.nav-logo-stack{display:flex;flex-direction:column;}
-.nav-logo-text{font-family:'Nunito',sans-serif;font-weight:900;color:var(--cyan);font-size:clamp(.82rem,1.6vw,1.1rem);} .nav-logo-text span{color:var(--white);}
-.nav-tagline{font-family:'Raleway',sans-serif;font-style:italic;font-size:.72rem;color:var(--white);}
-.nav-links{display:flex;gap:2px;list-style:none;}
-.nav-links li button{background:none;border:none;font-size:.65rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.55);padding:8px 11px;cursor:pointer;}
-.nav-links li button.active,.nav-links li button:hover{color:var(--cyan);background:rgba(0,200,212,.08);}
-.nav-quote{background:#0d6efd;color:#fff;border:none;font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;font-weight:700;padding:8px 16px;cursor:pointer;}
-.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px;} .hamburger span{width:22px;height:2px;background:var(--cyan);display:block;}
-.mob-menu{display:none;position:fixed;top:var(--nav-h);left:0;right:0;background:rgba(0,0,0,.97);z-index:299;padding:6px 0;} .mob-menu.open{display:block;} .mob-menu button{width:100%;text-align:left;background:none;border:none;color:rgba(255,255,255,.65);padding:13px var(--pad);cursor:pointer;border-bottom:1px solid rgba(255,255,255,.04);}
+.nav-logo{display:flex;align-items:center;gap:8px;background:none;border:none;cursor:pointer;text-decoration:none;min-width:0;}
+.nav-logo img{height:34px;width:34px;border-radius:50%;object-fit:contain;flex-shrink:0;}
+.nav-logo-stack{display:flex;flex-direction:column;justify-content:center;min-width:0;}
+.nav-logo-text{font-family:'Nunito',sans-serif;font-size:clamp(.82rem,1.6vw,1.1rem);font-weight:900;letter-spacing:.04em;color:var(--cyan);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.nav-logo-text span{color:var(--white);}
+.nav-tagline{font-family:'Raleway',sans-serif;font-style:italic;font-weight:400;font-size:clamp(.56rem,1.3vw,.82rem);color:var(--white);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;line-height:1.3;}
+.nav-links{display:flex;gap:2px;list-style:none;align-items:center;}
+.nav-links li{position:relative;}
+.nav-links li button{background:none;border:none;font-family:'DM Sans',sans-serif;font-size:.65rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.55);padding:8px 11px;cursor:pointer;transition:color .25s,background .25s;border-radius:2px;white-space:nowrap;}
+.nav-links li button:hover,.nav-links li button.active{color:var(--cyan);background:rgba(0,200,212,.08);}
+.nav-dropdown{position:absolute;top:100%;left:0;background:rgba(0,0,0,.96);backdrop-filter:blur(14px);border:1px solid rgba(0,200,212,.15);min-width:160px;display:none;flex-direction:column;z-index:400;}
+.nav-links li:hover .nav-dropdown{display:flex;}
+.nav-dropdown button{background:none;border:none;font-family:'DM Sans',sans-serif;font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.55);padding:11px 16px;cursor:pointer;text-align:left;transition:color .25s,background .25s;white-space:nowrap;}
+.nav-dropdown button:hover{color:var(--cyan);background:rgba(0,200,212,.08);}
+.nav-cta{background:none;border:1px solid var(--cyan);font-family:'DM Sans',sans-serif;font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--cyan);padding:7px 16px;cursor:pointer;transition:background .25s,color .25s;white-space:nowrap;}
+.nav-cta:hover{background:var(--cyan);color:var(--black);}
+.nav-quote{display:inline-flex;align-items:center;background:#0d6efd;color:#fff;border:none;font-family:'DM Sans',sans-serif;font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;font-weight:700;padding:8px 16px;cursor:pointer;text-decoration:none;white-space:nowrap;transition:background .25s;}
+.nav-quote:hover{background:#0b5ed7;color:#fff;}
+.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px;}
+.hamburger span{display:block;width:22px;height:2px;background:var(--cyan);transition:all .3s;}
+.mob-menu{display:none;position:fixed;top:var(--nav-h);left:0;right:0;background:rgba(0,0,0,.97);backdrop-filter:blur(16px);z-index:299;border-bottom:1px solid rgba(0,200,212,.15);padding:6px 0;}
+.mob-menu.open{display:block;}
+.mob-menu button{display:block;width:100%;text-align:left;background:none;border:none;font-family:'DM Sans',sans-serif;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.65);padding:13px var(--pad);cursor:pointer;border-bottom:1px solid rgba(255,255,255,.04);transition:color .25s,background .25s;}
+.mob-menu button:hover,.mob-menu button.active{color:var(--cyan);background:rgba(0,200,212,.07);}
+.mob-menu .mob-sub{padding-left:calc(var(--pad) + 16px);font-size:.7rem;color:rgba(255,255,255,.45);}
+.mob-menu .mob-sub:hover{color:var(--cyan);}
 .panels{position:fixed;top:var(--nav-h);left:0;right:0;bottom:var(--footer-h);}
-.panel{position:absolute;inset:0;display:flex;flex-direction:column;opacity:0;pointer-events:none;transform:translateY(24px);transition:opacity .48s,transform .48s;overflow-y:auto;overflow-x:hidden;}
+.panel{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-start;padding:0;opacity:0;pointer-events:none;transform:translateY(24px);transition:opacity .48s cubic-bezier(.16,1,.3,1),transform .48s cubic-bezier(.16,1,.3,1);overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;}
 .panel.active{opacity:1;pointer-events:all;transform:translateY(0);}
-.btn-c{display:inline-flex;gap:8px;background:var(--cyan);color:#000;font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;padding:12px 24px;font-weight:600;border:none;cursor:pointer;}
-.slbl{font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;color:var(--cd);margin-bottom:14px;display:flex;gap:10px;align-items:center;} .slbl::before{content:'';width:20px;height:1px;background:var(--cd);} .slbl.cy{color:var(--cyan);} .slbl.cy::before{background:var(--cyan);}
-#p-home{background:linear-gradient(135deg,#000 0%,#001a1d 50%,#000d10 100%);padding:var(--nav-h) var(--pad) 24px;justify-content:flex-end;position:relative;}
-.marquee-wrap{position:absolute;top:28%;left:0;right:0;overflow:hidden;pointer-events:none;opacity:.9;}
-.marquee-track{display:flex;gap:60px;font-family:'Bebas Neue',sans-serif;font-size:clamp(4rem,10vw,9rem);color:transparent;-webkit-text-stroke:1px rgba(0,200,212,.09);white-space:nowrap;animation:mq 24s linear infinite;letter-spacing:.05em;}
+.panel.exit{opacity:0;transform:translateY(-16px);}
+#p-about,#p-services{background:linear-gradient(160deg,#000d10 0%,#001a1d 55%,#000 100%)}
+#p-home{background:linear-gradient(135deg,#000000 0%,#001a1d 50%,#000d10 100%);padding:var(--nav-h) var(--pad) clamp(14px,3vh,28px);overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;justify-content:flex-end;position:relative;}
+.btn-c{display:inline-flex;align-items:center;gap:8px;background:var(--cyan);color:var(--black);font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;padding:12px 24px;font-weight:600;border:none;cursor:pointer;transition:background .25s,transform .25s;text-decoration:none;}
+.btn-c:after{content:"→";transition:transform .25s;}
+.btn-c:hover{background:var(--cl);transform:translateY(-2px);}
+.btn-c:hover:after{transform:translateX(4px);}
+.btn-o{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(255,255,255,.28);color:rgba(255,255,255,.65);font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;padding:12px 24px;background:none;cursor:pointer;transition:border-color .25s,color .25s;text-decoration:none;}
+.btn-o:hover{border-color:var(--cyan);color:var(--cyan);}
+.slbl{font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;color:var(--cd);margin-bottom:14px;display:flex;align-items:center;gap:10px;}
+.slbl::before{content:'';display:block;width:20px;height:1px;background:var(--cd);}
+.slbl.cy{color:var(--cyan);}.slbl.cy::before{background:var(--cyan);}
+.slbl.lt{color:rgba(255,255,255,.6);}.slbl.lt::before{background:rgba(255,255,255,.6);}
+#p-home{background:linear-gradient(135deg,#000000 0%,#001a1d 50%,#000d10 100%);padding:var(--nav-h) var(--pad) clamp(14px,3vh,28px);overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;justify-content:flex-end;position:relative;}
+#p-home::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 75% 25%,rgba(0,200,212,.13) 0%,transparent 60%),radial-gradient(ellipse 40% 50% at 10% 80%,rgba(0,200,212,.07) 0%,transparent 55%);}
+.hero-tagline{position:absolute;top:clamp(10px,1.8vh,18px);left:50%;transform:translateX(-50%);z-index:2;font-family:'Raleway',sans-serif;font-style:italic;font-weight:700;font-size:clamp(.88rem,1.5vw,1.25rem);color:var(--white);white-space:nowrap;letter-spacing:.04em;}
+.hero-tagline .ac{color:var(--cyan);}
+.marquee-wrap{position:absolute;top:30%;left:0;right:0;overflow:hidden;pointer-events:none;}
+.marquee-track{display:flex;gap:60px;font-family:'Bebas Neue',sans-serif;font-size:clamp(5rem,12vw,11rem);color:transparent;-webkit-text-stroke:1px rgba(0,200,212,.08);white-space:nowrap;animation:mq 24s linear infinite;letter-spacing:.05em;}
 @keyframes mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-.hero-body{position:relative;z-index:2;display:flex;align-items:flex-end;gap:clamp(20px,4vw,60px);padding:0 var(--pad) 24px;}
+.hero-body{position:relative;z-index:2;display:flex;align-items:flex-end;gap:clamp(20px,4vw,60px);padding:0 var(--pad) clamp(24px,4vh,56px);}
 .hero-left{flex:1.1;min-width:0;align-self:stretch;display:flex;flex-direction:column;}
 .hero-right{flex:1;min-width:0;}
-.hero-big{font-family:'Cormorant Garamond',serif;font-size:clamp(1.15rem,3vw,2.6rem);font-weight:300;line-height:1.05;color:var(--white);margin-bottom:14px;} .hero-big em{font-style:italic;color:var(--cyan);}
-.hero-desc{font-size:.86rem;line-height:1.85;color:var(--muted);text-align:justify;margin-bottom:18px;}
+.hero-big{font-family:'Cormorant Garamond',serif;font-size:clamp(1.15rem,3vw,2.6rem);font-weight:300;line-height:1.05;color:var(--white);margin-bottom:14px;}
+.hero-big em{font-style:italic;color:var(--cyan);}
+.hero-break{display:none;}
+.hero-desc{font-size:.86rem;line-height:1.85;color:var(--muted);text-align:justify;margin-bottom:18px;font-weight:300;}
 .hero-stats{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-bottom:18px;}
-.hstat{background:rgba(0,200,212,.08);border:1px solid rgba(0,200,212,.18);padding:9px 13px;} .hstat-n{font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:var(--cyan);} .hstat-l{font-size:.56rem;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);}
-.hero-slider{position:relative;flex:1;min-height:340px;margin-top:16px;overflow:hidden;border:1px solid rgba(0,200,212,.18);background:#001215;border-radius:16px;}
-.hero-slide{position:absolute;inset:0;opacity:0;transition:opacity 1.1s;} .hero-slide.active{opacity:1;z-index:1;} .hero-slide img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;}
-#p-about{background:linear-gradient(160deg,#e2fbfc 0%,#bef0f3 45%,#edfeff 100%);color:#000;flex-direction:row;padding:0;overflow:hidden;}
-.ab-vis{width:34%;background:linear-gradient(135deg,#00b8c4 0%,#005f66 100%);display:flex;align-items:center;justify-content:center;flex-shrink:0;} .ab-cards{position:relative;width:190px;height:260px;} .ab-card{position:absolute;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.06);} .ab-card:nth-child(1){inset:0;} .ab-mono{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.10);border-radius:50%;} .ab-text{flex:1;padding:clamp(68px,10vh,80px) var(--pad) 32px;overflow-y:auto;} .ab-text h2{font-family:'Cormorant Garamond',serif;font-size:clamp(1.6rem,2.8vw,2.5rem);font-weight:300;margin-bottom:14px;} .ab-text h2 em{font-style:italic;color:var(--cd);} .ab-text p{font-size:.85rem;line-height:1.9;color:rgba(0,0,0,.62);margin-bottom:10px;text-align:justify;} .ab-4{display:grid;grid-template-columns:1fr 1fr;gap:8px 20px;margin:12px 0;} .ab-4-item strong{color:var(--cd);display:block;font-size:.76rem;}
-#p-services{background:linear-gradient(160deg,#000d10 0%,#001a1d 60%,#000 100%);padding:clamp(68px,10vh,80px) var(--pad) 100px;overflow-y:auto;}
-.svc-tabs{display:flex;gap:0;margin-bottom:20px;border-bottom:1px solid rgba(0,200,212,.15);} .svc-tab{background:none;border:none;font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.42);padding:9px 20px;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-1px;} .svc-tab.active{color:var(--cyan);border-bottom-color:var(--cyan);} .svc-pane{display:none;} .svc-pane.active{display:block;}
-.svc-hdr{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:18px;gap:16px;flex-wrap:wrap;} .svc-hdr h2{font-family:'Cormorant Garamond',serif;font-size:clamp(1.6rem,3vw,2.6rem);font-weight:300;color:var(--white);} .svc-hdr h2 em{font-style:italic;color:var(--cyan);}
+.hstat{background:rgba(0,200,212,.08);border:1px solid rgba(0,200,212,.18);padding:9px 13px;}
+.hstat-n{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:300;color:var(--cyan);line-height:1;}
+.hstat-l{font-size:.56rem;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);margin-top:2px;}
+.hero-btns{display:flex;gap:9px;flex-wrap:wrap;}
+.hero-slider{position:relative;flex:1;min-height:180px;margin-top:16px;overflow:hidden;border:1px solid rgba(0,200,212,.18);background:#001215;}
+.hero-slide{position:absolute;inset:0;opacity:0;transition:opacity 1.1s ease-in-out;}
+.hero-slide.active{opacity:1;z-index:1;}
+.hero-slide img{width:100%;height:100%;object-fit:cover;display:block;}
+.hero-slide-cap{position:absolute;left:0;right:0;bottom:0;padding:8px 13px;background:linear-gradient(0deg,rgba(0,0,0,.78),transparent);font-family:'DM Sans',sans-serif;font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--white);}
+#p-about{background:linear-gradient(160deg,#e2fbfc 0%,#bef0f3 45%,#edfeff 100%);color:var(--black);flex-direction:row;padding:0;overflow:hidden;min-height:0;}
+.ab-vis{width:34%;background:linear-gradient(135deg,#00b8c4 0%,#005f66 100%);display:flex;align-items:center;justify-content:center;flex-shrink:0;position:relative;}
+.ab-cards{position:relative;width:190px;height:260px;}
+.ab-card{position:absolute;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.06);}
+.ab-card:nth-child(1){inset:0;}
+.ab-card:nth-child(2){inset:16px;border-color:rgba(255,255,255,.12);}
+.ab-card:nth-child(3){inset:32px;border-color:rgba(255,255,255,.06);}
+.ab-mono{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.10);border-radius:50%;}
+.ab-text{flex:1;padding:clamp(68px,10vh,80px) var(--pad) 32px;overflow-y:auto;-webkit-overflow-scrolling:touch;}
+.ab-text h2{font-family:'Cormorant Garamond',serif;font-size:clamp(1.6rem,2.8vw,2.5rem);font-weight:300;line-height:1.2;margin-bottom:14px;color:var(--black);}
+.ab-text h2 em{font-style:italic;color:var(--cd);}
+.ab-text p{font-size:.85rem;line-height:1.9;color:rgba(0,0,0,.62);margin-bottom:10px;text-align:justify;}
+.ab-4{display:grid;grid-template-columns:1fr 1fr;gap:8px 20px;margin:12px 0;}
+.ab-4-item strong{color:var(--cd);display:block;font-size:.76rem;margin-bottom:1px;}
+.ab-4-item{font-size:.76rem;color:rgba(0,0,0,.58);line-height:1.5;}
+.ab-pillars{font-size:.72rem;color:rgba(0,0,0,.5);margin-top:8px;}
+.ab-pillars strong{color:var(--cd);}
+.ab-stats{display:flex;gap:24px;margin-top:18px;flex-wrap:wrap;}
+.astat-n{font-family:'Cormorant Garamond',serif;font-size:2.1rem;font-weight:300;color:var(--cd);line-height:1;}
+.astat-l{font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(0,0,0,.42);margin-top:2px;}
+.ab-btns{margin-top:18px;display:flex;gap:9px;flex-wrap:wrap;}
+.btn-o-dk{border-color:rgba(0,0,0,.22);color:rgba(0,0,0,.55);}
+.btn-o-dk:hover{border-color:var(--cd);color:var(--cd);}
+#p-services{background:linear-gradient(160deg,#000d10 0%,#001a1d 60%,#000 100%);padding:clamp(68px,10vh,80px) var(--pad) 52px;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;}
+.svc-tabs{display:flex;gap:0;margin-bottom:20px;border-bottom:1px solid rgba(0,200,212,.15);}
+.svc-tab{background:none;border:none;font-family:'DM Sans',sans-serif;font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.42);padding:9px 20px;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-1px;transition:all .25s;}
+.svc-tab.active{color:var(--cyan);border-bottom-color:var(--cyan);}
+.svc-tab:hover{color:var(--white);}
+.svc-pane{display:none;}
+.svc-pane.active{display:block;}
+.svc-hdr{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:18px;gap:16px;flex-wrap:wrap;}
+.svc-hdr h2{font-family:'Cormorant Garamond',serif;font-size:clamp(1.6rem,3vw,2.6rem);font-weight:300;color:var(--white);}
+.svc-hdr h2 em{font-style:italic;color:var(--cyan);}
+.svc-hdr p{max-width:240px;font-size:.78rem;line-height:1.7;color:var(--muted);text-align:justify;}
 .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(0,200,212,.07);}
-.svc-card{background:#000d10;padding:14px 14px 16px;display:flex;flex-direction:column;text-align:center;border-bottom:2px solid transparent;transition:all .3s;} .svc-card:hover{border-bottom-color:var(--cyan);background:rgba(0,200,212,.05);}
-.svc-card h3{font-family:'Cormorant Garamond',serif;font-size:1.05rem;color:var(--white);margin-bottom:12px;text-align:center;}
-.svc-img-wrap{height:210px;border-radius:12px;overflow:hidden;background:#000;display:flex;align-items:center;justify-content:center;border:1px solid rgba(0,200,212,.12);}
-.svc-img-wrap img{width:100%;height:100%;object-fit:cover!important;object-position:center top!important;padding:0!important;display:block;}
-.svc-img-wrap.fill-jacket{background:#fff!important;}
-.svc-img-wrap.fill-jacket img{object-fit:cover!important;object-position:center 18%!important;transform:scale(1.38);transform-origin:center top;}
-.gal-filters{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:12px;} .gfil{background:none;border:1px solid rgba(0,200,212,.25);font-size:.6rem;letter-spacing:.13em;text-transform:uppercase;color:rgba(255,255,255,.5);padding:5px 11px;cursor:pointer;} .gfil.active,.gfil:hover{background:var(--cyan);border-color:var(--cyan);color:#000;}
-.gal-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:4px;} .gal-card{position:relative;aspect-ratio:4/3;overflow:hidden;cursor:pointer;background:#001215;} .gal-card img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s;} .gal-card:hover img{transform:scale(1.07);} .gal-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.82),transparent 55%);opacity:0;transition:opacity .3s;display:flex;align-items:flex-end;padding:8px;} .gal-card:hover .gal-overlay{opacity:1;} .gal-lbl{font-size:.62rem;color:#fff;} .gal-card.hidden{display:none;}
-.lightbox{position:fixed;inset:0;background:rgba(0,0,0,.96);z-index:9000;display:none;align-items:center;justify-content:center;} .lightbox.open{display:flex;} .lb-inner{position:relative;max-width:90vw;max-height:90vh;} #lb-img{max-width:85vw;max-height:85vh;object-fit:contain;border:1px solid rgba(0,200,212,.2);} .lb-close{position:absolute;top:-38px;right:0;background:none;border:none;color:var(--cyan);font-size:1.5rem;cursor:pointer;} .lb-prev,.lb-next{position:absolute;top:50%;transform:translateY(-50%);background:rgba(0,200,212,.15);border:1px solid rgba(0,200,212,.3);color:var(--cyan);font-size:1.8rem;width:42px;height:42px;display:flex;align-items:center;justify-content:center;cursor:pointer;} .lb-prev{left:-54px;} .lb-next{right:-54px;} .lb-caption{position:absolute;bottom:-30px;left:0;right:0;text-align:center;font-size:.7rem;color:rgba(255,255,255,.55);}
-#p-directory{background:linear-gradient(160deg,#000 0%,#001a20 55%,#000d10 100%);padding:clamp(68px,10vh,80px) var(--pad) 100px;overflow-y:auto;} .dir-stats{display:flex;gap:20px;margin-bottom:24px;padding:12px 18px;background:rgba(0,200,212,.05);border-left:3px solid var(--cyan);} .dir-stat strong{font-family:'Cormorant Garamond',serif;font-size:1.6rem;color:var(--cyan);} .dir-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:32px;}
-.legal-modal{position:fixed;inset:0;background:rgba(0,0,0,.96);z-index:5000;display:none;flex-direction:column;overflow-y:auto;} .legal-modal.open{display:flex;} .legal-inner{max-width:800px;margin:0 auto;padding:80px var(--pad) 100px;} .legal-close{position:fixed;top:16px;right:20px;background:none;border:none;color:var(--cyan);font-size:1.3rem;cursor:pointer;z-index:5001;padding:8px;} .legal-tabs{display:flex;gap:0;margin-bottom:20px;border-bottom:2px solid rgba(0,200,212,.18);} .legal-tab{background:none;border:none;font-size:.68rem;letter-spacing:.13em;text-transform:uppercase;color:rgba(255,255,255,.4);padding:9px 20px;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-2px;} .legal-tab.active{color:var(--cyan);border-bottom-color:var(--cyan);} .legal-pane{display:none;color:#fff;} .legal-pane.active{display:block;} .legal-pane h1{font-family:'Cormorant Garamond',serif;font-size:clamp(1.6rem,3vw,2.4rem);font-weight:300;margin-bottom:4px;} .legal-date{font-size:.68rem;color:rgba(255,255,255,.35);letter-spacing:.07em;margin-bottom:18px;display:block;} .legal-pane h2{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:600;color:var(--cyan);margin:16px 0 7px;} .legal-pane p,.legal-pane li{font-size:.82rem;line-height:1.85;color:rgba(255,255,255,.68);text-align:justify;margin-bottom:7px;} .legal-pane ul{padding-left:16px;margin-bottom:10px;} .legal-pane a{color:var(--cyan);text-decoration:none;} .legal-hl{background:rgba(0,200,212,.07);border-left:3px solid var(--cyan);padding:10px 14px;margin:10px 0;font-size:.8rem;color:rgba(255,255,255,.65);line-height:1.75;}
-@media(max-width:900px){.hero-body{flex-direction:column;align-items:stretch;} .svc-grid{grid-template-columns:repeat(2,1fr);} .gal-grid{grid-template-columns:repeat(3,1fr);} #p-about{flex-direction:column;} .ab-vis{width:100%;height:120px;} .hamburger{display:flex!important;} .nav-links{display:none!important;} .marquee-wrap{top:22%;} .marquee-track{font-size:clamp(3rem,14vw,6rem);}}
-@media(max-width:600px){.svc-grid{grid-template-columns:1fr!important;} .svc-img-wrap{height:220px!important;} #p-home{padding-bottom:90px!important;} .hero-slider{min-height:260px!important;}}
+.svc-card{background:#000d10;padding:clamp(14px,2.5vh,26px) clamp(12px,2vw,20px);position:relative;overflow:hidden;cursor:pointer;transition:background .3s;display:flex;flex-direction:column;}
+.svc-card::after{content:'';position:absolute;bottom:0;left:0;width:0;height:2px;background:var(--cyan);transition:width .4s cubic-bezier(.16,1,.3,1);}
+.svc-card:hover{background:rgba(0,200,212,.05);}
+.svc-card:hover::after{width:100%;}
+.svc-num{font-family:'Bebas Neue',sans-serif;font-size:2.4rem;color:transparent;-webkit-text-stroke:1px rgba(0,200,212,.13);line-height:1;margin-bottom:7px;transition:-webkit-text-stroke-color .3s;}
+.svc-card:hover .svc-num{-webkit-text-stroke-color:rgba(0,200,212,.36);}
+.svc-icon{font-size:1rem;margin-bottom:6px;}
+.svc-card h3{font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-weight:400;color:var(--white);margin-bottom:5px;}
+.svc-card p{font-size:.74rem;line-height:1.75;color:var(--muted);text-align:justify;flex:1;}
+.svc-lnk{display:inline-flex;align-items:center;gap:5px;margin-top:9px;font-size:.58rem;letter-spacing:.17em;text-transform:uppercase;color:var(--cyan);background:none;border:none;cursor:pointer;opacity:0;transform:translateY(4px);transition:all .3s;}
+.svc-card:hover .svc-lnk{opacity:1;transform:translateY(0);}
+.proc-wrap{text-align:center;}
+.proc-wrap h2{font-family:'Cormorant Garamond',serif;font-size:clamp(1.6rem,3vw,2.6rem);font-weight:300;color:var(--white);margin-bottom:clamp(20px,3.5vh,40px);}
+.proc-wrap h2 em{font-style:italic;color:var(--cyan);}
+.proc-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative;}
+.proc-steps::before{content:'';position:absolute;top:26px;left:12.5%;right:12.5%;height:1px;background:linear-gradient(to right,transparent,var(--cyan),transparent);opacity:.35;}
+.proc-step{padding:0 16px;text-align:center;}
+.proc-circle{width:52px;height:52px;border:1px solid var(--cyan);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:1rem;color:var(--cyan);margin:0 auto 16px;background:#001a1d;position:relative;z-index:1;}
+.proc-step h4{font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-weight:400;color:var(--white);margin-bottom:6px;}
+.proc-step p{font-size:.74rem;line-height:1.75;color:var(--muted);text-align:justify;}
+.proc-btns{margin-top:clamp(18px,3vh,36px);display:flex;gap:10px;justify-content:center;flex-wrap:wrap;}
+.site-footer{position:fixed;bottom:0;left:0;right:0;z-index:200;height:var(--footer-h);background:rgba(0,0,0,.97);border-top:1px solid rgba(0,200,212,.15);display:flex;flex-direction:column;}
+.footer-logo{font-family:'Nunito',sans-serif;font-weight:900;font-size:.88rem;color:var(--cyan);text-decoration:none;letter-spacing:.03em;}
+.footer-logo span{color:rgba(255,255,255,.38);}
+.footer-links{display:flex;gap:2px;align-items:center;flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:5px var(--pad) 4px;}
+.footer-links button,.footer-links a{background:none;border:none;font-family:'DM Sans',sans-serif;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.38);cursor:pointer;padding:4px 8px;transition:color .25s;text-decoration:none;display:inline-block;}
+.footer-links button:hover,.footer-links a:hover{color:var(--cyan);}
+.footer-links .sep{color:rgba(255,255,255,.15);font-size:.7rem;}
+.legal-modal{position:fixed;inset:0;background:rgba(0,0,0,.96);z-index:5000;display:none;flex-direction:column;overflow-y:auto;-webkit-overflow-scrolling:touch;}
+.legal-modal.open{display:flex;}
+.legal-inner{max-width:800px;margin:0 auto;padding:clamp(70px,10vh,90px) var(--pad) 60px;}
+.legal-close{position:fixed;top:16px;right:20px;background:none;border:none;color:var(--cyan);font-size:1.3rem;cursor:pointer;z-index:5001;padding:8px;}
+.legal-tabs{display:flex;gap:0;margin-bottom:20px;border-bottom:2px solid rgba(0,200,212,.18);}
+.legal-tab{background:none;border:none;font-family:'DM Sans',sans-serif;font-size:.68rem;letter-spacing:.13em;text-transform:uppercase;color:rgba(255,255,255,.4);padding:9px 20px;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-2px;transition:all .25s;}
+.legal-tab.active{color:var(--cyan);border-bottom-color:var(--cyan);}
+.legal-pane{display:none;color:var(--white);}
+.legal-pane.active{display:block;}
+.legal-pane h1{font-family:'Cormorant Garamond',serif;font-size:clamp(1.6rem,3vw,2.4rem);font-weight:300;margin-bottom:4px;}
+.legal-date{font-size:.68rem;color:rgba(255,255,255,.35);letter-spacing:.07em;margin-bottom:18px;display:block;}
+.legal-pane h2{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:600;color:var(--cyan);margin:16px 0 7px;}
+.legal-pane p,.legal-pane li{font-size:.82rem;line-height:1.85;color:rgba(255,255,255,.68);text-align:justify;margin-bottom:7px;}
+.legal-pane ul{padding-left:16px;margin-bottom:10px;}
+.legal-pane a{color:var(--cyan);text-decoration:none;}
+.legal-hl{background:rgba(0,200,212,.07);border-left:3px solid var(--cyan);padding:10px 14px;margin:10px 0;font-size:.8rem;color:rgba(255,255,255,.65);line-height:1.75;}
+.footer-left{display:flex;align-items:center;justify-content:center;flex:1;min-width:0;overflow:hidden;}
+.footer-logo{font-family:'Nunito',sans-serif;font-weight:900;font-size:.85rem;color:var(--cyan);white-space:nowrap;}
+.footer-logo-dim{color:rgba(255,255,255,.3);}
+.footer-contacts{display:flex;gap:8px;align-items:center;flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;justify-content:center;}
+.footer-contacts::-webkit-scrollbar{display:none;}
+.footer-contacts a,.footer-contacts span{font-size:.58rem;color:rgba(255,255,255,.42);text-decoration:none;white-space:nowrap;letter-spacing:.05em;}
+.footer-contacts a:hover{color:var(--cyan);}
+.footer-contacts svg{display:inline-block;vertical-align:middle;}
+.footer-right{display:flex;align-items:center;gap:2px;flex-shrink:0;padding-right:0}
+.ftr-lnk{background:none;border:none;font-family:'DM Sans',sans-serif;font-size:.6rem;letter-spacing:.13em;text-transform:uppercase;color:var(--cyan);cursor:pointer;padding:3px 6px;white-space:nowrap;text-decoration:none;display:inline-block;transition:opacity .2s;}
+.ftr-lnk:hover{opacity:.7;}
+.footer-right .sep{color:rgba(255,255,255,.2);font-size:.65rem;}
+.wa-float{position:fixed;bottom:calc(var(--footer-h) + 10px);right:16px;z-index:500;display:flex;align-items:center;flex-direction:row-reverse;gap:0;}
+.wa-btn{width:48px;height:48px;background:#25d366;border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;flex-shrink:0;position:relative;transition:transform .25s;box-shadow:0 3px 14px rgba(37,211,102,.45);}
+.wa-btn:hover{transform:scale(1.08);}
+.wa-btn svg{width:26px;height:26px;fill:#fff;}
+.wa-btn::before{content:'';position:absolute;inset:-5px;border-radius:50%;border:2px solid rgba(37,211,102,.4);animation:wapulse 2s ease-out infinite;}
+@keyframes wapulse{0%{transform:scale(1);opacity:.6}70%{transform:scale(1.4);opacity:0}100%{transform:scale(1.4);opacity:0}}
+.wa-lbl{background:#25d366;color:#fff;font-family:'DM Sans',sans-serif;font-size:.66rem;font-weight:500;padding:6px 10px 6px 12px;border-radius:20px 0 0 20px;margin-right:-4px;white-space:nowrap;opacity:0;transform:translateX(6px);transition:opacity .25s,transform .25s;pointer-events:none;}
+.wa-float:hover .wa-lbl{opacity:1;transform:translateX(0);}
+.home-poster svg{width:100%;height:100%;object-fit:cover;display:block;}
+#p-home .hero-body{position:relative;z-index:2;padding-bottom:clamp(110px,24vh,236px);}
+.blog-body{display:block;}
+.eflyer-wrap{width:100%;max-width:620px;margin:0 auto 22px;}
+.adv-excite{background:rgba(0,200,212,.05);border:1px solid rgba(0,200,212,.18);padding:20px 22px;margin-top:22px;text-align:center;}
+.gear-body{display:block;}
+.gal-filters{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:12px;}
+.gfil{background:none;border:1px solid rgba(0,200,212,.25);font-family:'DM Sans',sans-serif;font-size:.6rem;letter-spacing:.13em;text-transform:uppercase;color:rgba(255,255,255,.5);padding:5px 11px;cursor:pointer;transition:all .25s;}
+.gal-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:4px;}
+.gal-card{position:relative;aspect-ratio:4/3;overflow:hidden;cursor:pointer;background:#001215;}
+.lightbox{position:fixed;inset:0;background:rgba(0,0,0,.95);z-index:9000;display:none;align-items:center;justify-content:center;}
+.lb-prev{left:-52px;}
+.lb-next{position:absolute;top:50%;transform:translateY(-50%);background:rgba(0,200,212,.15);border:1px solid rgba(0,200,212,.3);color:var(--cyan);font-size:1.6rem;width:40px;height:40px;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .25s;}
+.footer-content{display:flex;align-items:center;justify-content:center;padding:0 var(--pad);flex:1;min-height:0;overflow:hidden;}
+.footer-legal{display:flex;align-items:center;justify-content:center;gap:3px;padding:0 var(--pad) env(safe-area-inset-bottom,4px);flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;flex-shrink:0;height:28px;}
+@media(min-width:901px){.hamburger{display:none!important;}.nav-links{display:flex!important;}}
+@media(max-width:900px){
+  .hamburger{display:flex!important;}.nav-links{display:none!important;}.nav-gear{display:none;}
+  #p-about{flex-direction:column;}.ab-vis{width:100%;height:120px;flex-shrink:0;}
+  .svc-grid{grid-template-columns:repeat(2,1fr);}.proc-steps{grid-template-columns:repeat(2,1fr);}
+  .why-wrap{grid-template-columns:1fr;}.hero-body{flex-direction:column;align-items:stretch;}
+  .hero-left{align-self:auto;width:100%;}
+  .hero-slider{margin:16px 0 0;min-height:200px;width:100%;}
+  .adv-hero{grid-template-columns:1fr;}.adv-pkgs{grid-template-columns:1fr;}
+  .adv-stats{grid-template-columns:repeat(2,1fr);}.ad-slots{grid-template-columns:repeat(2,1fr);}
+  .gear-grid{grid-template-columns:repeat(2,1fr);}.gal-grid{grid-template-columns:repeat(3,1fr);}
+  .footer-content{padding:0 14px;}
+  .footer-contacts{justify-content:flex-start;padding-right:14px;}
+}
+@media(max-width:768px){
+  .hero-big{margin-bottom:8px;}
+  #p-home{overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;padding-bottom:40px;}
+  .hero-stats{gap:8px;width:100%;box-sizing:border-box;margin-bottom:10px;}
+  .hstat{box-sizing:border-box;min-width:0;padding:6px 10px;}
+  .hstat-n{font-size:1.15rem;}
+}
+@media(max-width:600px){
+  :root{--pad:14px;}
+  nav{padding:0 14px;}.nav-cta{font-size:.55rem;padding:5px 9px;}.nav-quote{font-size:.55rem;padding:5px 9px;}
+#p-services{background:linear-gradient(160deg,#000 0%,#001a20 55%,#000 100%);padding:clamp(68px,10vh,80px) var(--pad) 100px;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;}
+  .svc-grid{grid-template-columns:1fr;}
+  }
+a[target="_blank"],button{cursor:pointer!important;}
+  .gal-card img{width:100%;height:100%;object-fit:cover;transition:transform .4s;display:block;}
+  .gal-card:hover img{transform:scale(1.07);}
+  .gal-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.82),transparent 55%);opacity:0;transition:opacity .3s;display:flex;align-items:flex-end;padding:8px;}
+  .gal-card:hover .gal-overlay{opacity:1;}
+  .gal-lbl{font-size:.62rem;color:var(--white);letter-spacing:.05em;line-height:1.4;font-family:'DM Sans',sans-serif;}
+  .gal-card.hidden{display:none;}
+  .gal-card.rotate90 img{transform:rotate(-90deg) scale(1.33);transform-origin:center;}
+  .gal-card.rotate90:hover img{transform:rotate(-90deg) scale(1.42);}
+  .gfil.active,.gfil:hover{background:var(--cyan);border-color:var(--cyan);color:var(--black);}
+  .lightbox{position:fixed;inset:0;background:rgba(0,0,0,.96);z-index:9000;display:none;align-items:center;justify-content:center;}
+  .lightbox.open{display:flex;}
+  .lb-inner{position:relative;max-width:90vw;max-height:90vh;display:flex;align-items:center;justify-content:center;}
+  #lb-img{max-width:85vw;max-height:85vh;object-fit:contain;border:1px solid rgba(0,200,212,.2);display:block;}
+  .lb-close{position:absolute;top:-38px;right:0;background:none;border:none;color:var(--cyan);font-size:1.5rem;cursor:pointer;z-index:2;}
+  .lb-prev,.lb-next{position:absolute;top:50%;transform:translateY(-50%);background:rgba(0,200,212,.15);border:1px solid rgba(0,200,212,.3);color:var(--cyan);font-size:1.8rem;width:42px;height:42px;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .25s;z-index:2;}
+  .lb-prev{left:-54px;} .lb-next{right:-54px;}
+  .lb-prev:hover,.lb-next:hover{background:var(--cyan);color:var(--black);}
+  .lb-caption{position:absolute;bottom:-30px;left:0;right:0;text-align:center;font-size:.7rem;color:rgba(255,255,255,.55);}
+  #p-directory{background:linear-gradient(160deg,#000 0%,#001a20 55%,#000d10 100%);padding:clamp(68px,10vh,80px) var(--pad) 100px;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;}
+  .dir-hero{margin-bottom:28px;}
+  .dir-hero h2{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,3.5vw,3rem);font-weight:300;color:var(--white);line-height:1.15;margin-bottom:8px;}
+  .dir-hero h2 em{font-style:italic;color:var(--cyan);}
+  .dir-hero p{font-size:.86rem;color:var(--muted);max-width:580px;line-height:1.8;}
+  .dir-search-wrap{position:relative;margin-bottom:18px;}
+  .dir-search{width:100%;padding:12px 18px 12px 44px;background:rgba(0,200,212,.07);border:1px solid rgba(0,200,212,.25);color:var(--white);font-family:'DM Sans',sans-serif;font-size:.88rem;outline:none;transition:border .25s;box-sizing:border-box;}
+  .dir-search:focus{border-color:var(--cyan);}
+  .dir-search::placeholder{color:rgba(255,255,255,.35);}
+  .dir-search-icon{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:rgba(0,200,212,.6);font-size:1rem;pointer-events:none;}
+  .dir-cats{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:22px;}
+  .dcat{background:none;border:1px solid rgba(0,200,212,.22);font-family:'DM Sans',sans-serif;font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.5);padding:5px 12px;cursor:pointer;transition:all .22s;}
+  .dcat.active,.dcat:hover{background:var(--cyan);border-color:var(--cyan);color:#000;}
+  .dir-stats{display:flex;gap:20px;margin-bottom:24px;padding:12px 18px;background:rgba(0,200,212,.05);border-left:3px solid var(--cyan);}
+  .dir-stat span{display:block;font-size:.58rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);}
+  .dir-stat strong{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:300;color:var(--cyan);}
+  .dir-results-label{font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:14px;}
+  .dir-results-label strong{color:var(--cyan);}
+  .dir-no-results{text-align:center;padding:60px 20px;color:var(--muted);display:none;}
+  .dir-no-results.show{display:block;}
+  .dir-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:32px;}
+  .biz-card{background:#000d10;border:1px solid rgba(0,200,212,.12);padding:18px;position:relative;transition:border-color .25s,transform .25s;display:flex;flex-direction:column;}
+  .biz-card:hover{border-color:rgba(0,200,212,.4);transform:translateY(-2px);}
+  .biz-card.featured{border-color:rgba(0,200,212,.35);background:linear-gradient(135deg,#000d10,#001a20);}
+  .biz-card.featured::before{content:"FEATURED";position:absolute;top:-1px;right:16px;background:var(--cyan);color:#000;font-family:'DM Sans',sans-serif;font-size:.5rem;font-weight:700;letter-spacing:.2em;padding:2px 7px;}
+  .biz-top{display:flex;align-items:flex-start;gap:12px;margin-bottom:10px;}
+  .biz-icon{width:42px;height:42px;background:rgba(0,200,212,.1);border:1px solid rgba(0,200,212,.2);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;}
+  .biz-name{font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-weight:600;color:var(--white);line-height:1.2;margin-bottom:3px;}
+  .biz-tagline{font-size:.68rem;font-style:italic;color:var(--cyan);line-height:1.3;}
+  .biz-cats{display:flex;gap:4px;flex-wrap:wrap;margin-bottom:8px;}
+  .biz-cat-tag{background:rgba(0,200,212,.08);border:1px solid rgba(0,200,212,.18);color:rgba(0,200,212,.8);font-size:.52rem;letter-spacing:.1em;text-transform:uppercase;padding:2px 6px;}
+  .biz-desc{font-size:.76rem;line-height:1.75;color:rgba(255,255,255,.62);margin-bottom:12px;flex:1;}
+  .biz-loc{font-size:.65rem;color:var(--muted);margin-bottom:12px;display:flex;align-items:center;gap:5px;}
+  .biz-loc::before{content:"📍";font-size:.7rem;}
+  .biz-actions{display:flex;gap:7px;flex-wrap:wrap;margin-top:auto;}
+  .biz-btn-c{background:var(--cyan);border:none;color:#000;font-family:'DM Sans',sans-serif;font-size:.6rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:8px 14px;cursor:pointer;text-decoration:none;display:inline-block;transition:opacity .2s;}
+  .biz-btn-c:hover{opacity:.85;}
+  .biz-btn-o{background:none;border:1px solid rgba(0,200,212,.35);color:var(--cyan);font-family:'DM Sans',sans-serif;font-size:.6rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:7px 13px;cursor:pointer;text-decoration:none;display:inline-block;transition:all .2s;}
+  .biz-btn-o:hover{background:rgba(0,200,212,.1);}
+  .biz-verified{display:inline-flex;align-items:center;gap:3px;font-size:.55rem;color:rgba(0,200,212,.7);margin-bottom:6px;}
+  .dir-add-section{margin-top:36px;padding:28px;background:rgba(0,200,212,.04);border:1px solid rgba(0,200,212,.15);}
+  .dir-add-h{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:300;color:var(--white);margin-bottom:6px;}
+  .dir-add-h em{font-style:italic;color:var(--cyan);}
+  .dir-add-p{font-size:.82rem;color:var(--muted);margin-bottom:20px;line-height:1.7;}
+  .dir-form{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+  .dir-field{display:flex;flex-direction:column;gap:5px;}
+  .dir-field.full{grid-column:1/-1;}
+  .dir-field label{font-size:.58rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(0,200,212,.7);}
+  .dir-field input,.dir-field select,.dir-field textarea{background:rgba(0,0,0,.4);border:1px solid rgba(0,200,212,.2);color:var(--white);font-family:'DM Sans',sans-serif;font-size:.82rem;padding:9px 12px;outline:none;transition:border .22s;width:100%;box-sizing:border-box;}
+  .dir-field input:focus,.dir-field select:focus,.dir-field textarea:focus{border-color:var(--cyan);}
+  .dir-field select option{background:#001215;color:var(--white);}
+  .dir-field textarea{resize:vertical;min-height:80px;}
+  .dir-submit{margin-top:14px;grid-column:1/-1;}
+  .dir-submit-btn{background:#0d6efd;color:#fff;border:none;padding:14px 24px;border-radius:8px;font-weight:600;font-size:16px;width:100%;cursor:pointer;margin-top:10px;}
+  .dir-submit-btn:hover{background:#0b5ed7;}
+  .dir-success{display:none;padding:14px 18px;background:rgba(0,200,212,.08);border:1px solid rgba(0,200,212,.3);color:var(--cyan);font-size:.82rem;margin-top:12px;grid-column:1/-1;}
+  .dir-success.show{display:block;}
+  @media(max-width:900px){.dir-grid{grid-template-columns:repeat(2,1fr);}}
+  @media(max-width:600px){
+    #p-directory{padding:66px 14px 80px!important;}
+    .dir-grid{grid-template-columns:1fr!important;}
+    .dir-form{grid-template-columns:1fr!important;}
+    .dir-stats{flex-wrap:wrap;gap:12px;}
+  }
+   .hero{min-height:auto !important;height:auto !important;padding:24px 16px 12px 16px !important;gap:16px !important;display:flex !important;flex-direction:column !important;}
+.hero-slider, .hero-track, .hero-slides{height:auto !important;min-height:auto !important;}
+.hero-slide img{width:100% !important;height:auto !important;aspect-ratio:16/9 !important;object-fit:cover !important;object-position:center top !important;border-radius:12px !important;display:block !important;}
+@media(min-width:768px){
+  .hero{padding:32px 24px !important;}
+  .hero-slide img{aspect-ratio:16/7 !important;max-height:520px !important;}
+}
+#p-about{margin-top:0 !important; padding-top:16px !important;}
+#ads-ticker, .hero-marquee{display:none !important;}
+   #p-about{margin-top:0 !important; padding-top:16px !important;}
+#ads-ticker, .hero-marquee{display:none !important;}
+footer, .footer{position:fixed !important; bottom:0 !important; left:0 !important; width:100% !important; z-index:99 !important; background:#000 !important;}
+body{padding-bottom:80px !important;}
+/* === FIX: Services titles only + Item 03 fill + marquee smooth === */
+.svc-card .svc-num, .svc-card .svc-icon, .svc-card p, .svc-card .svc-lnk { display:none !important; }
+.svc-card h3 { text-align:center !important; margin:0 0 10px !important; font-size:1.1rem !important; }
+.svc-card div[style*="height:160px"]{ height:210px !important; border-radius:12px !important; overflow:hidden !important; background:#000 !important; border:1px solid rgba(0,200,212,.12) !important; }
+.svc-card div[style*="height:160px"] img{ width:100% !important; height:100% !important; object-fit:cover !important; object-position:center top !important; padding:0 !important; display:block !important; }
+.svc-card:nth-child(3) div[style*="height:160px"]{ background:#fff !important; }
+.svc-card:nth-child(3) div[style*="height:160px"] img{ object-position:center 18% !important; transform:scale(1.38) !important; transform-origin:center top !important; }
+.marquee-track{ animation-duration:24s !important; animation-timing-function:linear !important; }
+.sep{color:rgba(255,255,255,.25);} .sep-legal{color:rgba(255,255,255,.2);}
 </style>
 </head>
 <body>
+<div class="cursor" id="cur"></div>
+<div class="cursor-ring" id="curRing"></div>
 <nav>
-<button class="nav-logo" onclick="go('home')"><img src="/portfolio-images/brandmark-logo.webp" alt="Logo"/><span class="nav-logo-stack"><span class="nav-logo-text">BrandMark<span> Systems Ltd</span></span><span class="nav-tagline">Inspired Branding...</span></span></button>
-<ul class="nav-links"><li><button id="n-home" class="active" onclick="go('home')">Home</button></li><li><button id="n-about" onclick="go('about')">About</button></li><li><button id="n-services" onclick="go('services')">Services</button></li><li><button onclick="location.href='/advertise/'">Advertise</button></li><li><button id="n-directory" onclick="go('directory')">Directory</button></li></ul>
-<button class="hamburger" onclick="toggleMob()"><span></span><span></span><span></span></button>
-<button class="nav-quote" onclick="go('quote')">GET A QUOTE</button>
+  <button class="nav-logo" onclick="go('home')"><img src="/portfolio-images/brandmark-logo.webp" alt="BrandMark Logo"/><span class="nav-logo-stack"><span class="nav-logo-text">BrandMark<span> Systems Ltd</span></span><span class="nav-tagline">Inspired Branding...</span></span></button>
+  <ul class="nav-links"><li><button id="n-home" class="active" onclick="go('home')">Home</button></li><li><button id="n-about" onclick="go('about')">About</button></li><li><button id="n-services" onclick="go('services')">Services ▾</button><div class="nav-dropdown"><button onclick="go('services');svcTab('main')">All Services</button></div></li><li><button id="n-advertise" onclick="location.href='/advertise/'">Advertise</button></li><li><button id="n-directory" onclick="go('directory')">Directory</button></li></ul>
+  <button class="hamburger" id="hbg" onclick="toggleMob()"><span></span><span></span><span></span></button>
+  <div style="display:flex;gap:8px;align-items:center;"><button class="nav-quote" onclick="go('quote')">GET A QUOTE</button></div>
 </nav>
-<div class="mob-menu" id="mobMenu"><button onclick="goMob('home')">Home</button><button onclick="goMob('about')">About</button><button onclick="goMob('services')">Services</button><button onclick="location.href='/advertise/'">Advertise</button><button onclick="goMob('directory')">Directory</button></div>
+<div class="mob-menu" id="mobMenu"><button onclick="goMob('home')">Home</button><button onclick="goMob('about')">About</button><button onclick="goMob('services');svcTab('main')">Services</button><button onclick="location.href='/advertise/'">Advertise</button><button onclick="goMob('directory')">Directory</button></div>
 <div class="panels">
 <div class="panel active" id="p-home">
-<div class="marquee-wrap"><div class="marquee-track">BRANDING · PRINTING · SIGNAGE · IDENTITY · DESIGN · BRANDING · PRINTING · SIGNAGE · IDENTITY · DESIGN · BRANDING · PRINTING · SIGNAGE · IDENTITY · DESIGN ·</div></div>
-<div class="hero-body"><div class="hero-left"><div class="hero-big">Where <em>Vision</em> Meets <em>Excellence</em></div><div class="hero-slider" id="heroSlider"><div class="hero-slide active"><img src="/portfolio-images/brandmark-embroidery-workshop.webp" alt="Workshop"></div><div class="hero-slide"><img src="/portfolio-images/huduma-centre-desk.webp" alt="Huduma"></div><div class="hero-slide"><img src="/portfolio-images/apparel-collage-branding.webp" alt="Apparel"></div><div class="hero-slide"><img src="/portfolio-images/coca-cola-gate-branding.webp" alt="Coca Cola"></div><div class="hero-slide"><img src="/portfolio-images/nuru-boutique-3d.webp" alt="Nuru"></div></div></div><div class="hero-right"><p class="hero-desc">BrandMark Systems Ltd is your one-stop centre for all Marketing and Communication products and services in Eldoret, Kenya and beyond. We build successful brands that stand out.</p><div class="hero-stats"><div class="hstat"><div class="hstat-n">500+</div><div class="hstat-l">Brands Built</div></div><div class="hstat"><div class="hstat-n">12+</div><div class="hstat-l">Industries</div></div><div class="hstat"><div class="hstat-n">100%</div><div class="hstat-l">Quality Promise</div></div><div class="hstat"><div class="hstat-n">∞</div><div class="hstat-l">Creativity</div></div></div><button class="btn-c" onclick="go('services')">Our Services</button></div></div>
+  <div class="marquee-wrap" aria-hidden="true"><div class="marquee-track">BRANDING · PRINTING · SIGNAGE · IDENTITY · DESIGN · BRANDING · PRINTING · SIGNAGE · IDENTITY · DESIGN · </div></div>
+  <div class="hero-body"><div class="hero-left"><div class="hero-big">Where <em>Vision</em><br class="hero-break"> Meets <em>Excellence</em></div>
+<div class="hero-slider" id="heroSlider" style="position:relative; width:100%; height:360px; overflow:hidden; border-radius:12px; background:#000;">
+  <div class="hero-slide active" style="position:absolute; inset:0; opacity:1; transition:opacity 0.9s;"><img src="./portfolio-images/brandmark-embroidery-workshop.webp" style="width:100%; height:100%; object-fit:cover;" alt="Embroidery workshop"></div>
+  <div class="hero-slide" style="position:absolute; inset:0; opacity:0; transition:opacity 0.9s;"><img src="./portfolio-images/huduma-centre-desk.webp" style="width:100%; height:100%; object-fit:cover;" alt="Huduma desk"></div>
+  <div class="hero-slide" style="position:absolute; inset:0; opacity:0; transition:opacity 0.9s;"><img src="./portfolio-images/apparel-collage-branding.webp" style="width:100%; height:100%; object-fit:cover;" alt="Apparel"></div>
+  <div class="hero-slide" style="position:absolute; inset:0; opacity:0; transition:opacity 0.9s;"><img src="./portfolio-images/coca-cola-gate-branding.webp" style="width:100%; height:100%; object-fit:cover;" alt="Coca Cola gate"></div>
+  <div class="hero-slide" style="position:absolute; inset:0; opacity:0; transition:opacity 0.9s;"><img src="./portfolio-images/nuru-boutique-3d.webp" style="width:100%; height:100%; object-fit:cover;" alt="Nuru Boutique"></div>
 </div>
-<div class="panel" id="p-about"><div class="ab-vis"><div class="ab-cards"><div class="ab-card"></div><div class="ab-mono"><img src="/portfolio-images/brandmark-logo.webp" alt="Logo" style="width:70%;max-width:130px;object-fit:contain;"/></div></div></div><div class="ab-text"><div class="slbl">Company Profile</div><h2>Building <em>Successful</em> Brands</h2><p>BrandMark Systems Ltd is a renowned business with a reputation for quality, service and innovation.</p><div class="ab-4"><div class="ab-4-item"><strong>Our Vision</strong>To be a one-stop centre providing all Marketing and Communication products and services.</div><div class="ab-4-item"><strong>Our Mission</strong>To build successful brands that stand out.</div><div class="ab-4-item"><strong>Our Promise</strong>We promise a better Experience; not just better rates.</div><div class="ab-4-item"><strong>Our Objective</strong>Professional business solutions through custom tailored Marketing Strategies.</div></div></div></div>
+</div></div>
+    <div class="hero-right"><p class="hero-desc">BrandMark Systems Ltd is your one-stop centre for all Marketing and Communication products and services in Eldoret, Kenya and beyond. We build successful brands that stand out.</p><div class="hero-stats"><div class="hstat"><div class="hstat-n">500+</div><div class="hstat-l">Brands Built</div></div><div class="hstat"><div class="hstat-n">12+</div><div class="hstat-l">Industries</div></div><div class="hstat"><div class="hstat-n">100%</div><div class="hstat-l">Quality Promise</div></div><div class="hstat"><div class="hstat-n">∞</div><div class="hstat-l">Creativity</div></div></div><div class="hero-btns"><button class="btn-c" onclick="go('services')">Our Services</button></div></div>
+  </div>
+</div>
+<div class="panel" id="p-about"><div class="ab-vis"><div class="ab-cards"><div class="ab-card"></div><div class="ab-mono"><img src="images/img-000.webp" alt="BrandMark Logo" style="width:70%;max-width:130px;height:auto;object-fit:contain;"/></div></div></div><div class="ab-text"><div class="slbl">Company Profile</div><h2>Building <em>Successful</em> Brands</h2><p>BrandMark Systems Ltd is a renowned business with a reputation for quality, service and innovation. We offer design and printing services for both individuals and corporates — with some of the most knowledgeable and passionate people in the industry working at every touch point.</p><p>Specialist consultants guide you through complex projects. We embrace cutting-edge technology to provide the best outcomes in printing and branding — without emphasis on prices, but quality for every project.</p><div class="ab-4"><div class="ab-4-item"><strong>Our Vision</strong>To be a one-stop centre providing all Marketing and Communication products and services.</div><div class="ab-4-item"><strong>Our Mission</strong>To build successful brands that stand out through reliable quality products and services.</div><div class="ab-4-item"><strong>Our Promise</strong>We promise a better Experience; not just better rates.</div><div class="ab-4-item"><strong>Our Objective</strong>Professional business solutions through custom tailored Marketing Strategies.</div></div><div class="ab-pillars"><strong>Our Pillars:</strong> Trust · Teamwork · Integrity · Creativity &amp; Innovation · Godliness</div><div class="ab-stats"><div><div class="astat-n">100+</div><div class="astat-l">Brands Built</div></div><div><div class="astat-n">12+</div><div class="astat-l">Industries</div></div><div><div class="astat-n">100%</div><div class="astat-l">Quality</div></div></div><div class="ab-btns"><button class="btn-c" onclick="go('services')">Our Services</button><button class="btn-o btn-o-dk" onclick="showContact()">Contact Us</button></div></div></div>
 <div class="panel" id="p-services"><div class="slbl cy">What We Do</div><div class="svc-tabs"><button class="svc-tab active" id="st-main" onclick="svcTab('main')">Services</button><button class="svc-tab" id="st-gallery" onclick="svcTab('gallery')">Gallery</button></div>
-<div class="svc-pane active" id="sp-main"><div class="svc-hdr"><div><h2>Our <em>Core</em> Services</h2></div></div>
+<div class="svc-pane active" id="sp-main"><div class="svc-hdr"><div><h2>Our <em>Core</em> Services</h2></div><p>We can Print and Brand anything. Contact us for any product or service.</p></div>
 <div class="svc-grid">
-<div class="svc-card"><h3>Embroidery Workshop</h3><div class="svc-img-wrap"><img src="/portfolio-images/brandmark-workshop.webp" alt="Embroidery Workshop"></div></div>
-<div class="svc-card"><h3>Corporate Uniforms & Polos</h3><div class="svc-img-wrap"><img src="/portfolio-images/apparel-collage-branding.webp" alt="Corporate Uniforms"></div></div>
-<div class="svc-card"><h3>Field Jackets & Vests</h3><div class="svc-img-wrap fill-jacket"><img src="/portfolio-images/world-vision-field-jacket.webp" alt="Field Jackets"></div></div>
-<div class="svc-card"><h3>Wall Murals & Facility Branding</h3><div class="svc-img-wrap"><img src="/portfolio-images/farm-inputs-wall-arts.webp" alt="Wall Murals"></div></div>
-<div class="svc-card"><h3>3D Signage & Shop Branding</h3><div class="svc-img-wrap"><img src="/portfolio-images/nuru-boutique-3d.webp" alt="3D Signage"></div></div>
-<div class="svc-card"><h3>Large Format & Outdoor</h3><div class="svc-img-wrap"><img src="/portfolio-images/coca-cola-gate-branding.webp" alt="Large Format"></div></div>
+<div class="svc-card"><div class="svc-num">01</div><div class="svc-icon">🧵</div><h3>Embroidery Workshop</h3><p>Original workshop photo untouched. In-house precision embroidery.</p><div style="height:160px;margin-top:12px;border-radius:10px;overflow:hidden"><img src="/portfolio-images/brandmark-embroidery-workshop.webp" style="width:100%;height:100%;object-fit:cover"></div></div>
+<div class="svc-card"><div class="svc-num">02</div><div class="svc-icon">👕</div><h3>Corporate Uniforms & Polos</h3><p>World Vision shirts, branded polos, blouses — coat-of-arms embroidery.</p><div style="height:160px;margin-top:12px;border-radius:10px;overflow:hidden"><img src="/portfolio-images/world-vision-shirts.webp" style="width:100%;height:100%;object-fit:cover"></div></div>
+<div class="svc-card"><div class="svc-num">03</div><div class="svc-icon">🦺</div><h3>Field Jackets & Vests</h3><p>Half-coats, reflector vests — NGO field standard.</p><div style="height:160px;margin-top:12px;border-radius:10px;overflow:hidden"><img src="/portfolio-images/world-vision-field-jacket.webp" style="width:100%;height:100%;object-fit:cover"></div></div>
+<div class="svc-card"><div class="svc-num">04</div><div class="svc-icon">🎨</div><h3>Wall Murals & Facility Branding</h3><p>Nutrition, breastfeeding, hand-washing, farm-inputs wall arts.</p><div style="height:160px;margin-top:12px;border-radius:10px;overflow:hidden"><img src="/portfolio-images/world-vision-nutrition-murals.webp" style="width:100%;height:100%;object-fit:cover"></div></div>
+<div class="svc-card"><div class="svc-num">05</div><div class="svc-icon">🏪</div><h3>3D Signage & Shop Branding</h3><p>Nuru Boutique 3D, Malaika Fashions, NCPB hub, Chayil before/after.</p><div style="height:160px;margin-top:12px;border-radius:10px;overflow:hidden"><img src="/portfolio-images/nuru-boutique-3d.webp" style="width:100%;height:100%;object-fit:cover"></div></div>
+<div class="svc-card"><div class="svc-num">06</div><div class="svc-icon">🖨️</div><h3>Large Format & Outdoor</h3><p>Coca-Cola Burudika gate, roll-up banners, vehicle wraps, flyers.</p><div style="height:160px;margin-top:12px;border-radius:10px;overflow:hidden"><img src="/portfolio-images/coca-cola-gate-branding.webp" style="width:100%;height:100%;object-fit:cover"></div></div>
+</div></div>
+<div class="svc-pane" id="sp-gallery">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:14px;flex-wrap:wrap;gap:10px;">
+      <div><div class="slbl lt">Portfolio</div>
+      <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(1.6rem,3vw,2.6rem);font-weight:300;color:var(--white);">Our Work <em style="font-style:italic;color:var(--cyan)">Speaks</em> for Itself</h2>
+      <p style="font-size:.84rem;color:var(--muted);margin-bottom:14px;max-width:560px;line-height:1.7;">From Coca-Cola wall branding to Huduma Kenya desks, World Vision projects to NCPB agricultural hub signage.</p></div>
+      <div class="gal-filters">
+        <button class="gfil active" onclick="filterGal('all',this)">All (46)</button>
+        <button class="gfil" onclick="filterGal('wall',this)">Wall (17)</button>
+        <button class="gfil" onclick="filterGal('signage',this)">Signage (10)</button>
+        <button class="gfil" onclick="filterGal('apparel',this)">Apparel (11)</button>
+        <button class="gfil" onclick="filterGal('promo',this)">Promo (5)</button>
+        <button class="gfil" onclick="filterGal('banners',this)">Banners (2)</button>
+        <button class="gfil" onclick="filterGal('vehicle',this)">Vehicle (1)</button>
+      </div>
+    </div>
+    <div class="gal-grid" id="galGrid"></div>
+    <div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap;">
+      <button class="btn-c" onclick="showContact()">Discuss Your Project</button>
+      <button class="btn-o" onclick="svcTab('main')">&#8592; Back to Services</button>
+    </div>
+  </div>
+</div>
+<div class="panel" id="p-directory">
+  <div class="slbl cy">Kenya Business Directory</div>
+  <div class="dir-hero">
+    <h2>Find <em>products & Service providers</em> near you</h2>
+    <p>The definitive directory of businesses and service providers across Kenya - Eldoret, Nairobi, Kisumu, Nakuru and beyond. Search, filter and connect with trusted providers in any industry.</p>
+  </div>
+  <div class="dir-stats">
+    <div class="dir-stat"><strong id="ds-total">6</strong><span>Listed Businesses</span></div>
+    <div class="dir-stat"><strong>10+</strong><span>Service Categories</span></div>
+    <div class="dir-stat"><strong>5+</strong><span>Cities Covered</span></div>
+    <div class="dir-stat"><strong>Free</strong><span>To List Your Business</span></div>
+  </div>
+  <div class="dir-search-wrap">
+    <span class="dir-search-icon">&#128269;</span>
+    <input class="dir-search" id="dirSearch" type="text" placeholder="Search by business name, service or location…" oninput="dirFilter()"/>
+  </div>
+  <div class="dir-cats" id="dirCats">
+    <button class="dcat active" data-cat="all" onclick="dirSetCat(this,'all')">All Categories</button>
+    <button class="dcat" data-cat="graphic-design" onclick="dirSetCat(this,'graphic-design')">Graphic Design</button>
+    <button class="dcat" data-cat="digital-print" onclick="dirSetCat(this,'digital-print')">Digital Printing</button>
+    <button class="dcat" data-cat="large-format" onclick="dirSetCat(this,'large-format')">Large Format</button>
+    <button class="dcat" data-cat="signage" onclick="dirSetCat(this,'signage')">Signage & Display</button>
+    <button class="dcat" data-cat="apparel" onclick="dirSetCat(this,'apparel')">Branded Apparel</button>
+    <button class="dcat" data-cat="promotional" onclick="dirSetCat(this,'promotional')">Promotional Items</button>
+    <button class="dcat" data-cat="packaging" onclick="dirSetCat(this,'packaging')">Packaging</button>
+    <button class="dcat" data-cat="photography" onclick="dirSetCat(this,'photography')">Photography & Video</button>
+    <button class="dcat" data-cat="web-design" onclick="dirSetCat(this,'web-design')">Web & Digital</button>
+    <button class="dcat" data-cat="events" onclick="dirSetCat(this,'events')">Events & Exhibitions</button>
+    <button class="dcat" data-cat="construction" onclick="dirSetCat(this,'construction')">Construction & Hardware</button>
+    <button class="dcat" data-cat="automotive" onclick="dirSetCat(this,'automotive')">Automotive</button>
+    <button class="dcat" data-cat="real-estate" onclick="dirSetCat(this,'real-estate')">Real Estate</button>
+    <button class="dcat" data-cat="health-beauty" onclick="dirSetCat(this,'health-beauty')">Health & Beauty</button>
+    <button class="dcat" data-cat="food-beverage" onclick="dirSetCat(this,'food-beverage')">Food & Beverage</button>
+    <button class="dcat" data-cat="fashion" onclick="dirSetCat(this,'fashion')">Fashion & Tailoring</button>
+    <button class="dcat" data-cat="electronics" onclick="dirSetCat(this,'electronics')">Electronics & IT</button>
+    <button class="dcat" data-cat="agriculture" onclick="dirSetCat(this,'agriculture')">Agriculture</button>
+    <button class="dcat" data-cat="education" onclick="dirSetCat(this,'education')">Education & Training</button>
+    <button class="dcat" data-cat="finance" onclick="dirSetCat(this,'finance')">Finance & Insurance</button>
+    <button class="dcat" data-cat="legal" onclick="dirSetCat(this,'legal')">Legal Services</button>
+    <button class="dcat" data-cat="logistics" onclick="dirSetCat(this,'logistics')">Logistics & Transport</button>
+    <button class="dcat" data-cat="hospitality" onclick="dirSetCat(this,'hospitality')">Hospitality & Travel</button>
+    <button class="dcat" data-cat="professional" onclick="dirSetCat(this,'professional')">Professional Services</button>
+    <button class="dcat" data-cat="other" onclick="dirSetCat(this,'other')">Other</button>
+  </div>
+  <div class="dir-results-label" id="dirResultsLabel"><strong id="dirCount">6</strong> businesses found</div>
+  <div class="dir-no-results" id="dirNoResults">
+    <p style="font-size:1.1rem;margin-bottom:8px;">No businesses found matching your search.</p>
+    <p style="font-size:.82rem;">Try a different keyword or category — or <button class="biz-btn-o" onclick="dirReset()" style="font-size:.7rem;padding:5px 12px;">clear filters</button></p>
+  </div>
+  <div class="dir-grid" id="dirGrid"></div>
+  <div class="dir-add-section" id="dirAddSection">
+    <h3 class="dir-add-h">List Your Business — It's <em>Free</em></h3>
+    <p class="dir-add-p">Are you a business or service provider in Kenya? Get in front of hundreds of clients actively searching for trusted providers across every industry — from branding and construction to fashion, food, finance and beyond. Fill in the form below and we'll add you to the directory.</p>
+    <form class="dir-form" id="dirForm">
+      <div class="dir-field"><label>Business Name *</label><input type="text" id="df-name" name="business_name" placeholder="e.g. Brandmark Kenya" required></div>
+      <div class="dir-field"><label>Business Type / Category *</label><select id="df-type" name="business_type" required><option value="">Select primary category</option><option>Graphic Design</option><option>Digital Printing</option><option>Large Format Printing</option><option>Signage & Display</option><option>Branded Apparel</option><option>Promotional Items</option><option>Packaging</option><option>Photography & Video</option><option>Web & Digital Design</option><option>Events & Exhibitions</option><option>Manufacturing & Industrial</option><option>Construction & Hardware</option><option>Automotive</option><option>Real Estate</option><option>Health & Beauty</option><option>Food & Beverage</option><option>Fashion & Tailoring</option><option>Electronics & IT</option><option>Agriculture</option><option>Education & Training</option><option>Finance & Insurance</option><option>Legal Services</option><option>Logistics & Transport</option><option>Hospitality & Travel</option><option>Professional Services</option><option>Other</option></select></div>
+      <div class="dir-field"><label>Contact Name *</label><input type="text" id="df-contact" name="contact_name" placeholder="Your full name" required></div>
+      <div class="dir-field"><label>Phone / WhatsApp *</label><input type="tel" id="df-phone" name="phone" placeholder="07xx xxx" required></div>
+      <div class="dir-field"><label>Email Address</label><input type="email" id="df-email" name="email" placeholder="you@email.com"></div>
+      <div class="dir-field"><label>Town / City *</label><select id="df-location" name="location" required><option value="">Select location...</option><option>Eldoret</option><option>Nairobi</option><option>Kisumu</option><option>Mombasa</option><option>Nakuru</option><option>Thika</option><option>Nyeri</option><option>Meru</option><option>Kisii</option><option>Kakamega</option><option>Other</option></select></div>
+      <div class="dir-field full"><label>Short Business Description</label><textarea id="df-desc" name="description" rows="3" placeholder="Briefly describe what you do" maxlength="200"></textarea></div>
+      <div class="dir-field full"><label>Website / Social Media Link (optional)</label><input type="url" id="df-web" name="website" placeholder="https://"></div>
+      <input type="hidden" name="user_name" id="df-hidden-name"><input type="hidden" name="user_email" id="df-hidden-email"><input type="hidden" name="to_email" value="info@brandmarkenya.com"><input type="hidden" name="subject" id="df-hidden-subject"><input type="hidden" name="message" id="df-hidden-message">
+      <div class="dir-submit"><button type="submit" class="dir-submit-btn">Submit Application</button><div class="dir-success" id="dirSuccess">&#10003; Thank you! Your listing request has been sent to BrandMark Systems Ltd. We'll review and add your business within 2 working days. For faster listing call <a href="tel:+254736900750" style="color:var(--cyan);">+254 736 900 750</a>.</div></div>
+    </form>
+  </div>
+</div>
+<div class="panel" id="p-quote" style="background:linear-gradient(160deg,#000d10 0%,#001a1d 55%,#000 100%);padding:clamp(68px,10vh,80px) var(--pad) 52px;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;">
+  <section id="quote-form" style="max-width:600px;margin:0 auto;">
+    <h2 style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;margin-bottom:14px;color:#fff;">Request a Quote</h2>
+    <form action="https://formsubmit.co/info@brandmarkenya.com" method="POST" style="display:flex;flex-direction:column;gap:12px;">
+      <input type="text" name="name" placeholder="Your Name" required style="padding:12px;border-radius:4px;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.05);color:#fff;"/>
+      <input type="tel" name="phone" placeholder="Phone Number" required style="padding:12px;border-radius:4px;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.05);color:#fff;"/>
+      <textarea name="message" placeholder="Tell us what you need" rows="5" required style="padding:12px;border-radius:4px;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.05);color:#fff;"></textarea>
+      <button type="submit" class="dir-submit-btn">Send Request</button>
+    </form>
+  </section>
 </div>
 </div>
-<div class="svc-pane" id="sp-gallery"><div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:14px;flex-wrap:wrap;gap:10px;"><div><h2 style="font-family:'Cormorant Garamond',serif;font-size:2rem;color:#fff;">Our Work <em style="font-style:italic;color:var(--cyan)">Speaks</em></h2></div><div class="gal-filters"><button class="gfil active" onclick="filterGal('all',this)">All</button><button class="gfil" onclick="filterGal('wall',this)">Wall</button><button class="gfil" onclick="filterGal('signage',this)">Signage</button><button class="gfil" onclick="filterGal('apparel',this)">Apparel</button></div></div><div class="gal-grid" id="galGrid"></div></div>
-</div>
-<div class="panel" id="p-directory"><div class="slbl cy">Kenya Business Directory</div><h2 style="font-family:'Cormorant Garamond',serif;font-size:2rem;color:#fff;margin-bottom:12px;">Find <em style="color:var(--cyan)">Businesses</em></h2><div class="dir-stats"><div class="dir-stat"><strong>9</strong><span>Listed</span></div><div class="dir-stat"><strong>10+</strong><span>Categories</span></div><div class="dir-stat"><strong>5+</strong><span>Cities</span></div></div><div class="dir-grid" id="dirGrid"></div></div>
-<div class="panel" id="p-quote" style="padding:70px var(--pad);"><h2 style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;color:#fff;margin-bottom:14px;">Request a Quote</h2><form action="https://formsubmit.co/info@brandmarkenya.com" method="POST" style="display:flex;flex-direction:column;gap:12px;max-width:600px;"><input type="text" name="name" placeholder="Your Name" required style="padding:12px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.2);color:#fff;"/><input type="tel" name="phone" placeholder="Phone" required style="padding:12px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.2);color:#fff;"/><textarea name="message" placeholder="Tell us what you need" rows="5" required style="padding:12px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.2);color:#fff;"></textarea><button type="submit" style="background:#0d6efd;color:#fff;border:none;padding:14px;border-radius:8px;font-weight:600;cursor:pointer;">Send Request</button></form></div>
-</div>
-<footer style="position:fixed;bottom:0;left:0;width:100%;background:#000;border-top:2px solid #00e5ff;padding:10px 14px;z-index:99999;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;font-size:13px;">
-<div style="color:#ccc;display:flex;gap:10px;flex-wrap:wrap;align-items:center;">
-<a href="tel:+254725776082" style="color:#fff;text-decoration:none;">0725 776 082</a> · <a href="tel:+254736900750" style="color:#fff;text-decoration:none;">0736 900 750</a> · <a href="mailto:info@brandmarkenya.com" style="color:#00e5ff;text-decoration:none;">info@brandmarkenya.com</a> · <a href="https://maps.app.goo.gl/Jc5PrwrSATAYwC5x5" target="_blank" style="color:#aaa;text-decoration:none;">📍 Aya House, Eldoret</a>
-</div>
-<div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap;">
-<button onclick="showContact()" style="background:none;border:none;color:#aaa;cursor:pointer;">Contact Us</button>
-<button onclick="openLegal('privacy')" style="background:none;border:none;color:#aaa;cursor:pointer;">Privacy Policy</button>
-<button onclick="openLegal('terms')" style="background:none;border:none;color:#aaa;cursor:pointer;">Terms of Use</button>
-<a href="https://www.facebook.com/share/18jms5gJXG/" target="_blank" style="color:#1877f2;text-decoration:none;">Facebook</a>
-<a href="https://vm.tiktok.com/ZS9NTeBmKfyME-xmaSz/" target="_blank" style="color:#fff;text-decoration:none;">TikTok</a>
-<a href="https://wa.me/254725776082" target="_blank" style="background:#25D366;color:#fff;padding:6px 14px;border-radius:20px;text-decoration:none;font-weight:bold;">WhatsApp</a>
-</div>
+
+<!-- ═══════════ FOOTER - YOUR LIKED SVG VERSION (FULL 1564) ═══════════ -->
+<footer class="site-footer">
+  <div class="footer-content">
+    <div class="footer-left">
+      <div class="footer-contacts">
+        <a href="tel:+254736900750">&#128222; +254 736 900 750</a>
+        <span class="sep">&#183;</span>
+        <a href="tel:+254797132084">+254 797 132 084</a>
+        <span class="sep">&#183;</span>
+        <a href="tel:+254725776082">+254 725 776 082</a>
+        <span class="sep">&#183;</span>
+        <a href="mailto:info@brandmarkenya.com">&#9993; info@brandmarkenya.com</a>
+        <span class="sep">&#183;</span>
+        <a href="https://maps.app.goo.gl/Jc5PrwrSATAYwC5x5" target="_blank" rel="noopener">&#128205; Aya House, Eldoret</a>
+        <span class="sep">&#183;</span>
+        <a href="https://www.facebook.com/share/18jms5gJXG/" target="_blank" rel="noopener" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 40 40" style="vertical-align:middle"><rect width="40" height="40" rx="8" fill="#1877F2"/><path d="M27.5 20H23v-3c0-1.1.9-2 2-2h2.5v-4.5H23c-3.6 0-6.5 2.9-6.5 6.5V20H13v4.5h3.5V38h5V24.5H25l2.5-4.5z" fill="white"/></svg></a>
+        <span class="sep">&#183;</span>
+        <a href="https://vm.tiktok.com/ZS9NTeBmKfyME-xmaSz/" target="_blank" rel="noopener" aria-label="TikTok"><svg width="16" height="16" viewBox="0 0 40 40" style="vertical-align:middle"><rect width="40" height="40" rx="8" fill="#010101"/><path d="M28 12.5a7.5 7.5 0 0 1-4.5-1.5v10a6.5 6.5 0 1 1-5-6.32V19a3 3 0 1 0 2 2.85V8h3.5a4 4 0 0 0 4 4z" fill="white"/></svg></a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-legal">
+    <button onclick="showContact()" class="ftr-lnk">Contact Us</button>
+    <span class="sep-legal">&#183;</span>
+    <button onclick="openLegal('privacy')" class="ftr-lnk">Privacy Policy</button>
+    <span class="sep-legal">&#183;</span>
+    <button onclick="openLegal('terms')" class="ftr-lnk">Terms of Use</button>
+  </div>
 </footer>
+<div style="height:70px;"></div>
+
+<!-- LEGAL MODAL (Privacy + Terms) - YOUR SEPT 12 VERSION -->
 <div class="legal-modal" id="legalModal">
-<button class="legal-close" onclick="closeLegal()">✕</button>
-<div class="legal-inner">
-<div class="legal-tabs"><button class="legal-tab active" id="lt-privacy" onclick="legalTab('privacy')">Privacy Policy</button><button class="legal-tab" id="lt-terms" onclick="legalTab('terms')">Terms of Use</button></div>
-<div class="legal-pane active" id="lp-privacy"><h1>Privacy Policy</h1><span class="legal-date">Last updated: September 12, 2026</span><div class="legal-hl">Brandmark Systems Ltd operates <strong>brandmarkenya.com</strong>. Kenya Data Protection Act, 2019.</div><h2>Information We Collect</h2><ul><li>Analytics, Contact info, Cookies</li></ul><h2>Your Rights</h2><p>Contact <a href="mailto:info@brandmarkenya.com">info@brandmarkenya.com</a></p></div>
-<div class="legal-pane" id="lp-terms"><h1>Terms of Use</h1><span class="legal-date">Last updated: September 12, 2026</span><div class="legal-hl">By using our website you agree to these Terms.</div><h2>Services</h2><p>Printing, branding, signage, corporate wear.</p><h2>Orders</h2><ul><li>50% deposit required</li><li>Full payment before release</li></ul><h2>Governing Law</h2><p>Laws of Kenya, Eldoret courts.</p></div>
+  <button class="legal-close" onclick="closeLegal()">✕</button>
+  <div class="legal-inner">
+    <div class="legal-tabs">
+      <button class="legal-tab active" id="lt-privacy" onclick="legalTab('privacy')">Privacy Policy</button>
+      <button class="legal-tab" id="lt-terms" onclick="legalTab('terms')">Terms of Use</button>
+    </div>
+    <div class="legal-pane active" id="lp-privacy">
+      <h1>Privacy Policy</h1>
+      <span class="legal-date">Last updated: September 12, 2026</span>
+      <div class="legal-hl">Brandmark Systems Ltd operates <strong>brandmarkenya.com</strong>. This policy covers data collection under the <strong>Kenya Data Protection Act, 2019</strong>.</div>
+      <h2>1. Information We Collect</h2><ul><li><strong>Analytics Data:</strong> Google Analytics collects device type, browser, pages visited and general location. This is anonymous.</li><li><strong>Contact Information:</strong> If you email or WhatsApp us, we collect your name, phone and message to respond to your enquiry.</li><li><strong>Cookies:</strong> We use cookies for analytics. Google may use cookies to show relevant ads.</li></ul>
+      <h2>2. How We Use Your Information</h2><ul><li>To operate and improve our website and services</li><li>To respond to enquiries about branding and printing services</li><li>To analyse traffic and understand what services clients find most useful</li></ul>
+      <h2>3. Third-Party Services</h2><ul><li><strong>Google Analytics:</strong> Measures site traffic.</li><li><strong>Cloudflare:</strong> Hosts our website.</li><li><strong>WhatsApp:</strong> Used for client communication.</li></ul>
+      <h2>4. Your Rights (Kenya Data Protection Act, 2019)</h2><p>You have the right to access, correct or request deletion of your personal data. Contact us at <a href="mailto:info@brandmarkenya.com">info@brandmarkenya.com</a>.</p>
+      <h2>5. Data Security</h2><p>We use Cloudflare's secure HTTPS hosting. No internet transmission is 100% secure.</p>
+      <h2>6. Children's Privacy</h2><p>Our Service is not directed to users under 18. We do not knowingly collect data from children.</p>
+      <h2>Contact</h2><p><a href="mailto:info@brandmarkenya.com">info@brandmarkenya.com</a> | +254 736 900 750 | Kenyatta Street, Aya House, 1st Floor Room 5, Eldoret, Kenya</p>
+    </div>
+    <div class="legal-pane" id="lp-terms">
+      <h1>Terms of Use</h1>
+      <span class="legal-date">Last updated: September 12, 2026</span>
+      <div class="legal-hl">By using our website and services, you agree to these Terms of Use and our Privacy Policy.</div>
+      <h2>1. Services</h2><p>BrandMark Systems Ltd provides digital printing, brand identity design, signage, corporate wear, promotional merchandise and related branding services. All services are subject to agreed order terms and payment.</p>
+      <h2>2. Orders & Payment</h2><ul><li>All orders require a minimum 50% deposit before production commences.</li><li>Full payment is required before goods are released unless a credit agreement is in place.</li><li>Prices may vary based on material costs, quantity and current market conditions.</li><li>Rush orders may attract an additional surcharge.</li></ul>
+      <h2>3. Quality Assurance</h2><p>We undertake to deliver products meeting the agreed specifications. Clients are required to approve artwork/proofs before production. BrandMark is not liable for errors in approved artwork.</p>
+      <h2>4. Intellectual Property</h2><p>All designs created by BrandMark remain our intellectual property until full payment is received. The client is responsible for ensuring they have rights to any content they supply to us.</p>
+      <h2>5. Limitation of Liability</h2><p>BrandMark's liability is limited to the value of the order. We are not liable for indirect or consequential damages arising from the use of our products or services.</p>
+      <h2>6. Governing Law</h2><p>These Terms are governed by the laws of Kenya. Disputes shall be subject to the jurisdiction of the courts of Eldoret, Kenya.</p>
+      <h2>Contact</h2><p><a href="mailto:info@brandmarkenya.com">info@brandmarkenya.com</a> | +254 736 900 750 | Aya House, Kenyatta Street, Eldoret, Kenya</p>
+    </div>
+  </div>
 </div>
-</div>
+
+<!-- CONTACT MODAL -->
 <div class="legal-modal" id="contactModal">
-<button class="legal-close" onclick="closeContact()">✕</button>
-<div class="legal-inner">
-<div class="slbl cy">Get In Touch</div>
-<h1 style="font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,4vw,3rem);font-weight:300;color:var(--white);">Ready to <em style="font-style:italic;color:var(--cyan)">Make</em> Your Mark?</h1>
-<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1px;background:rgba(0,200,212,.1);margin:22px 0;">
-<div style="background:rgba(0,10,12,.92);padding:18px;"><div style="font-size:.58rem;color:var(--cyan);">CALL US</div><a href="tel:+254736900750" style="color:rgba(255,255,255,.78);text-decoration:none;display:block;">+254 736 900 750</a><a href="tel:+254725776082" style="color:rgba(255,255,255,.78);text-decoration:none;display:block;">+254 725 776 082</a></div>
-<div style="background:rgba(0,10,12,.92);padding:18px;"><div style="font-size:.58rem;color:var(--cyan);">EMAIL</div><a href="mailto:info@brandmarkenya.com" style="color:rgba(255,255,255,.78);">info@brandmarkenya.com</a></div>
-<div style="background:rgba(0,10,12,.92);padding:18px;"><div style="font-size:.58rem;color:var(--cyan);">VISIT</div><span style="color:rgba(255,255,255,.78);font-size:.82rem;">Aya House, 1st Floor, Room 5, Eldoret</span><a href="https://maps.app.goo.gl/Jc5PrwrSATAYwC5x5" target="_blank" style="color:var(--cyan);display:block;margin-top:5px;">📍 Google Maps</a></div>
-<div style="background:rgba(0,10,12,.92);padding:18px;"><div style="font-size:.58rem;color:var(--cyan);">FOLLOW</div><a href="https://www.facebook.com/share/18jms5gJXG/" target="_blank" style="color:rgba(255,255,255,.78);display:block;">📘 Facebook</a><a href="https://vm.tiktok.com/ZS9NTeBmKfyME-xmaSz/" target="_blank" style="color:rgba(255,255,255,.78);display:block;">📱 TikTok</a></div>
+  <button class="legal-close" onclick="closeContact()">✕</button>
+  <div class="legal-inner">
+    <div class="slbl cy">Get In Touch</div>
+    <h1 style="font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,4vw,3rem);font-weight:300;color:var(--white);margin-bottom:6px;">Ready to <em style="font-style:italic;color:var(--cyan)">Make</em> Your Mark?</h1>
+    <p style="font-size:.85rem;color:var(--muted);margin-bottom:22px;">Tell us about your project and we will craft a tailored solution that elevates your brand beyond the ordinary.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1px;background:rgba(0,200,212,.1);margin-bottom:22px;">
+      <div style="background:rgba(0,10,12,.92);padding:18px;border-bottom:2px solid var(--cyan);"><div style="font-size:1.2rem;margin-bottom:5px;">📞</div><div style="font-size:.58rem;letter-spacing:.24em;text-transform:uppercase;color:var(--cyan);margin-bottom:5px;">Call Us</div><a href="tel:+254736900750" style="display:block;font-size:.82rem;color:rgba(255,255,255,.78);text-decoration:none;">+254 736 900 750</a><a href="tel:+254797132084" style="display:block;font-size:.82rem;color:rgba(255,255,255,.78);text-decoration:none;">+254 797 132 084</a><a href="tel:+254725776082" style="display:block;font-size:.82rem;color:rgba(255,255,255,.78);text-decoration:none;">+254 725 776 082</a></div>
+      <div style="background:rgba(0,10,12,.92);padding:18px;"><div style="font-size:1.2rem;margin-bottom:5px;">✉️</div><div style="font-size:.58rem;letter-spacing:.24em;text-transform:uppercase;color:var(--cyan);margin-bottom:5px;">Email Us</div><a href="mailto:info@brandmarkenya.com" style="display:block;font-size:.82rem;color:rgba(255,255,255,.78);text-decoration:none;">info@brandmarkenya.com</a></div>
+      <div style="background:rgba(0,10,12,.92);padding:18px;"><div style="font-size:1.2rem;margin-bottom:5px;">📍</div><div style="font-size:.58rem;letter-spacing:.24em;text-transform:uppercase;color:var(--cyan);margin-bottom:5px;">Visit Us</div><span style="display:block;font-size:.82rem;color:rgba(255,255,255,.78);">Kenyatta Street, Aya House<br>1st Floor, Room 5, Eldoret</span><a href="https://maps.app.goo.gl/Jc5PrwrSATAYwC5x5" target="_blank" rel="noopener" style="display:block;font-size:.72rem;color:var(--cyan);margin-top:5px;">📌 Open in Google Maps</a></div>
+      <div style="background:rgba(0,10,12,.92);padding:18px;"><div style="font-size:1.2rem;margin-bottom:5px;">🌐</div><div style="font-size:.58rem;letter-spacing:.24em;text-transform:uppercase;color:var(--cyan);margin-bottom:5px;">Follow Us</div><a href="https://www.facebook.com/share/18jms5gJXG/" target="_blank" rel="noopener" style="display:block;font-size:.82rem;color:rgba(255,255,255,.78);text-decoration:none;margin-bottom:5px;">📘 Brandmark Systems-KE</a><a href="https://vm.tiktok.com/ZS9NTeBmKfyME-xmaSz/" target="_blank" rel="noopener" style="display:block;font-size:.82rem;color:rgba(255,255,255,.78);text-decoration:none;">📱 @Brandmark Systems-KE</a></div>
+    </div>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;"><a href="mailto:info@brandmarkenya.com" class="btn-c">Send Us an Email</a><a href="tel:+254736900750" class="btn-o">Call Now</a></div>
+    <div style="margin-top:18px;width:100%;height:160px;border:1px solid rgba(0,200,212,.2);overflow:hidden;"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.748!2d35.2699!3d0.5143!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMCwwNTEgMzUsMjY5!5e0!3m2!1sen!2ske!4v1234567890" width="100%" height="160" style="border:0;filter:invert(90%) hue-rotate(180deg)" allowfullscreen="" loading="lazy"></iframe></div>
+  </div>
 </div>
-<div style="width:100%;height:220px;border:1px solid rgba(0,200,212,.2);border-radius:12px;overflow:hidden;"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.757!2d35.2699!3d0.5143!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sAya%20House%20Eldoret!5e0!3m2!1sen!2ske!4v1234567890" width="100%" height="220" style="border:0;filter:invert(90%) hue-rotate(180deg)" allowfullscreen="" loading="lazy"></iframe></div>
-</div>
-</div>
-<div class="lightbox" id="lightbox" onclick="closeLightbox()"><div class="lb-inner" onclick="event.stopPropagation()"><button class="lb-close" onclick="closeLightbox()">✕</button><button class="lb-prev" onclick="lbNav(-1)">‹</button><img id="lb-img" src="" alt=""/><button class="lb-next" onclick="lbNav(1)">›</button><div class="lb-caption" id="lb-caption"></div></div></div>
+<div class="wa-float" id="waFloat"><a href="https://wa.me/254725776082?text=Hello%20BrandMark%20Systems%20Ltd." target="_blank" rel="noopener" class="wa-btn" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0.16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg></a><div class="wa-lbl">Chat with us</div></div>
+<div class="lightbox" id="lightbox" onclick="closeLightbox()"><div class="lb-inner" onclick="event.stopPropagation()"><button class="lb-close" onclick="closeLightbox()">&#x2715;</button><button class="lb-prev" onclick="lbNav(-1)">&#8249;</button><img id="lb-img" src="" alt=""/><button class="lb-next" onclick="lbNav(1)">&#8250;</button><div class="lb-caption" id="lb-caption"></div></div></div>
+
 <script>
-var PANELS=['home','about','services','directory','quote']; var cur='home';
+var PANELS=['home','about','services','directory','quote'];var cur='home';
 function go(id){if(id===cur)return;var fp=document.getElementById('p-'+cur),tp=document.getElementById('p-'+id);if(!fp||!tp)return;fp.classList.remove('active');tp.classList.add('active');cur=id;PANELS.forEach(function(p){var b=document.getElementById('n-'+p);if(b)b.classList.toggle('active',p===id);});var mm=document.getElementById('mobMenu');if(mm)mm.classList.remove('open');}
 function svcTab(name){['main','gallery'].forEach(function(t){var st=document.getElementById('st-'+t),sp=document.getElementById('sp-'+t);if(st)st.classList.toggle('active',t===name);if(sp)sp.classList.toggle('active',t===name);});}
-function toggleMob(){var m=document.getElementById('mobMenu');if(m)m.classList.toggle('open');}
-function goMob(id){go(id);var m=document.getElementById('mobMenu');if(m)m.classList.remove('open');}
-function showContact(){document.getElementById('contactModal').classList.add('open');}
-function closeContact(){document.getElementById('contactModal').classList.remove('open');}
-function openLegal(tab){legalTab(tab);document.getElementById('legalModal').classList.add('open');}
-function closeLegal(){document.getElementById('legalModal').classList.remove('open');}
+function toggleMob(){var m=document.getElementById('mobMenu'),b=document.getElementById('hbg');if(!m||!b)return;m.classList.toggle('open');var sp=b.querySelectorAll('span');if(m.classList.contains('open')){sp[0].style.transform='rotate(45deg) translate(5px,5px)';sp[1].style.opacity='0';sp[2].style.transform='rotate(-45deg) translate(5px,-5px)';}else{sp[0].style.transform=sp[1].style.opacity=sp[2].style.transform='';}}
+function goMob(id){go(id);var m=document.getElementById('mobMenu');if(m)m.classList.remove('open');var b=document.getElementById('hbg');if(b){var sp=b.querySelectorAll('span');sp[0].style.transform=sp[1].style.opacity=sp[2].style.transform='';}}
+function showContact(){var m=document.getElementById('contactModal');if(m){m.classList.add('open');document.body.style.overflow='hidden';}}
+function closeContact(){var m=document.getElementById('contactModal');if(m){m.classList.remove('open');document.body.style.overflow='';}}
+function openLegal(tab){legalTab(tab);var m=document.getElementById('legalModal');if(m){m.classList.add('open');document.body.style.overflow='hidden';}}
+function closeLegal(){var m=document.getElementById('legalModal');if(m){m.classList.remove('open');document.body.style.overflow='';}}
 function legalTab(id){['privacy','terms'].forEach(function(t){var lt=document.getElementById('lt-'+t),lp=document.getElementById('lp-'+t);if(lt)lt.classList.toggle('active',t===id);if(lp)lp.classList.toggle('active',t===id);});}
-var galleryAll=[{label:'Embroidery Workshop',cat:'apparel',src:'/portfolio-images/brandmark-embroidery-workshop.webp'},{label:'Field Jacket',cat:'apparel',src:'/portfolio-images/world-vision-field-jacket.webp'},{label:'Nuru Boutique 3D',cat:'signage',src:'/portfolio-images/nuru-boutique-3d.webp'},{label:'Coca-Cola Gate',cat:'wall',src:'/portfolio-images/coca-cola-gate-branding.webp'},{label:'Huduma Desk',cat:'signage',src:'/portfolio-images/huduma-centre-desk.webp'},{label:'Apparel Collage',cat:'apparel',src:'/portfolio-images/apparel-collage-branding.webp'},{label:'Nutrition Murals',cat:'wall',src:'/portfolio-images/world-vision-nutrition-murals.webp'},{label:'Farm Inputs',cat:'wall',src:'/portfolio-images/farm-inputs-wall-arts.webp'}];
-var galleryFiltered=galleryAll.slice(); var lbIdx=0;
-(function(){var grid=document.getElementById('galGrid');if(!grid)return;grid.innerHTML=galleryAll.map(function(item,i){return '<div class="gal-card" data-cat="'+item.cat+'" onclick="openLightbox('+i+')"><img src="'+item.src+'" alt="'+item.label+'" loading="lazy"/><div class="gal-overlay"><div class="gal-lbl">'+item.label+'</div></div></div>';}).join('');})();
-function filterGal(cat,btn){document.querySelectorAll('.gfil').forEach(function(b){b.classList.remove('active');});if(btn)btn.classList.add('active');galleryFiltered=cat==='all'?galleryAll.slice():galleryAll.filter(function(x){return x.cat===cat;});document.querySelectorAll('.gal-card').forEach(function(card){var cc=card.getAttribute('data-cat');if(cat==='all'||cc===cat)card.classList.remove('hidden');else card.classList.add('hidden');});}
-function openLightbox(idx){lbIdx=idx;var img=document.getElementById('lb-img'),cap=document.getElementById('lb-caption'),lb=document.getElementById('lightbox');img.src=galleryFiltered[idx].src;cap.textContent=galleryFiltered[idx].label;lb.classList.add('open');}
-function closeLightbox(){document.getElementById('lightbox').classList.remove('open');}
-function lbNav(dir){lbIdx=(lbIdx+dir+galleryFiltered.length)%galleryFiltered.length;document.getElementById('lb-img').src=galleryFiltered[lbIdx].src;document.getElementById('lb-caption').textContent=galleryFiltered[lbIdx].label;}
+var galleryAll=[{label:'Brandmark Embroidery Workshop',cat:'embroidery',src:'/portfolio-images/brandmark-embroidery-workshop.webp'},{label:'Brandmark Workshop - Large Format',cat:'workshop',src:'/portfolio-images/brandmark-workshop.webp'},{label:'Brandmark Logo',cat:'branding',src:'/portfolio-images/brandmark-logo.webp'},{label:'Brandmark ICT Branding',cat:'signage',src:'/portfolio-images/brandmark-ict.webp'},{label:'Branded Half Coat',cat:'apparel',src:'/portfolio-images/branded-half-coat.webp'},{label:'Branded Blouse',cat:'apparel',src:'/portfolio-images/branded-blouse.webp'},{label:'Branded Polos',cat:'apparel',src:'/portfolio-images/branded-polos.webp'},{label:'Polos Shirt',cat:'apparel',src:'/portfolio-images/polos-shirt.webp'},{label:'Paper Caps',cat:'apparel',src:'/portfolio-images/paper-caps.webp'},{label:'Apparel Collage Branding',cat:'apparel',src:'/portfolio-images/apparel-collage-branding.webp'},{label:'Collage Aprons and Shirts',cat:'apparel',src:'/portfolio-images/collage-aprons-and-shirts.webp'},{label:'Coca-Cola Gate Branding',cat:'wall',src:'/portfolio-images/coca-cola-gate-branding.webp'},{label:'Coca-Cola Burudika',cat:'wall',src:'/portfolio-images/coca-cola-burudika.webp'},{label:'Coca-Cola Refreshingly Good',cat:'wall',src:'/portfolio-images/coca-cola-refreshingly.webp'},{label:'Chayil Before and After Branding',cat:'signage',src:'/portfolio-images/chayil-before-and-after-branding.webp'},{label:'Chayil Logo',cat:'branding',src:'/portfolio-images/chayil-logo.webp'},{label:'Huduma Centre Desk',cat:'signage',src:'/portfolio-images/huduma-centre-desk.webp'},{label:'Huduma Information Desk',cat:'signage',src:'/portfolio-images/huduma-centre-information-desk.webp'},{label:'Huduma Kenya Branding',cat:'signage',src:'/portfolio-images/huduma-kenya-branding.webp'},{label:'Malaika Fashions',cat:'signage',src:'/portfolio-images/malaika-fashions.webp'},{label:'NCPB Agricultural Hub 3D',cat:'signage',src:'/portfolio-images/ncpb-agricultural-hub-3d.webp'},{label:'NCPB Hub Sign',cat:'signage',src:'/portfolio-images/ncpb-hub-sign.webp'},{label:'NCPB Wall Branding',cat:'wall',src:'/portfolio-images/ncpb-wall-branding.webp'},{label:'Nuru Boutique 3D',cat:'signage',src:'/portfolio-images/nuru-boutique-3d.webp'},{label:'Exclusive Breast Feeding Murals',cat:'wall',src:'/portfolio-images/exclusive-breast-feeding-murals.webp'},{label:'Farm Inputs Wall Arts',cat:'wall',src:'/portfolio-images/farm-inputs-wall-arts.webp'},{label:'Hand Washing Mural',cat:'wall',src:'/portfolio-images/hand-washing-mural.webp'},{label:'World Vision Nutrition Murals',cat:'wall',src:'/portfolio-images/world-vision-nutrition-murals.webp'},{label:'World Vision Responsive Feeding Murals',cat:'wall',src:'/portfolio-images/world-vision-responsive-feeding-murals.webp'},{label:'World Vision Field Jacket',cat:'apparel',src:'/portfolio-images/world-vision-field-jacket.webp'},{label:'World Vision Field Jacket Back',cat:'apparel',src:'/portfolio-images/world-vision-field-jacket-back.webp'},{label:'World Vision Shirts',cat:'apparel',src:'/portfolio-images/world-vision-shirts.webp'},{label:'Commemorative Plaques',cat:'signage',src:'/portfolio-images/commemorative-plaques.webp'},{label:'Digital Printing Banner',cat:'banners',src:'/portfolio-images/digital-printing-banner.webp'},{label:'Roll-Up Banners',cat:'banners',src:'/portfolio-images/roll-up-banners.webp'},{label:'Printed Flyers',cat:'printing',src:'/portfolio-images/printed-flyers.webp'},{label:'Printed Stationery',cat:'printing',src:'/portfolio-images/printed-stationery.webp'},{label:'S4T Savings Box',cat:'printing',src:'/portfolio-images/s4t-savings-box.webp'},{label:'Vehicle Wraps',cat:'branding',src:'/portfolio-images/vehicle-wraps.webp'},{label:'Vijana Ventures',cat:'branding',src:'/portfolio-images/vijana-ventures.webp'},];
+var galleryFiltered=galleryAll.slice();var lbIdx=0;
+(function(){var cards=document.querySelectorAll('.gal-card');cards.forEach(function(card,i){if(i<galleryAll.length){var img=card.querySelector('img');if(img)img.src=galleryAll[i].src;card.onclick=(function(idx){return function(){openLightbox(idx);};})(i);}});galleryFiltered=galleryAll.slice();})();
+function filterGal(cat,btn){document.querySelectorAll('.gfil').forEach(function(b){b.classList.remove('active');});if(btn)btn.classList.add('active');galleryFiltered=cat==='all'?galleryAll.slice():galleryAll.filter(function(x){return x.cat===cat;});var vi=0;document.querySelectorAll('.gal-card').forEach(function(card){var cc=card.getAttribute('data-cat');if(cat==='all'||cc===cat){card.classList.remove('hidden');card.onclick=(function(i){return function(){openLightbox(i);};})(vi);vi++;}else{card.classList.add('hidden');}});}
+function openLightbox(idx){lbIdx=idx;var img=document.getElementById('lb-img'),cap=document.getElementById('lb-caption'),lb=document.getElementById('lightbox');if(!img||!cap||!lb)return;img.src=galleryFiltered[idx].src;cap.textContent=galleryFiltered[idx].label;lb.classList.add('open');document.body.style.overflow='hidden';}
+function closeLightbox(){var lb=document.getElementById('lightbox');if(lb)lb.classList.remove('open');document.body.style.overflow='';}
+function lbNav(dir){lbIdx=(lbIdx+dir+galleryFiltered.length)%galleryFiltered.length;var img=document.getElementById('lb-img'),cap=document.getElementById('lb-caption');if(img)img.src=galleryFiltered[lbIdx].src;if(cap)cap.textContent=galleryFiltered[lbIdx].label;}
+document.addEventListener('keydown',function(e){var lb=document.getElementById('lightbox');if(lb&&lb.classList.contains('open')){if(e.key==='ArrowRight')lbNav(1);else if(e.key==='ArrowLeft')lbNav(-1);else if(e.key==='Escape')closeLightbox();return;}if(e.key==='Escape'){closeContact();closeLegal();}});
+var tx=0,ty=0,tt=0;
+document.addEventListener('touchstart',function(e){tx=e.touches[0].clientX;ty=e.touches[0].clientY;tt=Date.now();},{passive:true});
+document.addEventListener('touchend',function(e){var dx=e.changedTouches[0].clientX-tx,dy=e.changedTouches[0].clientY-ty,dt=Date.now()-tt;if(Math.abs(dx)>120&&dt<400&&Math.abs(dx)>Math.abs(dy)*2){var i=PANELS.indexOf(cur);if(dx<0&&i<PANELS.length-1)go(PANELS[i+1]);else if(dx>0&&i>0)go(PANELS[i-1]);}},{passive:true});
+var cel=document.getElementById('cur'),crl=document.getElementById('curRing');
+if(cel&&crl&&window.matchMedia('(pointer:fine)').matches){var mx=0,my=0,rx=0,ry=0;document.addEventListener('mousemove',function(e){mx=e.clientX;my=e.clientY;});(function tick(){cel.style.left=mx+'px';cel.style.top=my+'px';rx+=(mx-rx)*.12;ry+=(my-ry)*.12;crl.style.left=rx+'px';crl.style.top=ry+'px';requestAnimationFrame(tick);})();}
+var dirData=[{id:"bm-001",name:"BrandMark Systems Ltd",featured:true,verified:true,cats:["graphic-design","digital-print","large-format","signage","apparel","promotional"],tagline:"Inspired Branding...",icon:"🖨️",desc:"Your one-stop centre for all branding, printing and signage needs in Eldoret and beyond. Wall branding, corporate wear, roll-up banners, logos and more.",location:"Eldoret",phone:"+254 736 900 750",whatsapp:"254725776082",website:"https://brandmarkenya.com"},{id:"bm-002",name:"PrintHouse Nairobi",featured:true,verified:true,cats:["digital-print","large-format","packaging"],tagline:"Precision printing, every time",icon:"🖼️",desc:"Large-format digital printing specialists serving Nairobi's corporate market. Banners, posters, vehicle wraps, packaging and more. Same-day service available.",location:"Nairobi",phone:"+254 722 100 200",whatsapp:"254722100200",website:""},{id:"bm-003",name:"SignCraft Kenya",featured:false,verified:true,cats:["signage","large-format"],tagline:"Signs that sell",icon:"🪧",desc:"Professional signage fabrication and installation across Kenya. 3D letters, illuminated signs, pylons, shop fronts and wayfinding systems.",location:"Kisumu",phone:"+254 711 300 400",whatsapp:"254711300400",website:""},{id:"bm-004",name:"ThreadBrands Apparel",featured:false,verified:false,cats:["apparel","promotional"],tagline:"Wear your brand with pride",icon:"👕",desc:"Custom branded apparel, embroidery and screen printing for corporates, NGOs, schools and events. T-shirts, polo shirts, caps, jackets and full uniform programmes.",location:"Nairobi",phone:"+254 701 500 600",whatsapp:"254701500600",website:""},{id:"bm-005",name:"CreativeEdge Design Studio",featured:false,verified:true,cats:["graphic-design","web-design"],tagline:"Design that means business",icon:"✏️",desc:"Full-service graphic design studio in Nakuru. Brand identity, logo design, packaging design, marketing materials and website design for SMEs.",location:"Nakuru",phone:"+254 733 700 800",whatsapp:"254733700800",website:""},{id:"bm-006",name:"EventPrint Kenya",featured:false,verified:false,cats:["events","promotional","large-format"],tagline:"Your event. Your brand. Our craft.",icon:"🎪",desc:"Specialist event branding and print solutions. Backdrops, pull-up banners, branded gazebos, event flags and promotional merchandise for corporate events.",location:"Nairobi",phone:"+254 720 900 100",whatsapp:"254720900100",website:""},{id:"bm-007",name:"First Choice Cleaning Services Ltd",featured:false,verified:true,cats:["professional"],tagline:"Professional cleaning, done right",icon:"🧹",desc:"First Choice Cleaning Services Ltd is a professional cleaning company in Nairobi providing office and commercial cleaning, contract cleaning, post-construction, house, carpet and sofa cleaning.",location:"Nairobi",phone:"+254 725 929 303",whatsapp:"254725929303",website:"https://www.fchoice.co.ke/"},{id:"bm-008",name:"Champions Movers",featured:false,verified:true,cats:["professional"],tagline:"Reliable Moving Services in Eldoret",icon:"🚚",desc:"Professional moving company in Eldoret offering house moving, office relocation, furniture transport and parcel delivery across Uasin Gishu and beyond. Fast, safe and affordable.",location:"Eldoret",phone:"+254 725 148 143",whatsapp:"254725148143",website:""},{id:"bm-009",name:"Galaxy Towing and Breakdown",featured:false,verified:true,cats:["automotive","professional"],tagline:"Flatbed Towing And Breakdown Services In Nairobi",icon:"🚛",desc:"Professional flatbed towing and breakdown services in Nairobi. 24/7 emergency roadside assistance for cars, SUVs and trucks. Fast response across Thika Road, Mombasa Road, Waiyaki Way and all Nairobi estates. Affordable rates.",location:"Nairobi",phone:"+254 707 539 673",whatsapp:"254707539673",website:"https://www.galaxytowing.co.ke"},];
+var dirActiveCat="all";var dirActiveSearch="";
+function dirInit(){dirRender(dirData);}
+function dirFilter(){dirActiveSearch=document.getElementById("dirSearch").value.toLowerCase().trim();dirApply();}
+function dirSetCat(btn,cat){document.querySelectorAll(".dcat").forEach(function(b){b.classList.remove("active");});btn.classList.add("active");dirActiveCat=cat;dirApply();}
+function dirApply(){var q=dirActiveSearch;var cat=dirActiveCat;var results=dirData.filter(function(b){var matchCat=cat==="all"||b.cats.indexOf(cat)!==-1;var matchQ=!q||b.name.toLowerCase().indexOf(q)!==-1||b.desc.toLowerCase().indexOf(q)!==-1||b.location.toLowerCase().indexOf(q)!==-1||b.tagline.toLowerCase().indexOf(q)!==-1;return matchCat&&matchQ;});dirRender(results);}
+function dirReset(){document.getElementById("dirSearch").value="";dirActiveSearch="";dirActiveCat="all";document.querySelectorAll(".dcat").forEach(function(b){b.classList.toggle("active",b.getAttribute("data-cat")==="all");});dirApply();}
+function dirRender(list){var grid=document.getElementById("dirGrid");var countEl=document.getElementById("dirCount");var noRes=document.getElementById("dirNoResults");var label=document.getElementById("dirResultsLabel");if(countEl)countEl.textContent=list.length;if(document.getElementById("ds-total"))document.getElementById("ds-total").textContent=dirData.length;if(list.length===0){grid.innerHTML="";if(noRes)noRes.classList.add("show");if(label)label.style.display="none";return;}if(noRes)noRes.classList.remove("show");if(label)label.style.display="";var sorted=list.slice().sort(function(a,b){return (b.featured?1:0)-(a.featured?1:0);});grid.innerHTML=sorted.map(function(b){var catLabels={"graphic-design":"Graphic Design","digital-print":"Digital Print","large-format":"Large Format","signage":"Signage","apparel":"Apparel","promotional":"Promo Items","packaging":"Packaging","photography":"Photography","web-design":"Web Design","events":"Events","construction":"Construction & Hardware","automotive":"Automotive","real-estate":"Real Estate","health-beauty":"Health & Beauty","food-beverage":"Food & Beverage","fashion":"Fashion & Tailoring","electronics":"Electronics & IT","agriculture":"Agriculture","education":"Education & Training","finance":"Finance & Insurance","legal":"Legal Services","logistics":"Logistics & Transport","hospitality":"Hospitality & Travel","professional":"Professional Services","other":"Other"};var cats=b.cats.slice(0,3).map(function(c){return "<span class=\"biz-cat-tag\">"+(catLabels[c]||c)+"</span>";}).join("");var verified=b.verified?"<div class=\"biz-verified\">&#10003; Verified Listing</div>":"";var website=b.website?"<a href=\""+b.website+"\" target=\"_blank\" rel=\"noopener\" class=\"biz-btn-o\">Website</a>":"";var featured=b.featured?" featured":"";return "<div class=\"biz-card"+featured+"\">"+"<div class=\"biz-top\">"+"<div class=\"biz-icon\">"+b.icon+"</div>"+"<div><div class=\"biz-name\">"+b.name+"</div>"+"<div class=\"biz-tagline\">"+b.tagline+"</div></div>"+"</div>"+verified+"<div class=\"biz-cats\">"+cats+"</div>"+"<div class=\"biz-desc\">"+b.desc+"</div>"+"<div class=\"biz-loc\">"+b.location+"</div>"+"<div class=\"biz-actions\">"+"<a href=\"https://wa.me/"+b.whatsapp+"?text=Hello%20"+encodeURIComponent(b.name)+"\" target=\"_blank\" rel=\"noopener\" class=\"biz-btn-c\">&#128241; WhatsApp</a>"+"<a href=\"tel:"+b.phone.replace(/\s/g,"")+"\" class=\"biz-btn-o\">&#128222; Call</a>"+website+"</div>"+"</div>";}).join("");}
+var _origGo=go;go=function(id){_origGo(id);if(id==="directory")dirInit();};
 document.addEventListener('DOMContentLoaded',function(){var slider=document.getElementById('heroSlider');if(!slider)return;var slides=slider.querySelectorAll('.hero-slide');if(slides.length<2)return;var current=0;setInterval(function(){slides[current].classList.remove('active');current=(current+1)%slides.length;slides[current].classList.add('active');},4000);});
-document.addEventListener('keydown',function(e){if(e.key==='Escape'){closeContact();closeLegal();closeLightbox();}});
+</script>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>
+emailjs.init("7753IOWgjjtOoCq6V");
+document.getElementById('dirForm').addEventListener('submit',function(e){e.preventDefault();var form=this;var val=function(field){var el=form.querySelector('[name="'+field+'"]');return el?el.value:'';};var contactName=val('contact_name');var businessName=val('business_name');form.querySelector('[name="user_name"]').value=contactName;form.querySelector('[name="user_email"]').value=val('email');form.querySelector('[name="subject"]').value='New Business Directory Listing: '+businessName;form.querySelector('[name="message"]').value='Business Name: '+businessName+'\n'+'Business Type: '+val('business_type')+'\n'+'Contact Name: '+contactName+'\n'+'Phone / WhatsApp: '+val('phone')+'\n'+'Location: '+val('location')+'\n'+'Description: '+val('description')+'\n'+'Website / Social: '+val('website');emailjs.sendForm("service_47tm0gp","template_96dy9vf",form).then(()=>{alert("✅ Application sent! We’ll review and contact you soon.");document.getElementById('dirForm').reset();}).catch((err)=>{alert("❌ Error sending. Please try again.");console.error(err);});});
 </script>
 </body>
 </html>
