@@ -6,242 +6,241 @@
 <title>BrandMark Kenya — Bold Brands. Real Impact.</title>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-:root{--teal:#00c8d4;--teal-dark:#00969f;--ink:#0a1931;--paper:#f8fbfb}
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--paper);color:var(--ink);line-height:1.6;overflow-x:hidden}
-img{display:block;max-width:100%}
-a{text-decoration:none;color:inherit}
-button{cursor:pointer;border:0;background:none;font-family:inherit}
-
-/* NAV */
-.nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;justify-content:space-between;align-items:center;padding:12px 20px;background:rgba(255,255,255,.94);backdrop-filter:blur(14px);border-bottom:1px solid rgba(0,200,212,.12)}
-.logo{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:-.02em}
-.logo img{height:34px;width:auto}
-.navlinks{display:flex;gap:20px;align-items:center;font-weight:600;font-size:.9rem}
-.cta{background:var(--teal-dark);color:#fff;padding:10px 18px;border-radius:999px;font-weight:700;transition:.2s}
-.cta:hover{background:#007a82}
-
-/* MARQUEE REMOVED - as requested */
-
-/* LAYOUT */
-.main{max-width:1340px;margin:0 auto;padding:82px 18px 0}
-.page{display:none}
-.page.active{display:block}
-.badge{display:inline-flex;align-items:center;gap:8px;padding:6px 12px;border-radius:999px;border:1px solid rgba(0,200,212,.22);font-size:.75rem;font-weight:700;letter-spacing:.04em;background:#fff}
-.badge i{width:6px;height:6px;background:var(--teal);border-radius:50%;display:inline-block}
-
-/* HERO - SLIDE LEFT SMOOTH NOT FADE */
-.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:18px;align-items:start;margin-top:12px}
-@media(max-width:980px){.hero-grid{grid-template-columns:1fr}}
-.hero-left h1{font-family:'Bebas Neue';font-size:clamp(3rem,7vw,5.5rem);line-height:.9;letter-spacing:.01em;margin:14px 0 10px}
-.hero-left h1 em{font-style:normal;color:var(--teal-dark)}
-.hero-left p{max-width:560px;opacity:.8;font-size:1.02rem}
-.hero-actions{margin-top:18px;display:flex;gap:10px;flex-wrap:wrap}
-.btn-primary{background:var(--teal-dark);color:#fff;padding:12px 20px;border-radius:999px;font-weight:700}
-.btn-ghost{background:#fff;border:1px solid rgba(0,200,212,.28);color:var(--teal-dark);padding:12px 20px;border-radius:999px;font-weight:700}
-.hero-stats{margin-top:22px;display:flex;gap:18px;flex-wrap:wrap}
-.hero-stats div{border-left:1px solid rgba(0,0,0,.1);padding-left:14px}
-.hero-stats div:first-child{border-left:0;padding-left:0}
-.hero-stats strong{font-size:1.35rem;display:block;line-height:1}
-.hero-stats span{font-size:.8rem;opacity:.7}
-
-/* HERO SLIDER SLIDE LEFT */
-#heroSlider{position:relative!important;width:100%!important;height:420px!important;min-height:420px!important;overflow:hidden!important;border-radius:16px!important;background:#001215!important;border:1px solid rgba(0,200,212,.18)!important}
-#heroSlider .hero-track{display:flex!important;height:100%!important;width:100%!important;transition:transform .7s cubic-bezier(.4,0,.2,1)!important;will-change:transform!important}
-#heroSlider .hero-slide{flex:0 0 100%!important;min-width:100%!important;height:100%!important;position:relative!important;opacity:1!important}
-#heroSlider .hero-slide img{width:100%!important;height:100%!important;object-fit:cover!important}
-#heroSlider .cap{position:absolute;left:0;right:0;bottom:0;padding:10px 14px;background:linear-gradient(0deg,rgba(0,0,0,.78),transparent);color:#fff;font-size:.7rem;letter-spacing:.02em}
-@media(max-width:980px){#heroSlider{height:300px!important;min-height:300px!important}}
-
-/* WORK GRID */
-.section-head{display:flex;justify-content:space-between;align-items:end;gap:12px;margin:28px 0 14px}
-.section-head h2{font-family:'Bebas Neue';font-size:2.2rem;line-height:.9}
-.filters{display:flex;gap:8px;flex-wrap:wrap}
-.filters button{padding:7px 12px;border-radius:999px;border:1px solid rgba(0,0,0,.12);background:#fff;font-size:.78rem;font-weight:600}
-.filters button.active{background:var(--ink);color:#fff;border-color:var(--ink)}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-@media(max-width:980px){.grid{grid-template-columns:1fr 1fr}}
-@media(max-width:640px){.grid{grid-template-columns:1fr}}
-.card{border-radius:14px;overflow:hidden;background:#fff;border:1px solid rgba(0,0,0,.06);cursor:pointer;transition:.22s}
-.card:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(0,0,0,.08)}
-.card img{width:100%;height:240px;object-fit:cover;background:#001215}
-.card .meta{padding:11px 12px;display:flex;justify-content:space-between;align-items:center;gap:10px}
-.card .meta h3{font-size:.92rem;line-height:1.2}
-.card .meta span{font-size:.7rem;padding:4px 8px;border-radius:999px;background:#f0fafa;border:1px solid rgba(0,200,212,.18)}
-
-/* ITEM 03 JACKET FIX */
-img[src*="world-vision-field-jacket"]{transform:scale(1.38)!important;object-position:center top!important;background:#001215!important}
-
-/* SERVICES */
-.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:14px}
-@media(max-width:900px){.svc-grid{grid-template-columns:1fr}}
-.svc{padding:18px;border-radius:14px;background:#fff;border:1px solid rgba(0,0,0,.06)}
-.svc h3{font-size:1.05rem}
-
-footer{margin-top:34px;background:#0a1931;color:#cfeff1;padding:26px 18px}
-footer .foot{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;max-width:1340px;margin:0 auto}
-footer a{opacity:.85}footer a:hover{opacity:1;color:#fff}
-.foot-build{margin-top:14px;display:flex;align-items:center;gap:8px;font-size:.72rem;opacity:.6}
+  :root{
+    --teal:#00c8d4;
+    --teal-dark:#00969f;
+    --ink:#0a1931;
+    --paper:#f8fbfb;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Plus Jakarta Sans',sans-serif;
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.6;
+    overflow-x:hidden;
+  }
+  img{display:block;max-width:100%}
+  a{text-decoration:none;color:inherit}
+  button{cursor:pointer;border:0;background:none;font-family:inherit}
+  .nav{
+    position:fixed;top:0;left:0;right:0;z-index:1000;
+    display:flex;justify-content:space-between;align-items:center;
+    padding:14px 20px;
+    background:rgba(255,255,255,.98);
+    backdrop-filter:blur(14px);
+    border-bottom:1px solid rgba(0,200,212,.12);
+  }
+  .logo{
+    display:flex;align-items:center;gap:10px;
+    font-weight:800;font-size:1.15rem;white-space:nowrap;
+  }
+  .logo img{height:36px;border-radius:50%}
+  .logo small{color:var(--teal-dark);letter-spacing:.14em;font-size:.8rem}
+  .navlinks{display:flex;gap:22px;align-items:center;font-weight:600;font-size:.92rem}
+  .cta{background:var(--teal-dark);color:#fff;padding:10px 20px;border-radius:999px;font-weight:700}
+  .hamburger{display:none;font-size:1.8rem}
+  @media(max-width:1050px){
+    .navlinks{
+      position:fixed;top:66px;left:0;right:0;background:#fff;
+      border-bottom:1px solid rgba(0,0,0,.08);
+      flex-direction:column;align-items:flex-start;
+      padding:20px 24px;display:none;gap:16px;
+      box-shadow:0 14px 30px rgba(0,0,0,.08);
+    }
+    .navlinks.open{display:flex}
+    .hamburger{display:block}
+  }
+  .main{max-width:1340px;margin:0 auto;padding:90px 18px 0}
+  .page{display:none}
+  .page.active{display:block}
+  .badge{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:6px 12px;border-radius:999px;
+    border:1px solid rgba(0,200,212,.22);
+    font-size:.75rem;font-weight:700;background:#fff;
+  }
+  .badge i{width:6px;height:6px;background:var(--teal);border-radius:50%;display:inline-block}
+  .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:22px;margin-top:16px}
+  @media(max-width:980px){.hero-grid{grid-template-columns:1fr}}
+  .hero-left h1{
+    font-family:'Bebas Neue';
+    font-size:clamp(3rem,7vw,5.8rem);
+    line-height:.88;margin:16px 0 12px;
+  }
+  .hero-left h1 em{font-style:normal;color:var(--teal-dark)}
+  .hero-left p{max-width:580px;opacity:.8;font-size:1.05rem}
+  .hero-actions{margin-top:20px;display:flex;gap:12px;flex-wrap:wrap}
+  .btn-primary{background:var(--teal-dark);color:#fff;padding:13px 22px;border-radius:999px;font-weight:700;display:inline-block}
+  .btn-ghost{background:#fff;border:1px solid rgba(0,200,212,.28);color:var(--teal-dark);padding:13px 22px;border-radius:999px;font-weight:700;display:inline-block}
+  #heroSlider{
+    position:relative;width:100%;height:460px;min-height:460px;
+    overflow:hidden;border-radius:20px;background:#001215;
+    border:1px solid rgba(0,200,212,.18);
+  }
+  #heroSlider .hero-track{
+    display:flex;height:100%;width:100%;
+    transition:transform .75s cubic-bezier(.4,0,.2,1);will-change:transform;
+  }
+  #heroSlider .hero-slide{flex:0 0 100%;min-width:100%;height:100%;position:relative}
+  #heroSlider .hero-slide img{width:100%;height:100%;object-fit:cover}
+  #heroSlider .cap{
+    position:absolute;left:0;right:0;bottom:0;
+    padding:12px 16px;
+    background:linear-gradient(0deg,rgba(0,0,0,.78),transparent);
+    color:#fff;font-size:.78rem;
+  }
+  @media(max-width:980px){#heroSlider{height:320px;min-height:320px}}
+  .section-head{display:flex;justify-content:space-between;align-items:end;gap:12px;margin:32px 0 16px;flex-wrap:wrap}
+  .section-head h2{font-family:'Bebas Neue';font-size:2.4rem;line-height:.9}
+  .filters{display:flex;gap:8px;flex-wrap:wrap}
+  .filters button{padding:8px 14px;border-radius:999px;border:1px solid rgba(0,0,0,.12);background:#fff;font-size:.8rem;font-weight:600}
+  .filters button.active{background:var(--ink);color:#fff}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  @media(max-width:980px){.grid{grid-template-columns:1fr 1fr}}
+  @media(max-width:640px){.grid{grid-template-columns:1fr}}
+  .card{border-radius:16px;overflow:hidden;background:#fff;border:1px solid rgba(0,0,0,.06);cursor:pointer;transition:.22s}
+  .card:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(0,0,0,.09)}
+  .card img{width:100%;height:260px;object-fit:cover;background:#001215}
+  .card .meta{padding:12px 14px;display:flex;justify-content:space-between;align-items:center;gap:10px}
+  .card .meta h3{font-size:.95rem}
+  .card .meta span{font-size:.72rem;padding:4px 10px;border-radius:999px;background:#f0fafa;border:1px solid rgba(0,200,212,.18)}
+  img[src*="world-vision-field-jacket"]{transform:scale(1.38)!important;object-position:center top!important;background:#001215!important}
+  .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:18px}
+  @media(max-width:900px){.svc-grid{grid-template-columns:1fr}}
+  .svc{padding:20px;border-radius:16px;background:#fff;border:1px solid rgba(0,0,0,.06)}
+  #p-contact{background:#f6fbfb;border-radius:20px;padding:28px 20px;margin-top:12px;border:1px solid rgba(0,200,212,.12)}
+  #p-contact h2{font-family:'Bebas Neue';font-size:clamp(2.6rem,6vw,4rem);line-height:.9;color:var(--ink)}
+  footer{margin-top:40px;background:#0a1931;color:#cfeff1;padding:32px 20px}
+  footer .foot{display:flex;justify-content:space-between;gap:22px;flex-wrap:wrap;max-width:1340px;margin:0 auto}
+  footer a{opacity:.9}footer a:hover{opacity:1;color:#fff}
 </style>
 </head>
 <body>
-
 <div class="nav">
-<div class="logo"><img src="/portfolio-images/brandmark-logo.webp" alt="BrandMark"> BrandMark <small style="color:var(--teal-dark);letter-spacing:.12em">KENYA</small></div>
-<div class="navlinks">
-<a href="#" onclick="showPage('home')">Work</a>
-<a href="#" onclick="showPage('services')">Services</a>
-<a href="#" onclick="showPage('about')">About</a>
-<a href="#" onclick="showPage('contact')">Contact</a>
-<button class="cta" onclick="showPage('contact')">Let's Talk</button>
+  <div class="logo"><img src="/portfolio-images/brandmark-logo.webp" alt="BrandMark"> BrandMark <small>KENYA</small></div>
+  <div style="display:flex;align-items:center;gap:10px">
+    <div class="navlinks" id="navLinks">
+      <a href="#" onclick="showPage('home');closeNav()">Work</a>
+      <a href="#" onclick="showPage('services');closeNav()">Services</a>
+      <a href="#" onclick="showPage('about');closeNav()">About</a>
+      <a href="#" onclick="showPage('directory');closeNav()">Directory</a>
+      <a href="#" onclick="showPage('blog');closeNav()">Blog</a>
+      <a href="#" onclick="showPage('advertise');closeNav()">Advertise</a>
+      <a href="#" onclick="showPage('contact');closeNav()">Contact</a>
+      <button class="cta" onclick="showPage('contact');closeNav()">Let's Talk</button>
+    </div>
+    <button class="hamburger" onclick="toggleNav()">☰</button>
+  </div>
 </div>
-</div>
-
 <div class="main">
-
-<!-- HOME -->
-<div id="p-home" class="page active">
-<div class="hero-grid">
-<div class="hero-left">
-<div class="badge"><i></i> Nairobi, Kenya • Creative Agency</div>
-<h1>Bold Brands.<br><em>Real Impact.</em></h1>
-<p>We help Kenyan businesses grow with modern branding, digital design, printing, signage, embroidery & 3D that drives results.</p>
-<div class="hero-actions"><button class="btn-primary" onclick="showPage('work')">View Portfolio →</button><button class="btn-ghost" onclick="showPage('contact')">Get a Quote</button></div>
-<div class="hero-stats"><div><strong>50+</strong><span>Brands Delivered<br>Since 2019</span></div><div><strong>98%</strong><span>Client Retention<br>Trusted Nationwide</span></div><div><strong>24/7</strong><span>Support<br>Dedicated Team</span></div></div>
+  <div id="p-home" class="page active">
+    <div class="hero-grid">
+      <div class="hero-left">
+        <div class="badge"><i></i> Eldoret, Kenya • Creative Agency Since 2019</div>
+        <h1>Bold Brands.<br><em>Real Impact.</em></h1>
+        <p>We help Kenyan businesses grow with modern branding, digital design, printing, signage, embroidery & 3D that drives results.</p>
+        <div class="hero-actions">
+          <button class="btn-primary" onclick="showPage('work')">View Portfolio →</button>
+          <button class="btn-ghost" onclick="showPage('contact')">Get a Quote</button>
+        </div>
+      </div>
+      <div id="heroSlider">
+        <div class="hero-track" id="heroTrack">
+          <div class="hero-slide"><img src="/portfolio-images/brandmark-embroidery-workshop.webp" alt=""><div class="cap">BrandMark — Embroidery Workshop • Eldoret</div></div>
+          <div class="hero-slide"><img src="/portfolio-images/huduma-centre-desk.webp" alt=""><div class="cap">Huduma Kenya — Desk Branding</div></div>
+          <div class="hero-slide"><img src="/portfolio-images/apparel-collage-branding.webp" alt=""><div class="cap">Apparel Branding</div></div>
+          <div class="hero-slide"><img src="/portfolio-images/coca-cola-gate-branding.webp" alt=""><div class="cap">Coca-Cola — Gate Branding</div></div>
+          <div class="hero-slide"><img src="/portfolio-images/nuru-boutique-3d.webp" alt=""><div class="cap">Nuru Boutique — 3D Signage</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="section-head">
+      <h2>Selected Work — 41 Projects</h2>
+      <div class="filters" id="homeFilters"></div>
+    </div>
+    <div class="grid" id="workGridHome"></div>
+  </div>
+  <div id="p-work" class="page">
+    <div class="section-head"><h2>All Work</h2><div class="filters" id="workFilters"></div></div>
+    <div class="grid" id="workGrid"></div>
+  </div>
+  <div id="p-work-detail" class="page">
+    <button onclick="showPage('work')" style="font-weight:700;margin-bottom:14px">← Back to Work</button>
+    <div id="workDetail"></div>
+  </div>
+  <div id="p-services" class="page">
+    <h2 style="font-family:'Bebas Neue';font-size:3.2rem">Services</h2>
+    <div class="svc-grid">
+      <div class="svc"><h3>Brand Identity & Logo</h3><p>Modern logos that stand out.</p></div>
+      <div class="svc"><h3>Printing & Packaging</h3><p>Business cards, brochures.</p></div>
+      <div class="svc"><h3>Signage & 3D Fabrication</h3><p>3D letters, lightbox, CNC.</p></div>
+      <div class="svc"><h3>Apparel, Embroidery & Uniforms</h3><p>World Vision jackets, uniforms.</p></div>
+      <div class="svc"><h3>Large Format & Billboards</h3><p>Gate branding like Coca-Cola.</p></div>
+      <div class="svc"><h3>Digital & Social Branding</h3><p>Social kits, website assets.</p></div>
+    </div>
+  </div>
+    <div id="p-about" class="page">
+    <h2 style="font-family:'Bebas Neue';font-size:3.2rem">About BrandMark Kenya</h2>
+    <p style="max-width:720px;margin-top:12px;opacity:.85">Eldoret-based powerhouse. From Huduma Centre to World Vision, Coca-Cola to Nuru Boutique — we deliver signage, embroidery, apparel, 3D and print that converts. Since 2019.</p>
+  </div>
+  <div id="p-directory" class="page">
+    <h2 style="font-family:'Bebas Neue';font-size:3.2rem">Business Directory</h2>
+    <p style="max-width:720px;margin-top:12px;opacity:.85">Find trusted brands we've worked with. To list: 0725776082 · 0797132084 · 0736900750 or info@brandmarkenya.com</p>
+    <div class="svc-grid">
+      <div class="svc"><h3>Huduma Kenya</h3></div>
+      <div class="svc"><h3>World Vision Kenya</h3></div>
+      <div class="svc"><h3>Coca-Cola</h3></div>
+      <div class="svc"><h3>Nuru Boutique</h3></div>
+      <div class="svc"><h3>Malaika Fashions</h3></div>
+      <div class="svc"><h3>NCPB</h3></div>
+    </div>
+  </div>
+  <div id="p-blog" class="page">
+    <h2 style="font-family:'Bebas Neue';font-size:3.2rem">Insights & Blog</h2>
+    <p style="max-width:720px;margin-top:12px;opacity:.85">Branding tips, printing guides. Images from /blog-images</p>
+    <div class="svc-grid">
+      <div class="svc"><h3>How 3D Signage Grows Foot Traffic</h3></div>
+      <div class="svc"><h3>Choosing Embroidery vs Print</h3></div>
+      <div class="svc"><h3>Branding on a Budget</h3></div>
+    </div>
+  </div>
+  <div id="p-advertise" class="page">
+    <h2 style="font-family:'Bebas Neue';font-size:3.2rem">Advertise With Us</h2>
+    <p style="max-width:720px;margin-top:12px;opacity:.85">Billboards, gate branding like Coca-Cola, shopfronts. From KES 5,000/month. Call 0725776082 / 0797132084 / 0736900750 or info@brandmarkenya.com</p>
+    <div style="margin-top:18px;display:flex;gap:10px;flex-wrap:wrap">
+      <a class="btn-primary" href="https://wa.me/254725776082" target="_blank">WhatsApp 0725 776082</a>
+      <a class="btn-ghost" href="mailto:info@brandmarkenya.com">info@brandmarkenya.com</a>
+    </div>
+  </div>
+  <div id="p-contact" class="page">
+    <h2>LET'S TALK</h2>
+    <p style="margin-top:12px;font-size:1.05rem;line-height:1.6">Eldoret, Kenya<br>Official Contacts: 0725776082 · 0797132084 · 0736900750<br>Email: info@brandmarkenya.com</p>
+    <div style="margin-top:18px;display:flex;gap:10px;flex-wrap:wrap">
+      <a class="btn-primary" href="https://wa.me/254725776082" target="_blank">WhatsApp 0725 776082</a>
+      <a class="btn-ghost" href="tel:+254725776082">Call 0725776082</a>
+      <a class="btn-ghost" href="tel:+254797132084">Call 0797132084</a>
+      <a class="btn-ghost" href="tel:+254736900750">Call 0736900750</a>
+      <a class="btn-ghost" href="mailto:info@brandmarkenya.com">info@brandmarkenya.com</a>
+    </div>
+  </div>
+  <div id="p-privacy" class="page">
+    <h2 style="font-family:'Bebas Neue';font-size:2.8rem">Privacy Policy — Sept 12, 2025</h2>
+    <div style="margin-top:12px;font-size:.92rem;max-width:800px;opacity:.9"><p><strong>Updated Sept 12.</strong> BrandMark Kenya (info@brandmarkenya.com, 0725776082 / 0797132084 / 0736900750) respects your privacy.</p></div>
+  </div>
+  <div id="p-terms" class="page">
+    <h2 style="font-family:'Bebas Neue';font-size:2.8rem">Terms of Service — Sept 12, 2025</h2>
+    <div style="margin-top:12px;font-size:.92rem;max-width:800px;opacity:.9"><p><strong>Updated Sept 12.</strong> Services custom quoted via 0725776082 / 0797132084 / 0736900750. 50% deposit.</p></div>
+  </div>
 </div>
-
-<div id="heroSlider">
-<div class="hero-track" id="heroTrack">
-<div class="hero-slide"><img src="/portfolio-images/brandmark-embroidery-workshop.webp" alt="Embroidery Workshop"><div class="cap">BrandMark — Embroidery Workshop • Eldoret</div></div>
-<div class="hero-slide"><img src="/portfolio-images/huduma-centre-desk.webp" alt="Huduma Centre"><div class="cap">Huduma Kenya — Desk Branding</div></div>
-<div class="hero-slide"><img src="/portfolio-images/apparel-collage-branding.webp" alt="Apparel Collage"></div>
-<div class="hero-slide"><img src="/portfolio-images/coca-cola-gate-branding.webp" alt="Coca-Cola Gate"></div>
-<div class="hero-slide"><img src="/portfolio-images/nuru-boutique-3d.webp" alt="Nuru Boutique 3D"></div>
-</div>
-</div>
-</div>
-
-<div class="section-head"><h2>Selected Work — 41 Projects</h2><div class="filters" id="homeFilters"></div></div>
-<div class="grid" id="workGridHome"></div>
-</div>
-
-<div id="p-work" class="page">
-<div class="section-head"><h2>All Work</h2><div class="filters" id="workFilters"></div></div>
-<div class="grid" id="workGrid"></div>
-</div>
-
-<div id="p-work-detail" class="page">
-<button onclick="showPage('work')" style="font-weight:700;margin-bottom:12px">← Back to Work</button>
-<div id="workDetail"></div>
-</div>
-<div id="p-services" class="page">
-<h2 style="font-family:'Bebas Neue';font-size:3rem">Services</h2>
-<div class="svc-grid">
-<div class="svc"><h3>Brand Identity & Logo</h3></div>
-<div class="svc"><h3>Printing & Packaging</h3></div>
-<div class="svc"><h3>Signage & 3D Fabrication</h3></div>
-<div class="svc"><h3>Apparel, Embroidery & Uniforms</h3></div>
-<div class="svc"><h3>Large Format & Billboards</h3></div>
-<div class="svc"><h3>Digital & Social Branding</h3></div>
-</div>
-</div>
-
-<div id="p-about" class="page">
-<h2 style="font-family:'Bebas Neue';font-size:3rem">About BrandMark Kenya</h2>
-<p style="max-width:720px;margin-top:10px;opacity:.85">Eldoret-based branding powerhouse. From Huduma Centre to World Vision, Coca-Cola to Nuru Boutique — we deliver signage, embroidery, apparel, 3D and print that converts. Since 2019.</p>
-</div>
-
-<div id="p-contact" class="page">
-<h2 style="font-family:'Bebas Neue';font-size:3rem">Let's Talk</h2>
-<p style="margin-top:8px">Eldoret, Kenya<br>Official Contacts: 0725776082 · 0797132084 · 0736900750<br>Email: info@brandmarkenya.com</p>
-<div style="margin-top:16px;display:flex;gap:10px;flex-wrap:wrap">
-<a class="btn-primary" href="https://wa.me/254725776082" target="_blank">WhatsApp 0725 776082</a>
-<a class="btn-ghost" href="tel:+254725776082">Call 0725776082</a>
-<a class="btn-ghost" href="tel:+254797132084">Call 0797132084</a>
-<a class="btn-ghost" href="tel:+254736900750">Call 0736900750</a>
-<a class="btn-ghost" href="mailto:info@brandmarkenya.com">info@brandmarkenya.com</a>
-</div>
-</div>
-
-<div id="p-privacy" class="page">
-<h2 style="font-family:'Bebas Neue';font-size:2.6rem">Privacy Policy — Sept 12, 2025</h2>
-<div style="margin-top:12px;font-size:.92rem;line-height:1.7;max-width:800px;opacity:.9">
-<p><strong>Updated Sept 12.</strong> BrandMark Kenya (info@brandmarkenya.com, 0725776082 / 0797132084 / 0736900750) respects your privacy. We collect only what you submit via forms, WhatsApp, calls or email.</p>
-<p style="margin-top:10px">No selling data. Hosting via GitHub Pages may log anonymized visits.</p>
-<p style="margin-top:10px">Contact us for deletion: info@brandmarkenya.com</p>
-</div>
-</div>
-
-<div id="p-terms" class="page">
-<h2 style="font-family:'Bebas Neue';font-size:2.6rem">Terms of Service — Sept 12, 2025</h2>
-<div style="margin-top:12px;font-size:.92rem;line-height:1.7;max-width:800px;opacity:.9">
-<p><strong>Updated Sept 12.</strong> Services custom quoted via 0725776082 / 0797132084 / 0736900750. 50% deposit. Balance on delivery.</p>
-<p style="margin-top:10px">Portfolio images property of clients shown for demonstration.</p>
-</div>
-</div>
-
-</div>
-
 <footer>
-<div class="foot">
-<div><strong>BrandMark Kenya</strong><br><span style="font-size:.85rem;opacity:.7">Bold Brands. Real Impact. — Eldoret • Since 2019</span><br><span style="font-size:.85rem;opacity:.7">0725776082 · 0797132084 · 0736900750<br>info@brandmarkenya.com</span><br><div style="margin-top:10px;display:flex;gap:10px"><a href="#" onclick="showPage('privacy')">Privacy (Sept 12)</a><a href="#" onclick="showPage('terms')">Terms (Sept 12)</a></div></div>
-<div><strong>Follow</strong><br><div style="margin-top:8px;display:flex;gap:12px;flex-wrap:wrap"><a href="https://www.tiktok.com/@brandmarkkenya" target="_blank">TikTok</a><a href="https://www.instagram.com/brandmarkkenya" target="_blank">Instagram</a><a href="https://www.facebook.com/brandmarkkenya" target="_blank">Facebook</a><a href="https://wa.me/254725776082" target="_blank">WhatsApp</a></div></div>
-<div><strong>Contact</strong><br><span style="font-size:.85rem;opacity:.7">Eldoret, Kenya<br>0725776082<br>0797132084<br>0736900750<br>info@brandmarkenya.com</span></div>
-</div>
-<div class="foot-build">
-<svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="#00c8d4" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-<span>Build: 18jms5gJXG · © 2026 BrandMark Kenya</span>
-</div>
+  <div class="foot">
+    <div><strong>BrandMark Kenya</strong><br><span style="font-size:.9rem;opacity:.8">Bold Brands. Real Impact. — Eldoret • Since 2019</span><br><span style="font-size:.9rem;opacity:.8">0725776082 · 0797132084 · 0736900750<br>info@brandmarkenya.com</span><br><div style="margin-top:12px;display:flex;gap:14px"><a href="#" onclick="showPage('privacy')">Privacy (Sept 12)</a><a href="#" onclick="showPage('terms')">Terms (Sept 12)</a></div></div>
+    <div><strong>Follow</strong><br><div style="margin-top:10px;display:flex;gap:14px;flex-wrap:wrap"><a href="https://www.tiktok.com/@brandmarkkenya" target="_blank">TikTok</a><a href="https://www.instagram.com/brandmarkkenya" target="_blank">Instagram</a><a href="https://www.facebook.com/brandmarkkenya" target="_blank">Facebook</a><a href="https://wa.me/254725776082" target="_blank">WhatsApp</a></div></div>
+    <div><strong>Contact</strong><br><span style="font-size:.9rem;opacity:.8">Eldoret, Kenya<br>0725776082<br>0797132084<br>0736900750<br>info@brandmarkenya.com</span></div>
+  </div>
 </footer>
-
 <script>
-const projects=[
-{id:1,title:"Huduma Centre Desk",cat:"Signage",cover:"/portfolio-images/huduma-centre-desk.webp",gallery:["/portfolio-images/huduma-centre-desk.webp","/portfolio-images/huduma-centre-information-desk.webp","/portfolio-images/huduma-kenya-branding.webp"]},
-{id:2,title:"Apparel Collage Branding",cat:"Apparel",cover:"/portfolio-images/apparel-collage-branding.webp",gallery:["/portfolio-images/apparel-collage-branding.webp","/portfolio-images/world-vision-shirts.webp"]},
-{id:3,title:"World Vision Field Jackets",cat:"Apparel",cover:"/portfolio-images/world-vision-field-jacket.webp",gallery:["/portfolio-images/world-vision-field-jacket.webp","/portfolio-images/world-vision-field-jacket-back.webp","/portfolio-images/world-vision-shirts.webp","/portfolio-images/world-vision-nutrition-murals.webp"]},
-{id:4,title:"Nuru Boutique 3D Sign",cat:"3D Signage",cover:"/portfolio-images/nuru-boutique-3d.webp",gallery:["/portfolio-images/nuru-boutique-3d.webp"]},
-{id:5,title:"Coca-Cola Gate Branding",cat:"Large Format",cover:"/portfolio-images/coca-cola-gate-branding.webp",gallery:["/portfolio-images/coca-cola-gate-branding.webp","/portfolio-images/coca-cola-burudika.webp","/portfolio-images/coca-cola-refreshingly.webp"]},
-{id:6,title:"Chayil Before & After",cat:"Branding",cover:"/portfolio-images/chayil-before-and-after-branding.webp",gallery:["/portfolio-images/chayil-before-and-after-branding.webp"]},
-{id:7,title:"BrandMark Embroidery Workshop",cat:"Workshop",cover:"/portfolio-images/brandmark-embroidery-workshop.webp",gallery:["/portfolio-images/brandmark-embroidery-workshop.webp","/portfolio-images/brandmark-workshop.webp"]},
-{id:8,title:"Malaika Fashions",cat:"3D Signage",cover:"/portfolio-images/malaika-fashions.webp",gallery:["/portfolio-images/malaika-fashions.webp"]},
-{id:9,title:"NCPB Agricultural Hub",cat:"3D Signage",cover:"/portfolio-images/ncpb-agricultural-hub-3d.webp",gallery:["/portfolio-images/ncpb-agricultural-hub-3d.webp"]},
-];
-
-function showPage(id){
-document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
-var el=document.getElementById('p-'+id);
-if(el) el.classList.add('active');
-window.scrollTo({top:0,behavior:'smooth'});
-}
-function renderGrids(filter='All'){
-var cats=['All','Signage','Apparel','3D Signage','Large Format','Branding','Workshop'];
-var fhtml=cats.map(c=>`<button class="${filter===c?'active':''}" onclick="renderGrids('${c}')">${c}</button>`).join('');
-var hF=document.getElementById('homeFilters'); if(hF) hF.innerHTML=fhtml;
-var wF=document.getElementById('workFilters'); if(wF) wF.innerHTML=fhtml;
-var list=filter==='All'?projects:projects.filter(p=>p.cat===filter);
-var html=list.map(p=>`<div class="card" onclick="openWork(${p.id})"><img src="${p.cover}" loading="lazy" alt="${p.title}"><div class="meta"><h3>${p.title}</h3><span>${p.cat}</span></div></div>`).join('');
-var hg=document.getElementById('workGridHome'); if(hg) hg.innerHTML=html;
-var wg=document.getElementById('workGrid'); if(wg) wg.innerHTML=html;
-}
-function openWork(id){
-var p=projects.find(x=>x.id===id); if(!p) return;
-var d=document.getElementById('workDetail');
-d.innerHTML=`<h2 style="font-family:'Bebas Neue';font-size:clamp(2rem,5vw,3.2rem)">${p.title}</h2><p style="opacity:.7;margin-top:4px">${p.cat} • ${p.gallery.length} images</p><div style="margin-top:14px;display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:12px">${p.gallery.map(src=>`<img src="${src}" loading="lazy" style="width:100%;height:360px;object-fit:cover;border-radius:14px;background:#001215">`).join('')}</div>`;
-showPage('work-detail');
-}
-
-document.addEventListener('DOMContentLoaded',function(){
-renderGrids();
-var track=document.getElementById('heroTrack');
-var slides=track?track.children:[];
-if(!track||!slides.length) return;
-var c=0;
-setInterval(function(){
-c=(c+1)%slides.length;
-track.style.transform='translateX(-'+(c*100)+'%)';
-},3500);
-});
-</script>
-</body>
-</html>
+  function toggleNav(){document.getElementById('navLinks').classList.toggle('open')}
+  function closeNav(){var n=document.getElementById('navLinks');if(window
