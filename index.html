@@ -672,18 +672,17 @@ body{padding-bottom:80px !important;}
       <div class="hero-big">Where <em>Vision</em><br class="hero-break"> Meets <em>Excellence</em></div>
       <!-- Rotating image slider — fills the remaining space in the left column.
            Replace the src="" placeholders below with the actual photo files. -->
-<div class="hero-slider" id="heroSlider">
-  <div class="hero-slide active">
-    <img src="/portfolio-images/huduma-centre-desk.webp" alt="Huduma Centre branding and signage by BrandMark Systems" loading="lazy"/>
-  </div>
-  <div class="hero-slide">
-    <img src="/portfolio-images/collage-aprons-and-shirts.webp" alt="Collage of branded apparel - t-shirts, caps and mugs" loading="lazy"/>
-    <div class="hero-slide-cap">Branded Apparel &mdash; T-Shirts, Caps &amp; Mugs</div>
-  </div>
-  <div class="hero-slide">
-    <img src="/portfolio-images/nuru-boutique-3d.webp" alt="Nuru Boutique branding project" loading="lazy"/>
-    <div class="hero-slide-cap">Nuru Boutique</div>
-  </div>
+<div class="hero-slider" id="heroSlider" style="position:relative; width:100%; height:360px; overflow:hidden; border-radius:12px; background:#000;">
+  <div class="hero-slide active" style="position:absolute; inset:0; opacity:1; transition:opacity 0.9s;"><img src="./portfolio-images/brandmark-embroidery-workshop.webp" style="width:100%; height:100%; object-fit:cover;" alt="Embroidery workshop"></div>
+  <div class="hero-slide" style="position:absolute; inset:0; opacity:0; transition:opacity 0.9s;"><img src="./portfolio-images/huduma-centre-desk.webp" style="width:100%; height:100%; object-fit:cover;" alt="Huduma desk"></div>
+  <div class="hero-slide" style="position:absolute; inset:0; opacity:0; transition:opacity 0.9s;"><img src="./portfolio-images/apparel-collage-branding.webp" style="width:100%; height:100%; object-fit:cover;" alt="Apparel"></div>
+  <div class="hero-slide" style="position:absolute; inset:0; opacity:0; transition:opacity 0.9s;"><img src="./portfolio-images/coca-cola-gate-branding.webp" style="width:100%; height:100%; object-fit:cover;" alt="Coca Cola gate"></div>
+  <div class="hero-slide" style="position:absolute; inset:0; opacity:0; transition:opacity 0.9s;"><img src="./portfolio-images/nuru-boutique-3d.webp" style="width:100%; height:100%; object-fit:cover;" alt="Nuru Boutique"></div>
+</div>
+<script>
+let c=0; const s=document.querySelectorAll('#heroSlider.hero-slide');
+setInterval(()=>{s[c].style.opacity=0; c=(c+1)%s.length; s[c].style.opacity=1;},3500);
+</script>
   <div class="hero-slide">
     <img src="/portfolio-images/brandmark-workshop.webp" alt="BrandMark Systems embroidery workshop" loading="lazy"/>
     <div class="hero-slide-cap">BrandMark &mdash; Embroidery Workshop</div>
