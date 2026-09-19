@@ -276,31 +276,6 @@ nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);z-index:300;
 .proc-step p{font-size:.74rem;line-height:1.75;color:var(--muted);text-align:justify;}
 .proc-btns{margin-top:clamp(18px,3vh,36px);display:flex;gap:10px;
   justify-content:center;flex-wrap:wrap;}
-/* Why Us sub-panel */
-.why-wrap{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start;}
-.why-wrap h2{font-family:'Cormorant Garamond',serif;
-  font-size:clamp(1.6rem,3vw,2.6rem);font-weight:300;color:var(--white);
-  line-height:1.2;margin-bottom:12px;grid-column:1/-1;}
-.why-wrap h2 em{font-style:italic;color:var(--cyan);}
-.why-intro{font-size:.86rem;line-height:1.85;color:var(--muted);
-  text-align:justify;grid-column:1/-1;margin-bottom:4px;}
-.why-list{margin-top:0;}
-.why-item{display:flex;align-items:flex-start;gap:11px;
-  padding:11px 0;border-bottom:1px solid rgba(0,200,212,.1);}
-.why-item:first-child{border-top:1px solid rgba(0,200,212,.1);}
-.why-dot{width:5px;height:5px;background:var(--cyan);border-radius:50%;
-  margin-top:6px;flex-shrink:0;}
-.why-item h5{font-family:'Cormorant Garamond',serif;font-size:.98rem;
-  font-weight:400;color:var(--white);margin-bottom:2px;}
-.why-item p{font-size:.74rem;color:var(--muted);line-height:1.65;text-align:justify;}
-.why-quote-box{background:linear-gradient(135deg,rgba(0,200,212,.1),rgba(0,200,212,.02));
-  border-left:3px solid var(--cyan);padding:18px 20px;}
-.why-quote-box blockquote{font-family:'Cormorant Garamond',serif;font-size:1.1rem;
-  font-style:italic;color:var(--white);line-height:1.7;margin-bottom:6px;}
-.why-quote-box cite{font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;
-  color:var(--cyan);}
-.why-btns{margin-top:18px;display:flex;gap:9px;flex-wrap:wrap;}
-
 
 /* ── FOOTER ── */
 .site-footer{position:fixed;bottom:0;left:0;right:0;z-index:200;height:var(--footer-h);background:rgba(0,0,0,.97);border-top:1px solid rgba(0,200,212,.15);display:flex;flex-direction:column;}
@@ -353,16 +328,9 @@ nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);z-index:300;
 /* ── WHATSAPP ── */
 
 
-
-
-
 70%{transform:scale(1.4);opacity:0}100%{transform:scale(1.4);opacity:0}}
 
-
-
 /* ── RESPONSIVE ── */
-
-
 
 a[target="_blank"],button{cursor:pointer!important;}
 
@@ -823,7 +791,6 @@ setInterval(()=>{s[c].style.opacity=0; c=(c+1)%s.length; s[c].style.opacity=1;},
   </div>
 
 
-
   <!-- BrandMark inline ad -->
     <div class="bm-ad">
       <div class="bm-ad-badge">&#10022; FEATURED PARTNER</div>
@@ -837,7 +804,6 @@ setInterval(()=>{s[c].style.opacity=0; c=(c+1)%s.length; s[c].style.opacity=1;},
     </div>
   </div>
 </div>
-
 
 
   <div class="panel" id="p-directory">
@@ -1029,34 +995,22 @@ setInterval(()=>{s[c].style.opacity=0; c=(c+1)%s.length; s[c].style.opacity=1;},
 </div><!-- /panels -->
 
 <!-- ═══════════ FOOTER ═══════════ -->
-<footer class="site-footer">
-  <div class="footer-content">
-    <div class="footer-left">
-      <div class="footer-contacts">
-        <a href="tel:+254736900750">&#128222; +254 736 900 750</a>
-        <span class="sep">&#183;</span>
-        <a href="tel:+254797132084">+254 797 132 084</a>
-        <span class="sep">&#183;</span>
-        <a href="tel:+254725776082">+254 725 776 082</a>
-        <span class="sep">&#183;</span>
-        <a href="mailto:info@brandmarkenya.com">&#9993; info@brandmarkenya.com</a>
-        <span class="sep">&#183;</span>
-        <a href="https://maps.app.goo.gl/Jc5PrwrSATAYwC5x5" target="_blank" rel="noopener">&#128205; Aya House, Eldoret</a>
-        <span class="sep">&#183;</span>
-        <a href="https://www.facebook.com/share/18jms5gJXG/" target="_blank" rel="noopener" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 40 40" style="vertical-align:middle"><rect width="40" height="40" rx="8" fill="#1877F2"/><path d="M27.5 20H23v-3c0-1.1.9-2 2-2h2.5v-4.5H23c-3.6 0-6.5 2.9-6.5 6.5V20H13v4.5h3.5V38h5V24.5H25l2.5-4.5z" fill="white"/></svg></a>
-        <span class="sep">&#183;</span>
-        <a href="https://vm.tiktok.com/ZS9NTeBmKfyME-xmaSz/" target="_blank" rel="noopener" aria-label="TikTok"><svg width="16" height="16" viewBox="0 0 40 40" style="vertical-align:middle"><rect width="40" height="40" rx="8" fill="#010101"/><path d="M28 12.5a7.5 7.5 0 0 1-4.5-1.5v10a6.5 6.5 0 1 1-5-6.32V19a3 3 0 1 0 2 2.85V8h3.5a4 4 0 0 0 4 4z" fill="white"/></svg></a>
-      </div>
-    </div>
+<footer style="position:fixed; bottom:0; left:0; width:100%; background:#000; border-top:2px solid #00e5ff; padding:10px 14px; z-index:99999; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; font-size:13px; font-family:sans-serif;">
+  <div style="color:#ccc;">
+    <a href="tel:+254725776082" style="color:#fff; text-decoration:none;">0725 776 082</a> · 
+    <a href="tel:+254736900750" style="color:#fff; text-decoration:none;">0736 900 750</a> · 
+    <a href="tel:+254797132084" style="color:#fff; text-decoration:none;">0797 132 084</a> | 
+    <a href="mailto:info@brandmarkenya.com" style="color:#00e5ff; text-decoration:none;">info@brandmarkenya.com</a> · 
+    <a href="https://maps.app.goo.gl/Jc5PrwrSATAYwC5x5" target="_blank" style="color:#aaa; text-decoration:none;">Aya House, Eldoret</a>
   </div>
-  <div class="footer-legal">
-    <button onclick="showContact()" class="ftr-lnk">Contact Us</button>
-    <span class="sep-legal">&#183;</span>
-    <button onclick="openLegal('privacy')" class="ftr-lnk">Privacy Policy</button>
-    <span class="sep-legal">&#183;</span>
-    <button onclick="openLegal('terms')" class="ftr-lnk">Terms of Use</button>
+  <div style="display:flex; gap:12px; align-items:center;">
+    <button onclick="showContact()" style="background:none; border:none; color:#aaa; cursor:pointer;">Contact Us</button>
+    <button onclick="openLegal('privacy')" style="background:none; border:none; color:#aaa; cursor:pointer;">Privacy Policy</button>
+    <button onclick="openLegal('terms')" style="background:none; border:none; color:#aaa; cursor:pointer;">Terms of Use</button>
+    <a href="https://wa.me/254725776082" target="_blank" style="background:#25D366; color:#fff; padding:6px 14px; border-radius:20px; text-decoration:none; font-weight:bold;">WhatsApp</a>
   </div>
 </footer>
+<div style="height:70px;"></div>
 
 <!-- LEGAL MODAL (Privacy + Terms) -->
 <div class="legal-modal" id="legalModal">
