@@ -7,108 +7,48 @@
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
-      --teal: #00c8d4;
-      --teal-dark: #00969f;
-      --ink: #0a1931;
-      --paper: #f8fbfb;
+      --teal:#00c8d4; --teal-dark:#00969f; --ink:#0a1931; --paper:#f8fbfb;
+      --border:rgba(0,200,212,.12); --shadow:0 12px 32px rgba(0,0,0,.09);
     }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      background: var(--paper);
-      color: var(--ink);
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
-    img { display: block; max-width: 100%; }
-    a { text-decoration: none; color: inherit; }
-    button { cursor: pointer; border: 0; background: none; font-family: inherit; }
+    * {margin:0;padding:0;box-sizing:border-box}
+    html {scroll-behavior:smooth}
+    body {font-family:'Plus Jakarta Sans',sans-serif;background:var(--paper);color:var(--ink);line-height:1.6;overflow-x:hidden}
+    img {display:block;max-width:100%} a {text-decoration:none;color:inherit} button {cursor:pointer;border:0;background:none;font-family:inherit}
     .nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
-      display: flex; justify-content: space-between; align-items: center;
-      padding: 14px 20px; background: rgba(255,255,255,.98);
-      backdrop-filter: blur(14px); border-bottom: 1px solid rgba(0,200,212,.12);
+      position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;justify-content:space-between;align-items:center;
+      padding:14px 20px;background:rgba(255,255,255,.98);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);
     }
-    .logo {
-      display: flex; align-items: center; gap: 10px;
-      font-weight: 800; font-size: 1.15rem; white-space: nowrap;
-    }
-    .logo img { height: 36px; border-radius: 50%; }
-    .logo small { color: var(--teal-dark); letter-spacing: .14em; font-size: .8rem; }
-    .navlinks { display: flex; gap: 22px; align-items: center; font-weight: 600; font-size: .92rem; }
-    .cta { background: var(--teal-dark); color: #fff; padding: 10px 20px; border-radius: 999px; font-weight: 700; }
-    .hamburger { display: none; font-size: 1.8rem; }
-    @media (max-width: 1050px) {
-      .navlinks {
-        position: fixed; top: 66px; left: 0; right: 0; background: #fff;
-        border-bottom: 1px solid rgba(0,0,0,.08); flex-direction: column;
-        align-items: flex-start; padding: 20px 24px; display: none; gap: 16px;
-        box-shadow: 0 14px 30px rgba(0,0,0,.08);
-      }
-      .navlinks.open { display: flex; }
-      .hamburger { display: block; }
-    }
-    .main { max-width: 1340px; margin: 0 auto; padding: 90px 18px 0; }
-    .page { display: none; }
-    .page.active { display: block; }
-    .badge {
-      display: inline-flex; align-items: center; gap: 8px;
-      padding: 6px 12px; border-radius: 999px;
-      border: 1px solid rgba(0,200,212,.22); font-size: .75rem;
-      font-weight: 700; background: #fff;
-    }
-    .badge i { width: 6px; height: 6px; background: var(--teal); border-radius: 50%; display: inline-block; }
-    .hero-grid { display: grid; grid-template-columns: 1.15fr .85fr; gap: 22px; margin-top: 16px; }
-    @media (max-width: 980px) { .hero-grid { grid-template-columns: 1fr; } }
-    .hero-left h1 {
-      font-family: 'Bebas Neue'; font-size: clamp(3rem,7vw,5.8rem);
-      line-height: .88; margin: 16px 0 12px;
-    }
-    .hero-left h1 em { font-style: normal; color: var(--teal-dark); }
-    .hero-left p { max-width: 580px; opacity: .8; font-size: 1.05rem; }
-    .hero-actions { margin-top: 20px; display: flex; gap: 12px; flex-wrap: wrap; }
-    .btn-primary { background: var(--teal-dark); color: #fff; padding: 13px 22px; border-radius: 999px; font-weight: 700; display: inline-block; }
-    .btn-ghost { background: #fff; border: 1px solid rgba(0,200,212,.28); color: var(--teal-dark); padding: 13px 22px; border-radius: 999px; font-weight: 700; display: inline-block; }
-    #heroSlider {
-      position: relative; width: 100%; height: 460px; min-height: 460px;
-      overflow: hidden; border-radius: 20px; background: #001215;
-      border: 1px solid rgba(0,200,212,.18);
-    }
-    #heroSlider .hero-track {
-      display: flex; height: 100%; width: 100%;
-      transition: transform .75s cubic-bezier(.4,0,.2,1); will-change: transform;
-    }
-    #heroSlider .hero-slide { flex: 0 0 100%; min-width: 100%; height: 100%; position: relative; }
-    #heroSlider .hero-slide img { width: 100%; height: 100%; object-fit: cover; }
-    #heroSlider .cap {
-      position: absolute; left: 0; right: 0; bottom: 0; padding: 12px 16px;
-      background: linear-gradient(0deg,rgba(0,0,0,.78),transparent); color: #fff; font-size: .78rem;
-    }
-    @media (max-width: 980px) { #heroSlider { height: 320px; min-height: 320px; } }
-    .section-head { display: flex; justify-content: space-between; align-items: end; gap: 12px; margin: 32px 0 16px; flex-wrap: wrap; }
-    .section-head h2 { font-family: 'Bebas Neue'; font-size: 2.4rem; line-height: .9; }
-    .filters { display: flex; gap: 8px; flex-wrap: wrap; }
-    .filters button { padding: 8px 14px; border-radius: 999px; border: 1px solid rgba(0,0,0,.12); background: #fff; font-size: .8rem; font-weight: 600; }
-    .filters button.active { background: var(--ink); color: #fff; }
-    .grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; }
-    @media (max-width: 980px) { .grid { grid-template-columns: 1fr 1fr; } }
-    @media (max-width: 640px) { .grid { grid-template-columns: 1fr; } }
-    .card { border-radius: 16px; overflow: hidden; background: #fff; border: 1px solid rgba(0,0,0,.06); cursor: pointer; transition: .22s; }
-    .card:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(0,0,0,.09); }
-    .card img { width: 100%; height: 260px; object-fit: cover; background: #001215; }
-    .card .meta { padding: 12px 14px; display: flex; justify-content: space-between; align-items: center; gap: 10px; }
-    .card .meta h3 { font-size: .95rem; }
-    .card .meta span { font-size: .72rem; padding: 4px 10px; border-radius: 999px; background: #f0fafa; border: 1px solid rgba(0,200,212,.18); }
-    img[src*="world-vision-field-jacket"] { transform: scale(1.38) !important; object-position: center top !important; background: #001215 !important; }
-    .svc-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; margin-top: 18px; }
-    @media (max-width: 900px) { .svc-grid { grid-template-columns: 1fr; } }
-    .svc { padding: 20px; border-radius: 16px; background: #fff; border: 1px solid rgba(0,0,0,.06); }
-    #p-contact { background: #f6fbfb; border-radius: 20px; padding: 28px 20px; margin-top: 12px; border: 1px solid rgba(0,200,212,.12); }
-    #p-contact h2 { font-family: 'Bebas Neue'; font-size: clamp(2.6rem,6vw,4rem); line-height: .9; color: var(--ink); }
-    footer { margin-top: 40px; background: #0a1931; color: #cfeff1; padding: 32px 20px; }
-    footer .foot { display: flex; justify-content: space-between; gap: 22px; flex-wrap: wrap; max-width: 1340px; margin: 0 auto; }
-    footer a { opacity: .9; } footer a:hover { opacity: 1; color: #fff; }
+    .logo {display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.15rem;white-space:nowrap}
+    .logo img {height:36px;width:36px;border-radius:50%} .logo small {color:var(--teal-dark);letter-spacing:.14em;font-size:.8rem}
+    .navlinks {display:flex;gap:22px;align-items:center;font-weight:600;font-size:.92rem} .cta {background:var(--teal-dark);color:#fff;padding:10px 20px;border-radius:999px;font-weight:700}
+    .hamburger {display:none;font-size:1.8rem} @media(max-width:1050px){.navlinks{position:fixed;top:66px;left:0;right:0;background:#fff;border-bottom:1px solid rgba(0,0,0,.08);flex-direction:column;align-items:flex-start;padding:20px 24px;display:none;gap:16px;box-shadow:0 14px 30px rgba(0,0,0,.08)}.navlinks.open{display:flex}.hamburger{display:block}}
+    .main {max-width:1340px;margin:0 auto;padding:90px 18px 0} .page {display:none} .page.active {display:block}
+    .badge {display:inline-flex;align-items:center;gap:8px;padding:6px 12px;border-radius:999px;border:1px solid rgba(0,200,212,.22);font-size:.75rem;font-weight:700;background:#fff}
+    .badge i {width:6px;height:6px;background:var(--teal);border-radius:50%;display:inline-block}
+    .hero-grid {display:grid;grid-template-columns:1.15fr .85fr;gap:22px;margin-top:16px} @media(max-width:980px){.hero-grid{grid-template-columns:1fr}}
+    .hero-left h1 {font-family:'Bebas Neue';font-size:clamp(3rem,7vw,5.8rem);line-height:.88;margin:16px 0 12px} .hero-left h1 em {font-style:normal;color:var(--teal-dark)}
+    .hero-left p {max-width:580px;opacity:.8;font-size:1.05rem} .hero-actions {margin-top:20px;display:flex;gap:12px;flex-wrap:wrap}
+    .btn-primary {background:var(--teal-dark);color:#fff;padding:13px 22px;border-radius:999px;font-weight:700;display:inline-block}
+    .btn-ghost {background:#fff;border:1px solid rgba(0,200,212,.28);color:var(--teal-dark);padding:13px 22px;border-radius:999px;font-weight:700;display:inline-block}
+    #heroSlider {position:relative;width:100%;height:460px;min-height:460px;overflow:hidden;border-radius:20px;background:#001215;border:1px solid rgba(0,200,212,.18)}
+    #heroSlider .hero-track {display:flex;height:100%;width:100%;transition:transform .75s cubic-bezier(.4,0,.2,1);will-change:transform}
+    #heroSlider .hero-slide {flex:0 0 100%;min-width:100%;height:100%;position:relative} #heroSlider .hero-slide img {width:100%;height:100%;object-fit:cover}
+    #heroSlider .cap {position:absolute;left:0;right:0;bottom:0;padding:12px 16px;background:linear-gradient(0deg,rgba(0,0,0,.78),transparent);color:#fff;font-size:.78rem}
+    @media(max-width:980px){#heroSlider{height:320px;min-height:320px}}
+    .section-head {display:flex;justify-content:space-between;align-items:end;gap:12px;margin:32px 0 16px;flex-wrap:wrap} .section-head h2 {font-family:'Bebas Neue';font-size:2.4rem;line-height:.9}
+    .filters {display:flex;gap:8px;flex-wrap:wrap} .filters button {padding:8px 14px;border-radius:999px;border:1px solid rgba(0,0,0,.12);background:#fff;font-size:.8rem;font-weight:600} .filters button.active {background:var(--ink);color:#fff}
+    .grid {display:grid;grid-template-columns:repeat(3,1fr);gap:16px} @media(max-width:980px){.grid{grid-template-columns:1fr 1fr}} @media(max-width:640px){.grid{grid-template-columns:1fr}}
+    .card {border-radius:16px;overflow:hidden;background:#fff;border:1px solid rgba(0,0,0,.06);cursor:pointer;transition:.22s} .card:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+    .card img {width:100%;height:260px;object-fit:cover;background:#001215} .card .meta{padding:12px 14px;display:flex;justify-content:space-between;align-items:center;gap:10px}
+    .card .meta h3{font-size:.95rem} .card .meta span{font-size:.72rem;padding:4px 10px;border-radius:999px;background:#f0fafa;border:1px solid rgba(0,200,212,.18)}
+    img[src*="world-vision-field-jacket"]{transform:scale(1.38)!important;object-position:center top!important;background:#001215!important}
+    .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:18px} @media(max-width:900px){.svc-grid{grid-template-columns:1fr}}
+    .svc{padding:20px;border-radius:16px;background:#fff;border:1px solid rgba(0,0,0,.06)}
+    #p-contact{background:#f6fbfb;border-radius:20px;padding:28px 20px;margin-top:12px;border:1px solid rgba(0,200,212,.12)}
+    #p-contact h2{font-family:'Bebas Neue';font-size:clamp(2.6rem,6vw,4rem);line-height:.9;color:var(--ink)}
+    footer{margin-top:40px;background:#0a1931;color:#cfeff1;padding:32px 20px}
+    footer .foot{display:flex;justify-content:space-between;gap:22px;flex-wrap:wrap;max-width:1340px;margin:0 auto}
+    footer a{opacity:.9}footer a:hover{opacity:1;color:#fff}
   </style>
 </head>
 <body>
@@ -116,16 +56,11 @@
     <div class="logo"><img src="/portfolio-images/brandmark-logo.webp" alt="BrandMark"> BrandMark <small>KENYA</small></div>
     <div style="display:flex;align-items:center;gap:10px">
       <div class="navlinks" id="navLinks">
-        <a href="#" onclick="showPage('home');closeNav()">Work</a>
-        <a href="#" onclick="showPage('services');closeNav()">Services</a>
-        <a href="#" onclick="showPage('about');closeNav()">About</a>
-        <a href="#" onclick="showPage('directory');closeNav()">Directory</a>
-        <a href="#" onclick="showPage('blog');closeNav()">Blog</a>
-        <a href="#" onclick="showPage('advertise');closeNav()">Advertise</a>
-        <a href="#" onclick="showPage('contact');closeNav()">Contact</a>
-        <button class="cta" onclick="showPage('contact');closeNav()">Let's Talk</button>
-      </div>
-      <button class="hamburger" onclick="toggleNav()">☰</button>
+        <a href="#" onclick="showPage('home');closeNav()">Work</a><a href="#" onclick="showPage('services');closeNav()">Services</a>
+        <a href="#" onclick="showPage('about');closeNav()">About</a><a href="#" onclick="showPage('directory');closeNav()">Directory</a>
+        <a href="#" onclick="showPage('blog');closeNav()">Blog</a><a href="#" onclick="showPage('advertise');closeNav()">Advertise</a>
+        <a href="#" onclick="showPage('contact');closeNav()">Contact</a><button class="cta" onclick="showPage('contact');closeNav()">Let's Talk</button>
+      </div><button class="hamburger" onclick="toggleNav()">☰</button>
     </div>
   </div>
   <div class="main">
@@ -135,36 +70,22 @@
           <div class="badge"><i></i> Eldoret, Kenya • Creative Agency Since 2019</div>
           <h1>Bold Brands.<br><em>Real Impact.</em></h1>
           <p>We help Kenyan businesses grow with modern branding, digital design, printing, signage, embroidery & 3D that drives results.</p>
-          <div class="hero-actions">
-            <button class="btn-primary" onclick="showPage('work')">View Portfolio →</button>
-            <button class="btn-ghost" onclick="showPage('contact')">Get a Quote</button>
-          </div>
+          <div class="hero-actions"><button class="btn-primary" onclick="showPage('work')">View Portfolio →</button><button class="btn-ghost" onclick="showPage('contact')">Get a Quote</button></div>
         </div>
-        <div id="heroSlider">
-          <div class="hero-track" id="heroTrack">
-            <div class="hero-slide"><img src="/portfolio-images/brandmark-embroidery-workshop.webp" alt=""><div class="cap">BrandMark — Embroidery Workshop • Eldoret</div></div>
-            <div class="hero-slide"><img src="/portfolio-images/huduma-centre-desk.webp" alt=""><div class="cap">Huduma Kenya — Desk Branding</div></div>
-            <div class="hero-slide"><img src="/portfolio-images/apparel-collage-branding.webp" alt=""><div class="cap">Apparel Branding</div></div>
-            <div class="hero-slide"><img src="/portfolio-images/coca-cola-gate-branding.webp" alt=""><div class="cap">Coca-Cola — Gate Branding</div></div>
-            <div class="hero-slide"><img src="/portfolio-images/nuru-boutique-3d.webp" alt=""><div class="cap">Nuru Boutique — 3D Signage</div></div>
-          </div>
-        </div>
+        <div id="heroSlider"><div class="hero-track" id="heroTrack">
+          <div class="hero-slide"><img src="/portfolio-images/brandmark-embroidery-workshop.webp" alt=""><div class="cap">BrandMark — Embroidery Workshop • Eldoret</div></div>
+          <div class="hero-slide"><img src="/portfolio-images/huduma-centre-desk.webp" alt=""><div class="cap">Huduma Kenya — Desk Branding</div></div>
+          <div class="hero-slide"><img src="/portfolio-images/apparel-collage-branding.webp" alt=""><div class="cap">Apparel Branding</div></div>
+          <div class="hero-slide"><img src="/portfolio-images/coca-cola-gate-branding.webp" alt=""><div class="cap">Coca-Cola — Gate Branding</div></div>
+          <div class="hero-slide"><img src="/portfolio-images/nuru-boutique-3d.webp" alt=""><div class="cap">Nuru Boutique — 3D Signage</div></div>
+        </div></div>
       </div>
-      <div class="section-head">
-        <h2>Selected Work — 41 Projects</h2>
-        <div class="filters" id="homeFilters"></div>
-      </div>
+      <div class="section-head"><h2>Selected Work — 41 Projects</h2><div class="filters" id="homeFilters"></div></div>
       <div class="grid" id="workGridHome"></div>
     </div>
-    <div id="p-work" class="page">
-      <div class="section-head"><h2>All Work</h2><div class="filters" id="workFilters"></div></div>
-      <div class="grid" id="workGrid"></div>
-    </div>
-    <div id="p-work-detail" class="page">
-      <button onclick="showPage('work')" style="font-weight:700;margin-bottom:14px">← Back to Work</button>
-      <div id="workDetail"></div>
-    </div>
-    <div id="p-services" class="page">
+    <div id="p-work" class="page"><div class="section-head"><h2>All Work</h2><div class="filters" id="workFilters"></div></div><div class="grid" id="workGrid"></div></div>
+    <div id="p-work-detail" class="page"><button onclick="showPage('work')" style="font-weight:700;margin-bottom:14px">← Back to Work</button><div id="workDetail"></div></div>
+        <div id="p-services" class="page">
       <h2 style="font-family:'Bebas Neue';font-size:3.2rem">Services</h2>
       <div class="svc-grid">
         <div class="svc"><h3>Brand Identity & Logo</h3><p>Modern logos that stand out.</p></div>
@@ -175,477 +96,478 @@
         <div class="svc"><h3>Digital & Social Branding</h3><p>Social kits, website assets.</p></div>
       </div>
     </div>
-    <div id="p-about" class="page">
-      <h2 style="font-family:'Bebas Neue';font-size:3.2rem">About BrandMark Kenya</h2>
-      <p style="max-width:720px;margin-top:12px;opacity:.85">Eldoret-based powerhouse. From Huduma Centre to World Vision, Coca-Cola to Nuru Boutique — we deliver signage, embroidery, apparel, 3D and print that converts. Since 2019.</p>
-    </div>
-        <div id="p-directory" class="page">
+    <div id="p-about" class="page"><h2 style="font-family:'Bebas Neue';font-size:3.2rem">About BrandMark Kenya</h2><p style="max-width:720px;margin-top:12px;opacity:.85">Eldoret-based powerhouse. Since 2019. Huduma Kenya, World Vision, Coca-Cola, Nuru Boutique.</p></div>
+    <div id="p-directory" class="page">
       <h2 style="font-family:'Bebas Neue';font-size:3.2rem">Business Directory</h2>
-      <p style="max-width:720px;margin-top:12px;opacity:.85">
-        Find trusted brands we've worked with. To list: 0725776082 · 0797132084 · 0736900750 or info@brandmarkenya.com
-      </p>
-      <div class="svc-grid">
-        <div class="svc"><h3>Huduma Kenya</h3><p>Government branding — desks, info points.</p></div>
-        <div class="svc"><h3>World Vision Kenya</h3><p>Field jackets, shirts, nutrition murals.</p></div>
-        <div class="svc"><h3>Coca-Cola</h3><p>Gate branding, refreshing campaigns.</p></div>
-        <div class="svc"><h3>Nuru Boutique</h3><p>3D signage — Eldoret.</p></div>
-        <div class="svc"><h3>Malaika Fashions</h3><p>Retail 3D branding.</p></div>
-        <div class="svc"><h3>NCPB</h3><p>Agricultural hub 3D.</p></div>
-      </div>
+      <p style="max-width:720px;margin-top:12px;opacity:.85">Find trusted brands we've worked with. To list: 0725776082 · 0797132084 · 0736900750 or info@brandmarkenya.com</p>
+      <div class="svc-grid"><div class="svc"><h3>Huduma Kenya</h3></div><div class="svc"><h3>World Vision Kenya</h3></div><div class="svc"><h3>Coca-Cola</h3></div><div class="svc"><h3>Nuru Boutique</h3></div><div class="svc"><h3>Malaika Fashions</h3></div><div class="svc"><h3>NCPB</h3></div></div>
     </div>
-
-    <div id="p-blog" class="page">
-      <h2 style="font-family:'Bebas Neue';font-size:3.2rem">Insights & Blog</h2>
-      <p style="max-width:720px;margin-top:12px;opacity:.85">
-        Branding tips, printing guides, signage ideas. Images from your /blog-images folder.
-      </p>
-      <div class="svc-grid">
-        <div class="svc"><h3>How 3D Signage Grows Foot Traffic</h3><p>Why Nuru & Malaika-style 3D converts.</p></div>
-        <div class="svc"><h3>Choosing Embroidery vs Print</h3><p>Durability for World Vision jackets.</p></div>
-        <div class="svc"><h3>Branding on a Budget for Startups</h3><p>Start in Eldoret, scale nationwide.</p></div>
-      </div>
-    </div>
-
-    <div id="p-advertise" class="page">
-      <h2 style="font-family:'Bebas Neue';font-size:3.2rem">Advertise With Us</h2>
-      <p style="max-width:720px;margin-top:12px;opacity:.85">
-        Reach businesses across Eldoret & Kenya. Billboards, gate branding (like Coca-Cola), shopfronts, vehicle branding, digital screens.
-      </p>
-      <p style="margin-top:10px">Packages from KES 5,000/month. Call 0725776082 / 0797132084 / 0736900750 or email info@brandmarkenya.com</p>
-      <div style="margin-top:18px;display:flex;gap:10px;flex-wrap:wrap">
-        <a class="btn-primary" href="https://wa.me/254725776082" target="_blank">WhatsApp 0725 776082</a>
-        <a class="btn-ghost" href="mailto:info@brandmarkenya.com?subject=Advertise%20Enquiry">info@brandmarkenya.com</a>
-      </div>
-    </div>
-
-    <!-- CONTACT PAGE - COLOURS AS PER YOUR SCREENSHOT - LIGHT BACKGROUND -->
-    <div id="p-contact" class="page">
-      <h2>LET'S TALK</h2>
-      <p style="margin-top:12px;font-size:1.05rem;line-height:1.6">
-        Eldoret, Kenya<br>
-        Official Contacts: 0725776082 · 0797132084 · 0736900750<br>
-        Email: info@brandmarkenya.com
-      </p>
-      <div style="margin-top:18px;display:flex;gap:10px;flex-wrap:wrap">
-        <a class="btn-primary" href="https://wa.me/254725776082" target="_blank">WhatsApp 0725 776082</a>
-        <a class="btn-ghost" href="tel:+254725776082">Call 0725776082</a>
-        <a class="btn-ghost" href="tel:+254797132084">Call 0797132084</a>
-        <a class="btn-ghost" href="tel:+254736900750">Call 0736900750</a>
-        <a class="btn-ghost" href="mailto:info@brandmarkenya.com">info@brandmarkenya.com</a>
-      </div>
-    </div>
-
-    <div id="p-privacy" class="page">
-      <h2 style="font-family:'Bebas Neue';font-size:2.8rem">Privacy Policy — Sept 12, 2025</h2>
-      <div style="margin-top:12px;font-size:.92rem;line-height:1.7;max-width:800px;opacity:.9">
-        <p><strong>Updated Sept 12.</strong> BrandMark Kenya (info@brandmarkenya.com, 0725776082 / 0797132084 / 0736900750) respects your privacy. We collect only what you submit via forms, WhatsApp, calls or email.</p>
-      </div>
-    </div>
-
-    <div id="p-terms" class="page">
-      <h2 style="font-family:'Bebas Neue';font-size:2.8rem">Terms of Service — Sept 12, 2025</h2>
-      <div style="margin-top:12px;font-size:.92rem;line-height:1.7;max-width:800px;opacity:.9">
-        <p><strong>Updated Sept 12.</strong> Services custom quoted via 0725776082 / 0797132084 / 0736900750. 50% deposit. Balance on delivery.</p>
-      </div>
-    </div>
-
+    <div id="p-blog" class="page"><h2 style="font-family:'Bebas Neue';font-size:3.2rem">Insights & Blog</h2><p style="max-width:720px;margin-top:12px;opacity:.85">Branding tips, printing guides. Images from /blog-images</p><div class="svc-grid"><div class="svc"><h3>How 3D Signage Grows Foot Traffic</h3></div><div class="svc"><h3>Choosing Embroidery vs Print</h3></div><div class="svc"><h3>Branding on a Budget</h3></div></div></div>
+    <div id="p-advertise" class="page"><h2 style="font-family:'Bebas Neue';font-size:3.2rem">Advertise With Us</h2><p style="max-width:720px;margin-top:12px;opacity:.85">Billboards, gate branding like Coca-Cola, shopfronts. From KES 5,000/month. Call 0725776082 / 0797132084 / 0736900750 or info@brandmarkenya.com</p><div style="margin-top:18px;display:flex;gap:10px;flex-wrap:wrap"><a class="btn-primary" href="https://wa.me/254725776082" target="_blank">WhatsApp 0725 776082</a><a class="btn-ghost" href="mailto:info@brandmarkenya.com">info@brandmarkenya.com</a></div></div>
+    <div id="p-contact" class="page"><h2>LET'S TALK</h2><p style="margin-top:12px;font-size:1.05rem;line-height:1.6">Eldoret, Kenya<br>Official Contacts: 0725776082 · 0797132084 · 0736900750<br>Email: info@brandmarkenya.com</p><div style="margin-top:18px;display:flex;gap:10px;flex-wrap:wrap"><a class="btn-primary" href="https://wa.me/254725776082" target="_blank">WhatsApp 0725 776082</a><a class="btn-ghost" href="tel:+254725776082">Call 0725776082</a><a class="btn-ghost" href="tel:+254797132084">Call 0797132084</a><a class="btn-ghost" href="tel:+254736900750">Call 0736900750</a><a class="btn-ghost" href="mailto:info@brandmarkenya.com">info@brandmarkenya.com</a></div></div>
+    <div id="p-privacy" class="page"><h2 style="font-family:'Bebas Neue';font-size:2.8rem">Privacy Policy — Sept 12, 2025</h2><div style="margin-top:12px;font-size:.92rem;max-width:800px;opacity:.9"><p><strong>Updated Sept 12.</strong> BrandMark Kenya (info@brandmarkenya.com, 0725776082 / 0797132084 / 0736900750) respects your privacy.</p></div></div>
+    <div id="p-terms" class="page"><h2 style="font-family:'Bebas Neue';font-size:2.8rem">Terms of Service — Sept 12, 2025</h2><div style="margin-top:12px;font-size:.92rem;max-width:800px;opacity:.9"><p><strong>Updated Sept 12.</strong> Services custom quoted via 0725776082 / 0797132084 / 0736900750. 50% deposit.</p></div></div>
   </div>
-
-  <!-- FOOTER - DARK NAVY AS PER SCREENSHOT - NO BUILD TAG -->
-  <footer>
-    <div class="foot">
-      <div>
-        <strong>BrandMark Kenya</strong><br>
-        <span style="font-size:.9rem;opacity:.8">Bold Brands. Real Impact. — Eldoret • Since 2019</span><br>
-        <span style="font-size:.9rem;opacity:.8">0725776082 · 0797132084 · 0736900750<br>info@brandmarkenya.com</span><br>
-        <div style="margin-top:12px;display:flex;gap:14px">
-          <a href="#" onclick="showPage('privacy')">Privacy (Sept 12)</a>
-          <a href="#" onclick="showPage('terms')">Terms (Sept 12)</a>
-        </div>
-      </div>
-      <div>
-        <strong>Follow</strong><br>
-        <div style="margin-top:10px;display:flex;gap:14px;flex-wrap:wrap">
-          <a href="https://www.tiktok.com/@brandmarkkenya" target="_blank">TikTok</a>
-          <a href="https://www.instagram.com/brandmarkkenya" target="_blank">Instagram</a>
-          <a href="https://www.facebook.com/brandmarkkenya" target="_blank">Facebook</a>
-          <a href="https://wa.me/254725776082" target="_blank">WhatsApp</a>
-        </div>
-      </div>
-      <div>
-        <strong>Contact</strong><br>
-        <span style="font-size:.9rem;opacity:.8">
-          Eldoret, Kenya<br>
-          0725776082<br>
-          0797132084<br>
-          0736900750<br>
-          info@brandmarkenya.com
-        </span>
-      </div>
-    </div>
-  </footer>
-
+  <footer><div class="foot"><div><strong>BrandMark Kenya</strong><br><span style="font-size:.9rem;opacity:.8">Bold Brands. Real Impact. — Eldoret • Since 2019</span><br><span style="font-size:.9rem;opacity:.8">0725776082 · 0797132084 · 0736900750<br>info@brandmarkenya.com</span><br><div style="margin-top:12px;display:flex;gap:14px"><a href="#" onclick="showPage('privacy')">Privacy (Sept 12)</a><a href="#" onclick="showPage('terms')">Terms (Sept 12)</a></div></div><div><strong>Follow</strong><br><div style="margin-top:10px;display:flex;gap:14px;flex-wrap:wrap"><a href="https://www.tiktok.com/@brandmarkkenya" target="_blank">TikTok</a><a href="https://www.instagram.com/brandmarkkenya" target="_blank">Instagram</a><a href="https://www.facebook.com/brandmarkkenya" target="_blank">Facebook</a><a href="https://wa.me/254725776082" target="_blank">WhatsApp</a></div></div><div><strong>Contact</strong><br><span style="font-size:.9rem;opacity:.8">Eldoret, Kenya<br>0725776082<br>0797132084<br>0736900750<br>info@brandmarkenya.com</span></div></div></footer>
   <script>
-    function toggleNav() {
-      document.getElementById('navLinks').classList.toggle('open');
-    }
-
-    function closeNav() {
-      var n = document.getElementById('navLinks');
-      if (window.innerWidth <= 1050) {
-        n.classList.remove('open');
-      }
-    }
-
-    const projects = [
-    {
+    function toggleNav(){document.getElementById('navLinks').classList.toggle('open')}
+    function closeNav(){var n=document.getElementById('navLinks');if(window.innerWidth<=1050)n.classList.remove('open')}
+    const projects=[    {
       id: 1,
-      title: "Project 1 - Huduma Centre Desk",
+      title: "Project 1 - Huduma Centre Desk - BrandMark Kenya",
       cat: "Signage",
+      client: "Client 1",
+      year: "2024",
+      location: "Eldoret, Kenya",
+      desc: "Professional signage project delivered by BrandMark Kenya.",
       cover: "/portfolio-images/huduma-centre-desk.webp",
-      gallery: ["/portfolio-images/huduma-centre-desk.webp"]
+      gallery: ["/portfolio-images/huduma-centre-desk.webp","/portfolio-images/huduma-centre-desk.webp"]
     },
     {
       id: 2,
-      title: "Project 2 - Huduma Centre Information Desk",
+      title: "Project 2 - Huduma Centre Information Desk - BrandMark Kenya",
       cat: "Apparel",
+      client: "Client 2",
+      year: "2024",
+      location: "Eldoret, Kenya",
+      desc: "Professional apparel project delivered by BrandMark Kenya.",
       cover: "/portfolio-images/huduma-centre-information-desk.webp",
-      gallery: ["/portfolio-images/huduma-centre-information-desk.webp"]
+      gallery: ["/portfolio-images/huduma-centre-information-desk.webp","/portfolio-images/huduma-centre-information-desk.webp"]
     },
     {
       id: 3,
-      title: "Project 3 - Huduma Kenya Branding",
+      title: "Project 3 - Huduma Kenya Branding - BrandMark Kenya",
       cat: "3D Signage",
+      client: "Client 3",
+      year: "2024",
+      location: "Eldoret, Kenya",
+      desc: "Professional 3d signage project delivered by BrandMark Kenya.",
       cover: "/portfolio-images/huduma-kenya-branding.webp",
-      gallery: ["/portfolio-images/huduma-kenya-branding.webp"]
+      gallery: ["/portfolio-images/huduma-kenya-branding.webp","/portfolio-images/huduma-kenya-branding.webp"]
     },
     {
       id: 4,
-      title: "Project 4 - Apparel Collage Branding",
+      title: "Project 4 - Apparel Collage Branding - BrandMark Kenya",
       cat: "Large Format",
+      client: "Client 4",
+      year: "2024",
+      location: "Eldoret, Kenya",
+      desc: "Professional large format project delivered by BrandMark Kenya.",
       cover: "/portfolio-images/apparel-collage-branding.webp",
-      gallery: ["/portfolio-images/apparel-collage-branding.webp"]
+      gallery: ["/portfolio-images/apparel-collage-branding.webp","/portfolio-images/apparel-collage-branding.webp"]
     },
     {
       id: 5,
-      title: "Project 5 - World Vision Field Jacket",
+      title: "Project 5 - World Vision Field Jacket - BrandMark Kenya",
       cat: "Branding",
+      client: "Client 5",
+      year: "2024",
+      location: "Eldoret, Kenya",
+      desc: "Professional branding project delivered by BrandMark Kenya.",
       cover: "/portfolio-images/world-vision-field-jacket.webp",
-      gallery: ["/portfolio-images/world-vision-field-jacket.webp"]
+      gallery: ["/portfolio-images/world-vision-field-jacket.webp","/portfolio-images/world-vision-field-jacket.webp"]
     },
     {
       id: 6,
-      title: "Project 6 - World Vision Field Jacket Back",
+      title: "Project 6 - World Vision Field Jacket Back - BrandMark Kenya",
       cat: "Workshop",
+      client: "Client 6",
+      year: "2024",
+      location: "Eldoret, Kenya",
+      desc: "Professional workshop project delivered by BrandMark Kenya.",
       cover: "/portfolio-images/world-vision-field-jacket-back.webp",
-      gallery: ["/portfolio-images/world-vision-field-jacket-back.webp"]
+      gallery: ["/portfolio-images/world-vision-field-jacket-back.webp","/portfolio-images/world-vision-field-jacket-back.webp"]
     },
     {
       id: 7,
-      title: "Project 7 - World Vision Shirts",
+      title: "Project 7 - World Vision Shirts - BrandMark Kenya",
       cat: "Signage",
+      client: "Client 7",
+      year: "2024",
+      location: "Eldoret, Kenya",
+      desc: "Professional signage project delivered by BrandMark Kenya.",
       cover: "/portfolio-images/world-vision-shirts.webp",
-      gallery: ["/portfolio-images/world-vision-shirts.webp"]
+      gallery: ["/portfolio-images/world-vision-shirts.webp","/portfolio-images/world-vision-shirts.webp"]
     },
     {
       id: 8,
-      title: "Project 8 - World Vision Nutrition Murals",
+      title: "Project 8 - World Vision Nutrition Murals - BrandMark Kenya",
       cat: "Apparel",
+      client: "Client 8",
+      year: "2024",
+      location: "Eldoret, Kenya",
+      desc: "Professional apparel project delivered by BrandMark Kenya.",
       cover: "/portfolio-images/world-vision-nutrition-murals.webp",
-      gallery: ["/portfolio-images/world-vision-nutrition-murals.webp"]
+      gallery: ["/portfolio-images/world-vision-nutrition-murals.webp","/portfolio-images/world-vision-nutrition-murals.webp"]
     },
     {
       id: 9,
-      title: "Project 9 - Nuru Boutique 3D",
+      title: "Project 9 - Nuru Boutique 3D - BrandMark Kenya",
       cat: "3D Signage",
+      client: "Client 9",
+      year: "2024",
+      location: "Eldoret, Kenya",
+      desc: "Professional 3d signage project delivered by BrandMark Kenya.",
       cover: "/portfolio-images/nuru-boutique-3d.webp",
-      gallery: ["/portfolio-images/nuru-boutique-3d.webp"]
+      gallery: ["/portfolio-images/nuru-boutique-3d.webp","/portfolio-images/nuru-boutique-3d.webp"]
     },
     {
       id: 10,
-      title: "Project 10 - Coca Cola Gate Branding",
+      title: "Project 10 - Coca Cola Gate Branding - BrandMark Kenya",
       cat: "Large Format",
+      client: "Client 10",
+      year: "2024",
+      location: "Eldoret, Kenya",
+      desc: "Professional large format project delivered by BrandMark Kenya.",
       cover: "/portfolio-images/coca-cola-gate-branding.webp",
-      gallery: ["/portfolio-images/coca-cola-gate-branding.webp"]
+      gallery: ["/portfolio-images/coca-cola-gate-branding.webp","/portfolio-images/coca-cola-gate-branding.webp"]
     },
     {
       id: 11,
-      title: "Project 11 - Coca Cola Burudika",
+      title: "Project 11 - Coca Cola Burudika - BrandMark Kenya",
       cat: "Branding",
+      client: "Client 11",
+      year: "2024",
+      location: "Eldoret, Kenya",
+      desc: "Professional branding project delivered by BrandMark Kenya.",
       cover: "/portfolio-images/coca-cola-burudika.webp",
-      gallery: ["/portfolio-images/coca-cola-burudika.webp"]
+      gallery: ["/portfolio-images/coca-cola-burudika.webp","/portfolio-images/coca-cola-burudika.webp"]
     },
     {
       id: 12,
-      title: "Project 12 - Coca Cola Refreshingly",
+      title: "Project 12 - Coca Cola Refreshingly - BrandMark Kenya",
       cat: "Workshop",
+      client: "Client 12",
+      year: "2024",
+      location: "Eldoret, Kenya",
+      desc: "Professional workshop project delivered by BrandMark Kenya.",
       cover: "/portfolio-images/coca-cola-refreshingly.webp",
-      gallery: ["/portfolio-images/coca-cola-refreshingly.webp"]
+      gallery: ["/portfolio-images/coca-cola-refreshingly.webp","/portfolio-images/coca-cola-refreshingly.webp"]
     },
     {
       id: 13,
-      title: "Project 13 - Chayil Before And After Branding",
+      title: "Project 13 - Chayil Before And After Branding - BrandMark Kenya",
       cat: "Signage",
+      client: "Client 13",
+      year: "2024",
+      location: "Eldoret, Kenya",
+      desc: "Professional signage project delivered by BrandMark Kenya.",
       cover: "/portfolio-images/chayil-before-and-after-branding.webp",
-      gallery: ["/portfolio-images/chayil-before-and-after-branding.webp"]
+      gallery: ["/portfolio-images/chayil-before-and-after-branding.webp","/portfolio-images/chayil-before-and-after-branding.webp"]
     },
     {
       id: 14,
-      title: "Project 14 - Brandmark Embroidery Workshop",
+      title: "Project 14 - Brandmark Embroidery Workshop - BrandMark Kenya",
       cat: "Apparel",
+      client: "Client 14",
+      year: "2024",
+      location: "Eldoret, Kenya",
+      desc: "Professional apparel project delivered by BrandMark Kenya.",
       cover: "/portfolio-images/brandmark-embroidery-workshop.webp",
-      gallery: ["/portfolio-images/brandmark-embroidery-workshop.webp"]
+      gallery: ["/portfolio-images/brandmark-embroidery-workshop.webp","/portfolio-images/brandmark-embroidery-workshop.webp"]
     },
     {
       id: 15,
-      title: "Project 15 - Brandmark Workshop",
+      title: "Project 15 - Brandmark Workshop - BrandMark Kenya",
       cat: "3D Signage",
+      client: "Client 15",
+      year: "2024",
+      location: "Eldoret, Kenya",
+      desc: "Professional 3d signage project delivered by BrandMark Kenya.",
       cover: "/portfolio-images/brandmark-workshop.webp",
-      gallery: ["/portfolio-images/brandmark-workshop.webp"]
+      gallery: ["/portfolio-images/brandmark-workshop.webp","/portfolio-images/brandmark-workshop.webp"]
     },
     {
       id: 16,
-      title: "Project 16 - Malaika Fashions",
+      title: "Project 16 - Malaika Fashions - BrandMark Kenya",
       cat: "Large Format",
+      client: "Client 16",
+      year: "2024",
+      location: "Eldoret, Kenya",
+      desc: "Professional large format project delivered by BrandMark Kenya.",
       cover: "/portfolio-images/malaika-fashions.webp",
-      gallery: ["/portfolio-images/malaika-fashions.webp"]
+      gallery: ["/portfolio-images/malaika-fashions.webp","/portfolio-images/malaika-fashions.webp"]
     },
     {
       id: 17,
-      title: "Project 17 - Ncpb Agricultural Hub 3D",
+      title: "Project 17 - Ncpb Agricultural Hub 3D - BrandMark Kenya",
       cat: "Branding",
+      client: "Client 17",
+      year: "2024",
+      location: "Eldoret, Kenya",
+      desc: "Professional branding project delivered by BrandMark Kenya.",
       cover: "/portfolio-images/ncpb-agricultural-hub-3d.webp",
-      gallery: ["/portfolio-images/ncpb-agricultural-hub-3d.webp"]
+      gallery: ["/portfolio-images/ncpb-agricultural-hub-3d.webp","/portfolio-images/ncpb-agricultural-hub-3d.webp"]
     },
     {
       id: 18,
-      title: "Project 18 - Brandmark Logo",
+      title: "Project 18 - Brandmark Logo - BrandMark Kenya",
       cat: "Workshop",
+      client: "Client 18",
+      year: "2024",
+      location: "Eldoret, Kenya",
+      desc: "Professional workshop project delivered by BrandMark Kenya.",
       cover: "/portfolio-images/brandmark-logo.webp",
-      gallery: ["/portfolio-images/brandmark-logo.webp"]
+      gallery: ["/portfolio-images/brandmark-logo.webp","/portfolio-images/brandmark-logo.webp"]
     },
     {
       id: 19,
-      title: "Project 19 - Huduma Centre Desk",
+      title: "Project 19 - Huduma Centre Desk - BrandMark Kenya",
       cat: "Signage",
+      client: "Client 19",
+      year: "2024",
+      location: "Eldoret, Kenya",
+      desc: "Professional signage project delivered by BrandMark Kenya.",
       cover: "/portfolio-images/huduma-centre-desk.webp",
-      gallery: ["/portfolio-images/huduma-centre-desk.webp"]
+      gallery: ["/portfolio-images/huduma-centre-desk.webp","/portfolio-images/huduma-centre-desk.webp"]
     },
     {
       id: 20,
-      title: "Project 20 - Huduma Centre Information Desk",
+      title: "Project 20 - Huduma Centre Information Desk - BrandMark Kenya",
       cat: "Apparel",
+      client: "Client 20",
+      year: "2024",
+      location: "Eldoret, Kenya",
+      desc: "Professional apparel project delivered by BrandMark Kenya.",
       cover: "/portfolio-images/huduma-centre-information-desk.webp",
-      gallery: ["/portfolio-images/huduma-centre-information-desk.webp"]
+      gallery: ["/portfolio-images/huduma-centre-information-desk.webp","/portfolio-images/huduma-centre-information-desk.webp"]
     },
-    {
+                        {
       id: 21,
-      title: "Project 21 - Huduma Kenya Branding",
+      title: "Project 21 - Huduma Kenya Branding - BrandMark Kenya",
       cat: "3D Signage",
+      client: "Client 21",
+      year: "2024",
+      location: "Eldoret, Kenya",
+      desc: "Professional 3d signage project delivered by BrandMark Kenya.",
       cover: "/portfolio-images/huduma-kenya-branding.webp",
-      gallery: ["/portfolio-images/huduma-kenya-branding.webp"]
+      gallery: ["/portfolio-images/huduma-kenya-branding.webp","/portfolio-images/huduma-kenya-branding.webp"]
     },
     {
       id: 22,
-      title: "Project 22 - Apparel Collage Branding",
+      title: "Project 22 - Apparel Collage Branding - BrandMark Kenya",
       cat: "Large Format",
+      client: "Client 22",
+      year: "2024",
+      location: "Eldoret, Kenya",
+      desc: "Professional large format project delivered by BrandMark Kenya.",
       cover: "/portfolio-images/apparel-collage-branding.webp",
-      gallery: ["/portfolio-images/apparel-collage-branding.webp"]
+      gallery: ["/portfolio-images/apparel-collage-branding.webp","/portfolio-images/apparel-collage-branding.webp"]
     },
     {
       id: 23,
-      title: "Project 23 - World Vision Field Jacket",
+      title: "Project 23 - World Vision Field Jacket - BrandMark Kenya",
       cat: "Branding",
+      client: "Client 23",
+      year: "2024",
+      location: "Eldoret, Kenya",
+      desc: "Professional branding project delivered by BrandMark Kenya.",
       cover: "/portfolio-images/world-vision-field-jacket.webp",
-      gallery: ["/portfolio-images/world-vision-field-jacket.webp"]
+      gallery: ["/portfolio-images/world-vision-field-jacket.webp","/portfolio-images/world-vision-field-jacket.webp"]
     },
     {
       id: 24,
-      title: "Project 24 - World Vision Field Jacket Back",
+      title: "Project 24 - World Vision Field Jacket Back - BrandMark Kenya",
       cat: "Workshop",
+      client: "Client 24",
+      year: "2024",
+      location: "Eldoret, Kenya",
+      desc: "Professional workshop project delivered by BrandMark Kenya.",
       cover: "/portfolio-images/world-vision-field-jacket-back.webp",
-      gallery: ["/portfolio-images/world-vision-field-jacket-back.webp"]
+      gallery: ["/portfolio-images/world-vision-field-jacket-back.webp","/portfolio-images/world-vision-field-jacket-back.webp"]
     },
     {
       id: 25,
-      title: "Project 25 - World Vision Shirts",
+      title: "Project 25 - World Vision Shirts - BrandMark Kenya",
       cat: "Signage",
+      client: "Client 25",
+      year: "2024",
+      location: "Eldoret, Kenya",
+      desc: "Professional signage project delivered by BrandMark Kenya.",
       cover: "/portfolio-images/world-vision-shirts.webp",
-      gallery: ["/portfolio-images/world-vision-shirts.webp"]
+      gallery: ["/portfolio-images/world-vision-shirts.webp","/portfolio-images/world-vision-shirts.webp"]
     },
     {
       id: 26,
-      title: "Project 26 - World Vision Nutrition Murals",
+      title: "Project 26 - World Vision Nutrition Murals - BrandMark Kenya",
       cat: "Apparel",
+      client: "Client 26",
+      year: "2024",
+      location: "Eldoret, Kenya",
+      desc: "Professional apparel project delivered by BrandMark Kenya.",
       cover: "/portfolio-images/world-vision-nutrition-murals.webp",
-      gallery: ["/portfolio-images/world-vision-nutrition-murals.webp"]
+      gallery: ["/portfolio-images/world-vision-nutrition-murals.webp","/portfolio-images/world-vision-nutrition-murals.webp"]
     },
     {
       id: 27,
-      title: "Project 27 - Nuru Boutique 3D",
+      title: "Project 27 - Nuru Boutique 3D - BrandMark Kenya",
       cat: "3D Signage",
+      client: "Client 27",
+      year: "2024",
+      location: "Eldoret, Kenya",
+      desc: "Professional 3d signage project delivered by BrandMark Kenya.",
       cover: "/portfolio-images/nuru-boutique-3d.webp",
-      gallery: ["/portfolio-images/nuru-boutique-3d.webp"]
+      gallery: ["/portfolio-images/nuru-boutique-3d.webp","/portfolio-images/nuru-boutique-3d.webp"]
     },
     {
       id: 28,
-      title: "Project 28 - Coca Cola Gate Branding",
+      title: "Project 28 - Coca Cola Gate Branding - BrandMark Kenya",
       cat: "Large Format",
+      client: "Client 28",
+      year: "2024",
+      location: "Eldoret, Kenya",
+      desc: "Professional large format project delivered by BrandMark Kenya.",
       cover: "/portfolio-images/coca-cola-gate-branding.webp",
-      gallery: ["/portfolio-images/coca-cola-gate-branding.webp"]
+      gallery: ["/portfolio-images/coca-cola-gate-branding.webp","/portfolio-images/coca-cola-gate-branding.webp"]
     },
     {
       id: 29,
-      title: "Project 29 - Coca Cola Burudika",
+      title: "Project 29 - Coca Cola Burudika - BrandMark Kenya",
       cat: "Branding",
+      client: "Client 29",
+      year: "2024",
+      location: "Eldoret, Kenya",
+      desc: "Professional branding project delivered by BrandMark Kenya.",
       cover: "/portfolio-images/coca-cola-burudika.webp",
-      gallery: ["/portfolio-images/coca-cola-burudika.webp"]
+      gallery: ["/portfolio-images/coca-cola-burudika.webp","/portfolio-images/coca-cola-burudika.webp"]
     },
     {
       id: 30,
-      title: "Project 30 - Coca Cola Refreshingly",
+      title: "Project 30 - Coca Cola Refreshingly - BrandMark Kenya",
       cat: "Workshop",
+      client: "Client 30",
+      year: "2024",
+      location: "Eldoret, Kenya",
+      desc: "Professional workshop project delivered by BrandMark Kenya.",
       cover: "/portfolio-images/coca-cola-refreshingly.webp",
-      gallery: ["/portfolio-images/coca-cola-refreshingly.webp"]
+      gallery: ["/portfolio-images/coca-cola-refreshingly.webp","/portfolio-images/coca-cola-refreshingly.webp"]
     },
     {
       id: 31,
-      title: "Project 31 - Chayil Before And After Branding",
+      title: "Project 31 - Chayil Before And After Branding - BrandMark Kenya",
       cat: "Signage",
+      client: "Client 31",
+      year: "2024",
+      location: "Eldoret, Kenya",
+      desc: "Professional signage project delivered by BrandMark Kenya.",
       cover: "/portfolio-images/chayil-before-and-after-branding.webp",
-      gallery: ["/portfolio-images/chayil-before-and-after-branding.webp"]
+      gallery: ["/portfolio-images/chayil-before-and-after-branding.webp","/portfolio-images/chayil-before-and-after-branding.webp"]
     },
     {
       id: 32,
-      title: "Project 32 - Brandmark Embroidery Workshop",
+      title: "Project 32 - Brandmark Embroidery Workshop - BrandMark Kenya",
       cat: "Apparel",
+      client: "Client 32",
+      year: "2024",
+      location: "Eldoret, Kenya",
+      desc: "Professional apparel project delivered by BrandMark Kenya.",
       cover: "/portfolio-images/brandmark-embroidery-workshop.webp",
-      gallery: ["/portfolio-images/brandmark-embroidery-workshop.webp"]
+      gallery: ["/portfolio-images/brandmark-embroidery-workshop.webp","/portfolio-images/brandmark-embroidery-workshop.webp"]
     },
     {
       id: 33,
-      title: "Project 33 - Brandmark Workshop",
+      title: "Project 33 - Brandmark Workshop - BrandMark Kenya",
       cat: "3D Signage",
+      client: "Client 33",
+      year: "2024",
+      location: "Eldoret, Kenya",
+      desc: "Professional 3d signage project delivered by BrandMark Kenya.",
       cover: "/portfolio-images/brandmark-workshop.webp",
-      gallery: ["/portfolio-images/brandmark-workshop.webp"]
+      gallery: ["/portfolio-images/brandmark-workshop.webp","/portfolio-images/brandmark-workshop.webp"]
     },
     {
       id: 34,
-      title: "Project 34 - Malaika Fashions",
+      title: "Project 34 - Malaika Fashions - BrandMark Kenya",
       cat: "Large Format",
+      client: "Client 34",
+      year: "2024",
+      location: "Eldoret, Kenya",
+      desc: "Professional large format project delivered by BrandMark Kenya.",
       cover: "/portfolio-images/malaika-fashions.webp",
-      gallery: ["/portfolio-images/malaika-fashions.webp"]
+      gallery: ["/portfolio-images/malaika-fashions.webp","/portfolio-images/malaika-fashions.webp"]
     },
     {
       id: 35,
-      title: "Project 35 - Ncpb Agricultural Hub 3D",
+      title: "Project 35 - Ncpb Agricultural Hub 3D - BrandMark Kenya",
       cat: "Branding",
+      client: "Client 35",
+      year: "2024",
+      location: "Eldoret, Kenya",
+      desc: "Professional branding project delivered by BrandMark Kenya.",
       cover: "/portfolio-images/ncpb-agricultural-hub-3d.webp",
-      gallery: ["/portfolio-images/ncpb-agricultural-hub-3d.webp"]
+      gallery: ["/portfolio-images/ncpb-agricultural-hub-3d.webp","/portfolio-images/ncpb-agricultural-hub-3d.webp"]
     },
     {
       id: 36,
-      title: "Project 36 - Brandmark Logo",
+      title: "Project 36 - Brandmark Logo - BrandMark Kenya",
       cat: "Workshop",
+      client: "Client 36",
+      year: "2024",
+      location: "Eldoret, Kenya",
+      desc: "Professional workshop project delivered by BrandMark Kenya.",
       cover: "/portfolio-images/brandmark-logo.webp",
-      gallery: ["/portfolio-images/brandmark-logo.webp"]
+      gallery: ["/portfolio-images/brandmark-logo.webp","/portfolio-images/brandmark-logo.webp"]
     },
     {
       id: 37,
-      title: "Project 37 - Huduma Centre Desk",
+      title: "Project 37 - Huduma Centre Desk - BrandMark Kenya",
       cat: "Signage",
+      client: "Client 37",
+      year: "2024",
+      location: "Eldoret, Kenya",
+      desc: "Professional signage project delivered by BrandMark Kenya.",
       cover: "/portfolio-images/huduma-centre-desk.webp",
-      gallery: ["/portfolio-images/huduma-centre-desk.webp"]
+      gallery: ["/portfolio-images/huduma-centre-desk.webp","/portfolio-images/huduma-centre-desk.webp"]
     },
     {
       id: 38,
-      title: "Project 38 - Huduma Centre Information Desk",
+      title: "Project 38 - Huduma Centre Information Desk - BrandMark Kenya",
       cat: "Apparel",
+      client: "Client 38",
+      year: "2024",
+      location: "Eldoret, Kenya",
+      desc: "Professional apparel project delivered by BrandMark Kenya.",
       cover: "/portfolio-images/huduma-centre-information-desk.webp",
-      gallery: ["/portfolio-images/huduma-centre-information-desk.webp"]
+      gallery: ["/portfolio-images/huduma-centre-information-desk.webp","/portfolio-images/huduma-centre-information-desk.webp"]
     },
     {
       id: 39,
-      title: "Project 39 - Huduma Kenya Branding",
+      title: "Project 39 - Huduma Kenya Branding - BrandMark Kenya",
       cat: "3D Signage",
+      client: "Client 39",
+      year: "2024",
+      location: "Eldoret, Kenya",
+      desc: "Professional 3d signage project delivered by BrandMark Kenya.",
       cover: "/portfolio-images/huduma-kenya-branding.webp",
-      gallery: ["/portfolio-images/huduma-kenya-branding.webp"]
+      gallery: ["/portfolio-images/huduma-kenya-branding.webp","/portfolio-images/huduma-kenya-branding.webp"]
     },
     {
       id: 40,
-      title: "Project 40 - Apparel Collage Branding",
+      title: "Project 40 - Apparel Collage Branding - BrandMark Kenya",
       cat: "Large Format",
+      client: "Client 40",
+      year: "2024",
+      location: "Eldoret, Kenya",
+      desc: "Professional large format project delivered by BrandMark Kenya.",
       cover: "/portfolio-images/apparel-collage-branding.webp",
-      gallery: ["/portfolio-images/apparel-collage-branding.webp"]
+      gallery: ["/portfolio-images/apparel-collage-branding.webp","/portfolio-images/apparel-collage-branding.webp"]
     },
     {
       id: 41,
-      title: "Project 41 - World Vision Field Jacket",
+      title: "Project 41 - World Vision Field Jacket - BrandMark Kenya",
       cat: "Branding",
+      client: "Client 41",
+      year: "2024",
+      location: "Eldoret, Kenya",
+      desc: "Professional branding project delivered by BrandMark Kenya.",
       cover: "/portfolio-images/world-vision-field-jacket.webp",
-      gallery: ["/portfolio-images/world-vision-field-jacket.webp"]
+      gallery: ["/portfolio-images/world-vision-field-jacket.webp","/portfolio-images/world-vision-field-jacket.webp"]
     },
     ];
-
-    function showPage(id) {
-      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-      var el = document.getElementById('p-' + id);
-      if (el) {
-        el.classList.add('active');
-      }
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
-      closeNav();
-    }
-
-    function renderGrids(filter = 'All') {
-      var cats = ['All','Signage','Apparel','3D Signage','Large Format','Branding','Workshop'];
-      var fhtml = cats.map(c => `<button class="${filter===c?'active':''}" onclick="renderGrids('${c}')">${c}</button>`).join('');
-      var hF = document.getElementById('homeFilters');
-      if (hF) {
-        hF.innerHTML = fhtml;
-      }
-      var wF = document.getElementById('workFilters');
-      if (wF) {
-        wF.innerHTML = fhtml;
-      }
-      var list = filter === 'All' ? projects : projects.filter(p => p.cat === filter);
-      var html = list.map(p => `<div class="card" onclick="openWork(${p.id})"><img src="${p.cover}" loading="lazy" alt="${p.title}"><div class="meta"><h3>${p.title}</h3><span>${p.cat}</span></div></div>`).join('');
-      var hg = document.getElementById('workGridHome');
-      if (hg) {
-        hg.innerHTML = html;
-      }
-      var wg = document.getElementById('workGrid');
-      if (wg) {
-        wg.innerHTML = html;
-      }
-    }
-
-    function openWork(id) {
-      var p = projects.find(x => x.id === id);
-      if (!p) {
-        return;
-      }
-      var d = document.getElementById('workDetail');
-      d.innerHTML = `<h2 style="font-family:'Bebas Neue';font-size:clamp(2rem,5vw,3.2rem)">${p.title}</h2><p style="opacity:.7;margin-top:4px">${p.cat} • ${p.gallery.length} images</p><div style="margin-top:14px;display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:12px">${p.gallery.map(src=>`<img src="${src}" loading="lazy" style="width:100%;height:360px;object-fit:cover;border-radius:14px;background:#001215">`).join('')}</div>`;
-      showPage('work-detail');
-    }
-
-    document.addEventListener('DOMContentLoaded', function() {
-      renderGrids();
-      var track = document.getElementById('heroTrack');
-      if (!track) {
-        return;
-      }
-      var c = 0;
-      setInterval(function() {
-        c = (c + 1) % track.children.length;
-        track.style.transform = 'translateX(-' + (c * 100) + '%)';
-      }, 3500);
-    });
+    function showPage(id){document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));var el=document.getElementById('p-'+id);if(el)el.classList.add('active');window.scrollTo({top:0,behavior:'smooth'});closeNav()}
+    function renderGrids(filter='All'){var cats=['All','Signage','Apparel','3D Signage','Large Format','Branding','Workshop'];var fhtml=cats.map(c=>`<button class="${filter===c?'active':''}" onclick="renderGrids('${c}')">${c}</button>`).join('');var hF=document.getElementById('homeFilters');if(hF)hF.innerHTML=fhtml;var wF=document.getElementById('workFilters');if(wF)wF.innerHTML=fhtml;var list=filter==='All'?projects:projects.filter(p=>p.cat===filter);var html=list.map(p=>`<div class="card" onclick="openWork(${p.id})"><img src="${p.cover}" loading="lazy" alt="${p.title}"><div class="meta"><h3>${p.title}</h3><span>${p.cat}</span></div></div>`).join('');var hg=document.getElementById('workGridHome');if(hg)hg.innerHTML=html;var wg=document.getElementById('workGrid');if(wg)wg.innerHTML=html;}
+    function openWork(id){var p=projects.find(x=>x.id===id);if(!p)return;var d=document.getElementById('workDetail');d.innerHTML=`<h2 style="font-family:'Bebas Neue';font-size:clamp(2rem,5vw,3.2rem)">${p.title}</h2><p style="opacity:.7;margin-top:4px">${p.cat} • ${p.client} • ${p.year}</p><p style="margin-top:8px;opacity:.8">${p.desc}</p><div style="margin-top:14px;display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:12px">${p.gallery.map(src=>`<img src="${src}" loading="lazy" style="width:100%;height:360px;object-fit:cover;border-radius:14px;background:#001215">`).join('')}</div>`;showPage('work-detail');}
+    document.addEventListener('DOMContentLoaded',function(){renderGrids();var track=document.getElementById('heroTrack');if(!track)return;var c=0;setInterval(function(){c=(c+1)%track.children.length;track.style.transform='translateX(-'+(c*100)+'%)';},3500);});
   </script>
-
 </body>
 </html>
