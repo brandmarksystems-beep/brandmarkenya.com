@@ -565,7 +565,17 @@ a[target="_blank"],button{cursor:pointer!important;}
     .dir-form{grid-template-columns:1fr!important;}
     .dir-stats{flex-wrap:wrap;gap:12px;}
   }
-</style>
+  /* — FINAL MOBILE FIX — */
+  .hero-body{flex-direction:column !important; align-items:stretch !important;}
+  .hero-left{order:1; display:flex !important; flex-direction:column !important; visibility:visible !important; opacity:1 !important;}
+  .hero-right{order:2; width:100% !important; margin-top:16px;}
+  .hero-big{font-weight:800 !important; font-family:'Cormorant Garamond',serif !important;}
+  .hero-big em{font-weight:800 !important; font-style:italic !important; color:#14B8A6 !important;}
+  .hero-desc{display:block !important; visibility:visible !important; opacity:1 !important;}
+  .hero-stats{display:grid !important; grid-template-columns:1fr 1fr !important; gap:10px !important; visibility:visible !important; opacity:1 !important; margin-bottom:18px !important;}
+  .hero-btns{display:flex !important; visibility:visible !important;}
+  #p-home{padding-bottom:80px !important; display:block !important; min-height:auto !important;}
+</style> 
 </head>
 <body>
 <div class="cursor" id="cur"></div>
