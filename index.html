@@ -662,15 +662,6 @@ a[target="_blank"],button{cursor:pointer!important;}
   </div>
 </div>
 
-   <!-- FEATURED PARTNERS TICKER - from /advertise/ -->
-<div id="ads-ticker" style="overflow:hidden;background:#080808;padding:22px 0;border-top:1px solid #111;border-bottom:1px solid #111;width:100%;margin-top:30px">
-  <div style="color:#00e5ff;text-align:center;font-size:11px;letter-spacing:3px;margin-bottom:14px">FEATURED PARTNERS • FEATURED PARTNERS • FEATURED PARTNERS</div>
-  <div id="ads-track" style="display:flex;gap:24px;animation:adsScroll 40s linear infinite;width:max-content"></div>
-</div>
-<style>@keyframes adsScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}} #ads-track:hover{animation-play-state:paused} #ads-track a{flex:0 0 280px;background:#151515;border-radius:12px;overflow:hidden;border:1px solid #222;text-decoration:none;display:block} #ads-track img{width:100%;height:140px;object-fit:cover;display:block} #ads-track .ad-name{color:#fff;padding:10px 12px;font-weight:600;font-size:14px}</style>
-<script src="/advertise/data.js"></script>
-<script>try{const t=document.getElementById('ads-track');if(t&&typeof advertisers!=='undefined'&&advertisers.length){const l=[...advertisers,...advertisers];t.innerHTML=l.map(a=>`<a href="${a.page}"><img src="${a.banner}" onerror="this.src='${a.logo||'/portfolio-images/brandmark-logo.webp'}'"><div class="ad-name">${a.name}</div></a>`).join('')}else{document.getElementById('ads-ticker').style.display='none'}}catch(e){}</script>
-
    <!-- ═══════════ ABOUT ═══════════ -->
 <div class="panel" id="p-about">
   <div class="ab-vis">
