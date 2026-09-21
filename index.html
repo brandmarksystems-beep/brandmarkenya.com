@@ -10,6 +10,7 @@
 <meta property="og:type" content="website"/>
 <link rel="canonical" href="https://brandmarkenya.com"/>
 <title>Brandmarkenya.com</title>
+<!-- Responsive cleanup revision: preserves existing content, links, forms and assets. -->
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Bebas+Neue&family=DM+Sans:wght@300;400;500&family=Nunito:wght@900&family=Raleway:ital,wght@1,700&display=swap" rel="stylesheet"/>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-HPZ7GK21KM"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-HPZ7GK21KM');</script>
@@ -335,7 +336,7 @@ nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);z-index:300;
 .legal-hl{background:rgba(0,200,212,.07);border-left:3px solid var(--cyan);
   padding:10px 14px;margin:10px 0;font-size:.8rem;color:rgba(255,255,255,.65);line-height:1.75;}
 
-/* ── TICKER ── */to{transform:translateX(-50%)}}
+/* ── TICKER ── */
 
 /* ── WHATSAPP ── */
    a[target="_blank"],button{cursor:pointer!important;}
@@ -560,6 +561,61 @@ a[target="_blank"],button{cursor:pointer!important;}
   .hero-stats{display:grid !important; grid-template-columns:1fr 1fr !important; gap:10px !important; visibility:visible !important; opacity:1 !important; margin-bottom:18px !important;}
   .hero-btns{display:flex !important; visibility:visible !important;}
   #p-home{padding-bottom:80px !important; display:block !important; min-height:auto !important;}
+
+
+/* ============================================================
+   RESPONSIVE LAYOUT HARDENING
+   Keeps all existing content/data while preventing viewport,
+   hero and footer clipping across mobile and desktop.
+   ============================================================ */
+html,body{min-height:100%;}
+.panels{min-height:0;}
+.panel{min-height:0;}
+
+@media (min-width:901px){
+  #p-home{padding-top:18px;}
+  #p-home .hero-body{padding-left:0;padding-right:0;}
+  .site-footer{min-height:var(--footer-h);}
+}
+
+@media (max-width:900px){
+  .panels{bottom:var(--footer-h);}
+  #p-home{justify-content:flex-start;}
+  #p-home .hero-body{padding:18px 0 28px;gap:20px;flex:none;}
+  .hero-left,.hero-right{width:100%;max-width:100%;align-self:auto;}
+  .hero-slider{height:clamp(180px,42vw,280px);min-height:180px;max-height:280px;}
+  .hero-stats{grid-template-columns:repeat(2,minmax(0,1fr));}
+  .footer-content{min-height:0;overflow:visible;}
+  .footer-contacts{max-width:100%;}
+}
+
+@media (max-width:768px){
+  :root{--footer-h:116px;}
+  .site-footer{height:var(--footer-h);}
+  .footer-content{padding:10px var(--pad) 6px;align-items:center;}
+  .footer-left{width:100%;overflow:visible;}
+  .footer-contacts{justify-content:center;flex-wrap:wrap;overflow:visible;row-gap:5px;column-gap:8px;}
+  .footer-contacts a,.footer-contacts span{white-space:normal;text-align:center;}
+  .footer-legal{height:auto;min-height:34px;flex-wrap:wrap;overflow:visible;padding:5px var(--pad) 10px;row-gap:3px;}
+  #p-home{padding:14px var(--pad) 34px;}
+  .hero-big{font-size:clamp(2.25rem,9vw,4.5rem);line-height:.96;overflow-wrap:anywhere;}
+  .hero-desc{max-width:100%;}
+  .hero-btns{flex-wrap:wrap;}
+}
+
+@media (max-width:600px){
+  :root{--footer-h:136px;}
+  .site-footer{height:var(--footer-h);}
+  .footer-content{padding:9px 14px 4px;}
+  .footer-contacts{font-size:.56rem;gap:4px 7px;}
+  .footer-contacts a,.footer-contacts span{font-size:.56rem;}
+  .footer-legal{padding:4px 10px 9px;gap:2px;}
+  .ftr-lnk{font-size:.56rem;padding:4px 5px;}
+  #p-home{padding-left:14px;padding-right:14px;}
+  #p-home .hero-body{padding-top:12px;padding-bottom:24px;}
+  .hero-slider{height:210px;min-height:210px;}
+}
+
 </style> 
 </head>
 <body>
@@ -723,7 +779,7 @@ a[target="_blank"],button{cursor:pointer!important;}
         <button class="gfil" onclick="filterGal('vehicle',this)">Vehicle (1)</button>
       </div>
     </div>
-    <div class="gal-grid" id="galGrid"><div class="gal-card" data-cat="wall" onclick="openLightbox(0)"><img src="" alt="Coca-Cola Wall Branding" loading="lazy"/><div class="gal-overlay"><div class="gal-lbl">Coca-Cola Wall Branding</div></div></div><div class="gal-card" data-cat="wall" onclick="openLightbox(1)"><img src="" alt="Coca-Cola — Burudika na Coke" loading="lazy"/><div class="gal-overlay"><div class="gal-lbl">Coca-Cola — Burudika na Coke</div></div></div><div class="gal-card" data-cat="wall" onclick="openLightbox(2)"><img src="" alt="Coca-Cola — Refreshingly Good" loading="lazy"/><div class="gal-overlay"><div class="gal-lbl">Coca-Cola — Refreshingly Good</div></div></div><div class="gal-card" data-cat="signage" onclick="openLightbox(3)"><img src="" alt="Huduma Kenya — Desk Branding" loading="lazy"/><div class="gal-overlay"><div class="gal-lbl">Huduma Kenya — Desk Branding</div></div></div><div class="gal-card" data-cat="signage" onclick="openLightbox(4)"><img src="" alt="Huduma Kenya — Information Desk" loading="lazy"/><div class="gal-overlay"><div class="gal-lbl">Huduma Kenya — Information Desk</div></div></div><div class="gal-card" data-cat="signage" onclick="openLightbox(5)"><img src="" alt="Eldoret Country Lodge — Signage" loading="lazy"/><div class="gal-overlay"><div class="gal-lbl">Eldoret Country Lodge — Signage</div></div></div><div class="gal-card" data-cat="banners" onclick="openLightbox(6)"><img src="" alt="Roll-Up Banners — Multiple Clients" loading="lazy"/><div class="gal-overlay"><div class="gal-lbl">Roll-Up Banners — Multiple Clients</div></div></div><div class="gal-card" data-cat="promo" onclick="openLightbox(7)"><img src="" alt="Promo Items — World Vision Bands" loading="lazy"/><div class="gal-overlay"><div class="gal-lbl">Promo Items — World Vision Bands</div></div></div><div class="gal-card" data-cat="promo" onclick="openLightbox(8)"><img src="" alt="Custom Box — World Vision" loading="lazy"/><div class="gal-overlay"><div class="gal-lbl">Custom Box — World Vision</div></div></div><div class="gal-card" data-cat="apparel" onclick="openLightbox(9)"><img src="" alt="Corporate Wear — Custom Uniform" loading="lazy"/><div class="gal-overlay"><div class="gal-lbl">Corporate Wear — Custom Uniform</div></div></div><div class="gal-card" data-cat="apparel" onclick="openLightbox(10)"><img src="" alt="Corporate Vest — World Vision" loading="lazy"/><div class="gal-overlay"><div class="gal-lbl">Corporate Vest — World Vision</div></div></div><div class="gal-card" data-cat="apparel" onclick="openLightbox(11)"><img src="" alt="Corporate Vest — Front View" loading="lazy"/><div class="gal-overlay"><div class="gal-lbl">Corporate Vest — Front View</div></div></div><div class="gal-card" data-cat="apparel" onclick="openLightbox(12)"><img src="" alt="Corporate Apparel Collection" loading="lazy"/><div class="gal-overlay"><div class="gal-lbl">Corporate Apparel Collection</div></div></div><div class="gal-card" data-cat="vehicle" onclick="openLightbox(13)"><img src="" alt="Vehicle Wrap — UDA Campaign" loading="lazy"/><div class="gal-overlay"><div class="gal-lbl">Vehicle Wrap — UDA Campaign</div></div></div><div class="gal-card" data-cat="promo" onclick="openLightbox(14)"><img src="" alt="Branded Mugs — BrandMark & FMNR" loading="lazy"/><div class="gal-overlay"><div class="gal-lbl">Branded Mugs — BrandMark & FMNR</div></div></div><div class="gal-card" data-cat="signage" onclick="openLightbox(15)"><img src="" alt="Brass Plaques — World Vision" loading="lazy"/><div class="gal-overlay"><div class="gal-lbl">Brass Plaques — World Vision</div></div></div><div class="gal-card" data-cat="wall" onclick="openLightbox(16)"><iimagesmg src="" alt="Wall Branding — World Vision" loading="lazy"/><div class="gal-overlay"><div class="gal-lbl">Wall Branding — 
+    <div class="gal-grid" id="galGrid"><div class="gal-card" data-cat="wall" onclick="openLightbox(0)"><img src="" alt="Coca-Cola Wall Branding" loading="lazy"/><div class="gal-overlay"><div class="gal-lbl">Coca-Cola Wall Branding</div></div></div><div class="gal-card" data-cat="wall" onclick="openLightbox(1)"><img src="" alt="Coca-Cola — Burudika na Coke" loading="lazy"/><div class="gal-overlay"><div class="gal-lbl">Coca-Cola — Burudika na Coke</div></div></div><div class="gal-card" data-cat="wall" onclick="openLightbox(2)"><img src="" alt="Coca-Cola — Refreshingly Good" loading="lazy"/><div class="gal-overlay"><div class="gal-lbl">Coca-Cola — Refreshingly Good</div></div></div><div class="gal-card" data-cat="signage" onclick="openLightbox(3)"><img src="" alt="Huduma Kenya — Desk Branding" loading="lazy"/><div class="gal-overlay"><div class="gal-lbl">Huduma Kenya — Desk Branding</div></div></div><div class="gal-card" data-cat="signage" onclick="openLightbox(4)"><img src="" alt="Huduma Kenya — Information Desk" loading="lazy"/><div class="gal-overlay"><div class="gal-lbl">Huduma Kenya — Information Desk</div></div></div><div class="gal-card" data-cat="signage" onclick="openLightbox(5)"><img src="" alt="Eldoret Country Lodge — Signage" loading="lazy"/><div class="gal-overlay"><div class="gal-lbl">Eldoret Country Lodge — Signage</div></div></div><div class="gal-card" data-cat="banners" onclick="openLightbox(6)"><img src="" alt="Roll-Up Banners — Multiple Clients" loading="lazy"/><div class="gal-overlay"><div class="gal-lbl">Roll-Up Banners — Multiple Clients</div></div></div><div class="gal-card" data-cat="promo" onclick="openLightbox(7)"><img src="" alt="Promo Items — World Vision Bands" loading="lazy"/><div class="gal-overlay"><div class="gal-lbl">Promo Items — World Vision Bands</div></div></div><div class="gal-card" data-cat="promo" onclick="openLightbox(8)"><img src="" alt="Custom Box — World Vision" loading="lazy"/><div class="gal-overlay"><div class="gal-lbl">Custom Box — World Vision</div></div></div><div class="gal-card" data-cat="apparel" onclick="openLightbox(9)"><img src="" alt="Corporate Wear — Custom Uniform" loading="lazy"/><div class="gal-overlay"><div class="gal-lbl">Corporate Wear — Custom Uniform</div></div></div><div class="gal-card" data-cat="apparel" onclick="openLightbox(10)"><img src="" alt="Corporate Vest — World Vision" loading="lazy"/><div class="gal-overlay"><div class="gal-lbl">Corporate Vest — World Vision</div></div></div><div class="gal-card" data-cat="apparel" onclick="openLightbox(11)"><img src="" alt="Corporate Vest — Front View" loading="lazy"/><div class="gal-overlay"><div class="gal-lbl">Corporate Vest — Front View</div></div></div><div class="gal-card" data-cat="apparel" onclick="openLightbox(12)"><img src="" alt="Corporate Apparel Collection" loading="lazy"/><div class="gal-overlay"><div class="gal-lbl">Corporate Apparel Collection</div></div></div><div class="gal-card" data-cat="vehicle" onclick="openLightbox(13)"><img src="" alt="Vehicle Wrap — UDA Campaign" loading="lazy"/><div class="gal-overlay"><div class="gal-lbl">Vehicle Wrap — UDA Campaign</div></div></div><div class="gal-card" data-cat="promo" onclick="openLightbox(14)"><img src="" alt="Branded Mugs — BrandMark & FMNR" loading="lazy"/><div class="gal-overlay"><div class="gal-lbl">Branded Mugs — BrandMark & FMNR</div></div></div><div class="gal-card" data-cat="signage" onclick="openLightbox(15)"><img src="" alt="Brass Plaques — World Vision" loading="lazy"/><div class="gal-overlay"><div class="gal-lbl">Brass Plaques — World Vision</div></div></div><div class="gal-card" data-cat="wall" onclick="openLightbox(16)"><img src="" alt="Wall Branding — World Vision" loading="lazy"/><div class="gal-overlay"><div class="gal-lbl">Wall Branding — 
 World Vision</div></div></div><div class="gal-card" data-cat="wall" onclick="openLightbox(17)"><img src="" alt="Wall Mural — Nutrition" loading="lazy"/><div class="gal-overlay"><div class="gal-lbl">Wall Mural — Nutrition</div></div></div><div class="gal-card" data-cat="wall" onclick="openLightbox(18)"><img src="" alt="Wall Mural — Responsive Feeding" loading="lazy"/><div class="gal-overlay"><div class="gal-lbl">Wall Mural — Responsive Feeding</div></div></div><div class="gal-card" data-cat="wall" onclick="openLightbox(19)"><img src="" alt="Wall Mural — Hand Washing" loading="lazy"/><div class="gal-overlay"><div class="gal-lbl">Wall Mural — Hand Washing</div></div></div><div class="gal-card" data-cat="wall" onclick="openLightbox(20)"><img src="" alt="Wall Mural — Hand Washing II" loading="lazy"/><div class="gal-overlay"><div class="gal-lbl">Wall Mural — Hand Washing II</div></div></div><div class="gal-card" data-cat="wall" onclick="openLightbox(21)"><img src="" alt="Wall Mural — Nafaka Foods NCPB" loading="lazy"/><div class="gal-overlay"><div class="gal-lbl">Wall Mural — Nafaka Foods NCPB</div></div></div><div class="gal-card" data-cat="wall" onclick="openLightbox(22)"><img src="" alt="Wall Mural — Farm Inputs NCPB" loading="lazy"/><div class="gal-overlay"><div class="gal-lbl">Wall Mural — Farm Inputs NCPB</div></div></div><div class="gal-card" data-cat="wall" onclick="openLightbox(23)"><img src="" alt="NCPB Agricultural Hub — Wall" loading="lazy"/><div class="gal-overlay"><div class="gal-lbl">NCPB Agricultural Hub — Wall</div></div></div><div class="gal-card" data-cat="wall" onclick="openLightbox(24)"><img src="" alt="NCPB Wall Branding — Close-up" loading="lazy"/><div class="gal-overlay"><div class="gal-lbl">NCPB Wall Branding — Close-up</div></div></div><div class="gal-card" data-cat="signage" onclick="openLightbox(25)"><img src="" alt="NCPB Building Signage" loading="lazy"/><div class="gal-overlay"><div class="gal-lbl">NCPB Building Signage</div></div></div><div class="gal-card" data-cat="signage" onclick="openLightbox(26)"><img src="" alt="NCPB Hub Sign — Fabrication" loading="lazy"/><div class="gal-overlay"><div class="gal-lbl">NCPB Hub Sign — Fabrication</div></div></div><div class="gal-card" data-cat="apparel" onclick="openLightbox(27)"><img src="" alt="World Vision — Branded Bags & Blouses" loading="lazy"/><div class="gal-overlay"><div class="gal-lbl">World Vision — Branded Bags & Blouses</div></div></div><div class="gal-card" data-cat="apparel" onclick="openLightbox(28)"><img src="" alt="Palm Care Sinai Hospital — Corporate Vest" loading="lazy"/><div class="gal-overlay"><div class="gal-lbl">Palm Care Sinai Hospital — Corporate Vest</div></div></div><div class="gal-card" data-cat="apparel" onclick="openLightbox(29)"><img src="" alt="World Vision — Orange Vest (Back)" loading="lazy"/><div class="gal-overlay"><div class="gal-lbl">World Vision — Orange Vest (Back)</div></div></div><div class="gal-card" data-cat="apparel" onclick="openLightbox(30)"><img src="" alt="World Vision — Orange Field Vest (Front)" loading="lazy"/><div class="gal-overlay"><div class="gal-lbl">World Vision — Orange Field Vest (Front)</div></div></div><div class="gal-card" data-cat="wall" onclick="openLightbox(31)"><img src="" alt="World Vision — Breastfeeding Wall Mural" loading="lazy"/><div class="gal-overlay"><div class="gal-lbl">World Vision — Breastfeeding Wall Mural</div></div></div><div class="gal-card" data-cat="signage" onclick="openLightbox(32)"><img src="" alt="World Vision — Responsive Feeding Signage" loading="lazy"/><div class="gal-overlay"><div class="gal-lbl">World Vision — Responsive Feeding Signage</div></div></div><div class="gal-card" data-cat="wall" onclick="openLightbox(33)"><img src="" alt="World Vision — Nutrition Wall Mural" load
 ing="lazy"/><div class="gal-overlay"><div class="gal-lbl">World Vision — Nutrition Wall Mural</div></div></div><div class="gal-card" data-cat="promo" onclick="openLightbox(34)"><img src="" alt="World Vision — Kenya Big Dream Box" loading="lazy"/><div class="gal-overlay"><div class="gal-lbl">World Vision — Kenya Big Dream Box</div></div></div><div class="gal-card" data-cat="wall" onclick="openLightbox(35)"><img src="" alt="WaterFund — Hand Washing Wall Mural" loading="lazy"/><div class="gal-overlay"><div class="gal-lbl">WaterFund — Hand Washing Wall Mural</div></div></div><div class="gal-card" data-cat="promo" onclick="openLightbox(36)"><img src="" alt="World Vision — Children for Conservation Masks" loading="lazy"/><div class="gal-overlay"><div class="gal-lbl">World Vision — Children for Conservation Masks</div></div></div><div class="gal-card" data-cat="wall" onclick="openLightbox(37)"><img src="" alt="Coca-Cola — Burudika na Coke Wall" loading="lazy"/><div class="gal-overlay"><div class="gal-lbl">Coca-Cola — Burudika na Coke Wall</div></div></div><div class="gal-card" data-cat="apparel" onclick="openLightbox(38)"><img src="" alt="World Vision — Cream Blouse" loading="lazy"/><div class="gal-overlay"><div class="gal-lbl">World Vision — Cream Blouse</div></div></div><div class="gal-card" data-cat="apparel" onclick="openLightbox(39)"><img src="" alt="World Vision — Corporate Shirts & Bags" loading="lazy"/><div class="gal-overlay"><div class="gal-lbl">World Vision — Corporate Shirts & Bags</div></div></div><div class="gal-card" data-cat="apparel" onclick="openLightbox(40)"><img src="" alt="World Vision — Purple & Orange T-Shirts" loading="lazy"/><div class="gal-overlay"><div class="gal-lbl">World Vision — Purple & Orange T-Shirts</div></div></div><div class="gal-card" data-cat="signage" onclick="openLightbox(41)"><img src="" alt="Huduma Kenya — Eldoret Centre Signage" loading="lazy"/><div class="gal-overlay"><div class="gal-lbl">Huduma Kenya — Eldoret Centre Signage</div></div></div><div class="gal-card" data-cat="signage" onclick="openLightbox(42)"><img src="" alt="Huduma Kenya — Information Desk Branding" loading="lazy"/><div class="gal-overlay"><div class="gal-lbl">Huduma Kenya — Information Desk Branding</div></div></div><div class="gal-card" data-cat="signage" onclick="openLightbox(43)"><img src="" alt="Huduma Kenya — Information Desk Close" loading="lazy"/><div class="gal-overlay"><div class="gal-lbl">Huduma Kenya — Information Desk Close</div></div></div><div class="gal-card" data-cat="wall" onclick="openLightbox(44)"><img src="" alt="Coca-Cola — Refreshingly Good Wall" loading="lazy"/><div class="gal-overlay"><div class="gal-lbl">Coca-Cola — Refreshingly Good Wall</div></div></div><div class="gal-card" data-cat="banners" onclick="openLightbox(45)"><img src="" alt="Roll-Up Banners — World Vision & Church" loading="lazy"/><div class="gal-overlay"><div class="gal-lbl">Roll-Up Banners — World Vision & Church</div></div></div></div>
     <div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap;">
@@ -1590,20 +1646,6 @@ document.addEventListener('DOMContentLoaded', function(){
       console.error(err);
     });
   });
-</script>
-<!-- FIXED HERO SLIDER - SCROLL LEFT 4 SEC -->
-<script>
-(function(){
-  const track = document.querySelector('.hero-track');
-  if(!track) return;
-  const slides = track.querySelectorAll('.hero-slide');
-  if(slides.length <= 1) return;
-  let i = 0;
-  setInterval(()=>{
-    i = (i+1) % slides.length;
-    track.style.transform = 'translateX(-' + (i*100) + '%)';
-  }, 4000);
-})();
 </script>
 </body>
 </html>
