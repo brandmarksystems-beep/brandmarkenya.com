@@ -185,8 +185,7 @@ nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);z-index:300;
    "HERO MARQUEE" script block), so the source images stay the single
    source of truth. Mobile/tablet are untouched — they keep the
    fading .hero-slide behaviour and object-fit:cover as before. */
-.hero-marquee{display:none;position:absolute;inset:0;overflow:hidden;}
-.hero-marquee-track{display:flex;height:100%;width:max-content;
+.hero-marquee{display:block;position:absolute;inset:0;overflow:hidden;}
   animation:heroMarqueeScroll 32s linear infinite;}
 .hero-marquee:hover .hero-marquee-track{animation-play-state:paused;}
 .hero-marquee-item{position:relative;height:100%;flex-shrink:0;margin-right:2px;}
@@ -197,8 +196,7 @@ nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);z-index:300;
   text-transform:uppercase;color:var(--white);white-space:nowrap;}
 @keyframes heroMarqueeScroll{from{transform:translateX(0);}to{transform:translateX(-50%);}}
 @media(min-width:769px){
-  .hero-slide{display:none;}      /* hide the fading single-image slides */
-  .hero-marquee{display:block;}   /* show the scrolling filmstrip instead */
+  .hero-slide{display:block;}
 }
 
 /* ── ABOUT ── */
@@ -297,58 +295,6 @@ nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);z-index:300;
 .proc-step p{font-size:.74rem;line-height:1.75;color:var(--muted);text-align:justify;}
 .proc-btns{margin-top:clamp(18px,3vh,36px);display:flex;gap:10px;
   justify-content:center;flex-wrap:wrap;}
-/* Why Us sub-panel */
-.why-wrap{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start;}
-.why-wrap h2{font-family:'Cormorant Garamond',serif;
-  font-size:clamp(1.6rem,3vw,2.6rem);font-weight:300;color:var(--white);
-  line-height:1.2;margin-bottom:12px;grid-column:1/-1;}
-.why-wrap h2 em{font-style:italic;color:var(--cyan);}
-.why-intro{font-size:.86rem;line-height:1.85;color:var(--muted);
-  text-align:justify;grid-column:1/-1;margin-bottom:4px;}
-.why-list{margin-top:0;}
-.why-item{display:flex;align-items:flex-start;gap:11px;
-  padding:11px 0;border-bottom:1px solid rgba(0,200,212,.1);}
-.why-item:first-child{border-top:1px solid rgba(0,200,212,.1);}
-.why-dot{width:5px;height:5px;background:var(--cyan);border-radius:50%;
-  margin-top:6px;flex-shrink:0;}
-.why-item h5{font-family:'Cormorant Garamond',serif;font-size:.98rem;
-  font-weight:400;color:var(--white);margin-bottom:2px;}
-.why-item p{font-size:.74rem;color:var(--muted);line-height:1.65;text-align:justify;}
-.why-quote-box{background:linear-gradient(135deg,rgba(0,200,212,.1),rgba(0,200,212,.02));
-  border-left:3px solid var(--cyan);padding:18px 20px;}
-.why-quote-box blockquote{font-family:'Cormorant Garamond',serif;font-size:1.1rem;
-  font-style:italic;color:var(--white);line-height:1.7;margin-bottom:6px;}
-.why-quote-box cite{font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;
-  color:var(--cyan);}
-.why-btns{margin-top:18px;display:flex;gap:9px;flex-wrap:wrap;}
-
-/* ── PRICING ── */
-#p-pricing{background:#fff;color:var(--black);padding:clamp(68px,10vh,80px) var(--pad) 52px;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;}
-#p-pricing h2{font-family:'Cormorant Garamond',serif;
-  font-size:clamp(1.6rem,3vw,2.6rem);font-weight:300;margin-bottom:14px;}
-#p-pricing h2 em{font-style:italic;color:var(--cd);}
-.price-tabs{display:flex;gap:4px;margin-bottom:14px;flex-wrap:wrap;}
-.ptab{background:none;border:1px solid rgba(0,0,0,.14);
-  font-family:'DM Sans',sans-serif;font-size:.6rem;letter-spacing:.13em;
-  text-transform:uppercase;color:rgba(0,0,0,.48);padding:6px 11px;
-  cursor:pointer;transition:all .25s;}
-.ptab.active,.ptab:hover{background:var(--cyan);border-color:var(--cyan);color:var(--black);}
-.price-panels{overflow-y:auto;flex:1;}
-.price-panel{display:none;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));
-  gap:9px;padding-bottom:14px;}
-.price-panel.active{display:grid;}
-.pc{background:#f4feff;border:1px solid rgba(0,200,212,.16);padding:14px 16px;}
-.pc h4{font-family:'Cormorant Garamond',serif;font-size:.96rem;font-weight:600;
-  color:var(--cd);margin-bottom:7px;border-bottom:1px solid rgba(0,200,212,.18);
-  padding-bottom:5px;}
-.pc ul{list-style:none;}
-.pc ul li{font-size:.73rem;line-height:1.8;color:rgba(0,0,0,.63);
-  padding:1px 0;border-bottom:1px solid rgba(0,0,0,.05);}
-.pc ul li:last-child{border:none;}
-.pc ul li span{float:right;font-weight:500;color:var(--cd);}
-.pc-note{font-size:.68rem;color:rgba(0,0,0,.42);font-style:italic;
-  margin-top:10px;grid-column:1/-1;}
-
 
 /* Inline BrandMark ad */
 .bm-ad{background:linear-gradient(135deg,rgba(0,200,212,.09),rgba(0,0,0,.3));
@@ -385,8 +331,6 @@ nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);z-index:300;
   display:flex;gap:2px;align-items:center;flex-wrap:nowrap;
   overflow-x:auto;-webkit-overflow-scrolling:touch;
   scrollbar-width:none;padding:5px var(--pad) 4px;}
-
-
 
 .footer-links button,.footer-links a{background:none;border:none;
   font-family:'DM Sans',sans-serif;font-size:.6rem;letter-spacing:.15em;
@@ -427,17 +371,9 @@ nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);z-index:300;
 
 /* ── WHATSAPP ── */
 
-
-
-
-
 70%{transform:scale(1.4);opacity:0}100%{transform:scale(1.4);opacity:0}}
 
-
-
 /* ── RESPONSIVE ── */
-
-
 
 a[target="_blank"],button{cursor:pointer!important;}
 
@@ -460,12 +396,6 @@ a[target="_blank"],button{cursor:pointer!important;}
     text-decoration:none;display:inline-block;transition:opacity .2s;}
   .ftr-lnk:hover{opacity:.7;}
   .footer-right .sep{color:rgba(255,255,255,.2);font-size:.65rem;}
-
-
-
-  
-  
-
 
   .wa-float{position:fixed;bottom:calc(var(--footer-h) + 10px);right:16px;z-index:500;display:flex;align-items:center;flex-direction:row-reverse;gap:0;}
   .wa-btn{width:48px;height:48px;background:#25d366;border-radius:50%;display:flex;
@@ -666,7 +596,7 @@ a[target="_blank"],button{cursor:pointer!important;}
 
 <nav>
   <button class="nav-logo" onclick="go('home')">
-    <img src="images/img-000.webp" alt="BrandMark Logo"/>
+    <img src="/portfolio-images/brandmark-logo.webp" alt="BrandMark Logo"/>
     <span class="nav-logo-stack">
       <span class="nav-logo-text">BrandMark<span> Systems Ltd</span></span>
       <span class="nav-tagline">Inspired Branding...</span>
@@ -704,8 +634,6 @@ a[target="_blank"],button{cursor:pointer!important;}
 
 <!-- ═══════════ HOME ═══════════ -->
 <div class="panel active" id="p-home">
-  <div class="marquee-wrap" aria-hidden="true">
-    <div class="marquee-track">BRANDING · PRINTING · SIGNAGE · IDENTITY · DESIGN · BRANDING · PRINTING · SIGNAGE · IDENTITY · DESIGN · </div>
   </div>
   <div class="hero-body">
     <div class="hero-left">
@@ -714,26 +642,23 @@ a[target="_blank"],button{cursor:pointer!important;}
            Replace the src="" placeholders below with the actual photo files. -->
       <div class="hero-slider" id="heroSlider">
         <div class="hero-slide active">
-          <img src="images/img-001.webp" alt="Huduma Centre branding and signage by BrandMark Systems" loading="eager" fetchpriority="high" decoding="async">          <div class="hero-slide-cap">Huduma Centre &mdash; Branding &amp; Signage</div>
+          <img src="/portfolio-images/huduma-branding.webp" alt="Huduma Centre branding and signage by BrandMark Systems" loading="eager" fetchpriority="high" decoding="async">          <div class="hero-slide-cap">Huduma Centre &mdash; Branding &amp; Signage</div>
         </div>
         <div class="hero-slide">
-          <img src="images/img-002.webp" alt="Collage of branded apparel — t-shirts, caps and mugs" loading="lazy"/>
+          <img src="/portolio-images/apparel-collage-branding.webp" alt="Collage of branded apparel — t-shirts, caps and mugs" loading="lazy"/>
           <div class="hero-slide-cap">Branded Apparel &mdash; T-Shirts, Caps &amp; Mugs</div>
         </div>
         <div class="hero-slide">
-          <img src="images/img-003.webp" alt="Nuru Boutique branding project" loading="lazy"/>
+          <img src="/portfolio-images/nuru-boutique-3d.webp" alt="Nuru Boutique branding project" loading="lazy"/>
           <div class="hero-slide-cap">Nuru Boutique</div>
         </div>
 <div class="hero-slide">
-          <img src="images/img-004.webp" alt="BrandMark Systems embroidery workshop" loading="lazy"/>
+          <img src="/portfolio-images/brandmark-embroidery-workshop.webp" alt="BrandMark Systems embroidery workshop" loading="lazy"/>
           <div class="hero-slide-cap">BrandMark &mdash; Embroidery Workshop</div>
         </div>
         <!-- Desktop (>=1024px) sliding filmstrip: built by JS from the images
              above, so the source photos stay defined in one place only. -->
-        <div class="hero-marquee" id="heroMarquee" aria-hidden="true">
-          <div class="hero-marquee-track" id="heroMarqueeTrack"></div>
-        </div>
-      </div>
+         
     </div>
     <div class="hero-right">
       <p class="hero-desc">BrandMark Systems Ltd is your one-stop centre for all Marketing and Communication products and services in Eldoret, Kenya and beyond. We build successful brands that stand out.</p>
@@ -755,7 +680,7 @@ a[target="_blank"],button{cursor:pointer!important;}
   <div class="ab-vis">
     <div class="ab-cards">
       <div class="ab-card"></div><div class="ab-card"></div><div class="ab-card"></div>
-      <div class="ab-mono"><img src="images/img-000.webp" alt="BrandMark Logo" style="width:70%;max-width:130px;height:auto;object-fit:contain;filter:drop-shadow(0 2px 8px rgba(0,0,0,0.2));"/></div>
+      <div class="ab-mono"><img src="/portfolio-images/brandmark-logo.webp" alt="BrandMark Logo" style="width:70%;max-width:130px;height:auto;object-fit:contain;filter:drop-shadow(0 2px 8px rgba(0,0,0,0.2));"/></div>
     </div>
   </div>
   <div class="ab-text">
@@ -868,7 +793,6 @@ a[target="_blank"],button{cursor:pointer!important;}
   </div>
 
 
-
   <!-- BrandMark inline ad -->
     <div class="bm-ad">
       <div class="bm-ad-badge">&#10022; FEATURED PARTNER</div>
@@ -882,8 +806,6 @@ a[target="_blank"],button{cursor:pointer!important;}
     </div>
   </div>
 </div>
-
-
 
   <div class="panel" id="p-directory">
   <!-- SEO headings -->
@@ -1126,13 +1048,13 @@ a[target="_blank"],button{cursor:pointer!important;}
       <h2>3. Third-Party Services</h2>
       <ul>
         <li><strong>Google Analytics:</strong> Measures site traffic.</li>
-        <li><strong>Netlify:</strong> Hosts our website.</li>
+        <li><strong>Cloudflare:</strong> Hosts our website.</li>
         <li><strong>WhatsApp:</strong> Used for client communication.</li>
       </ul>
       <h2>4. Your Rights (Kenya Data Protection Act, 2019)</h2>
       <p>You have the right to access, correct or request deletion of your personal data. Contact us at <a href="mailto:info@brandmarkenya.com">info@brandmarkenya.com</a>.</p>
       <h2>5. Data Security</h2>
-      <p>We use Netlify's secure HTTPS hosting. No internet transmission is 100% secure.</p>
+      <p>We use Cloudflare's secure HTTPS hosting. No internet transmission is 100% secure.</p>
       <h2>6. Children's Privacy</h2>
       <p>Our Service is not directed to users under 18. We do not knowingly collect data from children.</p>
       <h2>Contact</h2>
@@ -1158,7 +1080,7 @@ a[target="_blank"],button{cursor:pointer!important;}
       <h2>5. Limitation of Liability</h2>
       <p>BrandMark's liability is limited to the value of the order. We are not liable for indirect or consequential damages arising from the use of our products or services.</p>
       <h2>6. Governing Law</h2>
-      <p>These Terms are governed by the laws of Kenya. Disputes shall be subject to the jurisdiction of the courts of Eldoret, Kenya.</p>
+      <p>These Terms are governed by the laws of Kenya. Disputes shall be subject to the jurisdiction of the Kenyan courts.</p>
       <h2>Contact</h2>
       <p><a href="mailto:info@brandmarkenya.com">info@brandmarkenya.com</a> | +254 736 900 750 | Aya House, Kenyatta Street, Eldoret, Kenya</p>
     </div>
@@ -1275,51 +1197,27 @@ function legalTab(id){
 }
 var galleryAll=[
   {label:'Coca-Cola Wall Branding',cat:'wall',src:'images/img-019.webp'},
-  {label:'Coca-Cola — Burudika na Coke',cat:'wall',src:'images/img-020.webp'},
-  {label:'Coca-Cola — Refreshingly Good',cat:'wall',src:'images/img-021.webp'},
-  {label:'Huduma Kenya — Desk Branding',cat:'signage',src:'images/img-001.webp'},
-  {label:'Huduma Kenya — Information Desk',cat:'signage',src:'images/img-022.webp'},
-  {label:'Eldoret Country Lodge — Signage',cat:'signage',src:'images/img-023.webp'},
-  {label:'Roll-Up Banners — Multiple Clients',cat:'banners',src:'images/img-024.webp'},
-  {label:'Promo Items — World Vision Bands',cat:'promo',src:'images/img-025.webp'},
-  {label:'Custom Box — World Vision',cat:'promo',src:'images/img-026.webp'},
-  {label:'Corporate Wear — Custom Uniform',cat:'apparel',src:'images/img-027.webp'},
-  {label:'Corporate Vest — World Vision',cat:'apparel',src:'images/img-028.webp'},
-  {label:'Corporate Vest — Front View',cat:'apparel',src:'images/img-029.webp'},
-  {label:'Corporate Apparel Collection',cat:'apparel',src:'images/img-030.webp'},
-  {label:'Vehicle Wrap — UDA Campaign',cat:'vehicle',src:'images/img-031.webp'},
-  {label:'Branded Mugs — BrandMark & FMNR',cat:'promo',src:'images/img-032.webp'},
-    {label:'Brass Plaques — World Vision',cat:'signage',src:'images/img-033.webp'},
-  {label:'Wall Branding — World Vision',cat:'wall',src:'images/img-034.webp'},
-  {label:'Wall Mural — Nutrition',cat:'wall',src:'images/img-035.webp'},
-  {label:'Wall Mural — Responsive Feeding',cat:'wall',src:'images/img-036.webp'},
-  {label:'Wall Mural — Hand Washing',cat:'wall',src:'images/img-037.webp'},
-  {label:'Wall Mural — Hand Washing II',cat:'wall',src:'images/img-037.webp'},
-  {label:'Wall Mural — Nafaka Foods NCPB',cat:'wall',src:'images/img-038.webp'},
-  {label:'Wall Mural — Farm Inputs NCPB',cat:'wall',src:'images/img-039.webp'},
-  {label:'NCPB Agricultural Hub — Wall',cat:'wall',src:'images/img-040.webp'},
-  {label:'NCPB Wall Branding — Close-up',cat:'wall',src:'images/img-041.webp'},
-  {label:'NCPB Building Signage',cat:'signage',src:'images/img-042.webp'},
-  {label:'NCPB Hub Sign — Fabrication',cat:'signage',src:'images/img-043.webp'},
-  {label:'World Vision — Branded Bags & Blouses',cat:'apparel',src:'images/img-044.webp'},
-  {label:'Palm Care Sinai Hospital — Corporate Vest',cat:'apparel',src:'images/img-045.webp'},
-  {label:'World Vision — Orange Vest (Back)',cat:'apparel',src:'images/img-028.webp'},
-  {label:'World Vision — Orange Field Vest (Front)',cat:'apparel',src:'images/img-046.webp'},
-  {label:'World Vision — Breastfeeding Wall Mural',cat:'wall',src:'images/img-047.webp'},
-  {label:'World Vision — Responsive Feeding Signage',cat:'signage',src:'images/img-048.webp'},
-  {label:'World Vision — Nutrition Wall Mural',cat:'wall',src:'images/img-035.webp'},
-  {label:'World Vision — Kenya Big Dream Box',cat:'promo',src:'images/img-026.webp'},
-  {label:'WaterFund — Hand Washing Wall Mural',cat:'wall',src:'images/img-049.webp'},
-  {label:'World Vision — Children for Conservation Masks',cat:'promo',src:'images/img-050.webp'},
-  {label:'Coca-Cola — Burudika na Coke Wall',cat:'wall',src:'images/img-051.webp'},
-  {label:'World Vision — Cream Blouse',cat:'apparel',src:'images/img-052.webp'},
-  {label:'World Vision — Corporate Shirts & Bags',cat:'apparel',src:'images/img-053.webp'},
-  {label:'World Vision — Purple & Orange T-Shirts',cat:'apparel',src:'images/img-054.webp'},
-  {label:'Huduma Kenya — Eldoret Centre Signage',cat:'signage',src:'images/img-055.webp'},
-  {label:'Huduma Kenya — Information Desk Branding',cat:'signage',src:'images/img-056.webp'},
-  {label:'Huduma Kenya — Information Desk Close',cat:'signage',src:'images/img-057.webp'},
-  {label:'Coca-Cola — Refreshingly Good Wall',cat:'wall',src:'images/img-058.webp'},
-  {label:'Roll-Up Banners — World Vision & Church',cat:'banners',src:'images/img-059.webp'}
+  <!-- PORTFOLIO - UPDATED PATHS -->
+<div class="portfolio-grid">
+  <img src="/portfolio-images/huduma-centre-desk.webp" alt="Huduma Centre Desk Branding" loading="lazy">
+  <img src="/portfolio-images/huduma-centre-information-desk.webp" alt="Huduma Centre Information Desk" loading="lazy">
+  <img src="/portfolio-images/huduma-kenya-branding.webp" alt="Huduma Kenya Branding" loading="lazy">
+  <img src="/portfolio-images/apparel-collage-branding.webp" alt="Apparel Collage Branding" loading="lazy">
+  <img src="/portfolio-images/world-vision-field-jacket.webp" alt="World Vision Field Jacket Front" loading="lazy">
+  <img src="/portfolio-images/world-vision-field-jacket-back.webp" alt="World Vision Field Jacket Back" loading="lazy">
+  <img src="/portfolio-images/world-vision-shirts.webp" alt="World Vision Branded Shirts" loading="lazy">
+  <img src="/portfolio-images/world-vision-nutrition-murals.webp" alt="World Vision Nutrition Murals" loading="lazy">
+  <img src="/portfolio-images/nuru-boutique-3d.webp" alt="Nuru Boutique 3D Signage" loading="lazy">
+  <img src="/portfolio-images/coca-cola-gate-branding.webp" alt="Coca-Cola Gate Branding" loading="lazy">
+  <img src="/portfolio-images/coca-cola-burudika.webp" alt="Coca-Cola Burudika Campaign" loading="lazy">
+  <img src="/portfolio-images/coca-cola-refreshingly.webp" alt="Coca-Cola Refreshingly" loading="lazy">
+  <img src="/portfolio-images/chayil-before-and-after-branding.webp" alt="Chayil Before and After Branding" loading="lazy">
+  <img src="/portfolio-images/brandmark-embroidery-workshop.webp" alt="BrandMark Embroidery Workshop" loading="lazy">
+  <img src="/portfolio-images/brandmark-workshop.webp" alt="BrandMark Workshop" loading="lazy">
+  <img src="/portfolio-images/malaika-fashions.webp" alt="Malaika Fashions Branding" loading="lazy">
+  <img src="/portfolio-images/ncpb-agricultural-hub-3d.webp" alt="NCPB Agricultural Hub 3D" loading="lazy">
+  <img src="/portfolio-images/brandmark-logo.webp" alt="BrandMark Logo" loading="lazy">
+</div>
 ];
 var galleryFiltered=galleryAll.slice();
 var lbIdx=0;
