@@ -562,216 +562,95 @@ a[target="_blank"],button{cursor:pointer!important;}
   #p-home{padding-bottom:80px !important; display:block !important; min-height:auto !important;}
 
 /* ============================================================
-   BRANDMARK RESPONSIVE LAYOUT V2
-   Purpose: preserve all existing content/data while fixing
-   home/hero cropping and keeping the footer permanently visible.
+   BRANDMARK RESPONSIVE V3 — layout, footer, directory, gallery
+   Appended after legacy rules so it wins without deleting data.
    ============================================================ */
-*{box-sizing:border-box;}
-html,body{width:100%;min-height:100%;margin:0;overflow:hidden;}
-body{position:relative;}
+html,body{width:100%;height:100%;overflow:hidden;}
+:root{--footer-h:96px;}
+.panels{top:var(--nav-h);bottom:var(--footer-h);overflow:hidden;}
+.panel{min-width:0;min-height:0;}
 
-/* The viewport between the fixed nav and fixed footer is the only
-   scrolling region. This prevents the page itself from pushing the
-   footer off-screen. */
-.panels{
-  position:fixed;
-  top:var(--nav-h);
-  left:0;
-  right:0;
-  bottom:var(--footer-h);
-  min-height:0;
-  height:auto;
-  overflow:hidden;
-}
-.panel{
-  position:absolute;
-  inset:0;
-  min-height:0;
-  height:auto;
-  overflow-y:auto;
-  overflow-x:hidden;
-  -webkit-overflow-scrolling:touch;
-  scrollbar-gutter:stable;
-}
+/* HOME — desktop gets a real two-column layout; no forced height */
+#p-home{padding:18px var(--pad) 24px!important;display:block!important;overflow-y:auto!important;}
+#p-home .hero-body{width:100%;max-width:1500px;margin:0 auto;min-height:100%;height:auto;display:grid!important;grid-template-columns:minmax(0,1.08fr) minmax(320px,.92fr);align-items:center;gap:clamp(24px,4vw,64px);padding:34px 0 18px!important;}
+#p-home .hero-left{min-width:0;align-self:center!important;justify-content:center!important;}
+#p-home .hero-right{min-width:0;align-self:center!important;}
+#p-home .hero-big{font-size:clamp(2.3rem,5vw,5.4rem)!important;line-height:.94!important;margin-bottom:18px!important;}
+#p-home .hero-break{display:none!important;}
+#p-home .hero-slider{height:clamp(300px,42vh,460px)!important;}
+#p-home .hero-desc{font-size:clamp(.88rem,1.05vw,1rem)!important;line-height:1.8!important;}
+#p-home .hero-stats{grid-template-columns:repeat(2,minmax(0,1fr))!important;}
 
-/* HOME / HERO ------------------------------------------------ */
-#p-home{
-  display:block;
-  position:relative;
-  padding:20px var(--pad) 34px;
-  overflow-y:auto;
-  overflow-x:hidden;
-  min-height:100%;
-  height:auto;
-}
-#p-home .hero-body{
-  position:relative;
-  z-index:2;
-  display:grid;
-  grid-template-columns:minmax(0,1.1fr) minmax(300px,1fr);
-  align-items:center;
-  gap:clamp(22px,4vw,60px);
-  width:100%;
-  max-width:1500px;
-  min-height:100%;
-  height:auto;
-  padding:12px 0 24px;
-  margin:0 auto;
-}
-#p-home .hero-left{
-  width:100%;
-  min-width:0;
-  align-self:center;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-}
-#p-home .hero-right{
-  width:100%;
-  min-width:0;
-  align-self:center;
-}
-#p-home .hero-big{
-  max-width:100%;
-  overflow:visible;
-  overflow-wrap:normal;
-  word-break:normal;
-}
-#p-home .hero-desc{
-  max-width:680px;
-}
-#p-home .hero-slider{
-  width:100%;
-  height:clamp(250px,34vw,430px);
-  min-height:0;
-}
+/* FOOTER — two deliberate rows on every device, no horizontal clipping */
+.site-footer{height:var(--footer-h)!important;padding:0!important;display:flex!important;flex-direction:column!important;overflow:hidden!important;}
+.footer-content{width:100%!important;flex:1 1 auto!important;min-height:0!important;padding:0 20px!important;display:flex!important;align-items:center!important;justify-content:center!important;overflow:hidden!important;}
+.footer-left{width:100%!important;min-width:0!important;display:flex!important;align-items:center!important;justify-content:center!important;overflow:hidden!important;}
+.footer-contacts{width:100%!important;display:flex!important;justify-content:center!important;align-items:center!important;gap:7px 9px!important;flex-wrap:wrap!important;overflow:hidden!important;white-space:normal!important;line-height:1.1!important;}
+.footer-contacts a,.footer-contacts span{font-size:clamp(.55rem,.62vw,.67rem)!important;white-space:nowrap!important;}
+.footer-contacts svg{width:14px!important;height:14px!important;}
+.footer-legal{width:100%!important;height:30px!important;min-height:30px!important;padding:0 20px 7px!important;display:flex!important;align-items:center!important;justify-content:center!important;gap:5px!important;flex-wrap:wrap!important;overflow:hidden!important;white-space:normal!important;}
+.ftr-lnk{font-size:clamp(.56rem,.62vw,.66rem)!important;padding:3px 6px!important;}
+.sep-legal{font-size:.65rem!important;color:rgba(255,255,255,.25)!important;}
 
-/* FOOTER ----------------------------------------------------- */
-.site-footer{
-  position:fixed;
-  left:0;
-  right:0;
-  bottom:0;
-  z-index:200;
-  width:100%;
-  height:var(--footer-h);
-  min-height:var(--footer-h);
-  overflow:hidden;
+/* SERVICES/GALLERY — pane is allowed to consume the panel height and scroll */
+#p-services{padding:68px var(--pad) 32px!important;overflow-y:auto!important;}
+#p-services .svc-pane{width:100%;min-width:0;}
+#p-services .gal-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;}
+#p-services .gal-card{min-width:0;aspect-ratio:4/3;}
+#p-services .gal-card img{width:100%;height:100%;object-fit:cover;display:block;}
+#p-services .gal-filters{max-width:100%;}
+
+/* DIRECTORY — stable responsive grid + form; avoid fixed-height assumptions */
+#p-directory{padding:68px var(--pad) 42px!important;overflow-y:auto!important;overflow-x:hidden!important;}
+#p-directory>*{max-width:1500px;margin-left:auto;margin-right:auto;}
+#p-directory .dir-search-wrap,#p-directory .dir-cats,#p-directory .dir-results-label,#p-directory .dir-no-results,#p-directory .dir-grid,#p-directory .dir-add-section,#p-directory .dir-stats{width:100%;}
+#p-directory .dir-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important;align-items:stretch;}
+#p-directory .biz-card{min-width:0;overflow:hidden;}
+#p-directory .dir-form{grid-template-columns:repeat(2,minmax(0,1fr));}
+#p-directory .dir-field{min-width:0;}
+#p-directory .dir-field input,#p-directory .dir-field select,#p-directory .dir-field textarea{max-width:100%;}
+
+/* Lightbox must sit above nav/footer and remain usable on small screens */
+.lightbox{z-index:9000!important;padding:24px!important;}
+.lb-inner{max-width:94vw!important;max-height:88vh!important;width:auto!important;}
+#lb-img{max-width:88vw!important;max-height:78vh!important;}
+
+@media (max-width:1200px){
+  #p-home .hero-big{font-size:clamp(2rem,4.8vw,4.2rem)!important;}
+  #p-services .gal-grid{grid-template-columns:repeat(3,minmax(0,1fr));}
+  #p-directory .dir-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;}
 }
-.footer-content{min-height:0;overflow:hidden;}
-
-/* Remove the malformed leftover ticker fragment from the original CSS. */
-/* ============================================================ */
-
 @media (max-width:900px){
-  :root{--footer-h:106px;}
+  :root{--footer-h:118px;}
   .panels{bottom:var(--footer-h);}
-  #p-home{
-    padding:16px 16px 36px;
-    min-height:100%;
-  }
-  #p-home .hero-body{
-    display:flex;
-    flex-direction:column;
-    align-items:stretch;
-    justify-content:flex-start;
-    gap:18px;
-    min-height:0;
-    padding:8px 0 28px;
-    margin:0;
-  }
-  #p-home .hero-left,
-  #p-home .hero-right{
-    width:100%;
-    max-width:none;
-    align-self:stretch;
-  }
-  #p-home .hero-left{display:block;}
-  #p-home .hero-big{
-    display:block;
-    margin:0 0 10px;
-    font-size:clamp(2rem,8.5vw,4rem);
-    line-height:.98;
-    white-space:normal;
-  }
-  #p-home .hero-break{display:none;}
-  #p-home .hero-slider{
-    width:100%;
-    height:clamp(190px,48vw,300px);
-    min-height:190px;
-    max-height:300px;
-    margin:0;
-  }
-  #p-home .hero-desc{
-    display:block;
-    width:100%;
-    max-width:none;
-    margin:0 0 14px;
-    line-height:1.7;
-  }
-  #p-home .hero-stats{
-    width:100%;
-    margin-bottom:14px;
-  }
-  #p-home .hero-btns{width:100%;}
-
-  .site-footer{
-    height:var(--footer-h);
-    min-height:var(--footer-h);
-  }
-  .footer-content{
-    height:auto;
-    min-height:64px;
-    padding:7px 12px 4px;
-    overflow:hidden;
-  }
-  .footer-left{width:100%;overflow:hidden;}
-  .footer-contacts{
-    width:100%;
-    justify-content:center;
-    flex-wrap:wrap;
-    gap:3px 8px;
-    overflow:hidden;
-    white-space:normal;
-    max-height:52px;
-  }
-  .footer-contacts a,.footer-contacts span{
-    white-space:nowrap;
-    line-height:1.2;
-  }
-  .footer-legal{
-    height:auto;
-    min-height:34px;
-    padding:4px 8px 8px;
-    flex-wrap:wrap;
-    overflow:hidden;
-  }
+  #p-home{padding:12px 14px 20px!important;}
+  #p-home .hero-body{display:flex!important;flex-direction:column!important;align-items:stretch!important;justify-content:flex-start!important;gap:16px!important;padding:18px 0 18px!important;min-height:auto!important;}
+  #p-home .hero-left,#p-home .hero-right{width:100%!important;align-self:auto!important;}
+  #p-home .hero-left{order:1!important;}
+  #p-home .hero-right{order:2!important;}
+  #p-home .hero-big{font-size:clamp(2rem,8vw,3.4rem)!important;}
+  #p-home .hero-slider{height:clamp(220px,52vw,330px)!important;}
+  #p-services{padding:66px 14px 28px!important;}
+  #p-services .gal-grid{grid-template-columns:repeat(2,minmax(0,1fr));}
+  #p-directory{padding:66px 14px 34px!important;}
+  #p-directory .dir-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;}
+  .footer-content{padding:0 12px!important;}
+  .footer-contacts{gap:6px 10px!important;}
+  .footer-legal{padding-left:12px!important;padding-right:12px!important;padding-bottom:7px!important;}
 }
-
 @media (max-width:600px){
-  :root{--footer-h:112px;--pad:14px;}
-  #p-home{padding-left:14px;padding-right:14px;padding-bottom:30px;}
-  #p-home .hero-body{gap:16px;padding-top:4px;padding-bottom:26px;}
-  #p-home .hero-big{font-size:clamp(2rem,10vw,3.25rem);}
-  #p-home .hero-slider{height:210px;min-height:210px;max-height:210px;}
-  #p-home .hero-desc{font-size:.82rem;line-height:1.65;}
-  #p-home .hero-stats{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:7px!important;}
-  #p-home .hstat{padding:8px 9px;}
-  #p-home .hstat-n{font-size:1.25rem;}
-  #p-home .hero-btns .btn-c{width:auto;}
-  .site-footer{height:var(--footer-h);min-height:var(--footer-h);}
-  .footer-content{padding:6px 10px 2px;}
-  .footer-contacts{font-size:.55rem;gap:3px 6px;max-height:58px;}
-  .footer-contacts a,.footer-contacts span{font-size:.55rem;}
-  .footer-legal{padding:3px 5px 7px;min-height:34px;}
-  .ftr-lnk{font-size:.55rem;padding:3px 5px;}
+  :root{--footer-h:126px;}
+  #p-home .hero-big{font-size:clamp(1.9rem,9.5vw,2.8rem)!important;}
+  #p-home .hero-slider{height:220px!important;}
+  #p-services .gal-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:4px;}
+  #p-directory .dir-grid{grid-template-columns:1fr!important;}
+  #p-directory .dir-form{grid-template-columns:1fr!important;}
+  .footer-content{padding:4px 8px 0!important;}
+  .footer-contacts{gap:5px 8px!important;}
+  .footer-contacts a,.footer-contacts span{font-size:.56rem!important;}
+  .footer-legal{height:34px!important;min-height:34px!important;padding:0 7px 7px!important;gap:2px!important;}
+  .ftr-lnk{font-size:.55rem!important;padding:3px 5px!important;}
 }
-
-@media (min-width:901px){
-  #p-home .hero-body{min-height:100%;}
-  #p-home .hero-slider{height:clamp(280px,38vh,430px);}
-}
-
 </style> 
 </head>
 <body>
@@ -1433,24 +1312,33 @@ function legalTab(id){
 ];
 var galleryFiltered=galleryAll.slice();
 var lbIdx=0;
-// Pre-fill gallery card images from JS data (no base64 in HTML)
+// Gallery initialisation: map only by matching labels. The old code
+// assigned galleryAll[i] to card i even when the datasets differed,
+// producing wrong photos and blank cards. Keep the visible 46 cards intact.
 (function(){
   var cards=document.querySelectorAll('.gal-card');
+  var byLabel={};
+  galleryAll.forEach(function(item){byLabel[item.label]=item.src;});
   cards.forEach(function(card,i){
-    if(i<galleryAll.length){
-      var img=card.querySelector('img');
-      if(img)img.src=galleryAll[i].src;
-      card.onclick=(function(idx){return function(){openLightbox(idx);};})(i);
-    }
+    var img=card.querySelector('img');
+    var labelEl=card.querySelector('.gal-lbl');
+    var label=labelEl ? labelEl.textContent.trim() : '';
+    if(img && byLabel[label]) img.src=byLabel[label];
+    card.onclick=(function(idx){return function(){openLightbox(idx);};})(i);
   });
   galleryFiltered=galleryAll.slice();
 })();
 function filterGal(cat,btn){
   document.querySelectorAll('.gfil').forEach(function(b){b.classList.remove('active');});
   if(btn)btn.classList.add('active');
-  galleryFiltered=cat==='all'?galleryAll.slice():galleryAll.filter(function(x){return x.cat===cat;});
+  var cards=Array.prototype.slice.call(document.querySelectorAll('.gal-card'));
+  var visibleCards=cards.filter(function(card){return cat==='all'||card.getAttribute('data-cat')===cat;});
+  galleryFiltered=visibleCards.map(function(card){
+    var img=card.querySelector('img'),lbl=card.querySelector('.gal-lbl');
+    return {src:img?img.src:'',label:lbl?lbl.textContent.trim():''};
+  });
   var vi=0;
-  document.querySelectorAll('.gal-card').forEach(function(card){
+  cards.forEach(function(card){
     var cc=card.getAttribute('data-cat');
     if(cat==='all'||cc===cat){
       card.classList.remove('hidden');
@@ -1462,7 +1350,16 @@ function openLightbox(idx){
   lbIdx=idx;
   var img=document.getElementById('lb-img'),cap=document.getElementById('lb-caption'),lb=document.getElementById('lightbox');
   if(!img||!cap||!lb)return;
-  img.src=galleryFiltered[idx].src;cap.textContent=galleryFiltered[idx].label;
+  var item=galleryFiltered[idx];
+  if(!item){
+    var cards=document.querySelectorAll('.gal-card:not(.hidden)');
+    var card=cards[idx];
+    var ci=card&&card.querySelector('img');
+    var cl=card&&card.querySelector('.gal-lbl');
+    if(!ci||!ci.src)return;
+    item={src:ci.src,label:cl?cl.textContent.trim():''};
+  }
+  img.src=item.src;cap.textContent=item.label;
   lb.classList.add('open');document.body.style.overflow='hidden';
 }
 function closeLightbox(){var lb=document.getElementById('lightbox');if(lb)lb.classList.remove('open');document.body.style.overflow='';}
