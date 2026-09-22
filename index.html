@@ -165,11 +165,14 @@ nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);z-index:300;
 
 @media(min-width:901px){
   .hero-body{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(280px,1fr);
-    grid-template-rows:minmax(0,1fr) auto;align-items:stretch;height:100%;
+    grid-template-rows:auto minmax(0,1fr) auto;align-items:stretch;height:100%;
     padding-bottom:clamp(18px,3vh,34px);}
+  .hero-big{grid-column:1/-1;grid-row:1;text-align:center;margin-bottom:0;}
   .hero-left{min-height:0;}
+  .hero-left{grid-column:1;grid-row:2;}
   .hero-right{display:flex;flex-direction:column;justify-content:flex-end;}
-  .hero-stats{grid-column:1/-1;grid-row:2;grid-template-columns:repeat(4,minmax(0,1fr));
+  .hero-right{grid-column:2;grid-row:2;}
+  .hero-stats{grid-column:1/-1;grid-row:3;grid-template-columns:repeat(4,minmax(0,1fr));
     width:100%;margin:0;}
   .hero-btns{margin-top:18px;}
 }
@@ -626,8 +629,8 @@ a[target="_blank"],button{cursor:pointer!important;}
 <!-- ═══════════ HOME ═══════════ -->
 <div class="panel active" id="p-home">
   <div class="hero-body">
+    <div class="hero-big">Where <em>Vision</em><br class="hero-break"> Meets <em>Excellence</em></div>
     <div class="hero-left">
-      <div class="hero-big">Where <em>Vision</em><br class="hero-break"> Meets <em>Excellence</em></div>
       <!-- Rotating image slider — fills the remaining space in the left column.
            Replace the src="" placeholders below with the actual photo files. -->
       <div class="hero-slider" id="heroSlider">
