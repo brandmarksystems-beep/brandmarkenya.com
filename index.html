@@ -166,7 +166,7 @@ nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);z-index:300;
 @media(min-width:901px){
   .hero-body{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(280px,1fr);
     grid-template-rows:auto minmax(0,1fr) auto;align-items:stretch;height:100%;
-    padding-bottom:clamp(18px,3vh,34px);}
+    padding-bottom:clamp(18px,3vh,34px)!important;}
   .hero-big{grid-column:1/-1;grid-row:1;text-align:center;margin-bottom:0;}
   .hero-left{min-height:0;}
   .hero-left{grid-column:1;grid-row:2;}
@@ -188,6 +188,7 @@ nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);z-index:300;
   background:linear-gradient(0deg,rgba(0,0,0,.78),transparent);
   font-family:'DM Sans',sans-serif;font-size:.6rem;letter-spacing:.1em;
   text-transform:uppercase;color:var(--white);}
+.hero-slide-cap{display:none;}
 
 @keyframes heroSliderScroll{from{transform:translateX(0);}to{transform:translateX(-50%);}}
 
@@ -225,7 +226,7 @@ nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);z-index:300;
 .btn-o-dk:hover{border-color:var(--cd);color:var(--cd);}
 
 /* ── SERVICES (with Process + Why Us sub-panels) ── */
-#p-services{background:linear-gradient(160deg,#000d10 0%,#001a1d 60%,#000 100%);padding:clamp(68px,10vh,80px) var(--pad) 52px;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;}
+#p-services{background:linear-gradient(145deg,#003f43 0%,#006b70 48%,#002b2f 100%);padding:clamp(68px,10vh,80px) var(--pad) 52px;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;}
 .svc-tabs{display:flex;gap:0;margin-bottom:20px;
   border-bottom:1px solid rgba(0,200,212,.15);}
 .svc-tab{background:none;border:none;font-family:'DM Sans',sans-serif;
@@ -246,20 +247,20 @@ nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);z-index:300;
   color:var(--muted);text-align:justify;}
 .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);
   gap:1px;background:rgba(0,200,212,.07);}
-.svc-card{background:#000d10;padding:clamp(14px,2.5vh,26px) clamp(12px,2vw,20px);
+.svc-card{background:rgba(0,18,21,.9);border:1px solid rgba(151,255,255,.2);border-radius:6px;padding:clamp(14px,2.5vh,26px) clamp(12px,2vw,20px);
   position:relative;overflow:hidden;cursor:pointer;
-  transition:background .3s;display:flex;flex-direction:column;}
+  box-shadow:0 10px 24px rgba(0,0,0,.18);transition:background .3s,border-color .3s,transform .3s;display:flex;flex-direction:column;}
 .svc-card::after{content:'';position:absolute;bottom:0;left:0;width:0;
   height:2px;background:var(--cyan);transition:width .4s cubic-bezier(.16,1,.3,1);}
-.svc-card:hover{background:rgba(0,200,212,.05);}
+.svc-card:hover{background:rgba(0,35,38,.98);border-color:rgba(151,255,255,.6);transform:translateY(-3px);}
 .svc-card:hover::after{width:100%;}
 .svc-num{font-family:'Bebas Neue',sans-serif;font-size:2.4rem;color:transparent;
   -webkit-text-stroke:1px rgba(0,200,212,.13);line-height:1;margin-bottom:7px;
   transition:-webkit-text-stroke-color .3s;}
 .svc-card:hover .svc-num{-webkit-text-stroke-color:rgba(0,200,212,.36);}
 .svc-icon{font-size:1rem;margin-bottom:6px;}
-.svc-card h3{font-family:'Cormorant Garamond',serif;font-size:1.05rem;
-  font-weight:400;color:var(--white);margin-bottom:5px;}
+.svc-card h3{font-family:'Cormorant Garamond',serif;font-size:1.1rem;
+  font-weight:700;color:var(--white);margin-bottom:5px;}
 .svc-card p{font-size:.74rem;line-height:1.75;color:var(--muted);
   text-align:justify;flex:1;}
 .svc-lnk{display:inline-flex;align-items:center;gap:5px;margin-top:9px;
@@ -460,6 +461,8 @@ a[target="_blank"],button{cursor:pointer!important;}
     -webkit-overflow-scrolling:touch;
     padding-bottom:40px;
   }
+  #p-home .hero-body{padding-bottom:40px;}
+  .hero-big{text-align:center;}
   /* Stats grid: keep the 2x2 layout, guarantee no horizontal overflow,
      and shrink the cards themselves (padding + number size) to free
      up vertical space so the buttons row below is fully visible
@@ -474,7 +477,7 @@ a[target="_blank"],button{cursor:pointer!important;}
 @media(max-width:600px){
   :root{--pad:14px;}
   nav{padding:0 14px;}.nav-cta{font-size:.55rem;padding:5px 9px;}.nav-quote{font-size:.55rem;padding:5px 9px;}
-#p-services{background:linear-gradient(160deg,#000 0%,#001a20 55%,#000 100%);padding:clamp(68px,10vh,80px) var(--pad) 100px;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;}
+#p-services{background:linear-gradient(145deg,#003f43 0%,#006b70 48%,#002b2f 100%);padding:clamp(68px,10vh,80px) var(--pad) 100px;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;}
   .svc-grid{grid-template-columns:1fr;}
   }
 a[target="_blank"],button{cursor:pointer!important;}
@@ -784,19 +787,6 @@ a[target="_blank"],button{cursor:pointer!important;}
       <button class="btn-c" onclick="showContact()">Discuss Your Project</button>
       <button class="btn-o" onclick="svcTab('main')">← Back to Services</button>
   </div>
-
-
-  <!-- BrandMark inline ad -->
-    <div class="bm-ad">
-      <div class="bm-ad-badge">&#10022; FEATURED PARTNER</div>
-      <div class="bm-ad-name">BrandMark Systems Ltd</div>
-      <div class="bm-ad-tag"><em>Inspired Branding...</em></div>
-      <h4 class="bm-ad-h">Your Brand Deserves to <span>Stand Out</span></h4>
-      <p class="bm-ad-p">From vivid digital prints to breathtaking brand identities — we craft brands that command attention and inspire loyalty across Kenya and beyond.</p>
-      <ul class="bm-ad-ul"><li>Logo &amp; Brand Identity Design</li><li>Large Format &amp; Digital Printing</li><li>Signage, Banners &amp; Wall Branding</li><li>Corporate Wear &amp; Promotional Items</li></ul>
-      <button class="btn-c" onclick="go('quote')" style="width:100%;justify-content:center;margin-top:14px;">GET A FREE QUOTE</button>
-      <div class="bm-ad-foot">&#128222; +254 736 900 750 &nbsp;&#183;&nbsp; &#128205; Aya House, Kenyatta St, Eldoret</div>
-    </div>
   </div>
 </div>
 
@@ -1213,13 +1203,12 @@ var galleryFiltered=galleryAll.slice();
 var lbIdx=0;
 // Pre-fill gallery card images from JS data (no base64 in HTML)
 (function(){
-  var cards=document.querySelectorAll('.gal-card');
+  var cards=Array.prototype.slice.call(document.querySelectorAll('.gal-card'));
   cards.forEach(function(card,i){
-    if(i<galleryAll.length){
-      var img=card.querySelector('img');
-      if(img)img.src=galleryAll[i].src;
-      card.onclick=(function(idx){return function(){openLightbox(idx);};})(i);
-    }
+    if(i>=galleryAll.length){card.remove();return;}
+    var img=card.querySelector('img');
+    if(img)img.src=galleryAll[i].src;
+    card.onclick=(function(idx){return function(){openLightbox(idx);};})(i);
   });
   galleryFiltered=galleryAll.slice();
 })();
