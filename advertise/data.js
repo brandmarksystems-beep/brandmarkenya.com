@@ -6,17 +6,17 @@ const advertisers = [
     logo: "/images/logos/brandmark-logo.webp",
     status: "TAKEN",
     category: "Branding & Printing",
-    page: "/advertise/brandmark-systems-ltd.html",
+    page: "/advertise/brandmark-systems-ltd/",
     contact: "0736 900 750"
   },
   {
     id: "chayil",
     name: "Chayil Business Solutions",
     banner: "/images/ads/chayil-business-final.webp",
-    logo: "/images/logos/chayil-business-solutions-logo.webp",
+    logo: "/images/logos/chayil-logo.webp",
     status: "TAKEN",
-    category: "Hair Care & Detergents",
-    page: "/advertise/chayil-business-solutions.html",
-    contact: "0795 675 786"
+    category: "Business Consultancy",
+    page: "/advertise/chayil-business-solutions/",
+    contact: "0723 098 298"
   }
 ];
