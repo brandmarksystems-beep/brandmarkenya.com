@@ -19,7 +19,9 @@
    Cyan #00c8d4  |  Black #000000  |  White #ffffff
    ============================================= */
 :root{--cyan:#00c8d4;--cl:#33d6e0;--cd:#008c96;--black:#000;--white:#fff;--muted:rgba(255,255,255,.58);--pad:clamp(16px,4vw,60px);--nav-h:58px;--footer-h:72px;}
-*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html,body{width:100%;max-width:100vw;overflow-x:hidden!important;box-sizing:border-box;margin:0;padding:0;}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;max-width:100%;}
+img,video{max-width:100%;min-width:0;height:auto;display:block;overflow:hidden;}
 html,body{width:100%;height:100%;overflow:hidden;font-family:'DM Sans',sans-serif;
   background:var(--black);color:var(--white);}
 
@@ -38,7 +40,7 @@ nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);z-index:300;
   backdrop-filter:blur(14px);border-bottom:1px solid rgba(0,200,212,.12);}
 .nav-logo{display:flex;align-items:center;gap:8px;background:none;border:none;
   cursor:pointer;text-decoration:none;min-width:0;}
-.nav-logo img{height:34px;width:34px;border-radius:50%;object-fit:contain;flex-shrink:0;}
+.nav-logo img{height:34px;width:34px;min-width:0;border-radius:50%;object-fit:contain;flex-shrink:0;}
 .nav-logo-stack{display:flex;flex-direction:column;justify-content:center;min-width:0;}
 .nav-logo-text{font-family:'Nunito',sans-serif;font-size:clamp(.82rem,1.6vw,1.1rem);
   font-weight:900;letter-spacing:.04em;color:var(--cyan);white-space:nowrap;
@@ -182,7 +184,7 @@ nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);z-index:300;
   overflow:hidden;border:1px solid rgba(0,200,212,.18);background:#001215;}
 .hero-slider-track{display:flex;width:800%;height:100%;animation:heroSliderScroll 28s linear infinite;}
 .hero-slider:hover .hero-slider-track{animation-play-state:paused;}
-.hero-slide{position:relative;inset:auto;flex:0 0 12.5%;height:100%;opacity:1;}
+.hero-slide{position:relative;inset:auto;flex:0 0 12.5%;width:12.5%;min-width:0;max-width:12.5%;height:100%;opacity:1;}
 .hero-slide img{width:100%;height:100%;object-fit:contain;display:block;background:#001215;}
 .hero-slide-cap{position:absolute;left:0;right:0;bottom:0;padding:8px 13px;
   background:linear-gradient(0deg,rgba(0,0,0,.78),transparent);
@@ -399,7 +401,7 @@ a[target="_blank"],button{cursor:pointer!important;}
   @keyframes wapulse{0%{transform:scale(1);opacity:.6}70%{transform:scale(1.4);opacity:0}100%{transform:scale(1.4);opacity:0}}
   .wa-lbl{background:#25d366;color:#fff;font-family:'DM Sans',sans-serif;
     font-size:.66rem;font-weight:500;padding:6px 10px 6px 12px;
-    border-radius:20px 0 0 20px;margin-right:-4px;white-space:nowrap;
+    border-radius:20px 0 0 20px;margin-right:0;white-space:nowrap;
     opacity:0;transform:translateX(6px);
     transition:opacity .25s,transform .25s;pointer-events:none;}
   .wa-float:hover .wa-lbl{opacity:1;transform:translateX(0);}
@@ -588,83 +590,21 @@ a[target="_blank"],button{cursor:pointer!important;}
 </style>
 <style>
 /* ── FINAL HERO RESPONSIVE LAYOUT ── */
-#p-home{
-  width:100%;
-  max-width:100%;
-  box-sizing:border-box;
-  padding:20px 24px 40px 24px;
-  overflow-x:hidden;
-}
-html,body{
-  width:100%;
-  max-width:100vw;
-  overflow-x:hidden;
-  box-sizing:border-box;
-}
-#p-home .hero-body{
-  display:grid;
-  grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);
-  grid-template-rows:auto minmax(0,1fr) auto;
-  gap:24px;
-  max-width:100%;
-  box-sizing:border-box;
-  height:auto;
-  padding:0;
-}
-#p-home .hero-tagline{
-  position:relative;
-  top:auto;
-  left:auto;
-  transform:none;
-  display:block;
-  grid-column:1/-1;
-  grid-row:1;
-  width:100%;
-  text-align:center;
-  white-space:nowrap;
-  font-size:1.25rem;
-  letter-spacing:.04em;
-  margin:16px 0 0;
-  line-height:1.2;
-}
+#p-home{width:100%;max-width:100%;box-sizing:border-box;padding:24px 16px 40px 16px;overflow:hidden;}
+#p-home .hero-body{display:flex;flex-wrap:wrap;gap:24px;width:100%;max-width:1200px;margin:0 auto;}
+#p-home .hero-tagline{flex:0 0 100%;width:100%;text-align:center;white-space:nowrap;font-size:1.25rem;margin:16px 0 12px 0;}
 #p-home .hero-tagline br{display:none;}
-#p-home .hero-left{grid-column:1;grid-row:2;min-width:0;}
-#p-home .hero-right{grid-column:2;grid-row:2;min-width:0;}
-#p-home .hero-stats{
-  grid-column:1/-1;
-  grid-row:3;
-  display:grid;
-  grid-template-columns:repeat(4,minmax(0,1fr));
-  gap:16px;
-  width:100%;
-  box-sizing:border-box;
-  margin:0;
-}
+#p-home .hero-left{flex:1 1 58%;min-width:0;overflow:hidden;}
+#p-home .hero-right{flex:1 1 38%;min-width:280px;max-width:100%;}
+#p-home .hero-stats{flex:0 0 100%;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;width:100%;}
+#p-home .hero-slider{width:100%;overflow:hidden;position:relative;}
+#p-home .hero-slider-track{display:flex;flex-wrap:nowrap;width:100%;max-width:100%;}
 @media(max-width:900px){
-  #p-home{padding:12px 16px 24px 16px;}
-  #p-home .hero-body{
-    grid-template-columns:1fr;
-    grid-template-rows:auto;
-    gap:20px;
-    padding:0;
-    overflow-x:hidden;
-  }
-  #p-home .hero-tagline{
-    grid-column:1;
-    grid-row:auto;
-    font-size:clamp(11px,3.4vw,14px);
-    margin:12px 0 0;
-    padding:0 4px;
-    white-space:nowrap!important;
-  }
-  #p-home .hero-left,#p-home .hero-right,#p-home .hero-stats{
-    grid-column:1;
-    grid-row:auto;
-    max-width:100%;
-    box-sizing:border-box;
-  }
+  #p-home{padding:12px 12px 20px 12px;}
+  #p-home .hero-body{flex-direction:column;}
+  #p-home .hero-tagline{font-size:clamp(11px,3.4vw,14px);white-space:nowrap!important;padding:0 4px;}
+  #p-home .hero-left,#p-home .hero-right,#p-home .hero-stats{flex:0 0 100%;width:100%;}
   #p-home .hero-stats{grid-template-columns:1fr 1fr;gap:8px;}
-  #p-home .hero-slider,#p-home .hero-desc{max-width:100%;box-sizing:border-box;}
 }
 </style>
 </head>
@@ -673,7 +613,7 @@ html,body{
 <div class="cursor-ring" id="curRing"></div>
 
 <nav>
-  <button class="nav-logo" onclick="go('home')">
+  <button class="nav-logo" onclick="showPage('p-home')">
     <img src="/portfolio-images/brandmark-logo.webp" alt="BrandMark Logo"/>
     <span class="nav-logo-stack">
       <span class="nav-logo-text">BrandMark<span> Systems Ltd</span></span>
@@ -681,7 +621,7 @@ html,body{
     </span>
   </button>
   <ul class="nav-links">
-    <li><button id="n-home" class="active" onclick="go('home')">Home</button></li>
+    <li><button id="n-home" class="active" onclick="showPage('p-home')">Home</button></li>
     <li><button id="n-about" onclick="go('about')">About</button></li>
     <li>
       <button id="n-services" onclick="go('services')">Services ▾</button>
@@ -1214,13 +1154,19 @@ html,body{
 var PANELS=['home','about','services','directory','quote'];
 var cur='home';
 function go(id){
-  if(id===cur)return;
   var fp=document.getElementById('p-'+cur),tp=document.getElementById('p-'+id);
   if(!fp||!tp)return;
   fp.classList.remove('active');tp.classList.add('active');
   cur=id;
   PANELS.forEach(function(p){var b=document.getElementById('n-'+p);if(b)b.classList.toggle('active',p===id);});
   var mm=document.getElementById('mobMenu');if(mm)mm.classList.remove('open');
+  if(id==='home'){
+    tp.scrollTo({top:0,behavior:'smooth'});
+    window.scrollTo({top:0,behavior:'smooth'});
+  }
+}
+function showPage(panelId){
+  go(panelId.replace(/^p-/,''));
 }
 function svcTab(name){
   ['main','gallery'].forEach(function(t){
