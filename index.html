@@ -590,75 +590,26 @@ a[target="_blank"],button{cursor:pointer!important;}
 </style>
 <style>
 /* ── FINAL HERO RESPONSIVE LAYOUT ── */
-#p-home{width:100%;max-width:100%;box-sizing:border-box;padding:24px 16px 40px 16px;overflow:hidden;}
-#p-home .hero-body{display:flex;flex-wrap:wrap;gap:24px;width:100%;max-width:1200px;margin:0 auto;}
-#p-home .hero-tagline{flex:0 0 100%;width:100%;text-align:center;white-space:nowrap;font-size:1.25rem;margin:16px 0 12px 0;}
-#p-home .hero-tagline br{display:none;}
-#p-home .hero-left{flex:1 1 58%;min-width:0;overflow:hidden;}
-#p-home .hero-right{flex:1 1 38%;min-width:280px;max-width:100%;}
-#p-home .hero-stats{flex:0 0 100%;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;width:100%;}
-#p-home .hero-slider{width:100%;overflow:hidden;position:relative;}
-#p-home .hero-slider-track{display:flex;flex-wrap:nowrap;width:100%;max-width:100%;}
+/* --- CLEAN HERO - STABLE, NO OVERFLOW --- */
+#p-home{width:100%;max-width:100%;box-sizing:border-box;padding:24px 16px 40px 16px;overflow:hidden!important}
+#p-home .hero-body{display:flex;flex-wrap:wrap;gap:24px;width:100%;max-width:1200px;margin:0 auto}
+#p-home .hero-tagline{flex:0 0 100%;width:100%;text-align:center;font-size:1.25rem;margin:16px 0 12px 0;font-style:italic;font-weight:700;color:#fff}
+#p-home .hero-tagline br{display:none}
+#p-home .hero-left{flex:1 1 58%;min-width:0;height:400px;min-height:400px;overflow:hidden;display:block;position:relative;border-radius:12px}
+#p-home .hero-right{flex:1 1 38%;min-width:280px;max-width:100%}
+#p-home .hero-stats{flex:0 0 100%;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;width:100%}
+#p-home .hero-slider{width:100%;height:100%;overflow:hidden;position:relative;display:block}
+#p-home .hero-slider-track{width:100%!important;height:100%!important;display:block!important;animation:none!important;transform:none!important}
+#p-home .hero-slider-track img{width:100%!important;height:400px!important;object-fit:cover!important;display:none!important}
+#p-home .hero-slider-track img:first-child{display:block!important}
 @media(max-width:900px){
-  #p-home{padding:12px 12px 20px 12px;}
-  #p-home .hero-body{flex-direction:column;}
-  #p-home .hero-tagline{font-size:clamp(11px,3.4vw,14px);white-space:nowrap!important;padding:0 4px;}
-  #p-home .hero-left,#p-home .hero-right,#p-home .hero-stats{flex:0 0 100%;width:100%;}
-  #p-home .hero-stats{grid-template-columns:1fr 1fr;gap:8px;}
-}
-
-/* FINAL FIX - No collage, no blank page, slogan outside */
-#p-home .hero-left{
-  width:100%;
-  height:400px;
-  min-height:400px;
-  overflow:hidden;
-  display:block;
-  position:relative;
-  border-radius:12px;
-  margin-top:10px;
-}
-.hero-slider{
-  width:100%;
-  height:100%;
-  overflow:hidden;
-  position:relative;
-  display:block;
-}
-.hero-slider-track{
-  display:flex!important;
-  flex-direction:row!important;
-  flex-wrap:nowrap!important;
-  width:400%!important; /* 4 images x 100% */
-  height:100%!important;
-  animation: brandSlideFixed 20s infinite ease-in-out;
-}
-.hero-slider-track img{
-  width:25%!important; /* 25% of 400% = 100% of screen */
-  flex:0 0 25%!important;
-  min-width:25%!important;
-  max-width:25%!important;
-  height:400px!important;
-  object-fit:cover!important;
-  display:block!important;
-  position:relative!important;
-  opacity:1!important;
-}
-@keyframes brandSlideFixed{
-  0% {transform:translateX(0)}
-  18% {transform:translateX(0)}
-  22% {transform:translateX(-25%)}
-  40% {transform:translateX(-25%)}
-  44% {transform:translateX(-50%)}
-  62% {transform:translateX(-50%)}
-  66% {transform:translateX(-75%)}
-  88% {transform:translateX(-75%)}
-  92% {transform:translateX(0)}
-  100% {transform:translateX(0)}
-}
-@media(max-width:900px){
-  #p-home .hero-left{height:280px!important;min-height:280px!important}
-  .hero-slider-track img{height:280px!important}
+ #p-home{padding:12px 12px 20px 12px}
+ #p-home .hero-body{flex-direction:column}
+ #p-home .hero-tagline{font-size:clamp(11px,3.4vw,14px);white-space:nowrap!important}
+ #p-home .hero-left,#p-home .hero-right,#p-home .hero-stats{flex:0 0 100%;width:100%}
+ #p-home .hero-left{height:280px;min-height:280px}
+ #p-home .hero-slider-track img{height:280px!important}
+ #p-home .hero-stats{grid-template-columns:1fr 1fr;gap:8px}
 }
 </style>
 </head>
