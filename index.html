@@ -607,40 +607,44 @@ a[target="_blank"],button{cursor:pointer!important;}
   #p-home .hero-stats{grid-template-columns:1fr 1fr;gap:8px;}
 }
 
-   /* FIX CROPPED STRIP - GIVE SLIDER HEIGHT BACK */
+/* FINAL HERO SLIDER - FIX COLLAGED STRIPS */
 #p-home .hero-left{
   position:relative;
+  width:100%;
   min-height:420px;
-  display:block;
   overflow:hidden;
 }
 .hero-slider{
   width:100%;
+  height:420px;
   min-height:420px;
-  overflow:hidden;
   position:relative;
+  overflow:hidden;
+  display:block;
 }
 .hero-slider-track{
-  display:flex;
+  display:block;
   width:100%;
   height:100%;
+  position:relative;
 }
-.hero-slider-track img,
-#p-home .hero-left img{
-  width:100%;
-  height:420px;
+.hero-slider-track img{
+  position:absolute!important;
+  top:0; left:0;
+  width:100%!important;
+  height:100%!important;
   object-fit:cover;
-  display:block;
-  flex-shrink:0;
+  object-position:center;
+  opacity:0;
+  transition:opacity 1s ease-in-out;
+}
+.hero-slider-track img.active,
+.hero-slider-track img:first-child{
+  opacity:1;
 }
 @media(max-width:900px){
-  #p-home .hero-left{min-height:260px}
-  .hero-slider{min-height:260px}
-  .hero-slider-track img,
-  #p-home .hero-left img{
-    height:260px;
-    min-height:260px;
-  }
+  #p-home .hero-left{ min-height:260px; }
+  .hero-slider{ height:260px; min-height:260px; }
 }
 </style>
 </head>
