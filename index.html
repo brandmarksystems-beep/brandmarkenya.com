@@ -589,26 +589,53 @@ a[target="_blank"],button{cursor:pointer!important;}
   }
 </style>
 <style>
-/* ── FINAL HERO RESPONSIVE LAYOUT ── */
-/* --- CLEAN HERO - STABLE, NO OVERFLOW --- */
-#p-home{width:100%;max-width:100%;box-sizing:border-box;padding:24px 16px 40px 16px;overflow:hidden!important}
-#p-home .hero-body{display:flex;flex-wrap:wrap;gap:24px;width:100%;max-width:1200px;margin:0 auto}
-#p-home .hero-tagline{flex:0 0 100%;width:100%;text-align:center;font-size:1.25rem;margin:16px 0 12px 0;font-style:italic;font-weight:700;color:#fff}
+/* ── FINAL HERO RESPONSIVE LAYOUT (fixed) ──
+   Root cause of the previous bug: this block set `flex:0 0 100%` on
+   .hero-left/.hero-right/.hero-stats to make them full-width on mobile,
+   but never set flex-direction on .hero-body itself — so it silently
+   inherited `flex-direction:column` from an older, unrelated mobile
+   rule elsewhere in the stylesheet. Once the container's main axis was
+   vertical, that "100%" flex-basis was read as a HEIGHT instruction
+   instead of a WIDTH one, so .hero-left grew to fit the full stacked
+   height of every slide image (thousands of px) instead of staying at
+   280px — dragging the stats cards and intro text far below the
+   screen. This block now sets flex-direction explicitly at every
+   breakpoint and sizes .hero-left with a plain `height`, so it can
+   never be reinterpreted as a main-axis size again. It also restores
+   the slider's auto-scroll animation, which the old block had
+   force-disabled (animation:none) on both desktop and mobile. */
+#p-home{width:100%;max-width:100%;box-sizing:border-box;padding:24px 16px 40px 16px;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch}
+#p-home .hero-body{display:flex;flex-direction:row;flex-wrap:wrap;align-items:flex-start;gap:24px;width:100%;max-width:1200px;margin:0 auto}
+/* .hero-tagline was originally an absolutely-positioned element centred
+   with `left:50%; transform:translateX(-50%)`. Switching it to
+   position:static (above) left that translateX(-50%) in place — a
+   transform applies even on a static, already-full-width element — so
+   it was still shifting the whole (already left-edge-to-right-edge)
+   tagline 50% of its own width further left, pushing it off-screen.
+   Resetting left/top/transform here is what actually re-centres it. */
+#p-home .hero-tagline{flex:0 0 100%;width:100%;text-align:center;font-size:1.25rem;margin:0 0 12px 0;font-style:italic;font-weight:700;color:#fff;position:static;left:auto;top:auto;transform:none}
 #p-home .hero-tagline br{display:none}
-#p-home .hero-left{flex:1 1 58%;min-width:0;height:400px;min-height:400px;overflow:hidden;display:block;position:relative;border-radius:12px}
-#p-home .hero-right{flex:1 1 38%;min-width:280px;max-width:100%}
-#p-home .hero-stats{flex:0 0 100%;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;width:100%}
-#p-home .hero-slider{width:100%;height:100%;overflow:hidden;position:relative;display:block}
-#p-home .hero-slider-track{width:100%!important;height:100%!important;display:block!important;animation:none!important;transform:none!important}
-#p-home .hero-slider-track img{width:100%!important;height:400px!important;object-fit:cover!important;display:none!important}
-#p-home .hero-slider-track img:first-child{display:block!important}
+#p-home .hero-left{flex:1 1 58%;min-width:280px;max-width:100%;height:380px;overflow:hidden;display:block;position:relative;border-radius:12px}
+#p-home .hero-right{flex:1 1 38%;min-width:280px;max-width:100%;display:flex;flex-direction:column;justify-content:center}
+#p-home .hero-stats{flex:0 0 100%;width:100%;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin:0}
+#p-home .hero-slider{width:100%;height:100%;min-height:0;margin-top:0;overflow:hidden;position:relative;display:block;border-radius:12px}
+/* A site-wide safety rule (`*{max-width:100%}`) caps every element's
+   width at its parent's — including this track, which needs to be 8x
+   wider than its box (one width per slide, 8 slides) so the animation
+   can slide smoothly from one full-width image to the next. That cap
+   was silently shrinking the track back to 100%, cramming all 8
+   slides into a single narrow view instead of showing one at a time.
+   max-width:none here restores the real width:800% from the base
+   stylesheet (this selector is specific enough to win over `*`). */
+#p-home .hero-slider-track{height:100%;max-width:none}
+#p-home .hero-slide{max-width:12.5%}
+#p-home .hero-slide img{border-radius:12px;max-width:none}
 @media(max-width:900px){
  #p-home{padding:12px 12px 20px 12px}
  #p-home .hero-body{flex-direction:column}
- #p-home .hero-tagline{font-size:clamp(11px,3.4vw,14px);white-space:nowrap!important}
- #p-home .hero-left,#p-home .hero-right,#p-home .hero-stats{flex:0 0 100%;width:100%}
- #p-home .hero-left{height:280px;min-height:280px}
- #p-home .hero-slider-track img{height:280px!important}
+ #p-home .hero-tagline{font-size:clamp(11px,3.4vw,14px);white-space:nowrap}
+ #p-home .hero-left,#p-home .hero-right,#p-home .hero-stats{flex:0 0 auto;width:100%;max-width:100%}
+ #p-home .hero-left{height:220px}
  #p-home .hero-stats{grid-template-columns:1fr 1fr;gap:8px}
 }
 </style>
