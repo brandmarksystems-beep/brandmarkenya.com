@@ -615,7 +615,7 @@ a[target="_blank"],button{cursor:pointer!important;}
    Resetting left/top/transform here is what actually re-centres it. */
 #p-home .hero-tagline{flex:0 0 100%;width:100%;text-align:center;font-size:1.25rem;margin:0 0 12px 0;font-style:italic;font-weight:700;color:#fff;position:static;left:auto;top:auto;transform:none}
 #p-home .hero-tagline br{display:none}
-#p-home .hero-left{flex:1 1 58%;min-width:280px;max-width:100%;height:380px;overflow:hidden;display:block;position:relative;border-radius:12px}
+#p-home .hero-left{flex:1 1 58%;min-width:280px;max-width:100%;height:clamp(240px,38vh,380px);overflow:hidden;display:block;position:relative;border-radius:12px}
 #p-home .hero-right{flex:1 1 38%;min-width:280px;max-width:100%;display:flex;flex-direction:column;justify-content:center}
 #p-home .hero-stats{flex:0 0 100%;width:100%;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin:0}
 #p-home .hero-slider{width:100%;height:100%;min-height:0;margin-top:0;overflow:hidden;position:relative;display:block;border-radius:12px}
@@ -627,9 +627,9 @@ a[target="_blank"],button{cursor:pointer!important;}
    slides into a single narrow view instead of showing one at a time.
    max-width:none here restores the real width:800% from the base
    stylesheet (this selector is specific enough to win over `*`). */
-#p-home .hero-slider-track{height:100%;max-width:none}
-#p-home .hero-slide{max-width:12.5%}
-#p-home .hero-slide img{border-radius:12px;max-width:none}
+#p-home .hero-slider-track{height:100%;max-width:none;gap:0}
+#p-home .hero-slide{flex:0 0 12.5%;width:12.5%;max-width:12.5%;min-width:12.5%;}
+#p-home .hero-slide img{width:100%;height:100%;max-width:none;object-fit:cover;border-radius:12px}
 @media(max-width:900px){
  #p-home{padding:12px 12px 20px 12px}
  #p-home .hero-body{flex-direction:column}
