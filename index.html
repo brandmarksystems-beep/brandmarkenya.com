@@ -1,25 +1,20 @@
-Understood. I’ll send the full modernized code in 3 clean parts.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="BrandMark Systems Ltd — Inspired Branding. Digital printing, signage, brand identity and corporate wear in Eldoret, Kenya."/>
+<meta name="keywords" content="printing Eldoret, branding Kenya, signage, digital print, corporate wear, BrandMark Systems"/>
+<meta property="og:title" content="BrandMark Systems Ltd — Inspired Branding"/>
+<meta property="og:url" content="https://brandmarkenya.com"/>
+<meta property="og:type" content="website"/>
+<link rel="canonical" href="https://brandmarkenya.com"/>
+<title>BrandMark Systems Ltd — Inspired Branding</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&family=Nunito:wght@900&family=Raleway:ital,wght@1,700&display=swap" rel="stylesheet"/>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-HPZ7GK21KM"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-HPZ7GK21KM');</script>
 
-PART 1 of 3  
-(Copy everything below into a new file called index.html)
-
-
-
-
-
-
-
-
-
-
-
-
-BrandMark Systems Ltd — Inspired Branding
-
-
-window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-HPZ7GK21KM');
-
-
+<style>
 :root {
   --cyan: #00c8d4;
   --cl: #33d6e0;
@@ -653,12 +648,7 @@ nav.scrolled {
 .gal-card:hover .gal-overlay { opacity: 1; }
 .gal-lbl { font-size: .65rem; color: #fff; }
 .gal-card.hidden { display: none; }
-
-PART 2 of 3
-
-Copy everything below and paste it directly after Part 1 (do not create a new file).
-
-/* DIRECTORY */
+  /* DIRECTORY */
 #p-directory {
   background: linear-gradient(160deg, #000 0%, #001a20 55%, #000d10 100%);
   padding: 70px var(--pad) 80px;
@@ -1245,506 +1235,501 @@ Copy everything below and paste it directly after Part 1 (do not create a new fi
   .discovery-grid { grid-template-columns: 1fr; }
   .hero-stats { grid-template-columns: 1fr 1fr; }
 }
+</style>
+</head>
+<body>
 
+<div class="cursor" id="cur"></div>
+<div class="cursor-ring" id="curRing"></div>
 
+<nav id="mainNav">
+  <button class="nav-logo" onclick="showPage('p-home')">
+    <img src="/portfolio-images/brandmark-logo.webp" alt="BrandMark Logo"/>
+    <span class="nav-logo-stack">
+      <span class="nav-logo-text">BrandMark<span> Systems Ltd</span></span>
+      <span class="nav-tagline">Inspired Branding...</span>
+    </span>
+  </button>
+  <ul class="nav-links">
+    <li><button id="n-home" class="active" onclick="go('home')">Home</button></li>
+    <li><button id="n-about" onclick="go('about')">About</button></li>
+    <li>
+      <button id="n-services" onclick="go('services')">Services ▾</button>
+      <div class="nav-dropdown">
+        <button onclick="go('services');svcTab('main')">All Services</button>
+        <button onclick="go('services');svcTab('gallery')">Gallery</button>
+      </div>
+    </li>
+    <li><button id="n-advertise" onclick="location.href='advertise/index.html'">Advertise</button></li>
+    <li><button id="n-directory" onclick="go('directory')">Directory</button></li>
+  </ul>
+  <div style="display:flex;gap:10px;align-items:center;">
+    <button class="nav-quote" onclick="go('quote')">GET A QUOTE</button>
+    <button class="hamburger" id="hbg" onclick="toggleMob()">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
 
+<div class="mob-menu" id="mobMenu">
+  <button onclick="goMob('home')">Home</button>
+  <button onclick="goMob('about')">About</button>
+  <button onclick="goMob('services');svcTab('main')">Services</button>
+  <button onclick="goMob('services');svcTab('gallery')">Gallery</button>
+  <button onclick="location.href='advertise/index.html'">Advertise</button>
+  <button onclick="goMob('directory')">Directory</button>
+  <button onclick="goMob('quote')">Get a Quote</button>
+</div>
 
+<div class="panels">
 
-
-
-
-  
-    
-    
-      BrandMark Systems Ltd
-      Inspired Branding...
-    
-  
-  
-    Home
-    About
-    
-      Services ▾
+  <!-- ==================== HOME ==================== -->
+  <div class="panel active" id="p-home">
+    <div class="hero-body">
+      <div class="hero-tagline">Where <em>Vision</em> Meets <em>Excellence</em></div>
       
-        All Services
-        Gallery
-      
-    
-    Advertise
-    Directory
-  
-  
-    GET A QUOTE
-    
-      
-    
-  
+      <div class="hero-left">
+        <div class="hero-slider" id="heroSlider">
+          <div class="hero-slide">
+            <img src="/portfolio-images/huduma-centre-desk.webp" alt="Huduma Centre" loading="eager">
+          </div>
+          <div class="hero-slide">
+            <img src="/portfolio-images/apparel-collage-branding.webp" alt="Branded Apparel" loading="lazy">
+          </div>
+          <div class="hero-slide">
+            <img src="/portfolio-images/nuru-boutique-3d.webp" alt="Nuru Boutique" loading="lazy">
+          </div>
+          <div class="hero-slide">
+            <img src="/portfolio-images/brandmark-embroidery-workshop.webp" alt="Embroidery Workshop" loading="lazy">
+          </div>
+        </div>
+      </div>
 
-
-
-  Home
-  About
-  Services
-  Gallery
-  Advertise
-  Directory
-  Get a Quote
-
-
-
-
-  
-  
-    
-      Where Vision Meets Excellence
-      
-      
-        
-          
-            
-          
-          
-            
-          
-          
-            
-          
-          
-            
-          
-        
-      
-
-      
-        
+      <div class="hero-right">
+        <p class="hero-desc">
           BrandMark Systems Ltd is your one-stop centre for all Marketing and Communication products and services in Eldoret, Kenya and beyond. We build successful brands that stand out.
-        
-        
-          Our Services
-          Get a Quote
-        
-      
+        </p>
+        <div class="hero-btns">
+          <button class="btn-c" onclick="go('services')">Our Services</button>
+          <button class="btn-o" onclick="go('quote')">Get a Quote</button>
+        </div>
+      </div>
 
-      
-        500+Brands Built
-        12+Industries
-        100%Quality Promise
-        ∞Creativity
-      
-    
+      <div class="hero-stats">
+        <div class="hstat"><div class="hstat-n">500+</div><div class="hstat-l">Brands Built</div></div>
+        <div class="hstat"><div class="hstat-n">12+</div><div class="hstat-l">Industries</div></div>
+        <div class="hstat"><div class="hstat-n">100%</div><div class="hstat-l">Quality Promise</div></div>
+        <div class="hstat"><div class="hstat-n">∞</div><div class="hstat-l">Creativity</div></div>
+      </div>
+    </div>
 
-    
-    
-      Find Your Partner
-      Discover trusted creative partners
-      
-        
-        Search
-      
-      
-        All
-        Design
-        Printing
-        Signage
-        Apparel
-        Events
-      
-      
-      No matching providers found.
-    
-  
+    <!-- Discovery Section -->
+    <section class="discovery-section">
+      <div class="slbl cy">Find Your Partner</div>
+      <h2 class="discovery-title">Discover trusted <em>creative partners</em></h2>
+      <div class="discovery-search">
+        <input id="discoverySearch" type="search" placeholder="Search by service, business or town" oninput="discoverySearch()">
+        <button onclick="discoverySearch()">Search</button>
+      </div>
+      <div class="discovery-chips" id="discoveryChips">
+        <button class="discovery-chip active" onclick="discoveryCategory(this,'all')">All</button>
+        <button class="discovery-chip" onclick="discoveryCategory(this,'graphic-design')">Design</button>
+        <button class="discovery-chip" onclick="discoveryCategory(this,'digital-print')">Printing</button>
+        <button class="discovery-chip" onclick="discoveryCategory(this,'signage')">Signage</button>
+        <button class="discovery-chip" onclick="discoveryCategory(this,'apparel')">Apparel</button>
+        <button class="discovery-chip" onclick="discoveryCategory(this,'events')">Events</button>
+      </div>
+      <div class="discovery-grid" id="discoveryGrid"></div>
+      <div id="discoveryEmpty" style="display:none;color:var(--muted);padding:20px 0;">No matching providers found.</div>
+    </section>
+  </div>
 
-  
-  
-    
+  <!-- ==================== ABOUT ==================== -->
+  <div class="panel" id="p-about">
+    <div class="ab-vis">
+      <div class="ab-mono">
+        <img src="/portfolio-images/brandmark-logo.webp" alt="BrandMark" style="width:70%;max-width:110px;">
+      </div>
+    </div>
+    <div class="ab-text">
+      <div class="slbl">Company Profile</div>
+      <h2>Building <em>Successful</em> Brands</h2>
+      <p>BrandMark Systems Ltd is a renowned business with a reputation for quality, service and innovation. We offer design and printing services for both individuals and corporates.</p>
+      <p>Specialist consultants guide you through complex projects. We embrace cutting-edge technology to provide the best outcomes — quality first, every time.</p>
       
-        
+      <div class="ab-4">
+        <div class="ab-4-item"><strong>Our Vision</strong>To be a one-stop centre for all Marketing and Communication products and services.</div>
+        <div class="ab-4-item"><strong>Our Mission</strong>To build successful brands that stand out through reliable quality products and services.</div>
+        <div class="ab-4-item"><strong>Our Promise</strong>We promise a better Experience; not just better rates.</div>
+        <div class="ab-4-item"><strong>Our Objective</strong>Professional business solutions through custom tailored Marketing Strategies.</div>
+      </div>
       
-    
-    
-      Company Profile
-      Building Successful Brands
-      BrandMark Systems Ltd is a renowned business with a reputation for quality, service and innovation. We offer design and printing services for both individuals and corporates.
-      Specialist consultants guide you through complex projects. We embrace cutting-edge technology to provide the best outcomes — quality first, every time.
+      <div class="ab-pillars"><strong>Our Pillars:</strong> Trust · Teamwork · Integrity · Creativity & Innovation · Godliness</div>
       
+      <div class="ab-stats">
+        <div><div class="astat-n">100+</div><div class="astat-l">Brands Built</div></div>
+        <div><div class="astat-n">12+</div><div class="astat-l">Industries</div></div>
+        <div><div class="astat-n">100%</div><div class="astat-l">Quality</div></div>
+      </div>
       
-        Our VisionTo be a one-stop centre for all Marketing and Communication products and services.
-        Our MissionTo build successful brands that stand out through reliable quality products and services.
-        Our PromiseWe promise a better Experience; not just better rates.
-        Our ObjectiveProfessional business solutions through custom tailored Marketing Strategies.
-      
-      
-      Our Pillars: Trust · Teamwork · Integrity · Creativity & Innovation · Godliness
-      
-      
-        100+Brands Built
-        12+Industries
-        100%Quality
-      
-      
-      
-        Our Services
-        Contact Us
-      
-    
-  
+      <div class="ab-btns">
+        <button class="btn-c" onclick="go('services')">Our Services</button>
+        <button class="btn-o" onclick="showContact()" style="border-color:rgba(0,0,0,.25);color:rgba(0,0,0,.6);">Contact Us</button>
+      </div>
+    </div>
+  </div>
 
-  
-  
-    What We Do
-    
-      Services
-      Gallery
-    
+  <!-- ==================== SERVICES ==================== -->
+  <div class="panel" id="p-services">
+    <div class="slbl cy">What We Do</div>
+    <div class="svc-tabs">
+      <button class="svc-tab active" id="st-main" onclick="svcTab('main')">Services</button>
+      <button class="svc-tab" id="st-gallery" onclick="svcTab('gallery')">Gallery</button>
+    </div>
 
-    
-    
-      
-        Our Core Services
-        We can Print and Brand anything. Contact us for any product or service.
-      
-      
-        
-          01
-          🎨
-          Graphic Design
-          Logo design, e-cards, e-flyers and multi-page designs. Concept development that captivates your audience.
-          Enquire →
-        
-        
-          02
-          🖨
-          Digital & Offset Print
-          High-resolution prints on photocopy, glossy, photo and art paper. Flyers, posters, brochures and certificates.
-          Enquire →
-        
-        
-          03
-          📐
-          Large Format & DTF
-          PVC banners, matte stickers, satin, DTF prints and roll-up banners for maximum visual impact.
-          Enquire →
-        
-        
-          04
-          🪧
-          Signage & Branding
-          Wall branding, floor graphics, forex signs, perspex engraved signs, vehicle wraps and exhibition displays.
-          Enquire →
-        
-        
-          05
-          👕
-          T-Shirts & Apparel
-          Round necks, polos (embroidery & print), jerseys, hoodies and custom corporate shirts & blouses.
-          Enquire →
-        
-        
-          06
-          🎁
-          Promotional Items
-          Clocks, mugs, pens, diaries, custom branded packaging, stationery and corporate gift items.
-          Enquire →
-        
-        
-          07
-          📦
-          Packaging & Labels
-          Custom packaging design and labelling for products. Strategic packaging that tells your story.
-          Enquire →
-        
-        
-          08
-          📚
-          Books & Publications
-          Receipt books, delivery notes, invoice books, calendars, magazines and custom-printed books.
-          Enquire →
-        
-        
-          09
-          🖼
-          Gallery
-          Browse our portfolio of completed projects — wall branding, signage, corporate wear and more.
-          View Gallery →
-        
-      
-    
+    <!-- Services Pane -->
+    <div class="svc-pane active" id="sp-main">
+      <div class="svc-hdr">
+        <h2>Our <em>Core</em> Services</h2>
+        <p style="max-width:260px;font-size:.8rem;color:var(--muted);">We can Print and Brand anything. Contact us for any product or service.</p>
+      </div>
+      <div class="svc-grid">
+        <div class="svc-card">
+          <div class="svc-num">01</div>
+          <div class="svc-icon">🎨</div>
+          <h3>Graphic Design</h3>
+          <p>Logo design, e-cards, e-flyers and multi-page designs. Concept development that captivates your audience.</p>
+          <button class="svc-lnk" onclick="showContact()">Enquire →</button>
+        </div>
+        <div class="svc-card">
+          <div class="svc-num">02</div>
+          <div class="svc-icon">🖨</div>
+          <h3>Digital & Offset Print</h3>
+          <p>High-resolution prints on photocopy, glossy, photo and art paper. Flyers, posters, brochures and certificates.</p>
+          <button class="svc-lnk" onclick="showContact()">Enquire →</button>
+        </div>
+        <div class="svc-card">
+          <div class="svc-num">03</div>
+          <div class="svc-icon">📐</div>
+          <h3>Large Format & DTF</h3>
+          <p>PVC banners, matte stickers, satin, DTF prints and roll-up banners for maximum visual impact.</p>
+          <button class="svc-lnk" onclick="showContact()">Enquire →</button>
+        </div>
+        <div class="svc-card">
+          <div class="svc-num">04</div>
+          <div class="svc-icon">🪧</div>
+          <h3>Signage & Branding</h3>
+          <p>Wall branding, floor graphics, forex signs, perspex engraved signs, vehicle wraps and exhibition displays.</p>
+          <button class="svc-lnk" onclick="showContact()">Enquire →</button>
+        </div>
+        <div class="svc-card">
+          <div class="svc-num">05</div>
+          <div class="svc-icon">👕</div>
+          <h3>T-Shirts & Apparel</h3>
+          <p>Round necks, polos (embroidery & print), jerseys, hoodies and custom corporate shirts & blouses.</p>
+          <button class="svc-lnk" onclick="showContact()">Enquire →</button>
+        </div>
+        <div class="svc-card">
+          <div class="svc-num">06</div>
+          <div class="svc-icon">🎁</div>
+          <h3>Promotional Items</h3>
+          <p>Clocks, mugs, pens, diaries, custom branded packaging, stationery and corporate gift items.</p>
+          <button class="svc-lnk" onclick="showContact()">Enquire →</button>
+        </div>
+        <div class="svc-card">
+          <div class="svc-num">07</div>
+          <div class="svc-icon">📦</div>
+          <h3>Packaging & Labels</h3>
+          <p>Custom packaging design and labelling for products. Strategic packaging that tells your story.</p>
+          <button class="svc-lnk" onclick="showContact()">Enquire →</button>
+        </div>
+        <div class="svc-card">
+          <div class="svc-num">08</div>
+          <div class="svc-icon">📚</div>
+          <h3>Books & Publications</h3>
+          <p>Receipt books, delivery notes, invoice books, calendars, magazines and custom-printed books.</p>
+          <button class="svc-lnk" onclick="showContact()">Enquire →</button>
+        </div>
+        <div class="svc-card">
+          <div class="svc-num">09</div>
+          <div class="svc-icon">🖼</div>
+          <h3>Gallery</h3>
+          <p>Browse our portfolio of completed projects — wall branding, signage, corporate wear and more.</p>
+          <button class="svc-lnk" onclick="svcTab('gallery')">View Gallery →</button>
+        </div>
+      </div>
+    </div>
 
-    
-    
-      Portfolio
-      
-        Our Work Speaks for Itself
-      
-      
+    <!-- Gallery Pane -->
+    <div class="svc-pane" id="sp-gallery">
+      <div class="slbl" style="color:rgba(255,255,255,.5);">Portfolio</div>
+      <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(1.7rem,3vw,2.5rem);font-weight:300;margin-bottom:8px;">
+        Our Work <em style="color:var(--cyan);font-style:italic;">Speaks</em> for Itself
+      </h2>
+      <p style="font-size:.88rem;color:var(--muted);margin-bottom:18px;max-width:560px;">
         From Coca-Cola wall branding to Huduma Kenya desks, World Vision projects to NCPB agricultural hub signage.
+      </p>
       
+      <div class="gal-filters">
+        <button class="gfil active" onclick="filterGal('all',this)">All</button>
+        <button class="gfil" onclick="filterGal('wall',this)">Wall</button>
+        <button class="gfil" onclick="filterGal('signage',this)">Signage</button>
+        <button class="gfil" onclick="filterGal('apparel',this)">Apparel</button>
+        <button class="gfil" onclick="filterGal('promo',this)">Promo</button>
+        <button class="gfil" onclick="filterGal('banners',this)">Banners</button>
+        <button class="gfil" onclick="filterGal('vehicle',this)">Vehicle</button>
+      </div>
       
+      <div class="gal-grid" id="galGrid"></div>
       
-        All
-        Wall
-        Signage
-        Apparel
-        Promo
-        Banners
-        Vehicle
+      <div style="margin-top:24px;display:flex;gap:12px;flex-wrap:wrap;">
+        <button class="btn-c" onclick="showContact()">Discuss Your Project</button>
+        <button class="btn-o" onclick="svcTab('main')">← Back to Services</button>
+      </div>
+    </div>
+  </div>
+    <!-- ==================== DIRECTORY ==================== -->
+  <div class="panel" id="p-directory">
+    <div class="slbl cy">Kenya Business Directory</div>
+    <div class="dir-hero">
+      <h2>Find <em>products & Service providers</em> near you</h2>
+      <p>The definitive directory of businesses and service providers across Kenya — Eldoret, Nairobi, Kisumu, Nakuru and beyond.</p>
+    </div>
+
+    <div class="dir-stats">
+      <div class="dir-stat"><strong id="ds-total">10</strong><span>Listed Businesses</span></div>
+      <div class="dir-stat"><strong>10+</strong><span>Service Categories</span></div>
+      <div class="dir-stat"><strong>5+</strong><span>Cities Covered</span></div>
+      <div class="dir-stat"><strong>Free</strong><span>To List Your Business</span></div>
+    </div>
+
+    <div class="dir-search-wrap">
+      <span class="dir-search-icon">🔍</span>
+      <input class="dir-search" id="dirSearch" type="text" placeholder="Search by business name, service or location…" oninput="dirFilter()">
+    </div>
+
+    <div class="dir-cats" id="dirCats">
+      <button class="dcat active" data-cat="all" onclick="dirSetCat(this,'all')">All Categories</button>
+      <button class="dcat" data-cat="graphic-design" onclick="dirSetCat(this,'graphic-design')">Graphic Design</button>
+      <button class="dcat" data-cat="digital-print" onclick="dirSetCat(this,'digital-print')">Digital Printing</button>
+      <button class="dcat" data-cat="signage" onclick="dirSetCat(this,'signage')">Signage & Display</button>
+      <button class="dcat" data-cat="apparel" onclick="dirSetCat(this,'apparel')">Branded Apparel</button>
+      <button class="dcat" data-cat="promotional" onclick="dirSetCat(this,'promotional')">Promotional Items</button>
+      <button class="dcat" data-cat="events" onclick="dirSetCat(this,'events')">Events</button>
+      <button class="dcat" data-cat="professional" onclick="dirSetCat(this,'professional')">Professional Services</button>
+    </div>
+
+    <div style="font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:14px;">
+      <strong id="dirCount" style="color:var(--cyan);">10</strong> businesses found
+    </div>
+
+    <div class="dir-no-results" id="dirNoResults" style="display:none;text-align:center;padding:50px 20px;color:var(--muted);">
+      <p style="font-size:1.1rem;margin-bottom:8px;">No businesses found matching your search.</p>
+      <button class="biz-btn-o" onclick="dirReset()">Clear filters</button>
+    </div>
+
+    <div class="dir-grid" id="dirGrid"></div>
+
+    <!-- Add Business Form -->
+    <div class="dir-add-section">
+      <h3 class="dir-add-h">List Your Business — It's <em>Free</em></h3>
+      <p style="font-size:.86rem;color:var(--muted);margin-bottom:6px;">Get in front of clients searching for trusted providers across Kenya.</p>
       
+      <form class="dir-form" id="dirForm">
+        <div class="dir-field">
+          <label>Business Name *</label>
+          <input type="text" name="business_name" required placeholder="e.g. BrandMark Systems">
+        </div>
+        <div class="dir-field">
+          <label>Category *</label>
+          <select name="business_type" required>
+            <option value="">Select category</option>
+            <option>Graphic Design</option>
+            <option>Digital Printing</option>
+            <option>Signage & Display</option>
+            <option>Branded Apparel</option>
+            <option>Promotional Items</option>
+            <option>Events & Exhibitions</option>
+            <option>Professional Services</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="dir-field">
+          <label>Contact Name *</label>
+          <input type="text" name="contact_name" required>
+        </div>
+        <div class="dir-field">
+          <label>Phone / WhatsApp *</label>
+          <input type="tel" name="phone" required placeholder="07xx xxx xxx">
+        </div>
+        <div class="dir-field">
+          <label>Email</label>
+          <input type="email" name="email">
+        </div>
+        <div class="dir-field">
+          <label>Town / City *</label>
+          <select name="location" required>
+            <option value="">Select location</option>
+            <option>Eldoret</option>
+            <option>Nairobi</option>
+            <option>Kisumu</option>
+            <option>Nakuru</option>
+            <option>Mombasa</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="dir-field full">
+          <label>Short Description</label>
+          <textarea name="description" rows="3" maxlength="200" placeholder="Briefly describe what you do"></textarea>
+        </div>
+        <div class="dir-field full">
+          <label>Website / Social (optional)</label>
+          <input type="url" name="website" placeholder="https://">
+        </div>
+
+        <!-- Hidden fields for EmailJS -->
+        <input type="hidden" name="user_name">
+        <input type="hidden" name="user_email">
+        <input type="hidden" name="subject">
+        <input type="hidden" name="message">
+
+        <div class="dir-field full">
+          <button type="submit" class="dir-submit-btn">Submit Application</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ==================== QUOTE ==================== -->
+  <div class="panel" id="p-quote">
+    <div class="quote-box">
+      <div class="slbl cy">Get a Quote</div>
+      <h2>Tell us about your <em>project</em></h2>
+      <p>Share a few details and we’ll get back to you quickly with a tailored quote.</p>
       
-      
-      
-      
-        Discuss Your Project
-        ← Back to Services
-      
-    
-  
+      <form action="https://formsubmit.co/info@brandmarkenya.com" method="POST">
+        <input type="text" name="name" placeholder="Your Name *" required>
+        <input type="tel" name="phone" placeholder="Phone / WhatsApp *" required>
+        <input type="email" name="email" placeholder="Email (optional)">
+        <textarea name="message" rows="5" placeholder="What do you need? (e.g. 50 branded t-shirts, wall branding, roll-up banners...)" required></textarea>
+        <button type="submit" class="btn-c">Send Request</button>
+      </form>
+    </div>
+  </div>
 
-PART 3 of 3 (Final Part)
+</div><!-- end .panels -->
 
-Copy everything below and paste it directly after Part 2.
+<!-- ==================== FOOTER ==================== -->
+<footer class="site-footer">
+  <div class="footer-content">
+    <div class="footer-contacts">
+      <a href="tel:+254736900750">📞 +254 736 900 750</a>
+      <span>·</span>
+      <a href="tel:+254797132084">+254 797 132 084</a>
+      <span>·</span>
+      <a href="tel:+254725776082">+254 725 776 082</a>
+      <span>·</span>
+      <a href="mailto:info@brandmarkenya.com">✉ info@brandmarkenya.com</a>
+      <span>·</span>
+      <a href="https://maps.app.goo.gl/Jc5PrwrSATAYwC5x5" target="_blank">📍 Aya House, Eldoret</a>
+    </div>
+  </div>
+  <div class="footer-legal">
+    <button class="ftr-lnk" onclick="showContact()">Contact Us</button>
+    <span style="color:rgba(255,255,255,.2);">·</span>
+    <button class="ftr-lnk" onclick="openLegal('privacy')">Privacy Policy</button>
+    <span style="color:rgba(255,255,255,.2);">·</span>
+    <button class="ftr-lnk" onclick="openLegal('terms')">Terms of Use</button>
+  </div>
+</footer>
 
-  
-  
-    Kenya Business Directory
-    
-      Find products & Service providers near you
-      The definitive directory of businesses and service providers across Kenya — Eldoret, Nairobi, Kisumu, Nakuru and beyond.
-    
+<!-- WhatsApp Button -->
+<div class="wa-float">
+  <a href="https://wa.me/254725776082?text=Hello%20BrandMark%20Systems%20Ltd." target="_blank" class="wa-btn" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+  </a>
+  <div class="wa-lbl">Chat with us</div>
+</div>
 
-    
-      10Listed Businesses
-      10+Service Categories
-      5+Cities Covered
-      FreeTo List Your Business
-    
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <div class="lb-inner" onclick="event.stopPropagation()">
+    <button class="lb-close" onclick="closeLightbox()">✕</button>
+    <button class="lb-prev" onclick="lbNav(-1)">‹</button>
+    <img id="lb-img" src="" alt="">
+    <button class="lb-next" onclick="lbNav(1)">›</button>
+    <div class="lb-caption" id="lb-caption"></div>
+  </div>
+</div>
 
+<!-- Contact Modal -->
+<div class="legal-modal" id="contactModal">
+  <button class="legal-close" onclick="closeContact()">✕</button>
+  <div class="legal-inner">
+    <div class="slbl cy">Get In Touch</div>
+    <h1 style="font-family:'Cormorant Garamond',serif;font-size:clamp(1.9rem,4vw,2.8rem);font-weight:300;margin-bottom:10px;">
+      Ready to <em style="color:var(--cyan);font-style:italic;">Make</em> Your Mark?
+    </h1>
+    <p style="color:var(--muted);margin-bottom:28px;">Tell us about your project and we will craft a tailored solution.</p>
     
-      🔍
-      
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;margin-bottom:24px;">
+      <div style="background:rgba(0,200,212,.06);padding:18px;border-radius:8px;">
+        <div style="color:var(--cyan);font-size:.6rem;letter-spacing:.2em;margin-bottom:8px;">CALL US</div>
+        <a href="tel:+254736900750" style="color:#fff;text-decoration:none;display:block;margin-bottom:4px;">+254 736 900 750</a>
+        <a href="tel:+254797132084" style="color:#fff;text-decoration:none;display:block;margin-bottom:4px;">+254 797 132 084</a>
+        <a href="tel:+254725776082" style="color:#fff;text-decoration:none;display:block;">+254 725 776 082</a>
+      </div>
+      <div style="background:rgba(0,200,212,.06);padding:18px;border-radius:8px;">
+        <div style="color:var(--cyan);font-size:.6rem;letter-spacing:.2em;margin-bottom:8px;">EMAIL</div>
+        <a href="mailto:info@brandmarkenya.com" style="color:#fff;text-decoration:none;">info@brandmarkenya.com</a>
+      </div>
+      <div style="background:rgba(0,200,212,.06);padding:18px;border-radius:8px;">
+        <div style="color:var(--cyan);font-size:.6rem;letter-spacing:.2em;margin-bottom:8px;">VISIT US</div>
+        <div style="color:#fff;font-size:.88rem;">Aya House, Kenyatta Street<br>1st Floor, Room 5, Eldoret</div>
+      </div>
+    </div>
     
+    <div style="display:flex;gap:12px;flex-wrap:wrap;">
+      <a href="mailto:info@brandmarkenya.com" class="btn-c">Send Email</a>
+      <a href="tel:+254736900750" class="btn-o">Call Now</a>
+    </div>
+  </div>
+</div>
 
+<!-- Legal Modal -->
+<div class="legal-modal" id="legalModal">
+  <button class="legal-close" onclick="closeLegal()">✕</button>
+  <div class="legal-inner">
+    <div style="display:flex;gap:0;margin-bottom:24px;border-bottom:2px solid rgba(0,200,212,.2);">
+      <button id="lt-privacy" onclick="legalTab('privacy')" style="background:none;border:none;color:var(--cyan);padding:10px 20px;cursor:pointer;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;">Privacy Policy</button>
+      <button id="lt-terms" onclick="legalTab('terms')" style="background:none;border:none;color:rgba(255,255,255,.4);padding:10px 20px;cursor:pointer;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;">Terms of Use</button>
+    </div>
     
-      All Categories
-      Graphic Design
-      Digital Printing
-      Signage & Display
-      Branded Apparel
-      Promotional Items
-      Events
-      Professional Services
-    
-
-    
-      10 businesses found
-    
-
-    
-      No businesses found matching your search.
-      Clear filters
-    
-
-    
-
-    
-    
-      List Your Business — It's Free
-      Get in front of clients searching for trusted providers across Kenya.
-      
-      
-        
-          Business Name *
-          
-        
-        
-          Category *
-          
-            Select category
-            Graphic Design
-            Digital Printing
-            Signage & Display
-            Branded Apparel
-            Promotional Items
-            Events & Exhibitions
-            Professional Services
-            Other
-          
-        
-        
-          Contact Name *
-          
-        
-        
-          Phone / WhatsApp *
-          
-        
-        
-          Email
-          
-        
-        
-          Town / City *
-          
-            Select location
-            Eldoret
-            Nairobi
-            Kisumu
-            Nakuru
-            Mombasa
-            Other
-          
-        
-        
-          Short Description
-          
-        
-        
-          Website / Social (optional)
-          
-        
-
-        
-        
-        
-        
-        
-
-        
-          Submit Application
-        
-      
-    
-  
-
-  
-  
-    
-      Get a Quote
-      Tell us about your project
-      Share a few details and we’ll get back to you quickly with a tailored quote.
-      
-      
-        
-        
-        
-        
-        Send Request
-      
-    
-  
-
-
-
-
-
-  
-    
-      📞 +254 736 900 750
-      ·
-      +254 797 132 084
-      ·
-      +254 725 776 082
-      ·
-      ✉ info@brandmarkenya.com
-      ·
-      📍 Aya House, Eldoret
-    
-  
-  
-    Contact Us
-    ·
-    Privacy Policy
-    ·
-    Terms of Use
-  
-
-
-
-
-  
-    
-  
-  Chat with us
-
-
-
-
-  
-    ✕
-    ‹
-    
-    ›
-    
-  
-
-
-
-
-  ✕
-  
-    Get In Touch
-    
-      Ready to Make Your Mark?
-    
-    Tell us about your project and we will craft a tailored solution.
-    
-    
-      
-        CALL US
-        +254 736 900 750
-        +254 797 132 084
-        +254 725 776 082
-      
-      
-        EMAIL
-        info@brandmarkenya.com
-      
-      
-        VISIT US
-        Aya House, Kenyatta Street1st Floor, Room 5, Eldoret
-      
-    
-    
-    
-      Send Email
-      Call Now
-    
-  
-
-
-
-
-  ✕
-  
-    
-      Privacy Policy
-      Terms of Use
-    
-    
-    
-      Privacy Policy
-      Last updated: May 2, 2026
-      
+    <div id="lp-privacy">
+      <h1 style="font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:300;margin-bottom:8px;">Privacy Policy</h1>
+      <p style="color:var(--muted);font-size:.8rem;margin-bottom:20px;">Last updated: May 2, 2026</p>
+      <p style="line-height:1.8;color:rgba(255,255,255,.7);margin-bottom:12px;">
         BrandMark Systems Ltd operates brandmarkenya.com. This policy covers data collection under the Kenya Data Protection Act, 2019.
-      
-      
+      </p>
+      <p style="line-height:1.8;color:rgba(255,255,255,.7);">
         We collect analytics data, contact information when you reach out, and use cookies for analytics. Contact us at info@brandmarkenya.com for any data requests.
-      
+      </p>
+    </div>
     
-    
-    
-      Terms of Use
-      Last updated: September 5, 2026
-      
+    <div id="lp-terms" style="display:none;">
+      <h1 style="font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:300;margin-bottom:8px;">Terms of Use</h1>
+      <p style="color:var(--muted);font-size:.8rem;margin-bottom:20px;">Last updated: September 5, 2026</p>
+      <p style="line-height:1.8;color:rgba(255,255,255,.7);margin-bottom:12px;">
         By using our website and services, you agree to these Terms. All orders require a minimum 50% deposit. Full payment is required before goods are released.
-      
-      
+      </p>
+      <p style="line-height:1.8;color:rgba(255,255,255,.7);">
         These Terms are governed by the laws of Kenya.
-      
-    
-  
+      </p>
+    </div>
+  </div>
+</div>
 
-
-
+<script>
 /* ========== CORE NAVIGATION ========== */
 var PANELS = ['home','about','services','directory','quote'];
 var cur = 'home';
@@ -1862,9 +1847,9 @@ function renderGallery() {
   var grid = document.getElementById('galGrid');
   if (!grid) return;
   grid.innerHTML = galleryFiltered.map(function(item, i) {
-    return '' +
-           '' +
-           '' + item.label + '';
+    return '<div class="gal-card" onclick="openLightbox(' + i + ')">' +
+           '<img src="' + item.src + '" alt="' + item.label + '" loading="lazy">' +
+           '<div class="gal-overlay"><div class="gal-lbl">' + item.label + '</div></div></div>';
   }).join('');
 }
 
@@ -1965,16 +1950,16 @@ function dirRender(list) {
   });
   
   grid.innerHTML = sorted.map(function(b) {
-    return '' +
-      '' + b.name + '' +
-      '' + b.tagline + '' +
-      '' + b.desc + '' +
-      '📍 ' + b.location + '' +
-      '' +
-        'WhatsApp' +
-        'Call' +
-        (b.website ? 'Website' : '') +
-      '';
+    return '<div class="biz-card' + (b.featured ? ' featured' : '') + '">' +
+      '<div class="biz-name">' + b.name + '</div>' +
+      '<div class="biz-tagline">' + b.tagline + '</div>' +
+      '<div class="biz-desc">' + b.desc + '</div>' +
+      '<div class="biz-loc">📍 ' + b.location + '</div>' +
+      '<div class="biz-actions">' +
+        '<a href="https://wa.me/' + b.whatsapp + '" target="_blank" class="biz-btn-c">WhatsApp</a>' +
+        '<a href="tel:' + b.phone.replace(/\s/g, '') + '" class="biz-btn-o">Call</a>' +
+        (b.website ? '<a href="' + b.website + '" target="_blank" class="biz-btn-o">Website</a>' : '') +
+      '</div></div>';
   }).join('');
 }
 
@@ -1993,10 +1978,10 @@ function discoverySearch() {
   var empty = document.getElementById("discoveryEmpty");
   
   grid.innerHTML = results.slice(0, 6).map(function(b) {
-    return '' +
-      '' + b.name + '' +
-      '' + b.location + ' · ' + b.tagline + '' +
-      '' + b.desc + '';
+    return '<article class="discovery-card">' +
+      '<div class="discovery-name">' + b.name + '</div>' +
+      '<div class="discovery-location">' + b.location + ' · ' + b.tagline + '</div>' +
+      '<p class="discovery-desc">' + b.desc + '</p></article>';
   }).join('');
   
   empty.style.display = results.length === 0 ? "block" : "none";
@@ -2068,11 +2053,11 @@ window.addEventListener('scroll', function() {
   var n = document.getElementById('mainNav');
   if (n) n.classList.toggle('scrolled', window.scrollY > 10);
 }, { passive: true });
+</script>
 
-
-
-
-
+<!-- EmailJS -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>
   emailjs.init("7753IOWgjjtOoCq6V");
 
   document.getElementById('dirForm').addEventListener('submit', function(e) {
@@ -2105,3 +2090,7 @@ window.addEventListener('scroll', function() {
         alert("❌ Error sending. Please try again or WhatsApp us.");
       });
   });
+</script>
+
+</body>
+</html>
