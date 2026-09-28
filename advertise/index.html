@@ -1,161 +1,461 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Discover verified local businesses and claim your free 90-day advertising slot with BrandMark Kenya. Printing, branding & more.">
 <title>Our Advertisers | BrandMark Kenya</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=DM+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
 <style>
-:root{--cyan:#00c8d4;--border:rgba(0,200,212,.18);--muted:#7a9e9e}
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'DM Sans',Inter,Arial,sans-serif;background:linear-gradient(160deg,#000d10 0%,#001a1d 55%,#000 100%);color:#d7e8e8;min-height:100vh}
-.h{background:rgba(0,0,0,.94);backdrop-filter:blur(14px);color:#fff;padding:12px 4vw;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:20;border-bottom:1px solid var(--border)}
-.h b{color:var(--cyan);font-weight:900;letter-spacing:.04em}
-.btn{background:transparent;color:#fff;padding:9px 16px;border-radius:8px;text-decoration:none;font-size:12px;letter-spacing:.12em;text-transform:uppercase;border:1px solid #1a3a3a;cursor:pointer}
-.btn-p{background:var(--cyan);color:#000;font-weight:800;border-color:var(--cyan)}
-.wrap{max-width:1100px;margin:auto;padding:30px 4vw 100px}
-.hero{text-align:center;padding:20px 0 30px}
-.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,5vw,42px);color:#fff;line-height:1.1;font-weight:300}
-.hero h1 span{color:var(--cyan);font-style:italic;font-weight:300}
-.hero.sub{color:var(--muted);margin:12px 0 0;font-size:13px}
-#featuredWrap{background:linear-gradient(135deg,rgba(0,200,212,.08) 0%, rgba(0,0,0,.35) 100%);border:1px solid var(--border);border-radius:20px;padding:18px;display:flex;gap:18px;align-items:center;position:relative;margin:20px 0 30px;min-height:120px;cursor:pointer;transition:.25s}
-#featuredWrap:hover{border-color:var(--cyan)}
-#featuredWrap img{width:120px;height:90px;object-fit:contain;background:#000;border-radius:12px;flex-shrink:0;border:1px solid var(--border)}
-.live{position:absolute;top:10px;left:10px;background:#000;color:#ff3b30;font-size:9px;font-weight:800;padding:4px 8px;border-radius:20px;display:flex;align-items:center;gap:6px;border:1px solid #ff3b30;letter-spacing:.1em}
-.dot{width:8px;height:8px;background:#ff3b30;border-radius:50%;box-shadow:0 0 10px #ff3b30;animation:pulse 1.5s infinite}
-@keyframes pulse{0%{transform:scale(1)}50%{transform:scale(1.4)}100%{transform:scale(1)}}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px}
-.card{background:rgba(0,200,212,.05);border:1px solid var(--border);border-radius:16px;overflow:hidden;transition:.25s;position:relative}
-.card:hover{transform:translateY(-4px);border-color:var(--cyan)}
-.card img{width:100%;height:220px;object-fit:contain;object-position:center top;background:#000;display:block;border-bottom:1px solid var(--border)}
-.card-body{padding:14px;position:relative;z-index:2}
-.badge{background:var(--cyan);color:#000;font-size:9px;font-weight:900;padding:4px 8px;border-radius:4px;letter-spacing:.06em}
-.free{border:1px dashed rgba(0,200,212,.22);background:rgba(0,200,212,.03);border-radius:16px;padding:28px 20px;text-align:center;min-height:240px;display:flex;flex-direction:column;align-items:center;justify-content:center}
-#bookModal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:99999;align-items:center;justify-content:center;padding:5vw}
-.m-opt{display:flex;align-items:center;gap:12px;padding:14px 16px;border-radius:12px;text-decoration:none;font-weight:700;margin-bottom:10px;justify-content:center}
-.wa-float{position:fixed;right:18px;bottom:18px;width:58px;height:58px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;z-index:30;text-decoration:none;font-size:30px;box-shadow:0 4px 12px rgba(0,0,0,.4)}
+:root {
+  --cyan: #00c8d4;
+  --border: rgba(0,200,212,.18);
+  --muted: #7a9e9e;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'DM Sans', Inter, Arial, sans-serif;
+  background: linear-gradient(160deg, #000d10 0%, #001a1d 55%, #000 100%);
+  color: #d7e8e8;
+  min-height: 100vh;
+}
+.h {
+  background: rgba(0,0,0,.94);
+  backdrop-filter: blur(14px);
+  color: #fff;
+  padding: 12px 4vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  border-bottom: 1px solid var(--border);
+}
+.h b { color: var(--cyan); font-weight: 900; letter-spacing: .04em; }
+.btn {
+  background: transparent;
+  color: #fff;
+  padding: 9px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 12px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  border: 1px solid #1a3a3a;
+  cursor: pointer;
+}
+.btn-p {
+  background: var(--cyan);
+  color: #000;
+  font-weight: 800;
+  border-color: var(--cyan);
+}
+.wrap {
+  max-width: 1100px;
+  margin: auto;
+  padding: 30px 4vw 100px;
+}
+.hero {
+  text-align: center;
+  padding: 20px 0 30px;
+}
+.hero h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(28px, 5vw, 42px);
+  color: #fff;
+  line-height: 1.1;
+  font-weight: 300;
+}
+.hero h1 span {
+  color: var(--cyan);
+  font-style: italic;
+  font-weight: 300;
+}
+.hero .sub {
+  color: var(--muted);
+  margin: 12px 0 0;
+  font-size: 13px;
+}
+#featuredWrap {
+  background: linear-gradient(135deg, rgba(0,200,212,.08) 0%, rgba(0,0,0,.35) 100%);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 18px;
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  position: relative;
+  margin: 20px 0 30px;
+  min-height: 120px;
+  cursor: pointer;
+  transition: .25s;
+}
+#featuredWrap:hover { border-color: var(--cyan); }
+#featuredWrap img {
+  width: 120px;
+  height: 90px;
+  object-fit: contain;
+  background: #000;
+  border-radius: 12px;
+  flex-shrink: 0;
+  border: 1px solid var(--border);
+}
+.live {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #000;
+  color: #ff3b30;
+  font-size: 9px;
+  font-weight: 800;
+  padding: 4px 8px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid #ff3b30;
+  letter-spacing: .1em;
+}
+.dot {
+  width: 8px;
+  height: 8px;
+  background: #ff3b30;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #ff3b30;
+  animation: pulse 1.5s infinite;
+}
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.4); }
+  100% { transform: scale(1); }
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 18px;
+}
+.card {
+  background: rgba(0,200,212,.05);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: .25s;
+  position: relative;
+}
+.card:hover {
+  transform: translateY(-4px);
+  border-color: var(--cyan);
+}
+.card img {
+  width: 100%;
+  height: 220px;
+  object-fit: contain;
+  object-position: center top;
+  background: #000;
+  display: block;
+  border-bottom: 1px solid var(--border);
+}
+.card-body {
+  padding: 14px;
+  position: relative;
+  z-index: 2;
+}
+.badge {
+  background: var(--cyan);
+  color: #000;
+  font-size: 9px;
+  font-weight: 900;
+  padding: 4px 8px;
+  border-radius: 4px;
+  letter-spacing: .06em;
+}
+.free {
+  border: 1px dashed rgba(0,200,212,.22);
+  background: rgba(0,200,212,.03);
+  border-radius: 16px;
+  padding: 28px 20px;
+  text-align: center;
+  min-height: 240px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#free-upload-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.85);
+  z-index: 999999;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+.wa-float {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  width: 58px;
+  height: 58px;
+  background: #25D366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 30;
+  text-decoration: none;
+  font-size: 30px;
+  box-shadow: 0 4px 12px rgba(0,0,0,.4);
+}
 </style>
 </head>
 <body>
-<div class="h"><div><b>BRANDMARK</b> Systems Ltd</div><div style="display:flex;gap:10px;align-items:center"><a href="/blog/" style="color:var(--muted);text-decoration:none;font-size:13px">Blog</a><a class="btn btn-p" href="/">GET A QUOTE</a></div></div>
-<div class="wrap">
-<div class="hero"><h1>Where <span>Vision</span> Meets <span>Excellence</span></h1><p class="sub" id="slotInfo">Loading partners...</p></div>
-<div id="featuredWrap" onclick="goFeatured()"></div>
-<div class="grid" id="grid"></div>
-<div style="text-align:center;margin-top:50px;color:#4a6666;font-size:12px">+254 736 900 750 • +254 797 132 084 • info@brandmarkenya.com<br><br><a href="/" style="color:var(--cyan);text-decoration:none">← Back to Home</a></div>
+<div class="h">
+  <div><b>BRANDMARK</b> Systems Ltd</div>
+  <div style="display:flex;gap:10px;align-items:center">
+    <a href="/blog/" style="color:var(--muted);text-decoration:none;font-size:13px">Blog</a>
+    <a class="btn btn-p" href="/">GET A QUOTE</a>
+  </div>
 </div>
-<a class="wa-float" id="waFloat" target="_blank">💬</a>
 
-<!-- BOOK MODAL OLD -->
-<div id="bookModal"><div style="background:#0a1f1f;border:1px solid #1a4444;border-radius:20px;max-width:380px;width:100%;padding:24px;position:relative;color:#fff">
-<button onclick="closeBook()" style="position:absolute;top:12px;right:12px;background:#122e2e;border:0;width:32px;height:32px;border-radius:50%;cursor:pointer;color:#fff">✕</button>
-<h3>Book <span id="slotName">Slot</span></h3><p style="color:var(--muted);font-size:13px;margin:6px 0 20px">From <b style="color:var(--cyan)">KSh 500/month</b></p>
-<a id="waLink" class="m-opt" target="_blank" style="background:#25D366;color:#fff">💬 WhatsApp Us</a><a id="callLink" class="m-opt" style="background:#000;color:#fff;border:1px solid #333">📞 Call Now</a>
-</div></div>
+<div class="wrap">
+  <div class="hero">
+    <h1>Where <span>Vision</span> Meets <span>Excellence</span></h1>
+    <p class="sub" id="slotInfo">Loading partners...</p>
+  </div>
 
-<!-- NEW FREE UPLOAD MODAL - NO PAYBILL -->
-<div id="free-upload-modal" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,.85); z-index:999999; align-items:center; justify-content:center; padding:16px;">
-  <form id="free-upload-form" style="background:#0a1f1f; border:1px solid var(--border); padding:24px; border-radius:20px; width:100%; max-width:400px; color:#fff;">
-    <h4 style="font-size:20px; font-weight:bold; margin:0 0 16px 0; color:#fff;">🚀 Get 90 Days FREE Exposure</h4>
-    <input required id="biz-name" placeholder="Business Name" style="width:100%; border:1px solid #1a4444; background:#000; color:#fff; padding:12px; border-radius:8px; margin-bottom:12px; box-sizing:border-box;">
-    <input required id="biz-phone" placeholder="Phone (e.g. 0712...)" style="width:100%; border:1px solid #1a4444; background:#000; color:#fff; padding:12px; border-radius:8px; margin-bottom:12px; box-sizing:border-box;">
-    <input id="biz-cat" placeholder="Category (e.g. Salon, Hotel)" style="width:100%; border:1px solid #1a4444; background:#000; color:#fff; padding:12px; border-radius:8px; margin-bottom:12px; box-sizing:border-box;">
-    <input required id="biz-file" type="file" accept="image/*" style="width:100%; margin-bottom:8px; color:#fff;">
-    <p style="font-size:11px; color:var(--muted); margin-bottom:16px;">Max 2MB JPG/PNG. 90 days free. No payment.</p>
-    <div style="display:flex; gap:12px;">
-      <button type="button" onclick="document.getElementById('free-upload-modal').style.display='none'" style="flex:1; border:1px solid #333; padding:12px; border-radius:8px; background:transparent; color:#fff; cursor:pointer;">Cancel</button>
-      <button id="upload-btn" type="submit" style="flex:1; background:var(--cyan); color:#000; padding:12px; border-radius:8px; font-weight:800; border:none; cursor:pointer;">Upload FREE</button>
+  <div id="featuredWrap" onclick="goFeatured()" role="button" tabindex="0"></div>
+
+  <div class="grid" id="grid"></div>
+
+  <div style="text-align:center;margin-top:50px;color:#4a6666;font-size:12px">
+    +254 736 900 750 • +254 797 132 084 • info@brandmarkenya.com<br><br>
+    <a href="/" style="color:var(--cyan);text-decoration:none">← Back to Home</a>
+  </div>
+</div>
+
+<a class="wa-float" id="waFloat" target="_blank" rel="noopener noreferrer">💬</a>
+
+<!-- FREE UPLOAD MODAL -->
+<div id="free-upload-modal">
+  <form id="free-upload-form" style="background:#0a1f1f;border:1px solid var(--border);padding:24px;border-radius:20px;width:100%;max-width:400px;color:#fff">
+    <h4 style="font-size:20px;font-weight:bold;margin:0 0 16px 0;color:#fff">🚀 Get 90 Days FREE Exposure</h4>
+    
+    <label for="biz-name" style="display:block;font-size:12px;color:var(--muted);margin-bottom:4px">Business Name</label>
+    <input required id="biz-name" placeholder="Your business name" style="width:100%;border:1px solid #1a4444;background:#000;color:#fff;padding:12px;border-radius:8px;margin-bottom:12px">
+    
+    <label for="biz-phone" style="display:block;font-size:12px;color:var(--muted);margin-bottom:4px">Phone Number</label>
+    <input required id="biz-phone" type="tel" placeholder="e.g. 0712 345 678" style="width:100%;border:1px solid #1a4444;background:#000;color:#fff;padding:12px;border-radius:8px;margin-bottom:12px">
+    
+    <label for="biz-cat" style="display:block;font-size:12px;color:var(--muted);margin-bottom:4px">Category (optional)</label>
+    <input id="biz-cat" placeholder="e.g. Salon, Hotel, Printing" style="width:100%;border:1px solid #1a4444;background:#000;color:#fff;padding:12px;border-radius:8px;margin-bottom:12px">
+    
+    <label for="biz-file" style="display:block;font-size:12px;color:var(--muted);margin-bottom:4px">Banner Image</label>
+    <input required id="biz-file" type="file" accept="image/jpeg,image/png,image/webp" style="width:100%;margin-bottom:8px;color:#fff">
+    
+    <p style="font-size:11px;color:var(--muted);margin-bottom:16px">Max 2MB • JPG / PNG / WebP • 90 days free • No payment</p>
+    
+    <div style="display:flex;gap:12px">
+      <button type="button" onclick="document.getElementById('free-upload-modal').style.display='none'" style="flex:1;border:1px solid #333;padding:12px;border-radius:8px;background:transparent;color:#fff;cursor:pointer">Cancel</button>
+      <button id="upload-btn" type="submit" style="flex:1;background:var(--cyan);color:#000;padding:12px;border-radius:8px;font-weight:800;border:none;cursor:pointer">Upload FREE</button>
     </div>
   </form>
 </div>
 
 <script>
-document.addEventListener('DOMContentLoaded', async function(){
-    const PHONE='254725776082';
-    const WORKER_URL='https://brandmark-kenya-new.brandmarksystems.workers.dev';
-    const TOTAL=6;
-    const advertisers=[
-      {id:"brandmark-systems", name:"BrandMark Systems Ltd", category:"Branding & Printing", banner:"/portfolio-images/ads/brandmark-systems-final.webp", page:"/advertise/brandmark-systems-ltd", baseViews:1240, tagline:"Printing & Branding Services — inspired branding", fallback:"/portfolio-images/brandmark-systems-final.webp"},
-      {id:"chayil-business", name:"Chayil Business Solutions", category:"Hair Care & Detergents Manufacturing", banner:"/portfolio-images/ads/chayil-business-final.webp", page:"/advertise/chayil-business-solutions", baseViews:892, tagline:"Professional Hair Care • Bar Soap • Industrial Detergents • 0795 675 786", fallback:"/advertise/chayil-business-final.webp"}
-    ];
+document.addEventListener('DOMContentLoaded', async function () {
+  const PHONE = '254725776082';
+  const WORKER_URL = 'https://brandmark-kenya-new.brandmarksystems.workers.dev';
+  const TOTAL = 6;
 
-    // TRY FETCH DYNAMIC ADS FROM WORKER
-    let dynamicAds = [];
-    try{
-      const r = await fetch(WORKER_URL + "/ads");
+  const advertisers = [
+    {
+      id: "brandmark-systems",
+      name: "BrandMark Systems Ltd",
+      category: "Branding & Printing",
+      banner: "/portfolio-images/ads/brandmark-systems-final.webp",
+      page: "/advertise/brandmark-systems-ltd",
+      baseViews: 1240,
+      tagline: "Printing & Branding Services — inspired branding",
+      fallback: "/portfolio-images/brandmark-systems-final.webp"
+    },
+    {
+      id: "chayil-business",
+      name: "Chayil Business Solutions",
+      category: "Hair Care & Detergents Manufacturing",
+      banner: "/portfolio-images/ads/chayil-business-final.webp",
+      page: "/advertise/chayil-business-solutions",
+      baseViews: 892,
+      tagline: "Professional Hair Care • Bar Soap • Industrial Detergents • 0795 675 786",
+      fallback: "/advertise/chayil-business-final.webp"
+    }
+  ];
+
+  // Fetch dynamic ads
+  let dynamicAds = [];
+  try {
+    const r = await fetch(WORKER_URL + "/ads");
+    if (r.ok) {
       const data = await r.json();
-      if(Array.isArray(data)){
-        dynamicAds = data.map(d=>({
-          id: d.id || d.business, name: d.business, category: d.category || "Verified Business",
-          banner: d.bannerUrl, page: "tel:"+d.phone, baseViews: 150, tagline: d.phone, isDynamic:true
+      if (Array.isArray(data)) {
+        dynamicAds = data.map(d => ({
+          id: d.id || d.business,
+          name: d.business,
+          category: d.category || "Verified Business",
+          banner: d.bannerUrl,
+          page: "tel:" + d.phone,
+          baseViews: 150,
+          tagline: d.phone,
+          isDynamic: true
         }));
       }
-    }catch(e){ console.log("No dynamic ads yet"); }
+    }
+  } catch (e) {
+    console.log("No dynamic ads available");
+  }
 
-    function getViews(ad){
-      try{
-        const k='bm_adv_views_'+ad.id;
-        let v=localStorage.getItem(k);
-        if(!v){ v=ad.baseViews + Math.floor(Math.random()*40); }
-        else{ v=parseInt(v)+Math.floor(Math.random()*3)+1; }
-        localStorage.setItem(k,v); return parseInt(v);
-      }catch(e){ return ad.baseViews; }
+  function getViews(ad) {
+    try {
+      const k = 'bm_adv_views_' + ad.id;
+      let v = localStorage.getItem(k);
+      if (!v) {
+        v = ad.baseViews + Math.floor(Math.random() * 40);
+      } else {
+        v = parseInt(v) + Math.floor(Math.random() * 3) + 1;
+      }
+      localStorage.setItem(k, v);
+      return parseInt(v);
+    } catch (e) {
+      return ad.baseViews;
+    }
+  }
+
+  const allAds = [...advertisers, ...dynamicAds];
+  const adsWithViews = allAds.map(a => ({ ...a, views: getViews(a) }));
+
+  // Update slot info
+  const totalViews = adsWithViews.reduce((s, a) => s + a.views, 0);
+  document.getElementById('slotInfo').innerHTML =
+    `${adsWithViews.length} slots taken • ${Math.max(0, TOTAL - adsWithViews.length)} available • ` +
+    `<span style="color:var(--cyan)">👁️ ${totalViews.toLocaleString()}+ total views</span> • ` +
+    `<span style="color:#16a34a;font-weight:800">90 DAYS FREE PROMO!</span>`;
+
+  document.getElementById('waFloat').href = `https://wa.me/${PHONE}`;
+
+  // Featured ad (static – no rotation)
+  window.goFeatured = function () {
+    if (adsWithViews.length === 0) return;
+    window.location.href = adsWithViews[0].page;
+  };
+
+  function renderFeatured() {
+    if (adsWithViews.length === 0) {
+      document.getElementById('featuredWrap').style.display = 'none';
+      return;
+    }
+    const ad = adsWithViews[0];
+    document.getElementById('featuredWrap').innerHTML = `
+      <div class="live"><span class="dot"></span> LIVE NOW</div>
+      <img src="${ad.banner}" alt="${ad.name}" width="120" height="90"
+           onerror="this.src='${ad.fallback || ad.banner}'">
+      <div style="flex:1">
+        <div style="display:flex;gap:8px;align-items:center;margin-bottom:6px">
+          <span class="badge">FEATURED</span>
+          <span style="font-size:11px;color:var(--cyan)">👁️ ${ad.views.toLocaleString()}</span>
+        </div>
+        <h3 style="color:#fff;font-size:18px;font-family:'Cormorant Garamond',serif;font-weight:400">${ad.name}</h3>
+        <p style="color:var(--muted);font-size:13px">${ad.tagline}</p>
+        <span style="color:var(--cyan);font-weight:700;font-size:13px">View Profile →</span>
+      </div>`;
+  }
+  renderFeatured();
+
+  // Grid
+  let h = '';
+  adsWithViews.forEach(ad => {
+    const link = ad.isDynamic ? `href="tel:${ad.tagline}"` : `href="${ad.page}"`;
+    h += `
+      <div class="card">
+        <a ${link} style="display:block">
+          <img src="${ad.banner}" alt="${ad.name}" loading="lazy" width="400" height="220"
+               onerror="this.src='${ad.fallback || ad.banner}'">
+        </a>
+        <div class="card-body">
+          <span class="badge">${ad.isDynamic ? 'NEW • FREE' : 'VERIFIED'}</span>
+          <h3 style="color:#fff;margin:8px 0 4px;font-family:'Cormorant Garamond',serif;font-weight:400">${ad.name}</h3>
+          <p style="color:#6d8d8d;font-size:12px">${ad.category}</p>
+          <div style="margin:10px 0;font-size:11px;color:#5a7a7a;background:rgba(0,0,0,.3);padding:6px 10px;border-radius:8px">
+            👁️ ${ad.views.toLocaleString()} views • ${ad.tagline}
+          </div>
+          <a ${link} style="color:var(--cyan);font-weight:800;text-decoration:none;font-size:13px;display:inline-block;padding:6px 0">
+            ${ad.isDynamic ? 'Call Now →' : 'View Profile →'}
+          </a>
+        </div>
+      </div>`;
+  });
+
+  // Free slots
+  for (let i = 1; i <= Math.max(0, TOTAL - adsWithViews.length); i++) {
+    h += `
+      <div class="free" style="border-color:#16a34a;background:linear-gradient(135deg,rgba(22,163,74,.12),rgba(0,0,0,.2))">
+        <h3 style="color:#fff;font-family:'Cormorant Garamond',serif;font-weight:400">Get 90 Days FREE!</h3>
+        <p style="color:#7a9e9e;font-size:12px;margin:6px 0">No Paybill • No Payment</p>
+        <p style="color:#16a34a;font-size:11px;font-weight:800;margin-bottom:12px">LIMITED BUILDING PROMO</p>
+        <button class="btn btn-p" style="margin-top:10px;background:#16a34a;border-color:#16a34a;color:#fff"
+                onclick="document.getElementById('free-upload-modal').style.display='flex'">
+          Upload FREE Banner
+        </button>
+      </div>`;
+  }
+  document.getElementById('grid').innerHTML = h;
+
+  // Free upload handler
+  document.getElementById("free-upload-form").addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const file = document.getElementById("biz-file").files[0];
+    if (!file) {
+      alert("Please select an image");
+      return;
+    }
+    if (file.size > 2 * 1024 * 1024) {
+      alert("Image must be under 2MB");
+      return;
+    }
+    if (!['image/jpeg', 'image/png', 'image/webp'].includes(file.type)) {
+      alert("Only JPG, PNG or WebP images are allowed");
+      return;
     }
 
-    const allAds=[...advertisers,...dynamicAds];
-    const adsWithViews=allAds.map(a=>({...a,views:getViews(a)}));
+    const btn = document.getElementById("upload-btn");
+    btn.textContent = "Uploading...";
+    btn.disabled = true;
 
-    document.getElementById('slotInfo').innerHTML=`${adsWithViews.length} slots taken • ${Math.max(0,TOTAL-adsWithViews.length)} available • <span style="color:var(--cyan)">👁️ ${adsWithViews.reduce((s,a)=>s+a.views,0).toLocaleString()}+ total views</span> • <span style="color:#16a34a; font-weight:800;">90 DAYS FREE PROMO!</span>`;
-    document.getElementById('waFloat').href=`https://wa.me/${PHONE}`;
+    const fd = new FormData();
+    fd.append("banner", file);
+    fd.append("business", document.getElementById("biz-name").value.trim());
+    fd.append("phone", document.getElementById("biz-phone").value.trim());
+    fd.append("category", document.getElementById("biz-cat").value.trim());
 
-    let cur=0;
-    window.goFeatured=function(){ window.location.href=adsWithViews[cur%adsWithViews.length].page; }
-    function renderFeatured(){
-      const ad=adsWithViews[cur%adsWithViews.length];
-      document.getElementById('featuredWrap').innerHTML=`
-        <div class="live"><span class="dot"></span> LIVE NOW</div>
-        <img src="${ad.banner}" onerror="this.src='${ad.fallback||ad.banner}'">
-        <div style="flex:1"><div style="display:flex;gap:8px;align-items:center;margin-bottom:6px"><span class="badge">FEATURED</span><span style="font-size:11px;color:var(--cyan)">👁️ ${ad.views.toLocaleString()}</span></div>
-        <h3 style="color:#fff;font-size:18px;font-family:'Cormorant Garamond',serif;font-weight:400">${ad.name}</h3><p style="color:var(--muted);font-size:13px">${ad.tagline}</p>
-        <span style="color:var(--cyan);font-weight:700;font-size:13px">View Profile →</span></div>`;
+    try {
+      const res = await fetch(WORKER_URL + "/upload", { method: "POST", body: fd });
+      const data = await res.json();
+      if (data.success) {
+        alert("✅ Success! Your banner will be LIVE in about 2 minutes — 90 days FREE!");
+        document.getElementById('free-upload-modal').style.display = 'none';
+        location.reload();
+      } else {
+        alert("Error: " + (data.error || "Upload failed"));
+      }
+    } catch (err) {
+      alert("Upload failed: " + err.message);
     }
-    renderFeatured(); setInterval(()=>{cur=(cur+1)%adsWithViews.length;renderFeatured();},4000);
 
-    let h='';
-    adsWithViews.forEach(ad=>{
-      const link = ad.isDynamic? `href="tel:${ad.tagline}"` : `href="${ad.page}"`;
-      h+=`<div class="card"><a ${link} style="display:block"><img src="${ad.banner}" onerror="this.src='${ad.fallback||ad.banner}'" alt="${ad.name}"></a><div class="card-body"><span class="badge">${ad.isDynamic?'NEW • FREE':'VERIFIED'}</span><h3 style="color:#fff;margin:8px 0 4px;font-family:'Cormorant Garamond',serif;font-weight:400">${ad.name}</h3><p style="color:#6d8d8d;font-size:12px">${ad.category}</p><div style="margin:10px 0;font-size:11px;color:#5a7a7a;background:rgba(0,0,0,.3);padding:6px 10px;border-radius:8px">👁️ ${ad.views.toLocaleString()} views • ${ad.tagline}</div><a ${link} style="color:var(--cyan);font-weight:800;text-decoration:none;font-size:13px;display:inline-block;padding:6px 0;position:relative;z-index:10">${ad.isDynamic?'Call Now →':'View Profile →'}</a></div></div>`;
-    });
-    // FREE SLOTS - NO KSH 500
-    for(let i=1;i<=Math.max(0,TOTAL-adsWithViews.length);i++){
-      h+=`<div class="free" style="border-color:#16a34a; background:linear-gradient(135deg,rgba(22,163,74,.12),rgba(0,0,0,.2))"><h3 style="color:#fff;font-family:'Cormorant Garamond',serif;font-weight:400">Get 90 Days FREE!</h3><p style="color:#7a9e9e;font-size:12px;margin:6px 0">No Paybill • No Payment</p><p style="color:#16a34a;font-size:11px;font-weight:800;margin-bottom:12px">LIMITED BUILDING PROMO</p><button class="btn btn-p" style="margin-top:10px; background:#16a34a; border-color:#16a34a; color:#fff;" onclick="document.getElementById('free-upload-modal').style.display='flex'">Upload FREE Banner</button></div>`;
-    }
-    document.getElementById('grid').innerHTML=h;
-
-    window.openBook=function(slot){
-      // Redirect old Book button to FREE modal
-      document.getElementById('free-upload-modal').style.display='flex';
-    }
-    window.closeBook=function(){document.getElementById('bookModal').style.display='none';}
-
-    // FREE UPLOAD HANDLER
-    document.getElementById("free-upload-form").addEventListener("submit", async (e)=>{
-      e.preventDefault();
-      const file = document.getElementById("biz-file").files[0];
-      if(!file) return alert("Select image");
-      const btn = document.getElementById("upload-btn");
-      btn.textContent="Uploading..."; btn.disabled=true;
-      const fd = new FormData();
-      fd.append("banner", file);
-      fd.append("business", document.getElementById("biz-name").value);
-      fd.append("phone", document.getElementById("biz-phone").value);
-      fd.append("category", document.getElementById("biz-cat").value);
-      try{
-        const res = await fetch(WORKER_URL + "/upload", { method:"POST", body:fd });
-        const data = await res.json();
-        if(data.success){ alert("✅ Success! Your banner will be LIVE in 2 mins - 90 days FREE!"); document.getElementById('free-upload-modal').style.display='none'; location.reload(); }
-        else alert("Error: "+data.error);
-      }catch(err){ alert("Failed: "+err.message); }
-      btn.textContent="Upload FREE"; btn.disabled=false;
-    });
+    btn.textContent = "Upload FREE";
+    btn.disabled = false;
+  });
 });
 </script>
 </body>
