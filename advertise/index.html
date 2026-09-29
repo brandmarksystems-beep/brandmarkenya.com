@@ -79,59 +79,6 @@ body {
   margin: 12px 0 0;
   font-size: 13px;
 }
-#featuredWrap {
-  background: linear-gradient(135deg, rgba(0,200,212,.08) 0%, rgba(0,0,0,.35) 100%);
-  border: 1px solid var(--border);
-  border-radius: 20px;
-  padding: 18px;
-  display: flex;
-  gap: 18px;
-  align-items: center;
-  position: relative;
-  margin: 20px 0 30px;
-  min-height: 120px;
-  cursor: pointer;
-  transition: .25s;
-}
-#featuredWrap:hover { border-color: var(--cyan); }
-#featuredWrap img {
-  width: 120px;
-  height: 90px;
-  object-fit: contain;
-  background: #000;
-  border-radius: 12px;
-  flex-shrink: 0;
-  border: 1px solid var(--border);
-}
-.live {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  background: #000;
-  color: #ff3b30;
-  font-size: 9px;
-  font-weight: 800;
-  padding: 4px 8px;
-  border-radius: 20px;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  border: 1px solid #ff3b30;
-  letter-spacing: .1em;
-}
-.dot {
-  width: 8px;
-  height: 8px;
-  background: #ff3b30;
-  border-radius: 50%;
-  box-shadow: 0 0 10px #ff3b30;
-  animation: pulse 1.5s infinite;
-}
-@keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.4); }
-  100% { transform: scale(1); }
-}
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -227,8 +174,6 @@ body {
     <p class="sub" id="slotInfo">Loading partners...</p>
   </div>
 
-  <div id="featuredWrap" onclick="goFeatured()" role="button" tabindex="0"></div>
-
   <div class="grid" id="grid"></div>
 
   <div style="text-align:center;margin-top:50px;color:#4a6666;font-size:12px">
@@ -278,7 +223,6 @@ document.addEventListener('DOMContentLoaded', async function () {
       category: "Branding & Printing",
       banner: "/portfolio-images/ads/brandmark-systems-final.webp",
       page: "/advertise/brandmark-systems-ltd",
-      baseViews: 1240,
       tagline: "Printing & Branding Services — inspired branding",
       fallback: "/portfolio-images/brandmark-systems-final.webp"
     },
@@ -288,7 +232,6 @@ document.addEventListener('DOMContentLoaded', async function () {
       category: "Hair Care & Detergents Manufacturing",
       banner: "/portfolio-images/ads/chayil-business-final.webp",
       page: "/advertise/chayil-business-solutions",
-      baseViews: 892,
       tagline: "Professional Hair Care • Bar Soap • Industrial Detergents • 0795 675 786",
       fallback: "/advertise/chayil-business-final.webp"
     }
@@ -307,7 +250,6 @@ document.addEventListener('DOMContentLoaded', async function () {
           category: d.category || "Verified Business",
           banner: d.bannerUrl,
           page: "tel:" + d.phone,
-          baseViews: 150,
           tagline: d.phone,
           isDynamic: true
         }));
@@ -317,65 +259,18 @@ document.addEventListener('DOMContentLoaded', async function () {
     console.log("No dynamic ads available");
   }
 
-  function getViews(ad) {
-    try {
-      const k = 'bm_adv_views_' + ad.id;
-      let v = localStorage.getItem(k);
-      if (!v) {
-        v = ad.baseViews + Math.floor(Math.random() * 40);
-      } else {
-        v = parseInt(v) + Math.floor(Math.random() * 3) + 1;
-      }
-      localStorage.setItem(k, v);
-      return parseInt(v);
-    } catch (e) {
-      return ad.baseViews;
-    }
-  }
-
   const allAds = [...advertisers, ...dynamicAds];
-  const adsWithViews = allAds.map(a => ({ ...a, views: getViews(a) }));
 
-  // Update slot info
-  const totalViews = adsWithViews.reduce((s, a) => s + a.views, 0);
+  // Update slot info (no views)
   document.getElementById('slotInfo').innerHTML =
-    `${adsWithViews.length} slots taken • ${Math.max(0, TOTAL - adsWithViews.length)} available • ` +
-    `<span style="color:var(--cyan)">👁️ ${totalViews.toLocaleString()}+ total views</span> • ` +
+    `${allAds.length} slots taken • ${Math.max(0, TOTAL - allAds.length)} available • ` +
     `<span style="color:#16a34a;font-weight:800">90 DAYS FREE PROMO!</span>`;
 
   document.getElementById('waFloat').href = `https://wa.me/${PHONE}`;
 
-  // Featured ad (static – no rotation)
-  window.goFeatured = function () {
-    if (adsWithViews.length === 0) return;
-    window.location.href = adsWithViews[0].page;
-  };
-
-  function renderFeatured() {
-    if (adsWithViews.length === 0) {
-      document.getElementById('featuredWrap').style.display = 'none';
-      return;
-    }
-    const ad = adsWithViews[0];
-    document.getElementById('featuredWrap').innerHTML = `
-      <div class="live"><span class="dot"></span> LIVE NOW</div>
-      <img src="${ad.banner}" alt="${ad.name}" width="120" height="90"
-           onerror="this.src='${ad.fallback || ad.banner}'">
-      <div style="flex:1">
-        <div style="display:flex;gap:8px;align-items:center;margin-bottom:6px">
-          <span class="badge">FEATURED</span>
-          <span style="font-size:11px;color:var(--cyan)">👁️ ${ad.views.toLocaleString()}</span>
-        </div>
-        <h3 style="color:#fff;font-size:18px;font-family:'Cormorant Garamond',serif;font-weight:400">${ad.name}</h3>
-        <p style="color:var(--muted);font-size:13px">${ad.tagline}</p>
-        <span style="color:var(--cyan);font-weight:700;font-size:13px">View Profile →</span>
-      </div>`;
-  }
-  renderFeatured();
-
   // Grid
   let h = '';
-  adsWithViews.forEach(ad => {
+  allAds.forEach(ad => {
     const link = ad.isDynamic ? `href="tel:${ad.tagline}"` : `href="${ad.page}"`;
     h += `
       <div class="card">
@@ -388,7 +283,7 @@ document.addEventListener('DOMContentLoaded', async function () {
           <h3 style="color:#fff;margin:8px 0 4px;font-family:'Cormorant Garamond',serif;font-weight:400">${ad.name}</h3>
           <p style="color:#6d8d8d;font-size:12px">${ad.category}</p>
           <div style="margin:10px 0;font-size:11px;color:#5a7a7a;background:rgba(0,0,0,.3);padding:6px 10px;border-radius:8px">
-            👁️ ${ad.views.toLocaleString()} views • ${ad.tagline}
+            ${ad.tagline}
           </div>
           <a ${link} style="color:var(--cyan);font-weight:800;text-decoration:none;font-size:13px;display:inline-block;padding:6px 0">
             ${ad.isDynamic ? 'Call Now →' : 'View Profile →'}
@@ -398,7 +293,7 @@ document.addEventListener('DOMContentLoaded', async function () {
   });
 
   // Free slots
-  for (let i = 1; i <= Math.max(0, TOTAL - adsWithViews.length); i++) {
+  for (let i = 1; i <= Math.max(0, TOTAL - allAds.length); i++) {
     h += `
       <div class="free" style="border-color:#16a34a;background:linear-gradient(135deg,rgba(22,163,74,.12),rgba(0,0,0,.2))">
         <h3 style="color:#fff;font-family:'Cormorant Garamond',serif;font-weight:400">Get 90 Days FREE!</h3>
