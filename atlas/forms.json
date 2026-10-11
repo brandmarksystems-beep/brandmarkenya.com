@@ -1,0 +1,381 @@
+{
+  "_readme": "Every form on the site is defined here. To change a form, edit its fields and commit. Field types: text, email, tel, url, number, select, textarea, checkbox, hidden. Add \"half\": true to put two fields side by side. A select takes \"options\" (a list) or \"options_from\": \"origins\" or \"currencies\". \"show_on\" decides which page group displays the form: \"contact\" is the Contact page, \"contribute\" is the section on the home page.",
+  "settings": {
+    "_readme": "provider \"cloudflare\" posts to the Pages Function at /api/contact (functions/api/contact.js), which emails info@brandmarkenya.com. Use \"web3forms\" with a key in config.json as a no-code alternative.",
+    "provider": "web3forms",
+    "subject_prefix": "Brandmark Atlas: ",
+    "success": "Thank you. We received your message and will reply to the contact details you gave, if any.",
+    "not_configured": "Sending is not switched on yet. Please message us on WhatsApp or email us instead.",
+    "wait": "Please wait a few seconds before sending another message.",
+    "consent_html": "I have read the <a href=\"privacy.html\" target=\"_blank\" rel=\"noopener\">Privacy Policy</a> and agree that Brandmark Systems Limited may use what I send to deal with my request.",
+    "web3forms_endpoint": "https://api.web3forms.com/submit",
+    "endpoint": "/api/contact"
+  },
+  "forms": {
+    "contact": {
+      "tab": "General enquiry",
+      "show_on": [
+        "contact"
+      ],
+      "title": "Send us a message",
+      "intro": "Questions about a listing, an estimate, a quote, a partnership or anything else.",
+      "submit": "Send message",
+      "consent": true,
+      "fields": [
+        {
+          "name": "topic",
+          "label": "What is this about?",
+          "type": "select",
+          "required": true,
+          "options": [
+            "General question",
+            "A quote for an import",
+            "A listing or price looks wrong",
+            "Partnership or affiliate",
+            "Media or press",
+            "Something else"
+          ]
+        },
+        {
+          "name": "name",
+          "label": "Your name",
+          "type": "text",
+          "required": true,
+          "max": 100,
+          "half": true
+        },
+        {
+          "name": "email",
+          "label": "Email",
+          "type": "email",
+          "required": true,
+          "max": 160,
+          "half": true
+        },
+        {
+          "name": "phone",
+          "label": "Phone or WhatsApp (optional)",
+          "type": "tel",
+          "max": 30
+        },
+        {
+          "name": "message",
+          "label": "Message",
+          "type": "textarea",
+          "required": true,
+          "max": 2000
+        }
+      ]
+    },
+    "seller": {
+      "tab": "List my products",
+      "show_on": [
+        "contact"
+      ],
+      "title": "Ask to have your products or services listed",
+      "intro": "Sellers, suppliers and service providers are welcome. Listing is free and we check every entry before it appears.",
+      "submit": "Send listing request",
+      "consent": true,
+      "fields": [
+        {
+          "name": "business",
+          "label": "Business name",
+          "type": "text",
+          "required": true,
+          "max": 120,
+          "half": true
+        },
+        {
+          "name": "country",
+          "label": "Country you ship from",
+          "type": "select",
+          "required": true,
+          "options_from": "origins",
+          "half": true
+        },
+        {
+          "name": "website",
+          "label": "Website or shop link",
+          "type": "url",
+          "required": true,
+          "max": 300
+        },
+        {
+          "name": "feed",
+          "label": "Link to a price list or product feed (optional)",
+          "type": "url",
+          "max": 300
+        },
+        {
+          "name": "name",
+          "label": "Contact person",
+          "type": "text",
+          "required": true,
+          "max": 100,
+          "half": true
+        },
+        {
+          "name": "email",
+          "label": "Email",
+          "type": "email",
+          "required": true,
+          "max": 160,
+          "half": true
+        },
+        {
+          "name": "message",
+          "label": "What do you sell?",
+          "type": "textarea",
+          "required": true,
+          "max": 1500
+        },
+        {
+          "name": "authority",
+          "label": "I am allowed to offer these products and share this information.",
+          "type": "checkbox",
+          "required": true
+        }
+      ]
+    },
+    "data-request": {
+      "tab": "My personal data",
+      "show_on": [
+        "contact"
+      ],
+      "title": "Make a request about your personal data",
+      "intro": "You can ask to see, correct or delete what we hold about you, withdraw your consent, or object to how we use it. We may ask you to confirm who you are before we act.",
+      "submit": "Send request",
+      "consent": true,
+      "fields": [
+        {
+          "name": "request_type",
+          "label": "What would you like to do?",
+          "type": "select",
+          "required": true,
+          "options": [
+            "See the personal data you hold about me",
+            "Correct my personal data",
+            "Delete my personal data",
+            "Withdraw my consent",
+            "Object to how my data is used",
+            "Receive my data in a portable format",
+            "Something else about my data"
+          ]
+        },
+        {
+          "name": "name",
+          "label": "Your name",
+          "type": "text",
+          "required": true,
+          "max": 100,
+          "half": true
+        },
+        {
+          "name": "email",
+          "label": "Email you used with us",
+          "type": "email",
+          "required": true,
+          "max": 160,
+          "half": true
+        },
+        {
+          "name": "message",
+          "label": "Details",
+          "type": "textarea",
+          "required": true,
+          "max": 2000
+        }
+      ]
+    },
+    "takedown": {
+      "tab": "Report content",
+      "show_on": [
+        "contact"
+      ],
+      "title": "Report content, a trademark or a copyright concern",
+      "intro": "Tell us what you believe is wrong and where it appears on Atlas. Read the steps in our Legal notices first.",
+      "submit": "Send notice",
+      "consent": true,
+      "fields": [
+        {
+          "name": "notice_type",
+          "label": "Type of concern",
+          "type": "select",
+          "required": true,
+          "options": [
+            "Copyright",
+            "Trademark or brand",
+            "Incorrect or misleading information",
+            "Personal data or privacy",
+            "Something else"
+          ]
+        },
+        {
+          "name": "name",
+          "label": "Your full name",
+          "type": "text",
+          "required": true,
+          "max": 100,
+          "half": true
+        },
+        {
+          "name": "email",
+          "label": "Email",
+          "type": "email",
+          "required": true,
+          "max": 160,
+          "half": true
+        },
+        {
+          "name": "organisation",
+          "label": "Organisation or rights holder (optional)",
+          "type": "text",
+          "max": 120
+        },
+        {
+          "name": "location",
+          "label": "Link or name of the content on Atlas",
+          "type": "text",
+          "required": true,
+          "max": 300
+        },
+        {
+          "name": "message",
+          "label": "What is wrong, and what would you like us to do?",
+          "type": "textarea",
+          "required": true,
+          "max": 2500
+        },
+        {
+          "name": "good_faith",
+          "label": "I state in good faith that the information in this notice is accurate, and that I am the owner or am authorised to act for the owner.",
+          "type": "checkbox",
+          "required": true
+        }
+      ]
+    },
+    "suggest": {
+      "tab": "Suggest a listing",
+      "show_on": [
+        "contribute"
+      ],
+      "title": "Suggest a listing",
+      "intro": "Found a new launch or a better price? Send the link and we will check it before it appears.",
+      "submit": "Send suggestion",
+      "consent": true,
+      "fields": [
+        {
+          "name": "product",
+          "label": "Product or service",
+          "type": "text",
+          "required": true,
+          "max": 140
+        },
+        {
+          "name": "link",
+          "label": "Link to the listing",
+          "type": "url",
+          "required": true,
+          "max": 500
+        },
+        {
+          "name": "price",
+          "label": "Price",
+          "type": "number",
+          "required": true,
+          "min": 0,
+          "step": "any",
+          "half": true
+        },
+        {
+          "name": "currency",
+          "label": "Currency",
+          "type": "select",
+          "required": true,
+          "options_from": "currencies",
+          "half": true
+        },
+        {
+          "name": "origin",
+          "label": "Ships from",
+          "type": "select",
+          "required": true,
+          "options_from": "origins",
+          "half": true
+        },
+        {
+          "name": "contact",
+          "label": "Your email or phone (optional)",
+          "type": "text",
+          "max": 120,
+          "half": true
+        }
+      ]
+    },
+    "paid": {
+      "tab": "Report what I paid",
+      "show_on": [
+        "contribute"
+      ],
+      "title": "Report what you paid",
+      "intro": "Tell us the total you paid at delivery. Real totals help us correct the estimates. We use the figures without your name.",
+      "submit": "Send my numbers",
+      "consent": true,
+      "fields": [
+        {
+          "name": "product",
+          "label": "What did you import?",
+          "type": "text",
+          "required": true,
+          "max": 140
+        },
+        {
+          "name": "origin",
+          "label": "Shipped from",
+          "type": "select",
+          "required": true,
+          "options_from": "origins",
+          "half": true
+        },
+        {
+          "name": "mode",
+          "label": "How it travelled",
+          "type": "select",
+          "required": true,
+          "half": true,
+          "options": [
+            "Air express",
+            "Air economy",
+            "Sea freight",
+            "Postal parcel",
+            "Personal luggage"
+          ]
+        },
+        {
+          "name": "item_price_kes",
+          "label": "Item price paid (KES)",
+          "type": "number",
+          "required": true,
+          "min": 0,
+          "step": "any",
+          "half": true
+        },
+        {
+          "name": "total_landed_kes",
+          "label": "Total landed in Kenya (KES)",
+          "type": "number",
+          "required": true,
+          "min": 0,
+          "step": "any",
+          "half": true
+        },
+        {
+          "name": "note",
+          "label": "Anything that surprised you? (optional)",
+          "type": "textarea",
+          "max": 500
+        }
+      ]
+    }
+  }
+}

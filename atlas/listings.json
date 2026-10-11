@@ -1,0 +1,899 @@
+{
+  "generated_on": "2026-10-11",
+  "count": 34,
+  "items": [
+    {
+      "id": "label-us",
+      "name": "4-inch Thermal Label Printer",
+      "cat": "elec",
+      "origin": "US",
+      "price": 129,
+      "cur": "USD",
+      "w": 2.2,
+      "dim": [
+        30,
+        22,
+        20
+      ],
+      "seller": "eBay (sample listing)",
+      "url": "",
+      "verified": false,
+      "checked_on": "",
+      "launched_on": "2026-10-06",
+      "rating": 4.6,
+      "group": "label-printer",
+      "notes": "Illustrative price. Replace with a checked listing.",
+      "history": [
+        [
+          "2026-10-10",
+          129
+        ]
+      ],
+      "store": "ebay"
+    },
+    {
+      "id": "label-cn",
+      "name": "4-inch Thermal Label Printer",
+      "cat": "elec",
+      "origin": "CN",
+      "price": 780,
+      "cur": "CNY",
+      "w": 2.4,
+      "dim": [
+        32,
+        24,
+        22
+      ],
+      "seller": "AliExpress (sample listing)",
+      "url": "",
+      "verified": false,
+      "checked_on": "",
+      "launched_on": "2026-10-04",
+      "rating": 4.4,
+      "group": "label-printer",
+      "notes": "Illustrative price. Replace with a checked listing.",
+      "history": [
+        [
+          "2026-10-10",
+          780
+        ]
+      ],
+      "store": "aliexpress"
+    },
+    {
+      "id": "label-ae",
+      "name": "4-inch Thermal Label Printer",
+      "cat": "elec",
+      "origin": "AE",
+      "price": 520,
+      "cur": "AED",
+      "w": 2.3,
+      "dim": [
+        31,
+        23,
+        21
+      ],
+      "seller": "Sample listing",
+      "url": "",
+      "verified": false,
+      "checked_on": "",
+      "launched_on": "2026-10-08",
+      "rating": 4.5,
+      "group": "label-printer",
+      "notes": "Illustrative price. Replace with a checked listing.",
+      "history": [
+        [
+          "2026-10-10",
+          520
+        ]
+      ],
+      "store": "other"
+    },
+    {
+      "id": "laptop-us",
+      "name": "14-inch Business Laptop, 16 GB / 512 GB",
+      "cat": "elec",
+      "origin": "US",
+      "price": 899,
+      "cur": "USD",
+      "w": 1.6,
+      "dim": [
+        42,
+        30,
+        8
+      ],
+      "seller": "eBay (sample listing)",
+      "url": "",
+      "verified": false,
+      "checked_on": "",
+      "launched_on": "2026-10-07",
+      "rating": 4.6,
+      "group": "",
+      "notes": "Illustrative price.",
+      "history": [
+        [
+          "2026-10-10",
+          899
+        ]
+      ],
+      "store": "ebay"
+    },
+    {
+      "id": "vinyl-cutter-us",
+      "name": "24-inch Vinyl Cutter with Stand",
+      "cat": "print",
+      "origin": "US",
+      "price": 380,
+      "cur": "USD",
+      "w": 14,
+      "dim": [
+        75,
+        35,
+        30
+      ],
+      "seller": "eBay (sample listing)",
+      "url": "",
+      "verified": false,
+      "checked_on": "",
+      "launched_on": "2026-10-05",
+      "rating": 4.4,
+      "group": "",
+      "notes": "Illustrative price.",
+      "history": [
+        [
+          "2026-10-10",
+          380
+        ]
+      ],
+      "store": "ebay"
+    },
+    {
+      "id": "dtf-printer-us",
+      "name": "A3 DTF Printer Starter Kit",
+      "cat": "print",
+      "origin": "US",
+      "price": 2100,
+      "cur": "USD",
+      "w": 38,
+      "dim": [
+        90,
+        60,
+        60
+      ],
+      "seller": "eBay (sample listing)",
+      "url": "",
+      "verified": false,
+      "checked_on": "",
+      "launched_on": "2026-10-03",
+      "rating": 4.3,
+      "group": "",
+      "notes": "Illustrative price.",
+      "history": [
+        [
+          "2026-10-10",
+          2100
+        ]
+      ],
+      "store": "ebay"
+    },
+    {
+      "id": "heat-press-us",
+      "name": "Heat Press Combo 15 x 15 in",
+      "cat": "print",
+      "origin": "US",
+      "price": 285,
+      "cur": "USD",
+      "w": 20,
+      "dim": [
+        60,
+        50,
+        50
+      ],
+      "seller": "eBay (sample listing)",
+      "url": "",
+      "verified": false,
+      "checked_on": "",
+      "launched_on": "2026-10-02",
+      "rating": 4.5,
+      "group": "",
+      "notes": "Illustrative price.",
+      "history": [
+        [
+          "2026-10-10",
+          285
+        ]
+      ],
+      "store": "ebay"
+    },
+    {
+      "id": "earbuds-us",
+      "name": "Noise-cancelling Earbuds Gen 3",
+      "cat": "elec",
+      "origin": "US",
+      "price": 79,
+      "cur": "USD",
+      "w": 0.3,
+      "dim": [
+        14,
+        10,
+        6
+      ],
+      "seller": "eBay (sample listing)",
+      "url": "",
+      "verified": false,
+      "checked_on": "",
+      "launched_on": "2026-10-09",
+      "rating": 4.2,
+      "group": "earbuds",
+      "notes": "Illustrative price.",
+      "history": [
+        [
+          "2026-10-10",
+          79
+        ]
+      ],
+      "store": "ebay"
+    },
+    {
+      "id": "desk-us",
+      "name": "Electric Standing Desk 60 in",
+      "cat": "home",
+      "origin": "US",
+      "price": 289,
+      "cur": "USD",
+      "w": 36,
+      "dim": [
+        160,
+        75,
+        15
+      ],
+      "seller": "eBay (sample listing)",
+      "url": "",
+      "verified": false,
+      "checked_on": "",
+      "launched_on": "2026-09-30",
+      "rating": 4.4,
+      "group": "",
+      "notes": "Illustrative price.",
+      "history": [
+        [
+          "2026-10-10",
+          289
+        ]
+      ],
+      "store": "ebay"
+    },
+    {
+      "id": "uv-flatbed-cn",
+      "name": "UV Flatbed Printer 6090, 3-head",
+      "cat": "print",
+      "origin": "CN",
+      "price": 98000,
+      "cur": "CNY",
+      "w": 310,
+      "dim": [
+        150,
+        110,
+        120
+      ],
+      "seller": "AliExpress (sample listing)",
+      "url": "",
+      "verified": false,
+      "checked_on": "",
+      "launched_on": "2026-10-06",
+      "rating": 4.6,
+      "group": "",
+      "notes": "Illustrative price.",
+      "history": [
+        [
+          "2026-10-10",
+          98000
+        ]
+      ],
+      "store": "aliexpress"
+    },
+    {
+      "id": "led-letters-cn",
+      "name": "LED Channel Letter Module Pack, 200 pcs",
+      "cat": "print",
+      "origin": "CN",
+      "price": 780,
+      "cur": "CNY",
+      "w": 6,
+      "dim": [
+        40,
+        30,
+        25
+      ],
+      "seller": "AliExpress (sample listing)",
+      "url": "",
+      "verified": false,
+      "checked_on": "",
+      "launched_on": "2026-10-08",
+      "rating": 4.2,
+      "group": "",
+      "notes": "Illustrative price.",
+      "history": [
+        [
+          "2026-10-10",
+          780
+        ]
+      ],
+      "store": "aliexpress"
+    },
+    {
+      "id": "vinyl-roll-cn",
+      "name": "Eco-solvent Vinyl Roll 1.37 m x 50 m",
+      "cat": "print",
+      "origin": "CN",
+      "price": 640,
+      "cur": "CNY",
+      "w": 14,
+      "dim": [
+        150,
+        15,
+        15
+      ],
+      "seller": "AliExpress (sample listing)",
+      "url": "",
+      "verified": false,
+      "checked_on": "",
+      "launched_on": "2026-10-01",
+      "rating": 4.3,
+      "group": "",
+      "notes": "Illustrative price.",
+      "history": [
+        [
+          "2026-10-10",
+          640
+        ]
+      ],
+      "store": "aliexpress"
+    },
+    {
+      "id": "battery-cn",
+      "name": "5 kWh LiFePO4 Wall Battery",
+      "cat": "solar",
+      "origin": "CN",
+      "price": 7900,
+      "cur": "CNY",
+      "w": 48,
+      "dim": [
+        70,
+        45,
+        20
+      ],
+      "seller": "AliExpress (sample listing)",
+      "url": "",
+      "verified": false,
+      "checked_on": "",
+      "launched_on": "2026-10-05",
+      "rating": 4.6,
+      "group": "",
+      "notes": "Illustrative price.",
+      "history": [
+        [
+          "2026-10-10",
+          7900
+        ]
+      ],
+      "store": "aliexpress"
+    },
+    {
+      "id": "panels-cn",
+      "name": "550 W Mono Solar Panels, pack of 4",
+      "cat": "solar",
+      "origin": "CN",
+      "price": 2100,
+      "cur": "CNY",
+      "w": 112,
+      "dim": [
+        230,
+        115,
+        30
+      ],
+      "seller": "AliExpress (sample listing)",
+      "url": "",
+      "verified": false,
+      "checked_on": "",
+      "launched_on": "2026-10-03",
+      "rating": 4.5,
+      "group": "",
+      "notes": "Illustrative price.",
+      "history": [
+        [
+          "2026-10-10",
+          2100
+        ]
+      ],
+      "store": "aliexpress"
+    },
+    {
+      "id": "inverter-ae",
+      "name": "3 kW Hybrid Inverter",
+      "cat": "solar",
+      "origin": "AE",
+      "price": 2400,
+      "cur": "AED",
+      "w": 18,
+      "dim": [
+        52,
+        40,
+        23
+      ],
+      "seller": "Sample listing",
+      "url": "",
+      "verified": false,
+      "checked_on": "",
+      "launched_on": "2026-10-07",
+      "rating": 4.4,
+      "group": "",
+      "notes": "Illustrative price.",
+      "history": [
+        [
+          "2026-10-10",
+          2400
+        ]
+      ],
+      "store": "other"
+    },
+    {
+      "id": "phone-in",
+      "name": "Mid-range 5G Smartphone 256 GB",
+      "cat": "elec",
+      "origin": "IN",
+      "price": 24999,
+      "cur": "INR",
+      "w": 0.5,
+      "dim": [
+        22,
+        13,
+        9
+      ],
+      "seller": "Sample listing",
+      "url": "",
+      "verified": false,
+      "checked_on": "",
+      "launched_on": "2026-10-09",
+      "rating": 4.3,
+      "group": "",
+      "notes": "Illustrative price.",
+      "history": [
+        [
+          "2026-10-10",
+          24999
+        ]
+      ],
+      "store": "other"
+    },
+    {
+      "id": "hoodies-in",
+      "name": "Custom Hoodie Blanks, 50 pcs",
+      "cat": "apparel",
+      "origin": "IN",
+      "price": 28500,
+      "cur": "INR",
+      "w": 22,
+      "dim": [
+        60,
+        45,
+        40
+      ],
+      "seller": "Sample listing",
+      "url": "",
+      "verified": false,
+      "checked_on": "",
+      "launched_on": "2026-10-04",
+      "rating": 4.2,
+      "group": "",
+      "notes": "Illustrative price.",
+      "history": [
+        [
+          "2026-10-10",
+          28500
+        ]
+      ],
+      "store": "other"
+    },
+    {
+      "id": "cloud-de",
+      "name": "Business Cloud Hosting",
+      "cat": "service",
+      "origin": "DE",
+      "price": 12,
+      "cur": "EUR",
+      "unit": "per month",
+      "seller": "Sample listing",
+      "url": "",
+      "verified": false,
+      "checked_on": "",
+      "launched_on": "2026-10-08",
+      "rating": 4.6,
+      "group": "",
+      "notes": "Illustrative price.",
+      "history": [
+        [
+          "2026-10-10",
+          12
+        ]
+      ],
+      "store": "other"
+    },
+    {
+      "id": "design-us",
+      "name": "Design Suite Team Seat",
+      "cat": "service",
+      "origin": "US",
+      "price": 18,
+      "cur": "USD",
+      "unit": "per seat, per month",
+      "seller": "eBay (sample listing)",
+      "url": "",
+      "verified": false,
+      "checked_on": "",
+      "launched_on": "2026-10-05",
+      "rating": 4.5,
+      "group": "",
+      "notes": "Illustrative price.",
+      "history": [
+        [
+          "2026-10-10",
+          18
+        ]
+      ],
+      "store": "ebay"
+    },
+    {
+      "id": "sms-gb",
+      "name": "Bulk SMS Gateway, East Africa routes",
+      "cat": "service",
+      "origin": "GB",
+      "price": 14,
+      "cur": "GBP",
+      "unit": "per 1,000 messages",
+      "seller": "Sample listing",
+      "url": "",
+      "verified": false,
+      "checked_on": "",
+      "launched_on": "2026-10-09",
+      "rating": 4.3,
+      "group": "",
+      "notes": "Illustrative price.",
+      "history": [
+        [
+          "2026-10-10",
+          14
+        ]
+      ],
+      "store": "other"
+    },
+    {
+      "id": "label-jumia",
+      "name": "4-inch Thermal Label Printer",
+      "cat": "elec",
+      "origin": "KE",
+      "price": 14500,
+      "cur": "KES",
+      "store": "jumia",
+      "seller": "Jumia (sample listing)",
+      "url": "",
+      "verified": false,
+      "checked_on": "",
+      "launched_on": "2026-10-08",
+      "rating": 4.3,
+      "group": "label-printer",
+      "notes": "Illustrative shelf price. Replace with a checked listing.",
+      "history": [
+        [
+          "2026-10-11",
+          14500
+        ]
+      ]
+    },
+    {
+      "id": "label-kilimall",
+      "name": "4-inch Thermal Label Printer",
+      "cat": "elec",
+      "origin": "KE",
+      "price": 13200,
+      "cur": "KES",
+      "store": "kilimall",
+      "seller": "Kilimall (sample listing)",
+      "url": "",
+      "verified": false,
+      "checked_on": "",
+      "launched_on": "2026-10-08",
+      "rating": 4.1,
+      "group": "label-printer",
+      "notes": "Illustrative shelf price. Replace with a checked listing.",
+      "history": [
+        [
+          "2026-10-11",
+          13200
+        ]
+      ]
+    },
+    {
+      "id": "earbuds-jumia",
+      "name": "Wireless Earbuds (ANC)",
+      "cat": "elec",
+      "origin": "KE",
+      "price": 6900,
+      "cur": "KES",
+      "store": "jumia",
+      "seller": "Jumia (sample listing)",
+      "url": "",
+      "verified": false,
+      "checked_on": "",
+      "launched_on": "2026-10-08",
+      "rating": 4.4,
+      "group": "earbuds",
+      "notes": "Illustrative shelf price. Replace with a checked listing.",
+      "history": [
+        [
+          "2026-10-11",
+          6900
+        ]
+      ]
+    },
+    {
+      "id": "earbuds-kilimall",
+      "name": "Wireless Earbuds (ANC)",
+      "cat": "elec",
+      "origin": "KE",
+      "price": 5800,
+      "cur": "KES",
+      "store": "kilimall",
+      "seller": "Kilimall (sample listing)",
+      "url": "",
+      "verified": false,
+      "checked_on": "",
+      "launched_on": "2026-10-08",
+      "rating": 4.0,
+      "group": "earbuds",
+      "notes": "Illustrative shelf price. Replace with a checked listing.",
+      "history": [
+        [
+          "2026-10-11",
+          5800
+        ]
+      ]
+    },
+    {
+      "id": "phone-jiji",
+      "name": "Smartphone, 128 GB (used, good condition)",
+      "cat": "elec",
+      "origin": "KE",
+      "price": 21500,
+      "cur": "KES",
+      "store": "jiji",
+      "seller": "Jiji (sample listing)",
+      "url": "",
+      "verified": false,
+      "checked_on": "",
+      "launched_on": "2026-10-08",
+      "rating": null,
+      "group": "",
+      "notes": "Illustrative second-hand price. Condition and seller reliability vary on Jiji.",
+      "history": [
+        [
+          "2026-10-11",
+          21500
+        ]
+      ]
+    },
+    {
+      "id": "laptop-jiji",
+      "name": "Business laptop, 8 GB RAM (used)",
+      "cat": "elec",
+      "origin": "KE",
+      "price": 38000,
+      "cur": "KES",
+      "store": "jiji",
+      "seller": "Jiji (sample listing)",
+      "url": "",
+      "verified": false,
+      "checked_on": "",
+      "launched_on": "2026-10-08",
+      "rating": null,
+      "group": "",
+      "notes": "Illustrative second-hand price. Condition and seller reliability vary on Jiji.",
+      "history": [
+        [
+          "2026-10-11",
+          38000
+        ]
+      ]
+    },
+    {
+      "id": "inverter-jumia",
+      "name": "1 kVA Solar Inverter",
+      "cat": "solar",
+      "origin": "KE",
+      "price": 16500,
+      "cur": "KES",
+      "store": "jumia",
+      "seller": "Jumia (sample listing)",
+      "url": "",
+      "verified": false,
+      "checked_on": "",
+      "launched_on": "2026-10-08",
+      "rating": 4.2,
+      "group": "",
+      "notes": "Illustrative shelf price. Replace with a checked listing.",
+      "history": [
+        [
+          "2026-10-11",
+          16500
+        ]
+      ]
+    },
+    {
+      "id": "desk-kilimall",
+      "name": "Office desk, 120 cm",
+      "cat": "home",
+      "origin": "KE",
+      "price": 9800,
+      "cur": "KES",
+      "store": "kilimall",
+      "seller": "Kilimall (sample listing)",
+      "url": "",
+      "verified": false,
+      "checked_on": "",
+      "launched_on": "2026-10-08",
+      "rating": 4.0,
+      "group": "",
+      "notes": "Illustrative shelf price. Replace with a checked listing.",
+      "history": [
+        [
+          "2026-10-11",
+          9800
+        ]
+      ]
+    },
+    {
+      "id": "oil-naivas",
+      "name": "Cooking oil, 5 L",
+      "cat": "grocery",
+      "origin": "KE",
+      "price": 1350,
+      "cur": "KES",
+      "unit": "per 5 L",
+      "store": "naivas",
+      "seller": "Naivas (sample listing)",
+      "url": "",
+      "verified": false,
+      "checked_on": "",
+      "launched_on": "2026-10-08",
+      "rating": null,
+      "group": "oil",
+      "notes": "Illustrative shelf price. Replace with a checked listing.",
+      "history": [
+        [
+          "2026-10-11",
+          1350
+        ]
+      ]
+    },
+    {
+      "id": "oil-carrefour",
+      "name": "Cooking oil, 5 L",
+      "cat": "grocery",
+      "origin": "KE",
+      "price": 1420,
+      "cur": "KES",
+      "unit": "per 5 L",
+      "store": "carrefour",
+      "seller": "Carrefour Kenya (sample listing)",
+      "url": "",
+      "verified": false,
+      "checked_on": "",
+      "launched_on": "2026-10-08",
+      "rating": null,
+      "group": "oil",
+      "notes": "Illustrative shelf price. Replace with a checked listing.",
+      "history": [
+        [
+          "2026-10-11",
+          1420
+        ]
+      ]
+    },
+    {
+      "id": "oil-quickmart",
+      "name": "Cooking oil, 5 L",
+      "cat": "grocery",
+      "origin": "KE",
+      "price": 1330,
+      "cur": "KES",
+      "unit": "per 5 L",
+      "store": "quickmart",
+      "seller": "Quickmart (sample listing)",
+      "url": "",
+      "verified": false,
+      "checked_on": "",
+      "launched_on": "2026-10-08",
+      "rating": null,
+      "group": "oil",
+      "notes": "Illustrative shelf price. Replace with a checked listing.",
+      "history": [
+        [
+          "2026-10-11",
+          1330
+        ]
+      ]
+    },
+    {
+      "id": "rice-naivas",
+      "name": "Pishori rice, 2 kg",
+      "cat": "grocery",
+      "origin": "KE",
+      "price": 620,
+      "cur": "KES",
+      "unit": "per 2 kg",
+      "store": "naivas",
+      "seller": "Naivas (sample listing)",
+      "url": "",
+      "verified": false,
+      "checked_on": "",
+      "launched_on": "2026-10-08",
+      "rating": null,
+      "group": "rice",
+      "notes": "Illustrative shelf price. Replace with a checked listing.",
+      "history": [
+        [
+          "2026-10-11",
+          620
+        ]
+      ]
+    },
+    {
+      "id": "rice-carrefour",
+      "name": "Pishori rice, 2 kg",
+      "cat": "grocery",
+      "origin": "KE",
+      "price": 650,
+      "cur": "KES",
+      "unit": "per 2 kg",
+      "store": "carrefour",
+      "seller": "Carrefour Kenya (sample listing)",
+      "url": "",
+      "verified": false,
+      "checked_on": "",
+      "launched_on": "2026-10-08",
+      "rating": null,
+      "group": "rice",
+      "notes": "Illustrative shelf price. Replace with a checked listing.",
+      "history": [
+        [
+          "2026-10-11",
+          650
+        ]
+      ]
+    },
+    {
+      "id": "rice-quickmart",
+      "name": "Pishori rice, 2 kg",
+      "cat": "grocery",
+      "origin": "KE",
+      "price": 600,
+      "cur": "KES",
+      "unit": "per 2 kg",
+      "store": "quickmart",
+      "seller": "Quickmart (sample listing)",
+      "url": "",
+      "verified": false,
+      "checked_on": "",
+      "launched_on": "2026-10-08",
+      "rating": null,
+      "group": "rice",
+      "notes": "Illustrative shelf price. Replace with a checked listing.",
+      "history": [
+        [
+          "2026-10-11",
+          600
+        ]
+      ]
+    }
+  ]
+}

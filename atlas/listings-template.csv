@@ -1,0 +1,35 @@
+id,name,category,origin,store,price,currency,unit,weight_kg,length_cm,width_cm,height_cm,seller,source_url,verified,checked_on,launched_on,rating,group,notes
+label-us,4-inch Thermal Label Printer,elec,US,ebay,129,USD,,2.2,30,22,20,eBay (sample listing),,no,,2026-10-06,4.6,label-printer,Illustrative price. Replace with a checked listing.
+label-cn,4-inch Thermal Label Printer,elec,CN,aliexpress,780,CNY,,2.4,32,24,22,AliExpress (sample listing),,no,,2026-10-04,4.4,label-printer,Illustrative price. Replace with a checked listing.
+label-ae,4-inch Thermal Label Printer,elec,AE,other,520,AED,,2.3,31,23,21,Sample listing,,no,,2026-10-08,4.5,label-printer,Illustrative price. Replace with a checked listing.
+laptop-us,"14-inch Business Laptop, 16 GB / 512 GB",elec,US,ebay,899,USD,,1.6,42,30,8,eBay (sample listing),,no,,2026-10-07,4.6,,Illustrative price.
+vinyl-cutter-us,24-inch Vinyl Cutter with Stand,print,US,ebay,380,USD,,14,75,35,30,eBay (sample listing),,no,,2026-10-05,4.4,,Illustrative price.
+dtf-printer-us,A3 DTF Printer Starter Kit,print,US,ebay,2100,USD,,38,90,60,60,eBay (sample listing),,no,,2026-10-03,4.3,,Illustrative price.
+heat-press-us,Heat Press Combo 15 x 15 in,print,US,ebay,285,USD,,20,60,50,50,eBay (sample listing),,no,,2026-10-02,4.5,,Illustrative price.
+earbuds-us,Noise-cancelling Earbuds Gen 3,elec,US,ebay,79,USD,,0.3,14,10,6,eBay (sample listing),,no,,2026-10-09,4.2,earbuds,Illustrative price.
+desk-us,Electric Standing Desk 60 in,home,US,ebay,289,USD,,36,160,75,15,eBay (sample listing),,no,,2026-09-30,4.4,,Illustrative price.
+uv-flatbed-cn,"UV Flatbed Printer 6090, 3-head",print,CN,aliexpress,98000,CNY,,310,150,110,120,AliExpress (sample listing),,no,,2026-10-06,4.6,,Illustrative price.
+led-letters-cn,"LED Channel Letter Module Pack, 200 pcs",print,CN,aliexpress,780,CNY,,6,40,30,25,AliExpress (sample listing),,no,,2026-10-08,4.2,,Illustrative price.
+vinyl-roll-cn,Eco-solvent Vinyl Roll 1.37 m x 50 m,print,CN,aliexpress,640,CNY,,14,150,15,15,AliExpress (sample listing),,no,,2026-10-01,4.3,,Illustrative price.
+battery-cn,5 kWh LiFePO4 Wall Battery,solar,CN,aliexpress,7900,CNY,,48,70,45,20,AliExpress (sample listing),,no,,2026-10-05,4.6,,Illustrative price.
+panels-cn,"550 W Mono Solar Panels, pack of 4",solar,CN,aliexpress,2100,CNY,,112,230,115,30,AliExpress (sample listing),,no,,2026-10-03,4.5,,Illustrative price.
+inverter-ae,3 kW Hybrid Inverter,solar,AE,other,2400,AED,,18,52,40,23,Sample listing,,no,,2026-10-07,4.4,,Illustrative price.
+phone-in,Mid-range 5G Smartphone 256 GB,elec,IN,other,24999,INR,,0.5,22,13,9,Sample listing,,no,,2026-10-09,4.3,,Illustrative price.
+hoodies-in,"Custom Hoodie Blanks, 50 pcs",apparel,IN,other,28500,INR,,22,60,45,40,Sample listing,,no,,2026-10-04,4.2,,Illustrative price.
+cloud-de,Business Cloud Hosting,service,DE,other,12,EUR,per month,,,,,Sample listing,,no,,2026-10-08,4.6,,Illustrative price.
+design-us,Design Suite Team Seat,service,US,ebay,18,USD,"per seat, per month",,,,,eBay (sample listing),,no,,2026-10-05,4.5,,Illustrative price.
+sms-gb,"Bulk SMS Gateway, East Africa routes",service,GB,other,14,GBP,"per 1,000 messages",,,,,Sample listing,,no,,2026-10-09,4.3,,Illustrative price.
+label-jumia,4-inch Thermal Label Printer,elec,KE,jumia,14500,KES,,,,,,Jumia (sample listing),,no,,2026-10-08,4.3,label-printer,Illustrative shelf price. Replace with a checked listing.
+label-kilimall,4-inch Thermal Label Printer,elec,KE,kilimall,13200,KES,,,,,,Kilimall (sample listing),,no,,2026-10-08,4.1,label-printer,Illustrative shelf price. Replace with a checked listing.
+earbuds-jumia,Wireless Earbuds (ANC),elec,KE,jumia,6900,KES,,,,,,Jumia (sample listing),,no,,2026-10-08,4.4,earbuds,Illustrative shelf price. Replace with a checked listing.
+earbuds-kilimall,Wireless Earbuds (ANC),elec,KE,kilimall,5800,KES,,,,,,Kilimall (sample listing),,no,,2026-10-08,4.0,earbuds,Illustrative shelf price. Replace with a checked listing.
+phone-jiji,"Smartphone, 128 GB (used, good condition)",elec,KE,jiji,21500,KES,,,,,,Jiji (sample listing),,no,,2026-10-08,,,Illustrative second-hand price. Condition and seller reliability vary on Jiji.
+laptop-jiji,"Business laptop, 8 GB RAM (used)",elec,KE,jiji,38000,KES,,,,,,Jiji (sample listing),,no,,2026-10-08,,,Illustrative second-hand price. Condition and seller reliability vary on Jiji.
+inverter-jumia,1 kVA Solar Inverter,solar,KE,jumia,16500,KES,,,,,,Jumia (sample listing),,no,,2026-10-08,4.2,,Illustrative shelf price. Replace with a checked listing.
+desk-kilimall,"Office desk, 120 cm",home,KE,kilimall,9800,KES,,,,,,Kilimall (sample listing),,no,,2026-10-08,4.0,,Illustrative shelf price. Replace with a checked listing.
+oil-naivas,"Cooking oil, 5 L",grocery,KE,naivas,1350,KES,per 5 L,,,,,Naivas (sample listing),,no,,2026-10-08,,oil,Illustrative shelf price. Replace with a checked listing.
+oil-carrefour,"Cooking oil, 5 L",grocery,KE,carrefour,1420,KES,per 5 L,,,,,Carrefour Kenya (sample listing),,no,,2026-10-08,,oil,Illustrative shelf price. Replace with a checked listing.
+oil-quickmart,"Cooking oil, 5 L",grocery,KE,quickmart,1330,KES,per 5 L,,,,,Quickmart (sample listing),,no,,2026-10-08,,oil,Illustrative shelf price. Replace with a checked listing.
+rice-naivas,"Pishori rice, 2 kg",grocery,KE,naivas,620,KES,per 2 kg,,,,,Naivas (sample listing),,no,,2026-10-08,,rice,Illustrative shelf price. Replace with a checked listing.
+rice-carrefour,"Pishori rice, 2 kg",grocery,KE,carrefour,650,KES,per 2 kg,,,,,Carrefour Kenya (sample listing),,no,,2026-10-08,,rice,Illustrative shelf price. Replace with a checked listing.
+rice-quickmart,"Pishori rice, 2 kg",grocery,KE,quickmart,600,KES,per 2 kg,,,,,Quickmart (sample listing),,no,,2026-10-08,,rice,Illustrative shelf price. Replace with a checked listing.

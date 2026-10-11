@@ -1,0 +1,17 @@
+{
+  "base": "USD",
+  "source": "ExchangeRate-API",
+  "source_url": "https://www.exchangerate-api.com",
+  "source_updated_utc": null,
+  "fetched_on": "2026-10-10",
+  "rates": {
+    "USD": 1,
+    "KES": 129.641415,
+    "CNY": 6.715255,
+    "AED": 3.6725,
+    "EUR": 0.892251,
+    "GBP": 0.756516,
+    "INR": 96.883664,
+    "TRY": 49.278221
+  }
+}
