@@ -1,0 +1,366 @@
+{
+  "_readme": "Edit this file in GitHub (pencil icon) or locally. Every rate has a verified_on date. Change a number, commit, and the site updates in about a minute.",
+  "site": {
+    "name": "BrandMark Atlas",
+    "stale_days": 14,
+    "hero_group": "label-printer",
+    "title": "BrandMark Atlas - Kenya's Total Cost compass",
+    "tagline": "Compare eBay, AliExpress, Jumia, Jiji, Kilimall & local supermarkets at a glance. Imports show estimated full landed cost.",
+    "live_search_url": ""
+  },
+  "contact": {
+    "whatsapp": "254736900750",
+    "email": "info@brandmarkenya.com",
+    "phones": [
+      "+254 736 900 750",
+      "+254 797 132 084",
+      "+254 725 776 082"
+    ],
+    "address": [
+      "Aya House, Kenyatta Street",
+      "1st Floor, Room 5, Eldoret"
+    ],
+    "social": "X @BrandmarkPlc, Facebook and TikTok Brandmark-KE"
+  },
+  "forms": {
+    "web3forms_key": "YOUR_WEB3FORMS_ACCESS_KEY"
+  },
+  "currencies": [
+    "USD",
+    "KES",
+    "CNY",
+    "AED",
+    "EUR",
+    "GBP",
+    "INR",
+    "TRY"
+  ],
+  "destination": {
+    "code": "KE",
+    "name": "Kenya",
+    "currency": "KES",
+    "vat": 0.16,
+    "levies": [
+      {
+        "name": "Import Declaration Fee",
+        "rate": 0.035,
+        "min_kes": 5000,
+        "apply_min": false
+      },
+      {
+        "name": "Railway Development Levy",
+        "rate": 0.02
+      }
+    ],
+    "local_delivery_usd": 8,
+    "clear_days": "2–4",
+    "verified_on": "2026-10-10",
+    "note": "IDF has moved between 2%, 2.5% and 3.5% in recent Finance Acts. Confirm the rate for the month of import with KRA or your clearing agent. Set apply_min to true if your forwarder charges the KES 5,000 minimum.",
+    "sources": [
+      {
+        "label": "Kenya Revenue Authority",
+        "url": "https://www.kra.go.ke"
+      }
+    ],
+    "local_note": "Local shop prices already include VAT and duty. Delivery fees vary by store, so Atlas shows the shelf price."
+  },
+  "categories": {
+    "elec": {
+      "label": "Electronics & Office",
+      "duty": 0.1,
+      "note": "Some computers and phones can be 0%. Classification by HS code decides."
+    },
+    "print": {
+      "label": "Printing & Signage",
+      "duty": 0.1,
+      "note": "Printers and presses are often 0% to 10%. Consumables vary."
+    },
+    "solar": {
+      "label": "Solar & Energy",
+      "duty": 0.0,
+      "note": "Many solar items are exempt. Batteries and inverters can differ."
+    },
+    "apparel": {
+      "label": "Apparel & Textiles",
+      "duty": 0.25,
+      "note": "EAC upper band for finished clothing."
+    },
+    "home": {
+      "label": "Furniture & Home",
+      "duty": 0.25,
+      "note": "EAC upper band for most furniture."
+    },
+    "service": {
+      "label": "Services & Rates",
+      "duty": 0.0,
+      "note": "Digital services carry VAT only in this estimate."
+    },
+    "grocery": {
+      "label": "Groceries & Household",
+      "duty": 0.0,
+      "note": "Local shelf prices. No import costs are added."
+    }
+  },
+  "freight": {
+    "verified_on": "2026-10-10",
+    "note": "Indicative rates in USD per billed kilogram. Replace with your forwarder's rate card before quoting anyone.",
+    "min": {
+      "exp": 25,
+      "eco": 18,
+      "sea": 60
+    },
+    "handling": {
+      "exp": 12,
+      "eco": 12,
+      "sea": 35
+    },
+    "fuel": {
+      "exp": 0.12,
+      "eco": 0.12,
+      "sea": 0.08
+    },
+    "insurance_rate": 0.01,
+    "volumetric_divisor": {
+      "air": 5000,
+      "sea": 1000
+    },
+    "smart_sea_from_kg": 150
+  },
+  "origins": {
+    "US": {
+      "name": "USA",
+      "city": "Chicago",
+      "cur": "USD",
+      "lon": -87.9,
+      "lat": 41.9,
+      "code": "ORD",
+      "rates": {
+        "exp": 14.8,
+        "eco": 8.8,
+        "sea": 0.26
+      },
+      "days": {
+        "exp": "4–6",
+        "eco": "8–14",
+        "sea": "30–45"
+      }
+    },
+    "CN": {
+      "name": "China",
+      "city": "Shenzhen",
+      "cur": "CNY",
+      "lon": 114.1,
+      "lat": 22.5,
+      "code": "SZX",
+      "rates": {
+        "exp": 9.5,
+        "eco": 5.2,
+        "sea": 0.16
+      },
+      "days": {
+        "exp": "3–5",
+        "eco": "7–12",
+        "sea": "30–42"
+      }
+    },
+    "AE": {
+      "name": "UAE",
+      "city": "Dubai",
+      "cur": "AED",
+      "lon": 55.3,
+      "lat": 25.2,
+      "code": "DXB",
+      "rates": {
+        "exp": 7.2,
+        "eco": 4.1,
+        "sea": 0.15
+      },
+      "days": {
+        "exp": "2–4",
+        "eco": "5–8",
+        "sea": "14–21"
+      }
+    },
+    "GB": {
+      "name": "UK",
+      "city": "London",
+      "cur": "GBP",
+      "lon": -0.5,
+      "lat": 51.5,
+      "code": "LHR",
+      "rates": {
+        "exp": 13.5,
+        "eco": 8.0,
+        "sea": 0.24
+      },
+      "days": {
+        "exp": "3–5",
+        "eco": "7–11",
+        "sea": "28–38"
+      }
+    },
+    "IN": {
+      "name": "India",
+      "city": "Mumbai",
+      "cur": "INR",
+      "lon": 72.9,
+      "lat": 19.0,
+      "code": "BOM",
+      "rates": {
+        "exp": 8.4,
+        "eco": 4.6,
+        "sea": 0.15
+      },
+      "days": {
+        "exp": "4–6",
+        "eco": "8–12",
+        "sea": "18–28"
+      }
+    },
+    "DE": {
+      "name": "Germany",
+      "city": "Frankfurt",
+      "cur": "EUR",
+      "lon": 8.7,
+      "lat": 50.1,
+      "code": "FRA",
+      "rates": {
+        "exp": 12.8,
+        "eco": 7.5,
+        "sea": 0.22
+      },
+      "days": {
+        "exp": "3–5",
+        "eco": "7–11",
+        "sea": "28–38"
+      }
+    },
+    "TR": {
+      "name": "Türkiye",
+      "city": "Istanbul",
+      "cur": "TRY",
+      "lon": 29.0,
+      "lat": 41.0,
+      "code": "IST",
+      "rates": {
+        "exp": 10.5,
+        "eco": 6.4,
+        "sea": 0.18
+      },
+      "days": {
+        "exp": "3–5",
+        "eco": "7–11",
+        "sea": "20–30"
+      }
+    },
+    "KE": {
+      "name": "Kenya",
+      "city": "Local",
+      "cur": "KES",
+      "lon": 36.8,
+      "lat": -1.3,
+      "code": "NBO",
+      "local": true,
+      "rates": {
+        "exp": 0,
+        "eco": 0,
+        "sea": 0
+      },
+      "days": {
+        "exp": "0–3",
+        "eco": "0–3",
+        "sea": "0–3"
+      }
+    }
+  },
+  "legal": {
+    "_readme": "Company details used on the legal pages and footer. Edit here and the pages update. Leave registration numbers empty until you have them and the line stays hidden.",
+    "company_name": "Brandmark Systems Limited",
+    "service_name": "Brandmark Atlas",
+    "website": "https://atlas.brandmarkenya.com",
+    "main_website": "https://brandmarkenya.com",
+    "address": [
+      "Aya House, Kenyatta Street",
+      "1st Floor, Room 5",
+      "Eldoret, Kenya"
+    ],
+    "email": "info@brandmarkenya.com",
+    "phone": "+254 736 900 750",
+    "registration_number": "",
+    "odpc_registration_number": "",
+    "governing_law": "the laws of Kenya",
+    "liability_cap": "KES 10,000",
+    "response_time": "5 working days",
+    "last_updated": "10 October 2026",
+    "effective_date": "10 October 2026",
+    "pages": [
+      {
+        "title": "Terms of Service",
+        "href": "terms.html"
+      },
+      {
+        "title": "Privacy Policy",
+        "href": "privacy.html"
+      },
+      {
+        "title": "Disclaimer",
+        "href": "disclaimer.html"
+      },
+      {
+        "title": "Legal notices",
+        "href": "notices.html"
+      },
+      {
+        "title": "Contact",
+        "href": "contact.html"
+      }
+    ]
+  },
+  "stores": {
+    "ebay": {
+      "label": "eBay",
+      "kind": "import",
+      "domain": "ebay.com"
+    },
+    "aliexpress": {
+      "label": "AliExpress",
+      "kind": "import",
+      "domain": "aliexpress.com"
+    },
+    "other": {
+      "label": "Other sellers",
+      "kind": "import",
+      "domain": ""
+    },
+    "jumia": {
+      "label": "Jumia",
+      "kind": "local",
+      "domain": "jumia.co.ke"
+    },
+    "jiji": {
+      "label": "Jiji",
+      "kind": "local",
+      "domain": "jiji.co.ke"
+    },
+    "kilimall": {
+      "label": "Kilimall",
+      "kind": "local",
+      "domain": "kilimall.co.ke"
+    },
+    "naivas": {
+      "label": "Naivas",
+      "kind": "local",
+      "domain": "naivas.co.ke"
+    },
+    "carrefour": {
+      "label": "Carrefour Kenya",
+      "kind": "local",
+      "domain": "carrefour.ke"
+    },
+    "quickmart": {
+      "label": "Quickmart",
+      "kind": "local",
+      "domain": "quickmart.co.ke"
+    }
+  }
+}

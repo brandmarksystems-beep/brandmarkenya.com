@@ -1,0 +1,13 @@
+name = "brandmark-atlas-api"
+compatibility_date = "2024-09-23"
+pages_build_output_dir = "public"
+
+# Workers AI binding: the function reads it as env.AI
+[ai]
+binding = "AI"
+
+# Optional settings (or set them in the dashboard under Settings > Variables):
+# [vars]
+# ALLOWED_ORIGINS = "https://brandmarkenya.com,https://www.brandmarkenya.com"
+# CACHE_SECONDS = "3600"
+# SCRAPE_DISABLED = "0"
